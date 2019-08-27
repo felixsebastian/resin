@@ -4,10 +4,14 @@
   "private": true,
   "dependencies": {
     "glamor": "^2.20.40",
+    "moment": "^2.24.0",
+    "pondjs": "^0.8.10",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-google-maps": "^9.4.5",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-timeseries-charts": "^0.16.1",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

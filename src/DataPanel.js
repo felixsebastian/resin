@@ -14,13 +14,13 @@ export default function DataPanel({ items }) {
     <div className={dataPanelCss}>
       <List>
         {items.map(item => (
-          <ListItemData text={item.name} />
+          <ListItemData text={item.label} />
         ))}
       </List>
       <List>
-        {items.map(item => (
+        {/*items.map(item => (
           <ListItemValue text={item.value} />
-        ))}
+        ))*/}
       </List>
     </div>
   );
