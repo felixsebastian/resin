@@ -1,8 +1,17 @@
 import React from "react";
 import { css } from "glamor";
+import { time } from "./data";
+import TimelineGraph from "./TimelineGraphAlt"
+import styled from 'styled-components';
+
+const Container = styled.div`
+  height: 3rem;
+  border-bottom: 1px solid #eee;
+`;
 
 const timelineCss = css({
-  overflow: "auto"
+  overflow: "hidden",
+  width: "100%"
 });
 
 const itemCss = css({
@@ -16,9 +25,9 @@ const itemCss = css({
 export default function Timeline({ items }) {
   return (
     <div className={timelineCss}>
-      {items.map(item => (
-        <img className={itemCss} src={item} alt="graph" />
-      ))}
+      <Container>
+        <TimelineGraph />
+      </Container>
     </div>
   );
 }

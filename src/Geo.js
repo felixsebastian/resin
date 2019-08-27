@@ -2,6 +2,7 @@ import React from "react";
 import DataPanel from "./DataPanel";
 import Map from "./Map";
 import { css } from "glamor";
+import { geo } from "./data";
 
 // styles
 
@@ -14,11 +15,7 @@ export default function Geo({ classNameCss, style }) {
     <div className={classNameCss} style={style}>
       <DataPanel
         className={dataPanelCss}
-        items={[
-          { name: "road seg type", value: "intersection" },
-          { name: "terrain type", value: "built up" },
-          { name: "road type", value: "normal" }
-        ]}
+        items={geo}
       />
       <Map classNameCss={mapCss} style={{ flexGrow: 1 }} />
     </div>

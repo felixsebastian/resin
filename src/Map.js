@@ -16,7 +16,7 @@ const Map = withScriptjs(
 
 export default props => (
   <Map
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCo3IgVCx38MJbR-x-O-QYJZgnZK-HhKqU"
+    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk"
     loadingElement={<div />}
     containerElement={<div style={{ height: "100%", width: "100%" }} />}
     mapElement={<div style={{ height: "100%", width: "100%" }} />}
