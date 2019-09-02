@@ -4,57 +4,82 @@ import {
   GoogleMap,
   Marker,
   InfoWindow,
-  withScriptjs
+  withScriptjs,
+  OverlayView,
 } from "react-google-maps";
+import DataPanel from "./DataPanel";
+import { css } from "glamor";
+import { compose, withStateHandlers, withProps } from "recompose";
 
-var isShowInfoWindow = false;
+const dataPanelCss = css({});
 
-const Map = withScriptjs(
-  withGoogleMap(props => (
+const Map =
+  compose(
+    withProps({
+      googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDQNVlrpDGGHrW5wdTK2tPbB0S8SwWlL7w",
+      loadingElement: <div />,
+      containerElement: <div style={{ height: "100%", width: "100%" }} />,
+      mapElement: <div style={{ height: "100%", width: "100%" }} />,
+    }),
+    withStateHandlers(() => ({
+      isOpen: false, isClicked: false,
+    }), {
+      onToggleOpen: ({ isOpen }) => () => ({
+        isOpen: !isOpen,
+      }),
+      onClicked: ({ isClicked }) => () => ({
+        isClicked: !isClicked,
+      })
+    }), 
+  withScriptjs,
+  withGoogleMap)(props => (
     <GoogleMap defaultZoom={12} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
       {
         props.isMarkerShown &&
-        <Marker position={{ lat: -34.397, lng: 150.644 }} 
-          onClick={(e)=>onMarkerClick(e)}
-          onMouseOver={(e)=>onMarkerHoverOn(e)}
-          onMouseOut={(e)=>onMarkerHoverOff(e)}
+        <Marker 
+          npm position={{ lat: -34.397, lng: 150.644 }} 
+          onClick={props.onClicked}
+          onMouseOver={props.onToggleOpen}
+          onMouseOut={props.onToggleOpen}
         >
-          <InfoWindow 
-            //onClose = {}
-            visible={isShowInfoWindow}>
-            <div>
-              <p>{'Showing something in the info window'}</p>
-            </div>
-          </InfoWindow>
+          {
+            props.isOpen &&
+            <InfoWindow onCloseClick={props.onToggleOpen}>
+              <div>
+                <p>{'Showing something in the info window'}</p>
+              </div>
+            </InfoWindow>
+          } 
+          { props.isClicked &&
+            <OverlayView
+              position={{ lat: -34.397, lng: 150.644 }}
+              mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+            >
+              <div style={{ background: `white`, border: `1px solid #ccc`, padding: 15}}>
+                <h1>Overlay View</h1>
+                <button 
+                  onClick={props.onClicked} 
+                  style={{ left: '91%', top: '10%', position: 'absolute'}}>
+                  X
+                </button>
+                <DataPanel
+                  className={dataPanelCss}
+                  items={[
+                    { name: "road seg type", value: "intersection" },
+                    { name: "terrain type", value: "built up" },
+                    { name: "road type", value: "normal" }
+                  ]}
+                />
+              </div>
+            </OverlayView>
+          }
         </Marker>
       }
     </GoogleMap>
-  ))
-);
-
-function onMarkerClick(e) 
-{
-  return console.log('Clicked at' + e.latLng.lat());
-}
-
-function onMarkerHoverOn(e) {
-  //return console.log(marker);
-  isShowInfoWindow = true;
-  return console.log('Show Info Window: ' + isShowInfoWindow);
-}
-
-function onMarkerHoverOff(e) {
-  //return console.clear();
-  isShowInfoWindow = false;
-  return console.log('Show Info Window: ' + isShowInfoWindow);
-}
+  ));
 
 export default props => (
   <Map
     isMarkerShown = {true}
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQNVlrpDGGHrW5wdTK2tPbB0S8SwWlL7w"
-    loadingElement={<div />}
-    containerElement={<div style={{ height: "100%", width: "100%" }} />}
-    mapElement={<div style={{ height: "100%", width: "100%" }} />}
   />
 );
