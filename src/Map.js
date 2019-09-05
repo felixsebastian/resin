@@ -55,7 +55,7 @@ const Map =
             </InfoWindow>
           } 
           
-          {/* props.isClicked &&
+          { props.isClicked &&
             <OverlayView
               position={{ lat: -34.397, lng: 150.644 }}
               mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
@@ -73,7 +73,7 @@ const Map =
                 />
               </div>
             </OverlayView>
-          */}
+          }
         </Marker>
       }
     </GoogleMap>
