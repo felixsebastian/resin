@@ -2,6 +2,7 @@ import React from "react";
 import DataPanel from "./DataPanel";
 import Map from "./Map";
 import { css } from "glamor";
+import { geo } from "./data";
 
 // styles
 
