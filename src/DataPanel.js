@@ -17,11 +17,11 @@ export default function DataPanel({ items }) {
           <ListItemData text={item.label} />
         ))}
       </List>
-      <List>
-        {/*items.map(item => (
+      {/* <List>
+        items.map(item => (
           <ListItemValue text={item.value} />
-        ))*/}
-      </List>
+        ))
+      </List> */}
     </div>
   );
 }
