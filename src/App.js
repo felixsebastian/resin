@@ -1,89 +1,33 @@
 import React from "react";
-import Geo from "./Geo.js";
-import Time from "./Time.js";
-import { css } from "glamor";
-import {
-  Header as HeaderCarbon,
-  HeaderName,
-  HeaderNavigation,
-  HeaderMenuItem
-} from "carbon-components-react/lib/components/UIShell";
-import { BrowserRouter as Router, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Header from "./Header";
+import Home from "./Home";
+import Dashboard from "./Dashboard";
+import styled from "styled-components";
 
-// styles
+const Page = styled.div`
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+`;
 
-const islandCss = css({
-  border: "0.5rem solid #eee"
-});
+const PageContent = styled.div`
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+`;
 
-const appCss = css({
-  display: "flex",
-  "flex-direction": "column",
-  height: "150vh",
-  width: "1200px",
-  "max-width": "100%",
-  margin: "0 auto"
-});
-
-const headerCss = css({
-  padding: "1rem 2rem",
-  "border-bottom": 0
-});
-
-const viewportRowCss = css({
-  display: "flex"
-});
-
-const geoCss = css({
-  "border-bottom": 0
-});
-
-const timeCss = css({});
-
-const viewportsFrameCss = css({
-  display: "flex",
-  "flex-direction": "column"
-});
-
-// component
-
-const Header = withRouter(({ history }) => {
-  const go = location => history.push(`/${location}`);
-
-  return (
-    <HeaderCarbon>
-      <HeaderName onClick={() => go("dashboard")} prefix="">
-        Resin
-      </HeaderName>
-      <HeaderNavigation>
-        <HeaderMenuItem onClick={() => go("dashboard")}>
-          Dashboard
-        </HeaderMenuItem>
-        <HeaderMenuItem onClick={() => go("add-data")}>Add Data</HeaderMenuItem>
-        <HeaderMenuItem onClick={() => go("log-out")}>Log Out</HeaderMenuItem>
-      </HeaderNavigation>
-    </HeaderCarbon>
-  );
-});
-
-const App = ({ history }) => {
+export default () => {
   return (
     <Router>
-      <Header />
-      <div className={`${appCss} container`}>
-        <div className={`${viewportsFrameCss}`} style={{ flexGrow: 1 }}>
-          <Geo
-            classNameCss={`${geoCss} ${islandCss} ${viewportRowCss}`}
-            style={{ flexGrow: 1 }}
-          />
-          <Time
-            classNameCss={`${timeCss} ${islandCss} ${viewportRowCss}`}
-            style={{ flexGrow: 1 }}
-          />
-        </div>
-      </div>
+      <Page>
+        <Header />
+        <PageContent>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/dashboard" component={Dashboard} />
+        </PageContent>
+      </Page>
     </Router>
   );
 };
-
-export default App;
