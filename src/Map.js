@@ -12,6 +12,9 @@ import { css } from "glamor";
 import { compose, withStateHandlers, withProps } from "recompose";
 import { geo } from "./data";
 
+import {connect} from 'react-redux'
+
+
 const dataPanelCss = css({});
 
 const Map =
@@ -51,7 +54,8 @@ const Map =
               </div>
             </InfoWindow>
           } 
-          { props.isClicked &&
+          
+          {/* props.isClicked &&
             <OverlayView
               position={{ lat: -34.397, lng: 150.644 }}
               mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
@@ -69,7 +73,7 @@ const Map =
                 />
               </div>
             </OverlayView>
-          }
+          */}
         </Marker>
       }
     </GoogleMap>

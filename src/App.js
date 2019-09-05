@@ -46,14 +46,15 @@ export default function App() {
     <div className={appCss}>
       <Header classNameCss={`${headerCss} ${islandCss}`} />
       <div className={`${viewportsFrameCss}`} style={{ flexGrow: 1 }}>
-    {   <Geo
+        <Geo
           classNameCss={`${geoCss} ${islandCss} ${viewportRowCss}`}
           style={{ flexGrow: 1 }}
-        />}
-        <Time
+        />
+        
+        {/*<Time
           classNameCss={`${timeCss} ${islandCss} ${viewportRowCss}`}
           style={{ flexGrow: 1 }}
-        />
+        />*/}
       </div>
     </div>
   );
