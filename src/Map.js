@@ -10,8 +10,7 @@ import {
 import DataPanel from "./DataPanel";
 import { css } from "glamor";
 import { compose, withStateHandlers, withProps } from "recompose";
-
-const dataPanelCss = css({});
+import { islandCss } from "./Dashboard";
 
 const Map = compose(
   withProps({
@@ -74,7 +73,6 @@ const Map = compose(
                 X
               </button>
               <DataPanel
-                className={dataPanelCss}
                 items={[
                   { name: "road seg type", value: "intersection" },
                   { name: "terrain type", value: "built up" },
@@ -89,11 +87,17 @@ const Map = compose(
   </GoogleMap>
 ));
 
+const mapCss = css({
+  width: "100%"
+});
+
 export default props => (
-  <Map
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk"
-    loadingElement={<div />}
-    containerElement={<div style={{ height: "100%", width: "100%" }} />}
-    mapElement={<div style={{ height: "100%", width: "100%" }} />}
-  />
+  <div className={`${islandCss} ${mapCss}`}>
+    <Map
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk"
+      loadingElement={<div />}
+      containerElement={<div style={{ height: "100%", width: "100%" }} />}
+      mapElement={<div style={{ height: "100%", width: "100%" }} />}
+    />
+  </div>
 );

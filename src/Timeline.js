@@ -12,12 +12,16 @@ import ValueAxis from "./ValueAxis";
 import data from "./bike.json";
 import styled from "styled-components";
 import styler from "./utils/styler";
+import { islandCss } from "./Dashboard";
 
 const Wrapper = styled.div`
   overflow: hidden;
   width: 100%;
   background-color: #222;
   position: relative;
+  margin: 0.25rem;
+  box-shadow: 0.1rem 0.1rem 0.05rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.2rem;
 `;
 
 const style = styler([

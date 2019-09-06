@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { symlink } from "fs";
 
 const Floaty = styled.div`
   display: flex;
@@ -17,7 +16,16 @@ const Spacer = styled.div`
 export default () => (
   <Floaty>
     <div>
-      <p>Welcome to ResIN</p>
+      <p>
+        <b>Welcome to ResIN</b>
+      </p>
+      <p>
+        Created by students of Swinburne University:{" "}
+        <a href="http://github.com/felix-sebastian/">Luke McHwa</a>,{" "}
+        <a href="http://github.com/felix-sebastian/">Cory Misfud</a>,{" "}
+        <a href="http://github.com/felix-sebastian/">Rab'a Albreiki</a> &amp;{" "}
+        <a href="http://github.com/felix-sebastian/">Felix Sebastian</a>
+      </p>
     </div>
     <Spacer />
   </Floaty>

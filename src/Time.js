@@ -6,7 +6,7 @@ import { time } from "./data";
 
 const dataPanelCss = css({});
 
-export default function Geo({ classNameCss, style }) {
+export default function Time({ classNameCss, style }) {
   return (
     <div className={classNameCss} style={style}>
       <DataPanel className={dataPanelCss} items={time} />

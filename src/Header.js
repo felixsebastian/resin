@@ -18,7 +18,7 @@ export default withRouter(({ history }) => {
         <HeaderMenuItem onClick={() => go("dashboard")}>
           Dashboard
         </HeaderMenuItem>
-        <HeaderMenuItem onClick={() => go("add-data")}>Add Data</HeaderMenuItem>
+        <HeaderMenuItem onClick={() => go("data")}>Data</HeaderMenuItem>
         <HeaderMenuItem onClick={() => go("log-out")}>Log Out</HeaderMenuItem>
       </HeaderNavigation>
     </HeaderCarbon>

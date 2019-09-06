@@ -11,10 +11,11 @@ import {
   StructuredListCell
 } from "carbon-components-react";
 
-const islandCss = css({
-  margin: "0.5rem",
-  "box-shadow": "0.1rem 0.1rem 0.2rem rgba(0,0,0,0.2)",
-  "border-radius": "0.2rem"
+export const islandCss = css({
+  margin: "0.25rem",
+  "box-shadow": "0.1rem 0.1rem 0.05rem rgba(0,0,0,0.3)",
+  "border-radius": "0.2rem",
+  "background-color": "#fff"
 });
 
 const appCss = css({
@@ -24,7 +25,9 @@ const appCss = css({
   "flex-direction": "row",
   width: "100%",
   "max-width": "100%",
-  margin: "0 auto"
+  margin: "0 auto",
+  padding: "0.25rem",
+  "box-sizing": "border-box"
 });
 
 const viewportRowCss = css({
@@ -32,10 +35,12 @@ const viewportRowCss = css({
 });
 
 const geoCss = css({
-  "border-bottom": 0
+  "margin-bottom": 0
 });
 
-const timeCss = css({});
+const timeCss = css({
+  height: "40vh"
+});
 
 const detailsCss = css({
   width: "30rem"
@@ -51,15 +56,12 @@ export default () => (
   <div className={`${appCss}`}>
     <div className={`${viewportsFrameCss}`} style={{ flexGrow: 1 }}>
       <Geo
-        classNameCss={`${geoCss} ${islandCss} ${viewportRowCss}`}
+        classNameCss={`${geoCss} ${viewportRowCss}`}
         style={{ flexGrow: 1 }}
       />
-      <Time
-        classNameCss={`${timeCss} ${islandCss} ${viewportRowCss}`}
-        style={{ flexGrow: 1 }}
-      />
+      <Time classNameCss={`${timeCss} ${viewportRowCss}`} />
     </div>
-    <div className={`${detailsCss}`}>
+    <div className={`${detailsCss} ${islandCss}`}>
       <StructuredListWrapper>
         <StructuredListHead>
           <StructuredListCell head style={{ width: "33%" }}>
