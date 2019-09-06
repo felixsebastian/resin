@@ -11,7 +11,7 @@ const Page = styled.div`
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  background-color: #eee;
+  background-color: #ccc;
 `;
 
 const PageContent = styled.div`
