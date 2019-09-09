@@ -51,10 +51,10 @@ export default function App() {
           style={{ flexGrow: 1 }}
         />
         
-        {/*<Time
+        {<Time
           classNameCss={`${timeCss} ${islandCss} ${viewportRowCss}`}
           style={{ flexGrow: 1 }}
-        />*/}
+        />}
       </div>
     </div>
   );
