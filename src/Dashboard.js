@@ -43,7 +43,7 @@ const timeCss = css({
 });
 
 const detailsCss = css({
-  width: "30rem"
+  width: "20rem"
 });
 
 const viewportsFrameCss = css({
