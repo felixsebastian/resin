@@ -15,9 +15,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { TimeSeries } from "pondjs";
 
-import { Styler } from "./utils/styler";
-import scaleAsString from "./utils/scaleAsString";
-import curves from "./utils/curve";
+import { Styler } from "../utils/styler";
+import scaleAsString from "../utils/scaleAsString";
+import curves from "../utils/curve";
 
 const defaultStyle = {
   normal: { stroke: "steelblue", fill: "none", strokeWidth: 1 },

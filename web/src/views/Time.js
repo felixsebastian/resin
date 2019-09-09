@@ -2,7 +2,7 @@ import React from "react";
 import DataPanel from "./DataPanel";
 import Timeline from "./Timeline";
 import { css } from "glamor";
-import { time } from "./dummy";
+import { time } from "../data/dummy";
 
 const dataPanelCss = css({});
 

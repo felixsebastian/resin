@@ -20,7 +20,7 @@ import { easeSinOut } from "d3-ease";
 import { format } from "d3-format";
 import { select } from "d3-selection";
 import "d3-selection-multi";
-import scaleAsString from "./utils/scaleAsString";
+import scaleAsString from "../utils/scaleAsString";
 
 const MARGIN = 0;
 

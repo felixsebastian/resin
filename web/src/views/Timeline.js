@@ -9,10 +9,9 @@ import YAxis from "./YAxis";
 import LineChart from "./LineChart";
 import Resizable from "./Resizable";
 import ValueAxis from "./ValueAxis";
-import data from "./bike.json";
+import data from "../data/bike.json";
 import styled from "styled-components";
-import styler from "./utils/styler";
-import { islandCss } from "./Dashboard";
+import styler from "../utils/styler";
 
 const Wrapper = styled.div`
   overflow: hidden;

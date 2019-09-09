@@ -1,8 +1,9 @@
 {
-  "name": "resin",
+  "name": "resin-web",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "acorn": "^7.0.0",
     "carbon-components": "^10.5.1",
     "carbon-components-react": "^7.5.1",
     "carbon-icons": "^7.0.7",

@@ -12,7 +12,7 @@ import merge from "merge";
 import React from "react";
 import PropTypes from "prop-types";
 import { TimeRange } from "pondjs";
-import getElementOffset from "./utils/scaleAsString";
+import getElementOffset from "../utils/scaleAsString";
 
 /**
  * Renders a brush with the range defined in the prop `timeRange`.

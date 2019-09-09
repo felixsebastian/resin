@@ -20,7 +20,7 @@ import YAxis from "./YAxis";
 import Charts from "./Charts";
 import MultiBrush from "./MultiBrush";
 import TimeMarker from "./TimeMarker";
-import ScaleInterpolator from "./utils/interpolators";
+import ScaleInterpolator from "../utils/interpolators";
 
 function createScale(yaxis, type, min, max, y0, y1) {
   let scale;

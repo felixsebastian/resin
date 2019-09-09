@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 
 import { TimeRange } from "pondjs";
 
-import getElementOffset from "./utils/getElementOffset";
+import getElementOffset from "../utils/getElementOffset";
 
 /**
  * Internal component which provides the top level event catcher for the charts.
