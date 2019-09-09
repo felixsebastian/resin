@@ -13,13 +13,6 @@ import { compose, withStateHandlers, withProps } from "recompose";
 import { islandCss } from "./Dashboard";
 
 const Map = compose(
-  withProps({
-    googleMapURL:
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyDQNVlrpDGGHrW5wdTK2tPbB0S8SwWlL7w",
-    loadingElement: <div />,
-    containerElement: <div style={{ height: "100%", width: "100%" }} />,
-    mapElement: <div style={{ height: "100%", width: "100%" }} />
-  }),
   withStateHandlers(
     () => ({
       isOpen: false,
@@ -38,9 +31,7 @@ const Map = compose(
   withGoogleMap
 )(props => (
   <GoogleMap defaultZoom={12} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-    {props.isMarkerShown && (
-      <Marker
-        npm
+    {<Marker
         position={{ lat: -34.397, lng: 150.644 }}
         onClick={props.onClicked}
         onMouseOver={props.onToggleOpen}
@@ -68,7 +59,7 @@ const Map = compose(
               <h1>Overlay View</h1>
               <button
                 onClick={props.onClicked}
-                style={{ left: "91%", top: "10%", position: "absolute" }}
+                style={{ left: "85%", top: "10%", position: "absolute" }}
               >
                 X
               </button>
@@ -83,7 +74,7 @@ const Map = compose(
           </OverlayView>
         )}
       </Marker>
-    )}
+    }
   </GoogleMap>
 ));
 
