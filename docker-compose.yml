@@ -12,3 +12,30 @@ services:
       - "4000:4000"
     volumes:
       - "./api:/app"
+    environment:
+      - PGUSER=dev
+      - PGHOST=rdb
+      - PGPASSWORD=dev
+      - PGDATABASE=resin
+      - PGPORT=5432
+  rdb:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./temp/pg:/var/lib/postgresql/data"
+    environment:
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=dev
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "5555:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=dev
+      - PGADMIN_DEFAULT_PASSWORD=dev
