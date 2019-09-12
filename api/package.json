@@ -1,20 +1,32 @@
 {
   "name": "resin-api",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "apollo-server": "^2.9.3",
-    "apollo-server-express": "^2.9.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "graphql": "^14.5.4",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1",
-    "pg": "^7.12.1",
-    "pgtools": "^0.3.0"
-  },
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
   "scripts": {
-    "start": "node ./index.js"
+    "setup": "npm run-script create-db && npm run-script migrate && npm run-script seed ",
+    "create-db": "sequelize db:create --config ./src/config/config.json",
+    "migrate": "sequelize db:migrate --config ./src/config/config.json --seeders-path ./src/seeders --migrations-path ./src/migrations --models-path ./src/--migrations-path ./src/migrations",
+    "unmigrate": "sequelize db:migrate:undo:all --config ./src/config/config.json --seeders-path ./src/seeders --migrations-path ./src/migrations --models-path ./src/--migrations-path ./src/migrations",
+    "seed": "sequelize db:seed:all --config ./src/config/config.json --seeders-path ./src/seeders --migrations-path ./src/migrations --models-path ./src/--migrations-path ./src/migrations",
+    "unseed": "sequelize db:seed:undo:all --config ./src/config/config.json --seeders-path ./src/seeders --migrations-path ./src/migrations --models-path ./src/--migrations-path ./src/migrations",
+    "start": "nodemon --exec babel-node src/index.js"
+  },
+  "dependencies": {
+    "apollo-server-express": "^2.9.3",
+    "core-js": "^3.2.1",
+    "express": "^4.16.4",
+    "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.3",
+    "nodemon": "^1.18.4",
+    "pg": "^7.4.3",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "5.4.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0"
   }
 }
