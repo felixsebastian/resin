@@ -118,6 +118,7 @@ const Map =
               </div>
             </InfoWindow>
 <<<<<<< HEAD
+<<<<<<< HEAD
           } 
           
           {/* props.isClicked &&
@@ -139,15 +140,7 @@ const Map =
               </div>
             </OverlayView>
           */}
-        </Marker>
-=======
-            } 
-          </Marker>
-        )
-        */
->>>>>>> Attempted to implement multiple markers and marker generation
-      }
-    </GoogleMap>
+        </GoogleMap>
   ));
 
 export default props => (
