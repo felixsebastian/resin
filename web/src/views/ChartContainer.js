@@ -94,7 +94,6 @@ const defaultTrackerStyle = {
 export default class ChartContainer extends React.Component {
   constructor(props) {
     super(props);
-    alert(0);
     this.handleTrackerChanged = this.handleTrackerChanged.bind(this);
     this.handleTimeRangeChanged = this.handleTimeRangeChanged.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
