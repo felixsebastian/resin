@@ -12,6 +12,16 @@ import { css } from "glamor";
 import { compose, withStateHandlers, withProps } from "recompose";
 import { islandCss } from "./Dashboard";
 
+import store from "./Store";
+import { clickTogglePanel } from "./Action";
+import { connect } from "react-redux";
+
+function mapDispatchToProps(dispatch) {
+  return {
+      clickTogglePanel: () => dispatch(clickTogglePanel())
+  };
+}
+
 const Map = compose(
   withStateHandlers(
     () => ({
@@ -33,7 +43,9 @@ const Map = compose(
   <GoogleMap defaultZoom={12} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
     {<Marker
         position={{ lat: -34.397, lng: 150.644 }}
-        onClick={props.onClicked}
+        onClick={ () => {
+          console.log(store.getState())
+        }}
         onMouseOver={props.onToggleOpen}
         onMouseOut={props.onToggleOpen}
       >
@@ -77,6 +89,8 @@ const Map = compose(
     }
   </GoogleMap>
 ));
+
+connect()
 
 const mapCss = css({
   width: "100%"

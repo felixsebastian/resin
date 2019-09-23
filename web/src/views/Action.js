@@ -1,4 +1,5 @@
-import {CLICK_TOGGLE_PANEL, HOVER_TOGGLE_PANEL}from "../constants/GeoConstants";
+export const CLICK_TOGGLE_PANEL = 'CLICK_TOGGLE_PANEL';
+export const HOVER_TOGGLE_PANEL = 'HOVER_TOGGLE_PANEL';
 
 export function clickTogglePanel(payload) {
   return {

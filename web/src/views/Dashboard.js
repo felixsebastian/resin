@@ -2,14 +2,10 @@ import React from "react";
 import Geo from "./Geo.js";
 import Time from "./Time.js";
 import { css } from "glamor";
-import {
-  StructuredListWrapper,
-  StructuredListHead,
-  StructuredListBody,
-  StructuredListRow,
-  StructuredListInput,
-  StructuredListCell
-} from "carbon-components-react";
+
+import store from "./Store";
+import {clickTogglePanel} from "./Action"
+import LeftInfoPanel from "./LeftInfoPanel"
 
 export const islandCss = css({
   margin: "0.25rem",
@@ -42,9 +38,11 @@ const timeCss = css({
   height: "40vh"
 });
 
+/*
 const detailsCss = css({
   width: "20rem"
 });
+*/
 
 const viewportsFrameCss = css({
   display: "flex",
@@ -52,7 +50,11 @@ const viewportsFrameCss = css({
   height: "100%"
 });
 
-export default () => (
+window.store = store;
+window.clickTogglePanel = clickTogglePanel;
+
+export default () => {
+  return (
   <div className={`${appCss}`}>
     <div className={`${viewportsFrameCss}`} style={{ flexGrow: 1 }}>
       <Geo
@@ -61,23 +63,9 @@ export default () => (
       />
       <Time classNameCss={`${timeCss} ${viewportRowCss}`} />
     </div>
-    <div className={`${detailsCss} ${islandCss}`}>
-      <StructuredListWrapper>
-        <StructuredListHead>
-          <StructuredListCell head style={{ width: "33%" }}>
-            Key
-          </StructuredListCell>
-          <StructuredListCell head>Value</StructuredListCell>
-        </StructuredListHead>
-        <StructuredListBody>
-          <StructuredListRow>
-            <StructuredListCell>make:</StructuredListCell>
-            <StructuredListCell>
-              <b>ford</b>
-            </StructuredListCell>
-          </StructuredListRow>
-        </StructuredListBody>
-      </StructuredListWrapper>
-    </div>
+    {//<div className={`${detailsCss} ${islandCss}`}>
+      <LeftInfoPanel />
+    //</div>
+    }
   </div>
-);
+)};
