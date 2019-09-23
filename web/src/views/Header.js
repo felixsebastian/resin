@@ -11,15 +11,19 @@ export default withRouter(({ history }) => {
   const go = location => history.push(`/${location || ""}`);
   return (
     <HeaderCarbon style={{ position: "static" }}>
-      <HeaderName onClick={() => go()} prefix="">
+      <HeaderName href="" onClick={() => go()} prefix="">
         Resin
       </HeaderName>
       <HeaderNavigation>
-        <HeaderMenuItem onClick={() => go("dashboard")}>
+        <HeaderMenuItem href="" onClick={() => go("dashboard")}>
           Dashboard
         </HeaderMenuItem>
-        <HeaderMenuItem onClick={() => go("data")}>Data</HeaderMenuItem>
-        <HeaderMenuItem onClick={() => go("log-out")}>Log Out</HeaderMenuItem>
+        <HeaderMenuItem href="" onClick={() => go("data")}>
+          Data
+        </HeaderMenuItem>
+        <HeaderMenuItem href="" onClick={() => go("log-out")}>
+          Log Out
+        </HeaderMenuItem>
       </HeaderNavigation>
     </HeaderCarbon>
   );

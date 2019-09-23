@@ -1,27 +1,17 @@
 import React from "react";
 import List from "./List";
-import ListItemData from "./ListItemData";
-import ListItemValue from "./ListItemValue";
-import { css } from "glamor";
+import styled from "styled-components";
 
-const dataPanelCss = css({
-  display: "flex",
-  "flex-direction": "row"
-});
+const Layout = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+`;
 
 export default function DataPanel({ items }) {
   return (
-    <div className={dataPanelCss}>
-      <List>
-        {items.map(item => (
-          <ListItemData text={item.label} />
-        ))}
-      </List>
-      {/* <List>
-        items.map(item => (
-          <ListItemValue text={item.value} />
-        ))
-      </List> */}
-    </div>
+    <Layout>
+      <List items={items} />
+    </Layout>
   );
 }

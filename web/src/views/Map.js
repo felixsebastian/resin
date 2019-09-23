@@ -8,9 +8,9 @@ import {
   OverlayView
 } from "react-google-maps";
 import DataPanel from "./DataPanel";
-import { css } from "glamor";
 import { compose, withStateHandlers, withProps } from "recompose";
-import { islandCss } from "./Dashboard";
+import Viewport from "./Viewport";
+import styled from "styled-components";
 
 const Map = compose(
   withStateHandlers(
@@ -31,7 +31,8 @@ const Map = compose(
   withGoogleMap
 )(props => (
   <GoogleMap defaultZoom={12} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-    {<Marker
+    {
+      <Marker
         position={{ lat: -34.397, lng: 150.644 }}
         onClick={props.onClicked}
         onMouseOver={props.onToggleOpen}
@@ -78,17 +79,17 @@ const Map = compose(
   </GoogleMap>
 ));
 
-const mapCss = css({
-  width: "100%"
-});
+const Layout = styled(Viewport)`
+  width: 100%;
+`;
 
 export default props => (
-  <div className={`${islandCss} ${mapCss}`}>
+  <Layout>
     <Map
       googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk"
       loadingElement={<div />}
       containerElement={<div style={{ height: "100%", width: "100%" }} />}
       mapElement={<div style={{ height: "100%", width: "100%" }} />}
     />
-  </div>
+  </Layout>
 );

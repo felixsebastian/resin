@@ -6,6 +6,7 @@ import ChartContainer from "./ChartContainer";
 import ChartRow from "./ChartRow";
 import Charts from "./Charts";
 import YAxis from "./YAxis";
+import Viewport from "./Viewport";
 import LineChart from "./LineChart";
 import Resizable from "./Resizable";
 import ValueAxis from "./ValueAxis";
@@ -13,14 +14,10 @@ import data from "../data/bike.json";
 import styled from "styled-components";
 import styler from "../utils/styler";
 
-const Wrapper = styled.div`
-  overflow: hidden;
+const Wrapper = styled(Viewport)`
   width: 100%;
-  background-color: #222;
   position: relative;
-  margin: 0.25rem;
-  box-shadow: 0.1rem 0.1rem 0.05rem rgba(0, 0, 0, 0.3);
-  border-radius: 0.2rem;
+  background-color: #000;
 `;
 
 const style = styler([
@@ -45,13 +42,6 @@ const channels = {
     series: null,
     chartType: "line"
   },
-  // moving: {
-  //   units: "watts",
-  //   label: "Moving",
-  //   format: ",.1f",
-  //   series: null,
-  //   chartType: "boolean"
-  // },
   power: {
     units: "watts",
     label: "Power",
@@ -87,6 +77,7 @@ export default class Timeline extends React.Component {
 
   componentDidMount() {
     setTimeout(() => {
+      return;
       const channels = this.state.channels;
       const points = {};
 

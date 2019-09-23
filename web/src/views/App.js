@@ -4,33 +4,28 @@ import Header from "./Header";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
 import Data from "./Data";
+import Page from "./Page";
 import styled from "styled-components";
 
-const Page = styled.div`
+const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  background-color: #dadada;
-`;
-
-const PageContent = styled.div`
-  flex-grow: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
+  background-color: #bbb;
 `;
 
 export default () => {
   return (
     <Router>
-      <Page>
+      <Wrapper>
         <Header />
-        <PageContent>
+        <Page>
           <Route exact path="/" component={Home} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/data" component={Data} />
-        </PageContent>
-      </Page>
+        </Page>
+      </Wrapper>
     </Router>
   );
 };

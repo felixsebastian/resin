@@ -7,7 +7,7 @@ import {
   StructuredListCell
 } from "carbon-components-react";
 import styled from "styled-components";
-import Frame from "./Frame";
+import Viewport from "./Viewport";
 
 const data = {
   make: "mitsubishi",
@@ -15,7 +15,7 @@ const data = {
   time: "10:15am"
 };
 
-const Layout = styled(Frame)`
+const Layout = styled(Viewport)`
   flex-grow: 1;
 `;
 
