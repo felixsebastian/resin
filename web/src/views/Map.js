@@ -18,11 +18,11 @@ import { clickTogglePanel, hoverTogglePanel } from "./Action";
 const Map = compose(
   withStateHandlers(
     () => ({
-      isOpen: false,
+      isOpen: false
     }),
     {
-      onToggleOpen: () => () => ({
-        isOpen: store.getState().briefIsOpen
+      onToggleOpen: ({isOpen}) => () => ({
+        isOpen: !isOpen
       })
     }
   ),
@@ -35,19 +35,13 @@ const Map = compose(
         onClick={ () => {
           store.dispatch(clickTogglePanel());
         }}
-        onMouseOver={() => {
-          store.dispatch(hoverTogglePanel());
-          props.onToggleOpen();
-        }}
-        onMouseOut={() => {
-          store.dispatch(hoverTogglePanel());
-          props.onToggleOpen();
-        }}
+        onMouseOver={props.onToggleOpen}
+        onMouseOut={props.onToggleOpen}
       >
         {props.isOpen && (
-          <InfoWindow>
+          <InfoWindow onCloseClick={props.onToggleOpen}>
             <div>
-              <p>{"This is opened with redux state store and dispatch!"}</p>
+              <p>{"Click to see info on left panel"}</p>
             </div>
           </InfoWindow>
         )}

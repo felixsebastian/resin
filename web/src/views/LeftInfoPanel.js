@@ -9,7 +9,7 @@ import {
     StructuredListCell
 } from "carbon-components-react";
 import { islandCss } from "./Dashboard";
-import { css, placeholder } from "glamor";
+import { css } from "glamor";
 
 import { clickTogglePanel } from "./Action";
 
@@ -19,7 +19,6 @@ const detailsCss = css({
 
 const mapStateToProps = state => {
     return {
-        briefIsOpen: state.briefIsOpen,
         panelIsOpen: state.panelIsOpen
     }
 }
