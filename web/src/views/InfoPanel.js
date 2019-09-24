@@ -10,7 +10,6 @@ import {
 } from "carbon-components-react";
 import { islandCss } from "./Dashboard";
 import { css } from "glamor";
-
 import { clickTogglePanel } from "./Action";
 
 const detailsCss = css({
@@ -29,29 +28,29 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-const InfoPanel = ({panelIsOpen}) => (
+const infoPanel = ({panelIsOpen}) => (
     <div className={`${detailsCss} ${islandCss}` }>
         {panelIsOpen === true && (
         <StructuredListWrapper>
             <StructuredListHead>
-            <StructuredListCell head style={{ width: "33%" }}>
-                Key
-            </StructuredListCell>
-            <StructuredListCell head>Value</StructuredListCell>
+                <StructuredListCell head style={{ width: "33%" }}>
+                    Key
+                </StructuredListCell>
+                <StructuredListCell head>Value</StructuredListCell>
             </StructuredListHead>
             <StructuredListBody>
-            <StructuredListRow>
-                <StructuredListCell>make:</StructuredListCell>
-                <StructuredListCell>
-                <b>ford</b>
-                </StructuredListCell>
-            </StructuredListRow>
+                <StructuredListRow>
+                    <StructuredListCell>make:</StructuredListCell>
+                    <StructuredListCell>
+                    <b>ford</b>
+                    </StructuredListCell>
+                </StructuredListRow>
             </StructuredListBody>
         </StructuredListWrapper>
-        )}
+        )} 
     </div>
 );
 
-const LeftInfoPanel = connect(mapStateToProps, mapDispatchToProps)(InfoPanel)
+const InfoPanel = connect(mapStateToProps, mapDispatchToProps)(infoPanel)
 
-export default LeftInfoPanel;
+export default InfoPanel;

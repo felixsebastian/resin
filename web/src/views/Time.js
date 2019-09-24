@@ -9,7 +9,7 @@ const dataPanelCss = css({});
 export default function Time({ classNameCss, style }) {
   return (
     <div className={classNameCss} style={style}>
-      <DataPanel className={dataPanelCss} items={time} />
+      {/*<DataPanel className={dataPanelCss} items={time} />*/}
       <Timeline />
     </div>
   );

@@ -2,10 +2,7 @@ import React from "react";
 import Geo from "./Geo.js";
 import Time from "./Time.js";
 import { css } from "glamor";
-
-import store from "./Store";
-import {clickTogglePanel} from "./Action"
-import LeftInfoPanel from "./LeftInfoPanel"
+import InfoPanel from "./InfoPanel"
 
 export const islandCss = css({
   margin: "0.25rem",
@@ -44,9 +41,6 @@ const viewportsFrameCss = css({
   height: "100%"
 });
 
-window.store = store;
-window.clickTogglePanel = clickTogglePanel;
-
 export default () => {
   return (
   <div className={`${appCss}`}>
@@ -57,6 +51,6 @@ export default () => {
       />
       <Time classNameCss={`${timeCss} ${viewportRowCss}`} />
     </div>
-    <LeftInfoPanel />
+    <InfoPanel />
   </div>
 )};
