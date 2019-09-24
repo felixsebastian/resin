@@ -38,12 +38,6 @@ const timeCss = css({
   height: "40vh"
 });
 
-/*
-const detailsCss = css({
-  width: "20rem"
-});
-*/
-
 const viewportsFrameCss = css({
   display: "flex",
   "flex-direction": "column",
@@ -63,9 +57,6 @@ export default () => {
       />
       <Time classNameCss={`${timeCss} ${viewportRowCss}`} />
     </div>
-    {//<div className={`${detailsCss} ${islandCss}`}>
-      <LeftInfoPanel />
-    //</div>
-    }
+    <LeftInfoPanel />
   </div>
 )};

@@ -9,7 +9,9 @@ import {
     StructuredListCell
 } from "carbon-components-react";
 import { islandCss } from "./Dashboard";
-import { css } from "glamor";
+import { css, placeholder } from "glamor";
+
+import { clickTogglePanel } from "./Action";
 
 const detailsCss = css({
     width: "20rem"
@@ -22,8 +24,15 @@ const mapStateToProps = state => {
     }
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        clickTogglePanel: () => dispatch(clickTogglePanel())
+    }
+}
+
 const InfoPanel = ({panelIsOpen}) => (
-    <div className={`${detailsCss} ${islandCss}`}>
+    <div className={`${detailsCss} ${islandCss}` }>
+        {panelIsOpen === true && (
         <StructuredListWrapper>
             <StructuredListHead>
             <StructuredListCell head style={{ width: "33%" }}>
@@ -40,9 +49,10 @@ const InfoPanel = ({panelIsOpen}) => (
             </StructuredListRow>
             </StructuredListBody>
         </StructuredListWrapper>
+        )}
     </div>
 );
 
-const LeftInfoPanel = connect(mapStateToProps)(InfoPanel)
+const LeftInfoPanel = connect(mapStateToProps, mapDispatchToProps)(InfoPanel)
 
 export default LeftInfoPanel;

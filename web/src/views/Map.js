@@ -7,33 +7,22 @@ import {
   withScriptjs,
   OverlayView
 } from "react-google-maps";
-import DataPanel from "./DataPanel";
 import { css } from "glamor";
+import DataPanel from "./DataPanel";
 import { compose, withStateHandlers, withProps } from "recompose";
-import { islandCss } from "./Dashboard";
+import { islandCss } from "./Dashboard"
 
 import store from "./Store";
-import { clickTogglePanel } from "./Action";
-import { connect } from "react-redux";
-
-function mapDispatchToProps(dispatch) {
-  return {
-      clickTogglePanel: () => dispatch(clickTogglePanel())
-  };
-}
+import { clickTogglePanel, hoverTogglePanel } from "./Action";
 
 const Map = compose(
   withStateHandlers(
     () => ({
       isOpen: false,
-      isClicked: false
     }),
     {
-      onToggleOpen: ({ isOpen }) => () => ({
-        isOpen: !isOpen
-      }),
-      onClicked: ({ isClicked }) => () => ({
-        isClicked: !isClicked
+      onToggleOpen: () => () => ({
+        isOpen: store.getState().briefIsOpen
       })
     }
   ),
@@ -44,53 +33,28 @@ const Map = compose(
     {<Marker
         position={{ lat: -34.397, lng: 150.644 }}
         onClick={ () => {
-          console.log(store.getState())
+          store.dispatch(clickTogglePanel());
         }}
-        onMouseOver={props.onToggleOpen}
-        onMouseOut={props.onToggleOpen}
+        onMouseOver={() => {
+          store.dispatch(hoverTogglePanel());
+          props.onToggleOpen();
+        }}
+        onMouseOut={() => {
+          store.dispatch(hoverTogglePanel());
+          props.onToggleOpen();
+        }}
       >
         {props.isOpen && (
-          <InfoWindow onCloseClick={props.onToggleOpen}>
+          <InfoWindow>
             <div>
-              <p>{"Showing something in the info window"}</p>
+              <p>{"This is opened with redux state store and dispatch!"}</p>
             </div>
           </InfoWindow>
         )}
-        {props.isClicked && (
-          <OverlayView
-            position={{ lat: -34.397, lng: 150.644 }}
-            mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-          >
-            <div
-              style={{
-                background: `white`,
-                border: `1px solid #ccc`,
-                padding: 15
-              }}
-            >
-              <h1>Overlay View</h1>
-              <button
-                onClick={props.onClicked}
-                style={{ left: "85%", top: "10%", position: "absolute" }}
-              >
-                X
-              </button>
-              <DataPanel
-                items={[
-                  { name: "road seg type", value: "intersection" },
-                  { name: "terrain type", value: "built up" },
-                  { name: "road type", value: "normal" }
-                ]}
-              />
-            </div>
-          </OverlayView>
-        )}
-      </Marker>
+    </Marker>
     }
   </GoogleMap>
 ));
-
-connect()
 
 const mapCss = css({
   width: "100%"
