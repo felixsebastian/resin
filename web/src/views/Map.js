@@ -8,12 +8,11 @@ import {
   OverlayView
 } from "react-google-maps";
 import { css } from "glamor";
-import DataPanel from "./DataPanel";
-import { compose, withStateHandlers, withProps } from "recompose";
+import { compose, withStateHandlers } from "recompose";
 import { islandCss } from "./Dashboard"
 
 import store from "./Store";
-import { clickTogglePanel, hoverTogglePanel } from "./Action";
+import { clickToggleInfoPanel } from "./Action";
 
 const Map = compose(
   withStateHandlers(
@@ -33,7 +32,7 @@ const Map = compose(
     {<Marker
         position={{ lat: -34.397, lng: 150.644 }}
         onClick={ () => {
-          store.dispatch(clickTogglePanel());
+          store.dispatch(clickToggleInfoPanel());
         }}
         onMouseOver={props.onToggleOpen}
         onMouseOut={props.onToggleOpen}

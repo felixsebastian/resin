@@ -3,6 +3,9 @@ import Geo from "./Geo.js";
 import Time from "./Time.js";
 import { css } from "glamor";
 import InfoPanel from "./InfoPanel"
+import FilterPanel from "./FilterPanel.js";
+
+import { geo } from "../data/dummy";
 
 export const islandCss = css({
   margin: "0.25rem",
@@ -10,6 +13,12 @@ export const islandCss = css({
   "border-radius": "0.2rem",
   "background-color": "#fff"
 });
+
+const dataPanelCss = css({});
+
+const filterPanelCss = css({});
+
+const infoPanelCss = css({});
 
 const appCss = css({
   display: "flex",
@@ -44,6 +53,9 @@ const viewportsFrameCss = css({
 export default () => {
   return (
   <div className={`${appCss}`}>
+    <div classname={`${filterPanelCss}`}>
+      <FilterPanel className={dataPanelCss} items={geo} />
+    </div>
     <div className={`${viewportsFrameCss}`} style={{ flexGrow: 1 }}>
       <Geo
         classNameCss={`${geoCss} ${viewportRowCss}`}
@@ -51,6 +63,8 @@ export default () => {
       />
       <Time classNameCss={`${timeCss} ${viewportRowCss}`} />
     </div>
-    <InfoPanel />
+    <div classname={`${infoPanelCss}`} >
+      <InfoPanel />
+    </div>
   </div>
 )};

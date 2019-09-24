@@ -10,7 +10,7 @@ import {
 } from "carbon-components-react";
 import { islandCss } from "./Dashboard";
 import { css } from "glamor";
-import { clickTogglePanel } from "./Action";
+import { clickToggleInfoPanel } from "./Action";
 
 const detailsCss = css({
     width: "20rem"
@@ -18,19 +18,19 @@ const detailsCss = css({
 
 const mapStateToProps = state => {
     return {
-        panelIsOpen: state.panelIsOpen
+        infoPanelIsOpen: state.infoPanelIsOpen
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        clickTogglePanel: () => dispatch(clickTogglePanel())
+        clickTogglePanel: () => dispatch(clickToggleInfoPanel())
     }
 }
 
-const infoPanel = ({panelIsOpen}) => (
+const infoPanel = ({infoPanelIsOpen}) => (
     <div className={`${detailsCss} ${islandCss}` }>
-        {panelIsOpen === true && (
+        {infoPanelIsOpen === true && (
         <StructuredListWrapper>
             <StructuredListHead>
                 <StructuredListCell head style={{ width: "33%" }}>
@@ -47,7 +47,7 @@ const infoPanel = ({panelIsOpen}) => (
                 </StructuredListRow>
             </StructuredListBody>
         </StructuredListWrapper>
-        )} 
+        )}
     </div>
 );
 

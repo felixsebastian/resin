@@ -14,7 +14,7 @@ const mapCss = css({ overflow: "hidden", position: "static" });
 export default function Geo({ classNameCss, style }) {
   return (
     <div className={classNameCss} style={style}>
-      <FilterPanel className={dataPanelCss} items={geo} />
+      {/*<FilterPanel className={dataPanelCss} items={geo} />*/}
       <Map classNameCss={mapCss} style={{ flexGrow: 1 }} />
     </div>
   );

@@ -1,16 +1,22 @@
-import { CLICK_TOGGLE_PANEL } from "./Action";
+import { CLICK_TOGGLE_INFO_PANEL, CLICK_TOGGLE_FILTER_PANEL } from "./Action";
 
 const panelState = {
-  panelIsOpen: false
+  filterPanelIsOpen: false,
+  infoPanelIsOpen: false
 };
 
 export default function reducer (state = panelState, action) {
   switch (action.type) {
-    case CLICK_TOGGLE_PANEL:
+    case CLICK_TOGGLE_INFO_PANEL:
       return Object.assign({}, state, {
-        briefIsOpen: state.briefIsOpen,
-        panelIsOpen: !state.panelIsOpen
+        filterPanelIsOpen: state.filterPanelIsOpen,
+        infoPanelIsOpen: !state.infoPanelIsOpen
       });
-    }
+    case CLICK_TOGGLE_FILTER_PANEL:
+      return Object.assign({}, state, {
+        filterPanelIsOpen: !state.filterPanelIsOpen,
+        infoPanelIsOpen: state.infoPanelIsOpen
+      });
+    } 
   return state;
 }
