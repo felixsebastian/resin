@@ -21,7 +21,8 @@ export default () => (
       </p>
       <p>
         Created by students of Swinburne University:{" "}
-        <a href="http://github.com/felix-sebastian/">Luke McHwa</a>,{" "}
+        <a href="http://github.com/felix-sebastian/">Trung Ahn Do</a>,{" "}
+        <a href="http://github.com/felix-sebastian/">Luke McWha</a>,{" "}
         <a href="http://github.com/felix-sebastian/">Cory Misfud</a>,{" "}
         <a href="http://github.com/felix-sebastian/">Rab'a Albreiki</a> &amp;{" "}
         <a href="http://github.com/felix-sebastian/">Felix Sebastian</a>
