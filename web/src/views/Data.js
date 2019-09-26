@@ -1,13 +1,7 @@
 import React from "react";
 import Viewport from "./Viewport";
 import styled from "styled-components";
-import {
-  Form,
-  FormGroup,
-  TextInput,
-  Button,
-  DataTable
-} from "carbon-components-react";
+import { Form, TextInput, Button, DataTable } from "carbon-components-react";
 
 const {
   TableContainer,
@@ -19,17 +13,14 @@ const {
   TableCell
 } = DataTable;
 
-const Floaty = styled.div`
+const Layout = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100%;
 `;
 
 export default () => {
   return (
-    <>
+    <Layout>
       <Viewport>
         <TableContainer title="Data Sources">
           <Table>
@@ -52,6 +43,6 @@ export default () => {
         </Form>
         <Button type="submit">Save</Button>
       </Viewport>
-    </>
+    </Layout>
   );
 };

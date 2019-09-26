@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
-import Dashboard from "./Dashboard";
-import Data from "./Data";
+import pages from "../utils/pages";
 import Page from "./Page";
 import styled from "styled-components";
 
@@ -22,8 +21,9 @@ export default () => {
         <Header />
         <Page>
           <Route exact path="/" component={Home} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/data" component={Data} />
+          {pages.map(page => (
+            <Route exact path={"/" + page.id} component={page.component} />
+          ))}
         </Page>
       </Wrapper>
     </Router>
