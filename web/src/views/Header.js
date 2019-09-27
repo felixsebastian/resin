@@ -7,7 +7,7 @@ import {
 } from "carbon-components-react";
 import pages from "../utils/pages";
 import { withRouter } from "react-router-dom";
-import "element-closest";
+import _ from "element-closest";
 
 const MENU_ITEM_CLASS = "FgbR8ge3OfxYmR6jmrfk";
 
