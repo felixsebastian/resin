@@ -12,9 +12,10 @@ import _ from "element-closest";
 const MENU_ITEM_CLASS = "FgbR8ge3OfxYmR6jmrfk";
 
 export default withRouter(({ history }) => {
+  const goHome = () => history.push("/");
+
   const go = e => {
     e.preventDefault();
-    console.log(e.target.closest(`.${MENU_ITEM_CLASS}`).dataset);
     history.push(
       `/${e.target.closest(`.${MENU_ITEM_CLASS}`).firstElementChild.dataset
         .location || ""}`
@@ -23,7 +24,7 @@ export default withRouter(({ history }) => {
 
   return (
     <HeaderCarbon style={{ position: "static" }}>
-      <HeaderName href="" onClick={go} prefix="">
+      <HeaderName href="" onClick={goHome} prefix="">
         Resin
       </HeaderName>
       <HeaderNavigation>
