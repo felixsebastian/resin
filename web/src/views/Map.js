@@ -4,17 +4,11 @@ import {
   GoogleMap,
   Marker,
   InfoWindow,
-  withScriptjs,
-  OverlayView
+  withScriptjs
 } from "react-google-maps";
-import { css } from "glamor";
 import { compose, withStateHandlers } from "recompose";
-import { islandCss } from "./Dashboard";
-
 import store from "./Store";
 import { clickToggleInfoPanel } from "./Action";
-import DataPanel from "./DataPanel";
-import { compose, withStateHandlers, withProps } from "recompose";
 import Viewport from "./Viewport";
 import styled from "styled-components";
 
