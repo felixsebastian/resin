@@ -7,8 +7,8 @@ import {
   withScriptjs
 } from "react-google-maps";
 import { compose, withStateHandlers } from "recompose";
-import store from "./Store";
-import { clickToggleInfoPanel } from "./Action";
+import store from "./store";
+import { clickToggleInfoPanel } from "./action";
 import Viewport from "./Viewport";
 import styled from "styled-components";
 

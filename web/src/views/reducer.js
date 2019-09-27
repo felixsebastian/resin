@@ -1,4 +1,4 @@
-import { CLICK_TOGGLE_INFO_PANEL, CLICK_TOGGLE_FILTER_PANEL } from "./Action";
+import { CLICK_TOGGLE_INFO_PANEL, CLICK_TOGGLE_FILTER_PANEL } from "./action";
 
 const panelState = {
   filterPanelIsOpen: false,
