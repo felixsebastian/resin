@@ -5,7 +5,7 @@ const panelState = {
   infoPanelIsOpen: false
 };
 
-export default function reducer (state = panelState, action) {
+export default function reducer(state = panelState, action) {
   switch (action.type) {
     case CLICK_TOGGLE_INFO_PANEL:
       return Object.assign({}, state, {
@@ -17,6 +17,7 @@ export default function reducer (state = panelState, action) {
         filterPanelIsOpen: !state.filterPanelIsOpen,
         infoPanelIsOpen: state.infoPanelIsOpen
       });
-    } 
-  return state;
+    default:
+      return state;
+  }
 }
