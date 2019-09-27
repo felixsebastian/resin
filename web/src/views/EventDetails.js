@@ -34,8 +34,8 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(({infoPanelIsOpen}) => (
+  infoPanelIsOpen == true &&
   <Layout>
-    {infoPanelIsOpen == true &&
     <StructuredListWrapper>
       <StructuredListHead>
         <StructuredListCell head style={{ width: "33%" }}>
@@ -54,6 +54,5 @@ export default connect(mapStateToProps, mapDispatchToProps)(({infoPanelIsOpen}) 
         ))}
       </StructuredListBody>
     </StructuredListWrapper>
-    }
   </Layout> 
 ));
