@@ -88,7 +88,7 @@ export default `
 
   union Vehicle = Automobile | RailVehicle | HumanPoweredVehicle
 
-  type Event {
+  type Incident {
     type: String
     time: Int
     latitude: Float
@@ -104,12 +104,12 @@ export default `
     end: Int
   }
 
-  input EventInput {
-    type: String
-    time: Int
-    latitude: Float
-    longitude: Float
-    severity: Int
-    crashSpeed: Int
+  input IncidentInput {
+    type: String!
+    time: Int!
+    latitude: Float!
+    longitude: Float!
+    severity: Int!
+    crashSpeed: Int!
   }
 `;

@@ -1,70 +1,58 @@
 import React from "react";
-import Geo from "./Geo.js";
-import Time from "./Time.js";
-import { css } from "glamor";
-import InfoPanel from "./InfoPanel"
-import FilterPanel from "./FilterPanel.js";
+import EventDetails from "./EventDetails";
+import styled from "styled-components";
+import DataPanel from "./DataPanel";
+import { geo, time } from "../data/dummy";
+import Map from "./Map";
+import Timeline from "./Timeline";
 
-import { geo } from "../data/dummy";
+const LayoutA = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+`;
 
-export const islandCss = css({
-  margin: "0.25rem",
-  "box-shadow": "0.1rem 0.1rem 0.05rem rgba(0,0,0,0.3)",
-  "border-radius": "0.2rem",
-  "background-color": "#fff"
-});
+const LayoutB = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`;
 
-const dataPanelCss = css({});
+const LayoutC = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+`;
 
-const filterPanelCss = css({});
+const LayoutD = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  height: 20rem;
+`;
 
-const infoPanelCss = css({});
+const LayoutE = styled.div`
+  width: 20rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
 
-const appCss = css({
-  display: "flex",
-  flexGrow: 1,
-  height: "100%",
-  "flex-direction": "row",
-  width: "100%",
-  "max-width": "100%",
-  margin: "0 auto",
-  padding: "0.25rem",
-  "box-sizing": "border-box"
-});
-
-const viewportRowCss = css({
-  display: "flex"
-});
-
-const geoCss = css({
-  "margin-bottom": 0
-});
-
-const timeCss = css({
-  height: "40vh"
-});
-
-const viewportsFrameCss = css({
-  display: "flex",
-  "flex-direction": "column",
-  height: "100%"
-});
-
-export default () => {
-  return (
-  <div className={`${appCss}`}>
-    <div classname={`${filterPanelCss}`}>
-      <FilterPanel className={dataPanelCss} items={geo} />
-    </div>
-    <div className={`${viewportsFrameCss}`} style={{ flexGrow: 1 }}>
-      <Geo
-        classNameCss={`${geoCss} ${viewportRowCss}`}
-        style={{ flexGrow: 1 }}
-      />
-      <Time classNameCss={`${timeCss} ${viewportRowCss}`} />
-    </div>
-    <div classname={`${infoPanelCss}`} >
-      <InfoPanel />
-    </div>
-  </div>
-)};
+export default () => (
+  <LayoutA>
+    <LayoutB>
+      <LayoutC>
+        <DataPanel items={geo} />
+        <Map />
+      </LayoutC>
+      <LayoutD>
+        <DataPanel items={time} />
+        <Timeline />
+      </LayoutD>
+    </LayoutB>
+    <LayoutE>
+      <EventDetails />
+    </LayoutE>
+  </LayoutA>
+);

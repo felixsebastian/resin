@@ -5,21 +5,38 @@ import {
   HeaderNavigation,
   HeaderMenuItem
 } from "carbon-components-react";
+import pages from "../utils/pages";
 import { withRouter } from "react-router-dom";
+import "element-closest";
+
+const MENU_ITEM_CLASS = "FgbR8ge3OfxYmR6jmrfk";
 
 export default withRouter(({ history }) => {
-  const go = location => history.push(`/${location || ""}`);
+  const go = e => {
+    e.preventDefault();
+    console.log(e.target.closest(`.${MENU_ITEM_CLASS}`).dataset);
+    history.push(
+      `/${e.target.closest(`.${MENU_ITEM_CLASS}`).firstElementChild.dataset
+        .location || ""}`
+    );
+  };
+
   return (
     <HeaderCarbon style={{ position: "static" }}>
-      <HeaderName onClick={() => go()} prefix="">
+      <HeaderName href="" onClick={go} prefix="">
         Resin
       </HeaderName>
       <HeaderNavigation>
-        <HeaderMenuItem onClick={() => go("dashboard")}>
-          Dashboard
-        </HeaderMenuItem>
-        <HeaderMenuItem onClick={() => go("data")}>Data</HeaderMenuItem>
-        <HeaderMenuItem onClick={() => go("log-out")}>Log Out</HeaderMenuItem>
+        {pages.map(page => (
+          <HeaderMenuItem
+            href=""
+            className={MENU_ITEM_CLASS}
+            data-location={page.id}
+            onClick={go}
+          >
+            {page.name}
+          </HeaderMenuItem>
+        ))}
       </HeaderNavigation>
     </HeaderCarbon>
   );

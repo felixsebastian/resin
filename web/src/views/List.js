@@ -1,11 +1,20 @@
 import React from "react";
-import { css } from "glamor";
-import { islandCss } from "./Dashboard";
+import styled from "styled-components";
+import Viewport from "./Viewport";
+import ListItemData from "./ListItemData";
 
-const dataListCss = css({
-  width: "15rem"
-});
+const Layout = styled.div`
+  width: 20rem;
+`;
 
-export default function List({ children }) {
-  return <div className={`${dataListCss} ${islandCss}`}>{children}</div>;
+export default function List({ items }) {
+  return (
+    <Viewport>
+      <Layout>
+        {items.map(item => (
+          <ListItemData text={item.label} />
+        ))}
+      </Layout>
+    </Viewport>
+  );
 }
