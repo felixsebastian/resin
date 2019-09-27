@@ -39,7 +39,7 @@ const Map = compose(
         {props.isOpen && (
           <InfoWindow onCloseClick={props.onToggleOpen}>
             <div>
-              <p>{"Click to see info on left panel"}</p>
+              <p>{"Click to see info on "}<strike>{"left"}</strike>{" right panel"}</p>
             </div>
           </InfoWindow>
         )}
