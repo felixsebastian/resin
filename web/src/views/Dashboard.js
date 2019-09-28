@@ -5,6 +5,7 @@ import DataPanel from "./DataPanel";
 import { geo, time } from "../data/dummy";
 import Map from "./Map";
 import Timeline from "./Timeline";
+import MapLeaflet from "./MapLeaflet";
 
 const LayoutA = styled.div`
   display: flex;
@@ -39,12 +40,21 @@ const LayoutE = styled.div`
   flex-direction: column;
 `;
 
+const LayoutMap = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  width: 100%;
+`;
+
 export default () => (
   <LayoutA>
     <LayoutB>
       <LayoutC>
         <DataPanel items={geo} />
-        <Map />
+        <LayoutMap>
+          <MapLeaflet />
+        </LayoutMap>
       </LayoutC>
       <LayoutD>
         <DataPanel items={time} />
