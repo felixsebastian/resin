@@ -7,8 +7,8 @@ import {
   withScriptjs
 } from "react-google-maps";
 import { compose, withStateHandlers } from "recompose";
-import store from "./store";
-import { clickToggleInfoPanel } from "./action";
+import store from "../lib/store";
+import { selectIncident } from "../lib/actionCreators";
 import Viewport from "./Viewport";
 import styled from "styled-components";
 
@@ -31,7 +31,7 @@ const Map = compose(
       <Marker
         position={{ lat: -34.397, lng: 150.644 }}
         onClick={() => {
-          store.dispatch(clickToggleInfoPanel());
+          store.dispatch(selectIncident());
         }}
         onMouseOver={props.onToggleOpen}
         onMouseOut={props.onToggleOpen}
@@ -52,7 +52,7 @@ const Layout = styled(Viewport)`
   width: 100%;
 `;
 
-export default props => (
+export default () => (
   <Layout>
     <Map
       googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk"

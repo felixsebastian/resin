@@ -1,7 +1,7 @@
-import Dashboard from "../views/Dashboard";
-import Incidents from "../views/Data";
-import Context from "../views/Data";
-import LogOut from "../views/Data";
+import Dashboard from "../components/Dashboard";
+import Incidents from "../components/Data";
+import Context from "../components/Data";
+import LogOut from "../components/Data";
 
 export default [
   {

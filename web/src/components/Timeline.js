@@ -12,7 +12,9 @@ import Resizable from "./Resizable";
 import ValueAxis from "./ValueAxis";
 import data from "../data/bike.json";
 import styled from "styled-components";
-import styler from "../utils/styler";
+import styler from "../lib/styler";
+import get, { sources as channels } from "../lib/tsdds";
+import fibbonacci from "../lib/fibbonacci";
 
 const Wrapper = styled(Viewport)`
   width: 100%;
@@ -20,44 +22,15 @@ const Wrapper = styled(Viewport)`
   background-color: #000;
 `;
 
-const style = styler([
-  { key: "altitude", color: "magenta", width: 2 },
-  { key: "cadence", color: "yellow", width: 2 },
-  { key: "power", color: "lime", width: 2 },
-  { key: "moving", color: "red", width: 2 }
-]);
+const style = styler(
+  Object.keys(channels).map(key => ({
+    key,
+    color: channels[key].color,
+    width: 2
+  }))
+);
 
-const channels = {
-  altitude: {
-    units: "feet",
-    label: "Altitude",
-    format: "d",
-    series: null,
-    chartType: "line"
-  },
-  cadence: {
-    units: "rpm",
-    label: "Cadence",
-    format: "d",
-    series: null,
-    chartType: "line"
-  },
-  power: {
-    units: "watts",
-    label: "Power",
-    format: ",.1f",
-    series: null,
-    chartType: "line"
-  }
-};
-
-const fibbonacci = max => {
-  var result = [1, 2];
-  while (result[result.length - 1] < max) {
-    result.push(result[result.length - 1] + result[result.length - 2]);
-  }
-  return result;
-};
+const usingChannels = ["altitude"];
 
 const rollupLevels = fibbonacci(200);
 
@@ -68,7 +41,9 @@ export default class Timeline extends React.Component {
 
     this.state = {
       ready: false,
-      channels,
+      channels: Object.keys(channels)
+        .filter(key => usingChannels.includes(key))
+        .reduce((res, o) => ({ ...res, [o]: channels[o] }), {}),
       rollup: "1m",
       tracker: null,
       timerange: initialRange
@@ -77,7 +52,6 @@ export default class Timeline extends React.Component {
 
   componentDidMount() {
     setTimeout(() => {
-      return;
       const channels = this.state.channels;
       const points = {};
 

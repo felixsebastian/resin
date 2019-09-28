@@ -5,7 +5,7 @@ import {
   HeaderNavigation,
   HeaderMenuItem
 } from "carbon-components-react";
-import pages from "../utils/pages";
+import pages from "../config/pages";
 import { withRouter } from "react-router-dom";
 import _ from "element-closest";
 
