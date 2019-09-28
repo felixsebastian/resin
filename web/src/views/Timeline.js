@@ -1,261 +1,142 @@
 import React from "react";
-import "moment-duration-format";
-import moment from "moment";
-import { TimeSeries, TimeRange, avg } from "pondjs";
-import ChartContainer from "./ChartContainer";
-import ChartRow from "./ChartRow";
-import Charts from "./Charts";
-import YAxis from "./YAxis";
+import store from "./store";
 import Viewport from "./Viewport";
-import LineChart from "./LineChart";
-import Resizable from "./Resizable";
-import ValueAxis from "./ValueAxis";
-import data from "../data/bike.json";
 import styled from "styled-components";
-import styler from "../utils/styler";
 
-const Wrapper = styled(Viewport)`
+import { 
+  Charts, 
+  ChartContainer, 
+  ChartRow, 
+  YAxis, 
+  LineChart,
+  Baseline,
+  Resizable,
+  Brush
+} from "react-timeseries-charts";
+import { TimeSeries } from "pondjs";
+
+const Layout = styled(Viewport)`
   width: 100%;
-  position: relative;
-  background-color: #000;
 `;
 
-const style = styler([
-  { key: "altitude", color: "magenta", width: 2 },
-  { key: "cadence", color: "yellow", width: 2 },
-  { key: "power", color: "lime", width: 2 },
-  { key: "moving", color: "red", width: 2 }
-]);
-
-const channels = {
-  altitude: {
-    units: "feet",
-    label: "Altitude",
-    format: "d",
-    series: null,
-    chartType: "line"
-  },
-  cadence: {
-    units: "rpm",
-    label: "Cadence",
-    format: "d",
-    series: null,
-    chartType: "line"
-  },
-  power: {
-    units: "watts",
-    label: "Power",
-    format: ",.1f",
-    series: null,
-    chartType: "line"
+const data = require("./usd_vs_aud.json");
+const points = data.widget[0].data.reverse();
+const series = new TimeSeries({
+    name: "USD_vs_AUD",
+    columns: ["time", "value"],
+    points
+});
+const style = {
+  value: {
+      stroke: "#a02c2c",
+      opacity: 0.2
   }
 };
 
-const fibbonacci = max => {
-  var result = [1, 2];
-  while (result[result.length - 1] < max) {
-    result.push(result[result.length - 1] + result[result.length - 2]);
+const baselineStyle = {
+  line: {
+      stroke: "steelblue",
+      strokeWidth: 1,
+      opacity: 0.4,
+      strokeDasharray: "none"
+  },
+  label: {
+      fill: "steelblue"
   }
-  return result;
 };
 
-const rollupLevels = fibbonacci(200);
-
-export default class Timeline extends React.Component {
-  constructor(props) {
-    super(props);
-    const initialRange = new TimeRange([75 * 60 * 1000, 125 * 60 * 1000]);
-
-    this.state = {
-      ready: false,
-      channels,
-      rollup: "1m",
-      tracker: null,
-      timerange: initialRange
-    };
+const baselineStyleLite = {
+  line: {
+      stroke: "steelblue",
+      strokeWidth: 1,
+      opacity: 0.5
+  },
+  label: {
+      fill: "steelblue"
   }
+};
 
-  componentDidMount() {
-    setTimeout(() => {
-      return;
-      const channels = this.state.channels;
-      const points = {};
-
-      Object.keys(channels).forEach(channelName => {
-        points[channelName] = [];
-      });
-
-      for (let i = 1; i < data.time.length; i += 1) {
-        const time = data.time[i] * 1000;
-        Object.keys(channels).forEach(channelName => {
-          points[channelName].push([time, data[channelName][i]]);
-        });
-      }
-
-      Object.keys(channels).forEach(channelName => {
-        const channel = channels[channelName];
-        const series = new TimeSeries({
-          name: channel.name,
-          columns: ["time", channelName],
-          points: points[channelName]
-        });
-
-        channel.series = series;
-
-        channel.rollups = rollupLevels.map(rollupLevel => ({
-          duration: rollupLevel,
-          series: series.fixedWindowRollup({
-            windowSize: rollupLevel + "s",
-            aggregation: { [channelName]: { [channelName]: avg() } }
-          })
-        }));
-
-        channel.avg = parseInt(series.avg(channelName), 10);
-        channel.min = parseInt(series.min(channelName), 10);
-        channel.max = parseInt(series.max(channelName), 10);
-      });
-
-      const minTime = channels.altitude.series.range().begin();
-      const maxTime = channels.altitude.series.range().end();
-      this.setState({ ready: true, channels, minTime, maxTime });
-    }, 0);
+const baselineStyleExtraLite = {
+  line: {
+      stroke: "steelblue",
+      strokeWidth: 1,
+      opacity: 0.2,
+      strokeDasharray: "1,1"
+  },
+  label: {
+      fill: "steelblue"
   }
+};
 
-  handleTrackerChanged = tracker => this.setState({ tracker });
+const brushStyle = {
+  fill: "#777",
+  fillOpacity: 0.3,
+  stroke: "#fff",
+  shapeRendering: "crispEdges",
+  cursor: "ew-resize"
+};
 
-  handleTimeRangeChange = timerange =>
-    this.setState({
-      timerange: timerange || this.state.channels["altitude"].range()
-    });
-
-  handleChartResize = width => this.setState({ width });
-
-  handleActiveChange = channelName => {
-    const channels = this.state.channels;
-    channels[channelName].show = !channels[channelName].show;
-    this.setState({ channels });
-  };
-
-  renderChannelsChart = () => {
-    const { timerange, channels, maxTime, minTime } = this.state;
-    const durationPerPixel = timerange.duration() / 800 / 1000;
-    const rows = [];
-
-    Object.keys(channels).forEach(channelName => {
-      const channel = channels[channelName];
-      const charts = [];
-      let series = channel.series;
-
-      channel.rollups.forEach(rollup => {
-        if (rollup.duration < durationPerPixel * 2) {
-          series = rollup.series.crop(
-            new TimeRange([
-              timerange.begin() - timerange.duration() / 2,
-              timerange.end() + timerange.duration() / 2
-            ])
-          );
-        }
-      });
-
-      if (channel.chartType === "line")
-        charts.push(
-          <LineChart
-            key={`line-${channelName}`}
-            axis={`${channelName}_axis`}
-            series={series}
-            columns={[channelName]}
-            breakLine
-            style={style}
-          />
-        );
-      else if (channel.chartType === "boolean") charts.push();
-
-      let value = "--";
-      if (this.state.tracker) {
-        const approx =
-          (+this.state.tracker - +timerange.begin()) /
-          (+timerange.end() - +timerange.begin());
-        const ii = Math.floor(approx * series.size());
-        const i = series.bisect(new Date(this.state.tracker), ii);
-        const v = i < series.size() ? series.at(i).get(channelName) : null;
-        if (v) {
-          value = parseInt(v, 10);
-        }
-      }
-
-      rows.push(
-        <ChartRow
-          height="80"
-          key={`row-${channelName}`}
-          title={channelName}
-          titleStyle={{ color: "#fff", backgroundColor: "#222" }}
+export default () => {
+  return( 
+    <Layout>
+      <Resizable>
+        <ChartContainer
+          title="AUD price (USD)"
+          titleStyle={{ fill: "#555", fontWeight: 500 }}
+          timeRange={series.range()}
+          format="%b '%y"
+          timeAxisTickCount={5}
         >
-          <YAxis
-            id={`${channelName}_axis`}
-            visible={false}
-            min={channel.min}
-            max={channel.max}
-          />
-          <Charts>{charts}</Charts>
-          <ValueAxis
-            id={`${channelName}_valueaxis`}
-            value={value}
-            detail={channels[channelName].units}
-            width={60}
-            min={0}
-            max={35}
-          />
-        </ChartRow>
-      );
-    });
-
-    return (
-      <ChartContainer
-        timeRange={this.state.timerange}
-        format="relative"
-        showGrid={false}
-        trackerShowTime={false}
-        enablePanZoom
-        minDuration={1000}
-        maxTime={maxTime}
-        minTime={minTime}
-        trackerPosition={this.state.tracker}
-        onTimeRangeChanged={this.handleTimeRangeChange}
-        onChartResize={width => this.handleChartResize(width)}
-        onTrackerChanged={this.handleTrackerChanged}
-        hideTimeAxis
-      >
-        {rows}
-      </ChartContainer>
-    );
-  };
-
-  render = () => (
-    <Wrapper>
-      {this.state.ready ? (
-        <>
-          <div>
-            <Resizable>{this.renderChannelsChart()}</Resizable>
-          </div>
-          <div
-            style={{
-              borderTop: "0.2rem solid #aaa",
-              backgroundColor: "#ccc",
-              color: "fff",
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0
-            }}
-          >
-            {this.state.tracker
-              ? `${moment.duration(+this.state.tracker).format()}`
-              : "-:--:--"}
-          </div>{" "}
-        </>
-      ) : (
-        <div>{"..."}</div>
-      )}
-    </Wrapper>
-  );
+          <ChartRow height="150">
+            <YAxis
+              id="price"
+              label="Price ($)"
+              min={series.min()}
+              max={series.max()}
+              width="60"
+              format="$,.2f"
+            />
+            <Charts>
+              <LineChart 
+                axis="price" 
+                series={series} 
+                style={style} 
+              />
+              <Baseline
+                  axis="price"
+                  style={baselineStyleLite}
+                  value={series.max()}
+                  label="Max"
+                  position="right"
+              />
+              <Baseline
+                  axis="price"
+                  style={baselineStyleLite}
+                  value={series.min()}
+                  label="Min"
+                  position="right"
+              />
+              <Baseline
+                  axis="price"
+                  style={baselineStyleExtraLite}
+                  value={series.avg() - series.stdev()}
+              />
+              <Baseline
+                  axis="price"
+                  style={baselineStyleExtraLite}
+                  value={series.avg() + series.stdev()}
+              />
+              <Baseline
+                  axis="price"
+                  style={baselineStyle}
+                  value={series.avg()}
+                  label="Avg"
+                  position="right"
+              />
+            </Charts>
+          </ChartRow>
+        </ChartContainer>
+      </Resizable>
+    </Layout>
+  )
 }
