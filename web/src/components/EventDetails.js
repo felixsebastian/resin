@@ -8,6 +8,8 @@ import {
 } from "carbon-components-react";
 import styled from "styled-components";
 import Viewport from "./Viewport";
+import { clickToggleInfoPanel } from "./action";
+import { connect } from "react-redux";
 
 const data = {
   make: "mitsubishi",
@@ -19,7 +21,20 @@ const Layout = styled(Viewport)`
   flex-grow: 1;
 `;
 
-export default () => (
+const mapStateToProps = state => {
+  return {
+      infoPanelIsOpen: state.infoPanelIsOpen
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+      clickTogglePanel: () => dispatch(clickToggleInfoPanel())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(({infoPanelIsOpen}) => (
+  infoPanelIsOpen == true &&
   <Layout>
     <StructuredListWrapper>
       <StructuredListHead>
@@ -39,5 +54,5 @@ export default () => (
         ))}
       </StructuredListBody>
     </StructuredListWrapper>
-  </Layout>
-);
+  </Layout> 
+));
