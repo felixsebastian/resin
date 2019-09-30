@@ -2,141 +2,263 @@ import React from "react";
 import store from "./store";
 import Viewport from "./Viewport";
 import styled from "styled-components";
+import { compose, withStateHandlers } from "recompose";
 
+import _ from "underscore";
+import Moment from "moment"
 import { 
   Charts, 
   ChartContainer, 
   ChartRow, 
   YAxis, 
   LineChart,
-  Baseline,
+  AreaChart,
   Resizable,
-  Brush
+  ScatterChart,
+  Legend,
+  styler
 } from "react-timeseries-charts";
-import { TimeSeries } from "pondjs";
+import { TimeSeries, TimeRange, IndexedEvent, Collection } from "pondjs";
+
+import weatherJSON from "./weather.json";
 
 const Layout = styled(Viewport)`
   width: 100%;
 `;
 
-const data = require("./usd_vs_aud.json");
-const points = data.widget[0].data.reverse();
-const series = new TimeSeries({
-    name: "USD_vs_AUD",
-    columns: ["time", "value"],
-    points
+//
+//Read in data
+//
+
+const temperaturePoints = [];
+const pressurePoints = [];
+const windPoints = [];
+const gustPoints = [];
+const rainPoints = [];
+const rainAccumPoints = [];
+_.each(weatherJSON, readings => {
+    const time = new Moment(readings.Time).toDate().getTime();
+    const tempReading = readings.TemperatureF;
+    const pressureReading = readings["PressureIn"];
+    const windReading = readings["WindSpeedMPH"] === "Calm" ? 0 : readings["WindSpeedMPH"];
+    const gustReading = readings["WindSpeedGustMPH"];
+    const rainReading = readings["HourlyPrecipIn"] === "N/A" ? 0 : readings["HourlyPrecipIn"];
+    const rainAccumReading = readings["dailyrainin"];
+
+    temperaturePoints.push([time, tempReading]);
+    pressurePoints.push([time, pressureReading]);
+
+    // Somewhat fake the wind speed...
+    windPoints.push([time, windReading * 5]);
+    if (gustReading !== "-" && gustReading !== 0) {
+        gustPoints.push([time, gustReading * 5 + Math.random() * 2.5 - 2.5, gustReading / 3]);
+    }
+    rainPoints.push([time, rainReading]);
+    rainAccumPoints.push([time, rainAccumReading]);
 });
-const style = {
-  value: {
-      stroke: "#a02c2c",
-      opacity: 0.2
-  }
+
+//
+// Timeseries
+//
+
+const tempSeries = new TimeSeries({
+  name: "Temperature",
+  columns: ["time", "temp"],
+  points: temperaturePoints
+});
+const pressureSeries = new TimeSeries({
+  name: "Pressure",
+  columns: ["time", "pressure"],
+  points: pressurePoints
+});
+const windSeries = new TimeSeries({
+  name: "Wind",
+  columns: ["time", "wind"],
+  points: windPoints
+});
+const gustSeries = new TimeSeries({
+  name: "Gust",
+  columns: ["time", "gust", "radius"],
+  points: gustPoints
+});
+const rainSeries = new TimeSeries({
+  name: "Rain",
+  columns: ["time", "rain"],
+  points: rainPoints
+});
+const rainAccumSeries = new TimeSeries({
+  name: "Rain Accum",
+  columns: ["time", "rainAccum"],
+  points: rainAccumPoints
+});
+
+//
+// Styling
+//
+
+const scheme = {
+  temp: "#CA4040",
+  pressure: "#9467bd",
+  wind: "#987951",
+  gust: "#CC862A",
+  rain: "#C3CBD4",
+  rainAccum: "#000"
 };
 
-const baselineStyle = {
-  line: {
-      stroke: "steelblue",
-      strokeWidth: 1,
-      opacity: 0.4,
-      strokeDasharray: "none"
-  },
-  label: {
-      fill: "steelblue"
-  }
-};
+const style = styler([
+  { key: "temp", color: "#CA4040" },
+  { key: "pressure", color: "#9467bd" },
+  { key: "wind", color: "#987951" },
+  { key: "gust", color: "#CC862A" },
+  { key: "rain", color: "#C3CBD4" },
+  { key: "rainAccum", color: "#333" }
+]);
 
-const baselineStyleLite = {
-  line: {
-      stroke: "steelblue",
-      strokeWidth: 1,
-      opacity: 0.5
-  },
-  label: {
-      fill: "steelblue"
-  }
-};
+//
+// Chart
+//
 
-const baselineStyleExtraLite = {
-  line: {
-      stroke: "steelblue",
-      strokeWidth: 1,
-      opacity: 0.2,
-      strokeDasharray: "1,1"
-  },
-  label: {
-      fill: "steelblue"
-  }
-};
+export default class Timeline extends React.Component {
+  state = {
+    tracker: null,
+    timerange: new TimeRange([1425168000000, 1433116800000]),
+    selection: null
+  };
 
-const brushStyle = {
-  fill: "#777",
-  fillOpacity: 0.3,
-  stroke: "#fff",
-  shapeRendering: "crispEdges",
-  cursor: "ew-resize"
-};
-
-export default () => {
-  return( 
+  render() {
+    return (
     <Layout>
       <Resizable>
         <ChartContainer
-          title="AUD price (USD)"
-          titleStyle={{ fill: "#555", fontWeight: 500 }}
-          timeRange={series.range()}
-          format="%b '%y"
-          timeAxisTickCount={5}
+          utc={false}
+          timeRange={tempSeries.timerange()}
+          showGridPosition="under"
+          onTrackerChanged={(tracker) => this.setState({tracker})}
+          trackerPosition={this.state.tracker}
         >
-          <ChartRow height="150">
-            <YAxis
-              id="price"
-              label="Price ($)"
-              min={series.min()}
-              max={series.max()}
-              width="60"
-              format="$,.2f"
+          <ChartRow height="80">
+          <YAxis
+                id="temp"
+                label="Temperature (°F)"
+                labelOffset={5}
+                style={style.axisStyle("temp")}
+                min={50}
+                max={70}
+                width="100"
+                type="linear"
+                format=",.1f"
             />
             <Charts>
-              <LineChart 
-                axis="price" 
-                series={series} 
-                style={style} 
+                <LineChart
+                    axis="temp"
+                    series={tempSeries}
+                    columns={["temp"]}
+                    style={style}
+                />
+            </Charts>
+            
+          </ChartRow>
+
+          <ChartRow height="80">
+            <YAxis
+              id="wind"
+              label="Wind (mph)"
+              labelOffset={5}
+              style={{ labelColor: scheme.wind }}
+              min={0}
+              max={50}
+              width="100"
+              type="linear"
+              format=",.1f"
+            />
+            <Charts>
+              <LineChart
+                axis="wind"
+                series={windSeries}
+                columns={["wind"]}
+                interpolation="curveStepBefore"
+                style={style}
               />
-              <Baseline
-                  axis="price"
-                  style={baselineStyleLite}
-                  value={series.max()}
-                  label="Max"
-                  position="right"
-              />
-              <Baseline
-                  axis="price"
-                  style={baselineStyleLite}
-                  value={series.min()}
-                  label="Min"
-                  position="right"
-              />
-              <Baseline
-                  axis="price"
-                  style={baselineStyleExtraLite}
-                  value={series.avg() - series.stdev()}
-              />
-              <Baseline
-                  axis="price"
-                  style={baselineStyleExtraLite}
-                  value={series.avg() + series.stdev()}
-              />
-              <Baseline
-                  axis="price"
-                  style={baselineStyle}
-                  value={series.avg()}
-                  label="Avg"
-                  position="right"
+              <ScatterChart
+                axis="wind-gust"
+                series={gustSeries}
+                columns={["gust"]}
+                style={style}
+                radius={event => {
+                    return event.get("radius");
+                }}
               />
             </Charts>
+            <YAxis
+              id="wind-gust"
+              label="Wind gust (mph)"
+              labelOffset={-5}
+              style={style.axisStyle("gust")}
+              min={0}
+              max={50}
+              width="100"
+              type="linear"
+              format=",.1f"
+            />
+          </ChartRow>
+
+          <ChartRow height="80">
+            <YAxis
+              id="total-rain"
+              label="Total Precipitation (in)"
+              style={style.axisStyle("rainAccum")}
+              labelOffset={5}
+              min={0}
+              max={rainAccumSeries.max("rainAccum")}
+              width="100"
+              type="linear"
+              format=",.2f"
+            />
+            <Charts>
+              <AreaChart
+                axis="rain"
+                series={rainSeries}
+                columns={{ up: ["rain"] }}
+                style={style}
+                interpolation="curveBasis"
+                fillOpacity={0.4}
+              />
+              <LineChart
+                axis="total-rain"
+                series={rainAccumSeries}
+                columns={["rainAccum"]}
+                style={style}
+              />
+            </Charts>
+            <YAxis
+              id="rain"
+              label="Precipitation (in)"
+              labelOffset={-5}
+              style={style.axisStyle("rain")}
+              min={0}
+              max={rainSeries.max("rain")}
+              width="100"
+              type="linear"
+              format=",.2f"
+            />
           </ChartRow>
         </ChartContainer>
       </Resizable>
+      <Legend
+          type="line"
+          align="left"
+          stack={false}
+          style={style}
+          categories={[
+              { key: "temp", label: "Temperature" },
+              { key: "pressure", label: "Pressure" },
+              { key: "wind", label: "Wind speed" },
+              { key: "gust", label: "Gust speed", symbolType: "dot" },
+              { key: "rain", label: "Rainfall", symbolType: "swatch" },
+              { key: "rainAccum", label: "Accumulated rainfall" }
+          ]}
+      />
     </Layout>
-  )
+    )
+  };
 }
