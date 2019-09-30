@@ -13,6 +13,7 @@ import {
   YAxis, 
   LineChart,
   AreaChart,
+  BoxChart,
   Resizable,
   ScatterChart,
   Legend,
@@ -106,7 +107,7 @@ const scheme = {
 };
 
 const style = styler([
-  { key: "temp", color: "#CA4040" },
+  { key: "temp", color: "red", width: 1, opacity: 0.5 },
   { key: "pressure", color: "#9467bd" },
   { key: "wind", color: "#987951" },
   { key: "gust", color: "#CC862A" },
