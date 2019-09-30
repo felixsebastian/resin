@@ -1,10 +1,9 @@
 import types from "./types";
 export default `
   type Query {
-    categories: [Category!],
-    locations(categoryId: Int): [Category!]
+    incidents: [Incident!]
   }
-`;
+  `;
 
 // type Query {
 //   getEvents(timerange: Timerange): [Event]

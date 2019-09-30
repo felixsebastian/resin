@@ -1,7 +1,8 @@
 import types from "./types";
 export default `
   type Mutation {
-    addCategory(categoryName: String): [Category!]
-    createIncident(event: IncidentInput): Incident
+    createIncident(event: IncidentInput!): [Incident!]
+
+    deleteAllIncidents: [Incident!]
   }
 `;

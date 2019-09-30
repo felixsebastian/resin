@@ -1,4 +1,5 @@
 export default {
+  /*
   categories: (parent, args, { db }, info) => {
     return db.Categories.findAll();
   },
@@ -14,5 +15,9 @@ export default {
         }
       ]
     });
+  },
+*/
+  incidents: (parent, args, { db }, info) => {
+    return db.Incidents.findAll();
   }
 };

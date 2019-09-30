@@ -1,25 +1,4 @@
 export default `
-  type Category {
-    id: ID
-    name: String
-  }
-  
-  enum Make {
-    FORD
-    TOYOTA
-    HONDA
-    VOLKSWAGEN
-    BMW
-  }
-
-  enum AutonomyLevel {
-    NONE
-    DRIVER_ASSISTANCE
-    PARTIAL_ASSISTANCE
-    CONDITIONAL_ASSISTANCE
-    HIGH_AUTOMATION
-    FULL_AUTOMATION
-  }
 
   enum Country {
     JAPAN
@@ -43,14 +22,55 @@ export default `
     CANADA
     ITALY
     MALAYSIA
-  }
+  },
+
+  enum Make {
+    FORD
+    TOYOTA
+    HONDA
+    VOLKSWAGEN
+    BMW
+  },
+
+  enum AutonomyLevel {
+    NONE
+    DRIVER_ASSISTANCE
+    PARTIAL_ASSISTANCE
+    HIGH_AUTOMATION
+    FULL_AUTOMATION
+  },
 
   enum AutomobileType {
     CAR
     MOTORBIKE
     BUS
     TRUCK
-  }
+  },
+
+  enum RailVehicleType {
+    TRAIN
+    TRAM
+  },
+
+  enum HumanPoweredVehicleType {
+    BICYCLE
+    TRICYCLE
+    VELOMOBILE
+    SKATEBOARD
+    SCOOTER
+    RICKSHAW
+    WHEELCHAIR
+  },
+
+  enum VehicleMode {
+    CONVENTIONAL
+    AUTONOMOUS
+  },
+
+  type Sensor {
+    name: String
+    description: String
+  },
 
   type Automobile {
     type: AutomobileType
@@ -61,55 +81,68 @@ export default `
     yearOfManufacture: Int
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel
-  }
-
-  enum RailVehicleType {
-    TRAIN
-    TRAM
-  }
+    sensors: [Sensor]
+  },
 
   type RailVehicle {
     type: RailVehicleType
-  }
-
-  enum HumanPoweredVehicleType {
-    BICYCLE
-    TRICYCLE
-    VELOMOBILE
-    SKATEBOARD
-    SCOOTER
-    RICKSHAW
-    WHEELCHAIR
-  }
+  },
 
   type HumanPoweredVehicle {
     type: HumanPoweredVehicleType
-  }
+  },
 
   union Vehicle = Automobile | RailVehicle | HumanPoweredVehicle
 
   type Incident {
-    type: String
-    time: Int
+    id: Int
+    timestamp: Int
     latitude: Float
     longitude: Float
-    severity: Int
-    damagedVehicles: [Vehicle]
-    otherVehicles: [Vehicle]
-    crashSpeed: Int
-  }
+    numVehicles: Int
+    damageSeverity: String
+    description: String
+    vehicle1: Vehicle
+    vehicle2: Vehicle
+    dca: Int
+    weatherDesc: String
+    mode: VehicleMode
+  },
 
-  input Timerange {
-    start: Int
-    end: Int
-  }
+  input SensorInput {
+    name: String
+    description: String
+  },
 
+  input AutomobileInput {
+    type: AutomobileType
+    registration: String
+    vin: String
+    make: Make
+    model: String
+    yearOfManufacture: Int
+    countryOfManufacture: Country
+    autonomyLevel: AutonomyLevel
+    sensors: [SensorInput]
+  },
+  input RailVehicleInput {
+    type: RailVehicleType
+  },
+  input HumanPoweredVehicleInput {
+    type: HumanPoweredVehicleType
+  },
+  
   input IncidentInput {
-    type: String!
-    time: Int!
-    latitude: Float!
-    longitude: Float!
-    severity: Int!
-    crashSpeed: Int!
+      timestamp: Int
+      latitude: Float
+      longitude: Float
+      numVehicles: Int
+      damageSeverity: String
+      description: String
+      vehicle1: AutomobileInput
+      vehicle2: AutomobileInput
+      dca: Int
+      weatherDesc: String
+      mode: VehicleMode
   }
 `;

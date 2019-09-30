@@ -1,55 +1,51 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
   var Incidents = sequelize.define("Incidents", {
+    timestamp: DataTypes.INTEGER,
+    latitude: DataTypes.FLOAT,
+    longitude: DataTypes.FLOAT,
+    numVehicles: DataTypes.INTEGER,
+    damageSeverity: DataTypes.STRING,
+    description: DataTypes.STRING,
+    // Posibly remove these and insert as foreign keys
+    vehicle1: DataTypes.INTEGER,
+    vehicle2: DataTypes.INTEGER,
+    dca: DataTypes.INTEGER,
+    weatherDesc: DataTypes.STRING,
+    mode: DataTypes.INTEGER,
+    updatedAt: DataTypes.INTEGER,
+    createdAt: DataTypes.INTEGER,
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
-    },
-    updatedAt: DataTypes.DATE,
-    createdAt: DataTypes.DATE,
-    type: {
-      type: DataTypes.ENUM,
-      values: ["CRASH"]
-    },
-    time: DataTypes.DATE,
-    latitude: {
-      type: DataTypes.FLOAT,
-      validate: {
-        min: -180,
-        max: 180
-      }
-    },
-    longitude: {
-      type: DataTypes.FLOAT,
-      validate: {
-        min: -180,
-        max: 180
-      }
-    },
-    severity: {
-      type: DataTypes.INTEGER,
-      validate: {
-        min: 0,
-        max: 100
-      }
-    },
-    primaryVehicle: DataTypes.INTEGER,
-    otherVehicles: DataTypes.ARRAY(DataTypes.INTEGER),
-    crashSpeed: {
-      type: DataTypes.INTEGER,
-      validate: {
-        min: 0
-      }
     }
   });
+  // add association to foreign key vehicle here
+  
+  return Incidents;
+};
 
+/*
+module.exports = (sequelize, DataTypes) => {
+  var Categories = sequelize.define("Categories", {
+    name: DataTypes.STRING,
+    updatedAt: DataTypes.INTEGER,
+    createdAt: DataTypes.INTEGER,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true
+    }
+  });
   Categories.associate = function(models) {
-    Categories.hasMany(models.Vehicles, {
+    Categories.belongsToMany(models.Locations, {
+      through: "CategoriesLocations",
       foreignKey: "categoryId"
     });
   };
-
-  return Incidents;
+  return Categories;
 };
+*/
