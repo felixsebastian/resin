@@ -139,8 +139,8 @@ export default `
       numVehicles: Int
       damageSeverity: String
       description: String
-      vehicle1: AutomobileInput
-      vehicle2: AutomobileInput
+      vehicle1: Int
+      vehicle2: Int
       dca: Int
       weatherDesc: String
       mode: VehicleMode

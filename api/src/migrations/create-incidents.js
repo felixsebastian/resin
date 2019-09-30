@@ -26,6 +26,12 @@ module.exports = {
       description: {
         type: Sequelize.STRING
       },
+      vehicle1: {
+        type: Sequelize.INTEGER
+      },
+      vehicle2: {
+        type: Sequelize.INTEGER
+      },
       dca: {
           type: Sequelize.INTEGER
       },
@@ -33,7 +39,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       mode: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

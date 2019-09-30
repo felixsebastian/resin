@@ -33,10 +33,13 @@ app.listen({ port: 4000 }, () =>
         npm run-script setup
         exit
 
+  When deleting models (run first):
+    npm run-script unmigrate
   Migrate db changes to db:
     docker-compose exec api bash
     npm run-script migrate
     exit
+
 
   Find full list of scripts in api/package.json
 

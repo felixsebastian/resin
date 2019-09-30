@@ -12,14 +12,17 @@ export default {
 
   createIncident: (parent, args, { db }, info) => {
     return db.Incidents.create({
-      type: args.event.type,
-      time: args.event.time,
+      timestamp: args.event.timestamp,
       latitude: args.event.latitude,
       longitude: args.event.longitude,
-      severity: args.event.severity,
-      damagedVehicles: args.event.damagedVehicles,
-      otherVehicles: args.event.otherVehicles,
-      crashSpeed: args.event.crashSpeed,
+      numVehicles: args.event.numVehicles,
+      damageSeverity: args.event.damageSeverity,
+      description: args.event.description,
+      vehicle1: args.event.vehicle1,
+      vehicle2: args.event.vehicle2,
+      dca : args.event.dca,
+      weatherDesc: args.event.weatherDesc,
+      mode: args.event.mode,
       createdAt: new Date(),
       updatedAt: new Date()
     }).then(newCat => {
