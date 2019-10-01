@@ -2,7 +2,6 @@ import React from "react";
 import store from "./store";
 import Viewport from "./Viewport";
 import styled from "styled-components";
-import { compose, withStateHandlers } from "recompose";
 
 import _ from "underscore";
 import Moment from "moment"
@@ -22,6 +21,7 @@ import {
 import { TimeSeries, TimeRange, IndexedEvent, Collection } from "pondjs";
 
 import weatherJSON from "./weather.json";
+import { clickTrackerTimeline, clickToggleInfoPanel } from "./action";
 
 const Layout = styled(Viewport)`
   width: 100%;
@@ -57,6 +57,17 @@ _.each(weatherJSON, readings => {
     rainPoints.push([time, rainReading]);
     rainAccumPoints.push([time, rainAccumReading]);
 });
+
+const tempEvents = weatherJSON.map(point => {
+  const { Time, TemperatureF } = point;
+  return new IndexedEvent(
+    Time,
+    TemperatureF,
+    false
+  );
+});
+
+const tempCollection = new Collection(tempEvents);
 
 //
 // Timeseries
@@ -122,9 +133,20 @@ const style = styler([
 export default class Timeline extends React.Component {
   state = {
     tracker: null,
-    timerange: new TimeRange([1425168000000, 1433116800000]),
     selection: null
   };
+
+  infoValues = () => {
+    if (this.state.highlight) {
+      return [
+        {
+          label: "temp",
+          value: `${this.state.highlight.get("innerMin")}°F`
+        },
+      ];
+    }
+    return null;
+  }
 
   render() {
     return (
@@ -150,14 +172,52 @@ export default class Timeline extends React.Component {
                 format=",.1f"
             />
             <Charts>
+              {/*
                 <LineChart
-                    axis="temp"
-                    series={tempSeries}
-                    columns={["temp"]}
-                    style={style}
+                  axis="temp"
+                  series={tempSeries}
+                  columns={["temp"]}
+                  style={style}
                 />
+              */
+                }<BoxChart
+                  axis="temp"
+                  style={style}
+                  column="temp"
+                  series={tempSeries}
+                  info={this.infoValues()}
+                  infoWidth={130}
+                  infoHeight={60}
+                  highlighted={this.state.highlight}
+                  onHighlightChange={highlight =>
+                    this.setState({highlight})
+                  }
+                  selected={this.state.selected}
+                  onSelectionChange={ ({selection} ) => {
+                    this.setState({selection});
+                    store.dispatch(clickTrackerTimeline({selection}));
+                    store.dispatch(clickToggleInfoPanel());
+                  }}
+                />
+                <LineChart
+                  axis="pressure"
+                  series={pressureSeries}
+                  columns={["pressure"]}
+                  style={style} 
+                />
+                
             </Charts>
-            
+            <YAxis 
+              id="pressure" 
+              label="Pressure (in)" 
+              labelOffset={5} 
+              style={style.axisStyle("pressure")}
+              min={29.5} 
+              max={30.0} 
+              width="100" 
+              type="linear" 
+              format=",.1f"
+            />
           </ChartRow>
 
           <ChartRow height="80">
