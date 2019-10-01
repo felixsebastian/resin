@@ -4,22 +4,43 @@ import {
   GoogleMap,
   Marker,
   InfoWindow,
-  withScriptjs
+  withScriptjs,
+  Circle,
+  Polygon,
+  Polyline
 } from "react-google-maps";
 import { compose, withStateHandlers } from "recompose";
 import store from "./store";
 import { clickToggleInfoPanel } from "./action";
 import Viewport from "./Viewport";
 import styled from "styled-components";
+const { DrawingManager } = require("react-google-maps/lib/components/drawing/DrawingManager");
+
+const position = { lat: -34.397, lng: 150.644 };
+
+const coords = [
+  { lat: -34.4, lng: 150.65 },
+  { lat: -34.39, lng: 150.64 },
+  { lat: -34.398, lng: 150.60 }
+];
+
+const coords2 = [
+  { lat: -34.3, lng: 150.6},
+  { lat: -34.45, lng: 150.7}
+];
 
 const Map = compose(
   withStateHandlers(
     () => ({
-      isOpen: false
+      isOpen: false,
+      isClicked: false
     }),
     {
       onToggleOpen: ({ isOpen }) => () => ({
         isOpen: !isOpen
+      }),
+      onClickedOpen: ({ isClicked }) => () => ({
+        isClicked: !isClicked
       })
     }
   ),
@@ -31,6 +52,7 @@ const Map = compose(
       <Marker
         position={{ lat: -34.397, lng: 150.644 }}
         onClick={() => {
+          props.onClickedOpen();
           store.dispatch(clickToggleInfoPanel());
         }}
         onMouseOver={props.onToggleOpen}
@@ -43,8 +65,34 @@ const Map = compose(
             </div>
           </InfoWindow>
         )}
+        {
+          props.isClicked &&
+          (<Circle 
+            center={position} 
+            radius={10000} 
+            options={{ 
+              fillColor: 'red', 
+              strokeColor: 'red' 
+            }}
+          />)
+        }
       </Marker>
     }
+      <Polygon 
+        path={coords}
+        options={{ 
+          fillColor: 'green',
+          strokeColor: 'blue' 
+        }}
+      />
+      <Polyline
+        path={coords2}
+        geodesic={true}
+        options={{ 
+          strokeColor: 'green' 
+        }}
+      />
+    
   </GoogleMap>
 ));
 
