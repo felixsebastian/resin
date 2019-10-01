@@ -1,261 +1,325 @@
 import React from "react";
-import "moment-duration-format";
-import moment from "moment";
-import { TimeSeries, TimeRange, avg } from "pondjs";
-import ChartContainer from "./ChartContainer";
-import ChartRow from "./ChartRow";
-import Charts from "./Charts";
-import YAxis from "./YAxis";
+import store from "./store";
 import Viewport from "./Viewport";
-import LineChart from "./LineChart";
-import Resizable from "./Resizable";
-import ValueAxis from "./ValueAxis";
-import data from "../data/bike.json";
 import styled from "styled-components";
-import styler from "../utils/styler";
 
-const Wrapper = styled(Viewport)`
+import _ from "underscore";
+import Moment from "moment"
+import { 
+  Charts, 
+  ChartContainer, 
+  ChartRow, 
+  YAxis, 
+  LineChart,
+  AreaChart,
+  BoxChart,
+  Resizable,
+  ScatterChart,
+  Legend,
+  styler
+} from "react-timeseries-charts";
+import { TimeSeries, TimeRange, IndexedEvent, Collection } from "pondjs";
+
+import weatherJSON from "./weather.json";
+import { clickTrackerTimeline, clickToggleInfoPanel } from "./action";
+
+const Layout = styled(Viewport)`
   width: 100%;
-  position: relative;
-  background-color: #000;
 `;
 
+//
+//Read in data
+//
+
+const temperaturePoints = [];
+const pressurePoints = [];
+const windPoints = [];
+const gustPoints = [];
+const rainPoints = [];
+const rainAccumPoints = [];
+_.each(weatherJSON, readings => {
+    const time = new Moment(readings.Time).toDate().getTime();
+    const tempReading = readings.TemperatureF;
+    const pressureReading = readings["PressureIn"];
+    const windReading = readings["WindSpeedMPH"] === "Calm" ? 0 : readings["WindSpeedMPH"];
+    const gustReading = readings["WindSpeedGustMPH"];
+    const rainReading = readings["HourlyPrecipIn"] === "N/A" ? 0 : readings["HourlyPrecipIn"];
+    const rainAccumReading = readings["dailyrainin"];
+
+    temperaturePoints.push([time, tempReading]);
+    pressurePoints.push([time, pressureReading]);
+
+    // Somewhat fake the wind speed...
+    windPoints.push([time, windReading * 5]);
+    if (gustReading !== "-" && gustReading !== 0) {
+        gustPoints.push([time, gustReading * 5 + Math.random() * 2.5 - 2.5, gustReading / 3]);
+    }
+    rainPoints.push([time, rainReading]);
+    rainAccumPoints.push([time, rainAccumReading]);
+});
+
+const tempEvents = weatherJSON.map(point => {
+  const { Time, TemperatureF } = point;
+  return new IndexedEvent(
+    Time,
+    TemperatureF,
+    false
+  );
+});
+
+const tempCollection = new Collection(tempEvents);
+
+//
+// Timeseries
+//
+
+const tempSeries = new TimeSeries({
+  name: "Temperature",
+  columns: ["time", "temp"],
+  points: temperaturePoints
+});
+const pressureSeries = new TimeSeries({
+  name: "Pressure",
+  columns: ["time", "pressure"],
+  points: pressurePoints
+});
+const windSeries = new TimeSeries({
+  name: "Wind",
+  columns: ["time", "wind"],
+  points: windPoints
+});
+const gustSeries = new TimeSeries({
+  name: "Gust",
+  columns: ["time", "gust", "radius"],
+  points: gustPoints
+});
+const rainSeries = new TimeSeries({
+  name: "Rain",
+  columns: ["time", "rain"],
+  points: rainPoints
+});
+const rainAccumSeries = new TimeSeries({
+  name: "Rain Accum",
+  columns: ["time", "rainAccum"],
+  points: rainAccumPoints
+});
+
+//
+// Styling
+//
+
+const scheme = {
+  temp: "#CA4040",
+  pressure: "#9467bd",
+  wind: "#987951",
+  gust: "#CC862A",
+  rain: "#C3CBD4",
+  rainAccum: "#000"
+};
+
 const style = styler([
-  { key: "altitude", color: "magenta", width: 2 },
-  { key: "cadence", color: "yellow", width: 2 },
-  { key: "power", color: "lime", width: 2 },
-  { key: "moving", color: "red", width: 2 }
+  { key: "temp", color: "red", width: 1, opacity: 0.5 },
+  { key: "pressure", color: "#9467bd" },
+  { key: "wind", color: "#987951" },
+  { key: "gust", color: "#CC862A" },
+  { key: "rain", color: "#C3CBD4" },
+  { key: "rainAccum", color: "#333" }
 ]);
 
-const channels = {
-  altitude: {
-    units: "feet",
-    label: "Altitude",
-    format: "d",
-    series: null,
-    chartType: "line"
-  },
-  cadence: {
-    units: "rpm",
-    label: "Cadence",
-    format: "d",
-    series: null,
-    chartType: "line"
-  },
-  power: {
-    units: "watts",
-    label: "Power",
-    format: ",.1f",
-    series: null,
-    chartType: "line"
-  }
-};
-
-const fibbonacci = max => {
-  var result = [1, 2];
-  while (result[result.length - 1] < max) {
-    result.push(result[result.length - 1] + result[result.length - 2]);
-  }
-  return result;
-};
-
-const rollupLevels = fibbonacci(200);
+//
+// Chart
+//
 
 export default class Timeline extends React.Component {
-  constructor(props) {
-    super(props);
-    const initialRange = new TimeRange([75 * 60 * 1000, 125 * 60 * 1000]);
-
-    this.state = {
-      ready: false,
-      channels,
-      rollup: "1m",
-      tracker: null,
-      timerange: initialRange
-    };
-  }
-
-  componentDidMount() {
-    setTimeout(() => {
-      return;
-      const channels = this.state.channels;
-      const points = {};
-
-      Object.keys(channels).forEach(channelName => {
-        points[channelName] = [];
-      });
-
-      for (let i = 1; i < data.time.length; i += 1) {
-        const time = data.time[i] * 1000;
-        Object.keys(channels).forEach(channelName => {
-          points[channelName].push([time, data[channelName][i]]);
-        });
-      }
-
-      Object.keys(channels).forEach(channelName => {
-        const channel = channels[channelName];
-        const series = new TimeSeries({
-          name: channel.name,
-          columns: ["time", channelName],
-          points: points[channelName]
-        });
-
-        channel.series = series;
-
-        channel.rollups = rollupLevels.map(rollupLevel => ({
-          duration: rollupLevel,
-          series: series.fixedWindowRollup({
-            windowSize: rollupLevel + "s",
-            aggregation: { [channelName]: { [channelName]: avg() } }
-          })
-        }));
-
-        channel.avg = parseInt(series.avg(channelName), 10);
-        channel.min = parseInt(series.min(channelName), 10);
-        channel.max = parseInt(series.max(channelName), 10);
-      });
-
-      const minTime = channels.altitude.series.range().begin();
-      const maxTime = channels.altitude.series.range().end();
-      this.setState({ ready: true, channels, minTime, maxTime });
-    }, 0);
-  }
-
-  handleTrackerChanged = tracker => this.setState({ tracker });
-
-  handleTimeRangeChange = timerange =>
-    this.setState({
-      timerange: timerange || this.state.channels["altitude"].range()
-    });
-
-  handleChartResize = width => this.setState({ width });
-
-  handleActiveChange = channelName => {
-    const channels = this.state.channels;
-    channels[channelName].show = !channels[channelName].show;
-    this.setState({ channels });
+  state = {
+    tracker: null,
+    selection: null
   };
 
-  renderChannelsChart = () => {
-    const { timerange, channels, maxTime, minTime } = this.state;
-    const durationPerPixel = timerange.duration() / 800 / 1000;
-    const rows = [];
+  infoValues = () => {
+    if (this.state.highlight) {
+      return [
+        {
+          label: "temp",
+          value: `${this.state.highlight.get("innerMin")}°F`
+        },
+      ];
+    }
+    return null;
+  }
 
-    Object.keys(channels).forEach(channelName => {
-      const channel = channels[channelName];
-      const charts = [];
-      let series = channel.series;
-
-      channel.rollups.forEach(rollup => {
-        if (rollup.duration < durationPerPixel * 2) {
-          series = rollup.series.crop(
-            new TimeRange([
-              timerange.begin() - timerange.duration() / 2,
-              timerange.end() + timerange.duration() / 2
-            ])
-          );
-        }
-      });
-
-      if (channel.chartType === "line")
-        charts.push(
-          <LineChart
-            key={`line-${channelName}`}
-            axis={`${channelName}_axis`}
-            series={series}
-            columns={[channelName]}
-            breakLine
-            style={style}
-          />
-        );
-      else if (channel.chartType === "boolean") charts.push();
-
-      let value = "--";
-      if (this.state.tracker) {
-        const approx =
-          (+this.state.tracker - +timerange.begin()) /
-          (+timerange.end() - +timerange.begin());
-        const ii = Math.floor(approx * series.size());
-        const i = series.bisect(new Date(this.state.tracker), ii);
-        const v = i < series.size() ? series.at(i).get(channelName) : null;
-        if (v) {
-          value = parseInt(v, 10);
-        }
-      }
-
-      rows.push(
-        <ChartRow
-          height="80"
-          key={`row-${channelName}`}
-          title={channelName}
-          titleStyle={{ color: "#fff", backgroundColor: "#222" }}
-        >
-          <YAxis
-            id={`${channelName}_axis`}
-            visible={false}
-            min={channel.min}
-            max={channel.max}
-          />
-          <Charts>{charts}</Charts>
-          <ValueAxis
-            id={`${channelName}_valueaxis`}
-            value={value}
-            detail={channels[channelName].units}
-            width={60}
-            min={0}
-            max={35}
-          />
-        </ChartRow>
-      );
-    });
-
+  render() {
     return (
-      <ChartContainer
-        timeRange={this.state.timerange}
-        format="relative"
-        showGrid={false}
-        trackerShowTime={false}
-        enablePanZoom
-        minDuration={1000}
-        maxTime={maxTime}
-        minTime={minTime}
-        trackerPosition={this.state.tracker}
-        onTimeRangeChanged={this.handleTimeRangeChange}
-        onChartResize={width => this.handleChartResize(width)}
-        onTrackerChanged={this.handleTrackerChanged}
-        hideTimeAxis
-      >
-        {rows}
-      </ChartContainer>
-    );
-  };
+    <Layout>
+      <Resizable>
+        <ChartContainer
+          utc={false}
+          timeRange={tempSeries.timerange()}
+          showGridPosition="under"
+          onTrackerChanged={(tracker) => this.setState({tracker})}
+          trackerPosition={this.state.tracker}
+        >
+          <ChartRow height="80">
+          <YAxis
+                id="temp"
+                label="Temperature (°F)"
+                labelOffset={5}
+                style={style.axisStyle("temp")}
+                min={50}
+                max={70}
+                width="100"
+                type="linear"
+                format=",.1f"
+            />
+            <Charts>
+              {/*
+                <LineChart
+                  axis="temp"
+                  series={tempSeries}
+                  columns={["temp"]}
+                  style={style}
+                />
+              */
+                }<BoxChart
+                  axis="temp"
+                  style={style}
+                  column="temp"
+                  series={tempSeries}
+                  info={this.infoValues()}
+                  infoWidth={130}
+                  infoHeight={60}
+                  highlighted={this.state.highlight}
+                  onHighlightChange={highlight =>
+                    this.setState({highlight})
+                  }
+                  selected={this.state.selected}
+                  onSelectionChange={ ({selection} ) => {
+                    this.setState({selection});
+                    store.dispatch(clickTrackerTimeline({selection}));
+                    store.dispatch(clickToggleInfoPanel());
+                  }}
+                />
+                <LineChart
+                  axis="pressure"
+                  series={pressureSeries}
+                  columns={["pressure"]}
+                  style={style} 
+                />
+                
+            </Charts>
+            <YAxis 
+              id="pressure" 
+              label="Pressure (in)" 
+              labelOffset={5} 
+              style={style.axisStyle("pressure")}
+              min={29.5} 
+              max={30.0} 
+              width="100" 
+              type="linear" 
+              format=",.1f"
+            />
+          </ChartRow>
 
-  render = () => (
-    <Wrapper>
-      {this.state.ready ? (
-        <>
-          <div>
-            <Resizable>{this.renderChannelsChart()}</Resizable>
-          </div>
-          <div
-            style={{
-              borderTop: "0.2rem solid #aaa",
-              backgroundColor: "#ccc",
-              color: "fff",
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0
-            }}
-          >
-            {this.state.tracker
-              ? `${moment.duration(+this.state.tracker).format()}`
-              : "-:--:--"}
-          </div>{" "}
-        </>
-      ) : (
-        <div>{"..."}</div>
-      )}
-    </Wrapper>
-  );
+          <ChartRow height="80">
+            <YAxis
+              id="wind"
+              label="Wind (mph)"
+              labelOffset={5}
+              style={{ labelColor: scheme.wind }}
+              min={0}
+              max={50}
+              width="100"
+              type="linear"
+              format=",.1f"
+            />
+            <Charts>
+              <LineChart
+                axis="wind"
+                series={windSeries}
+                columns={["wind"]}
+                interpolation="curveStepBefore"
+                style={style}
+              />
+              <ScatterChart
+                axis="wind-gust"
+                series={gustSeries}
+                columns={["gust"]}
+                style={style}
+                radius={event => {
+                    return event.get("radius");
+                }}
+              />
+            </Charts>
+            <YAxis
+              id="wind-gust"
+              label="Wind gust (mph)"
+              labelOffset={-5}
+              style={style.axisStyle("gust")}
+              min={0}
+              max={50}
+              width="100"
+              type="linear"
+              format=",.1f"
+            />
+          </ChartRow>
+
+          <ChartRow height="80">
+            <YAxis
+              id="total-rain"
+              label="Total Precipitation (in)"
+              style={style.axisStyle("rainAccum")}
+              labelOffset={5}
+              min={0}
+              max={rainAccumSeries.max("rainAccum")}
+              width="100"
+              type="linear"
+              format=",.2f"
+            />
+            <Charts>
+              <AreaChart
+                axis="rain"
+                series={rainSeries}
+                columns={{ up: ["rain"] }}
+                style={style}
+                interpolation="curveBasis"
+                fillOpacity={0.4}
+              />
+              <LineChart
+                axis="total-rain"
+                series={rainAccumSeries}
+                columns={["rainAccum"]}
+                style={style}
+              />
+            </Charts>
+            <YAxis
+              id="rain"
+              label="Precipitation (in)"
+              labelOffset={-5}
+              style={style.axisStyle("rain")}
+              min={0}
+              max={rainSeries.max("rain")}
+              width="100"
+              type="linear"
+              format=",.2f"
+            />
+          </ChartRow>
+        </ChartContainer>
+      </Resizable>
+      <Legend
+          type="line"
+          align="left"
+          stack={false}
+          style={style}
+          categories={[
+              { key: "temp", label: "Temperature" },
+              { key: "pressure", label: "Pressure" },
+              { key: "wind", label: "Wind speed" },
+              { key: "gust", label: "Gust speed", symbolType: "dot" },
+              { key: "rain", label: "Rainfall", symbolType: "swatch" },
+              { key: "rainAccum", label: "Accumulated rainfall" }
+          ]}
+      />
+    </Layout>
+    )
+  };
 }
