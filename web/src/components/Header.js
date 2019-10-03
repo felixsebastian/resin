@@ -13,7 +13,10 @@ import _ from "element-closest";
 const MENU_ITEM_CLASS = "FgbR8ge3OfxYmR6jmrfk";
 
 export default withRouter(({ history }) => {
-  const goHome = () => history.push("/");
+  const goHome = e => {
+    e.preventDefault();
+    history.push("/");
+  };
 
   const go = e => {
     e.preventDefault();
