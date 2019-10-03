@@ -8,6 +8,5 @@ export default styled.div`
   margin: 0 auto;
   padding: 0.25rem;
   box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 `;
