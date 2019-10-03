@@ -9,6 +9,7 @@ const Layout = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  padding: 0.1rem 0.5rem;
 `;
 
 export default ({ time }) => <Layout>{time ? `${time}` : "-:--:--"}</Layout>;
