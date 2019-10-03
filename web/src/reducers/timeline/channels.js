@@ -1,10 +1,13 @@
 import { TimeSeries, avg } from "pondjs";
 import fibbonacci from "../../lib/fibbonacci";
-import data from "../../data/bike";
+import data from "../../data/bikeLight";
+import getChannelStyles from "../../lib/getChannelStyles";
 
 const genExampleData = channel => {
-  return [...data.time].map((time, i) => [time, data[channel][i]]);
+  return [...data.time].map((time, i) => [time * 1000, data[channel][i]]);
 };
+
+console.log(data);
 
 const rollupLevels = fibbonacci(200);
 
@@ -34,6 +37,12 @@ const channels = {
     data: genExampleData("power")
   }
 };
+
+Object.keys(channels).forEach(id => (channels[id].id = id));
+
+Object.keys(channels).forEach(
+  id => (channels[id].styles = getChannelStyles(channels[id]))
+);
 
 Object.keys(channels).forEach(channelName => {
   const channel = channels[channelName];

@@ -1,14 +1,19 @@
 import Dashboard from "../components/Dashboard";
-import Setup from "../components/Data";
-import Incidents from "../components/Data";
-import Context from "../components/Data";
-import LogOut from "../components/Data";
+import Setup from "../components/Incidents";
+import Incidents from "../components/Incidents";
+import Context from "../components/Incidents";
+import LogOut from "../components/Incidents";
 
 export default [
   {
     id: "dashboard",
     name: "Dashboard",
     component: Dashboard
+  },
+  {
+    id: "correlate",
+    name: "Correlate",
+    component: Context
   },
   {
     id: "setup",

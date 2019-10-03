@@ -1,10 +1,6 @@
 import selection from "./selection";
 import timeline from "./timeline";
+import filteringFields from "./filteringFields";
+import { combineReducers } from "redux";
 
-export default (state, action) => {
-  return {
-    ...state,
-    selection: selection(state, action),
-    timeline: timeline(state, action)
-  };
-};
+export default combineReducers({ selection, timeline, filteringFields });

@@ -5,4 +5,5 @@ export default styled.div`
   box-shadow: 0.2rem 0.2rem 0.05rem rgba(0, 0, 0, 0.5);
   border-radius: 0.2rem;
   background-color: #fff;
+  overflow: auto;
 `;

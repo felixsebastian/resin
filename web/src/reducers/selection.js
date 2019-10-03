@@ -1,11 +1,15 @@
 import actionTypes from "../lib/actionTypes";
 
-const { INCIDENT_SELECTED } = actionTypes;
+const { INCIDENT_SELECTED, INCIDENT_ADDED_TO_SELECTION } = actionTypes;
 
 export default (state = [], action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+
+  switch (type) {
     case INCIDENT_SELECTED:
-      return [action.payload];
+      return [payload.selection];
+    case INCIDENT_ADDED_TO_SELECTION:
+      return [...state, payload.selection];
     default:
       return state;
   }
