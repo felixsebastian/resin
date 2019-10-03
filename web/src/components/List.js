@@ -11,8 +11,8 @@ export default function List({ items }) {
   return (
     <Viewport>
       <Layout>
-        {items.map(item => (
-          <ListItemData text={item.label} />
+        {items.map((item, i) => (
+          <ListItemData key={i} text={item.label} />
         ))}
       </Layout>
     </Viewport>

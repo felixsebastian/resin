@@ -22,7 +22,12 @@ export default () => {
         <Page>
           <Route exact path="/" component={Home} />
           {pages.map(page => (
-            <Route exact path={"/" + page.id} component={page.component} />
+            <Route
+              key={page.id}
+              exact
+              path={"/" + page.id}
+              component={page.component}
+            />
           ))}
         </Page>
       </Wrapper>

@@ -8,7 +8,7 @@ import {
 } from "react-google-maps";
 import { compose, withStateHandlers } from "recompose";
 import store from "../lib/store";
-import { selectIncident } from "../lib/actionCreators";
+import { incidentSelected } from "../lib/actionCreators";
 import Viewport from "./Viewport";
 import styled from "styled-components";
 
@@ -31,7 +31,7 @@ const Map = compose(
       <Marker
         position={{ lat: -34.397, lng: 150.644 }}
         onClick={() => {
-          store.dispatch(selectIncident());
+          store.dispatch(incidentSelected(1));
         }}
         onMouseOver={props.onToggleOpen}
         onMouseOut={props.onToggleOpen}
@@ -39,7 +39,11 @@ const Map = compose(
         {props.isOpen && (
           <InfoWindow onCloseClick={props.onToggleOpen}>
             <div>
-              <p>{"Click to see info on "}<strike>{"left"}</strike>{" right panel"}</p>
+              <p>
+                {"Click to see info on "}
+                <strike>{"left"}</strike>
+                {" right panel"}
+              </p>
             </div>
           </InfoWindow>
         )}

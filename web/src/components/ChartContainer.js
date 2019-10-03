@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /**
  *  Copyright (c) 2015-present, The Regents of the University of California,
  *  through Lawrence Berkeley National Laboratory (subject to receipt
@@ -398,6 +400,7 @@ export default class ChartContainer extends React.Component {
             );
             const titleTransform = `translate(${-leftWidth -
               paddingLeft},${yPosition})`;
+
             const title = (
               <g transform={titleTransform} key={rowTitleKey}>
                 <Label

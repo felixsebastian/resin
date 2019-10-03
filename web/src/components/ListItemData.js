@@ -1,22 +1,22 @@
 import React from "react";
-import { css } from "glamor";
+import styled from "styled-components";
 
-const dataListItemCss = css({
-  height: "3rem",
-  padding: "0 1rem",
-  "border-bottom": "1px solid #eee",
-  display: "flex",
-  "flex-direction": "row",
-  "align-items": "center"
-});
+const Layout = styled.div`
+  height: 3rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
 
 export default function ListItemData({ text }) {
   return (
-    <div className={dataListItemCss}>
+    <Layout>
       <input type="checkbox" />
       <input type="checkbox" />
       &nbsp;
       {text}
-    </div>
+    </Layout>
   );
 }

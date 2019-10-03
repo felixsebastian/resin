@@ -1,10 +1,10 @@
 import actionTypes from "../lib/actionTypes";
 
-const { SELECT_INCIDENT } = actionTypes;
+const { INCIDENT_SELECTED } = actionTypes;
 
 export default (state = [], action) => {
   switch (action.type) {
-    case SELECT_INCIDENT:
+    case INCIDENT_SELECTED:
       return [action.payload];
     default:
       return state;

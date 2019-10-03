@@ -8,7 +8,6 @@ import {
 } from "carbon-components-react";
 import styled from "styled-components";
 import Viewport from "./Viewport";
-import { selectIncident } from "../lib/actionCreators";
 import { connect } from "react-redux";
 
 const data = {
@@ -21,24 +20,14 @@ const Layout = styled(Viewport)`
   flex-grow: 1;
 `;
 
-const mapStateToProps = state => {
-  return {
-    infoPanelIsOpen: state.infoPanelIsOpen
-  };
-};
-
-function mapDispatchToProps(dispatch) {
-  return {
-    clickTogglePanel: () => dispatch(selectIncident())
-  };
-}
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  state => ({
+    infoPanelIsOpen: !!state.selection.length
+  }),
+  null
 )(
   ({ infoPanelIsOpen }) =>
-    infoPanelIsOpen == true && (
+    infoPanelIsOpen === true && (
       <Layout>
         <StructuredListWrapper>
           <StructuredListHead>

@@ -7,6 +7,7 @@ import {
 } from "carbon-components-react";
 import pages from "../config/pages";
 import { withRouter } from "react-router-dom";
+// eslint-disable-next-line
 import _ from "element-closest";
 
 const MENU_ITEM_CLASS = "FgbR8ge3OfxYmR6jmrfk";
@@ -23,13 +24,14 @@ export default withRouter(({ history }) => {
   };
 
   return (
-    <HeaderCarbon style={{ position: "static" }}>
+    <HeaderCarbon aria-label="" style={{ position: "static" }}>
       <HeaderName href="" onClick={goHome} prefix="">
         Resin
       </HeaderName>
-      <HeaderNavigation>
+      <HeaderNavigation aria-label="">
         {pages.map(page => (
           <HeaderMenuItem
+            key={page.id}
             href=""
             className={MENU_ITEM_CLASS}
             data-location={page.id}

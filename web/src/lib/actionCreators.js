@@ -1,13 +1,23 @@
 import types from "./actionTypes";
 
-export function selectIncident() {
-  return {
-    type: types.SELECT_INCIDENT
-  };
-}
+export const incidentSelected = selection => ({
+  type: types.INCIDENT_SELECTED,
+  payload: selection
+});
 
-export function clickToggleFilterPanel() {
-  return {
-    type: types.CLICK_TOGGLE_FILTER_PANEL
-  };
-}
+// timeline
+
+export const trackerMoved = time => ({
+  type: types.TRACKER_MOVED,
+  payload: time
+});
+
+export const timeRangeChanged = timerange => ({
+  type: types.TIME_RANGE_CHANGED,
+  payload: timerange
+});
+
+export const zoomLevelChanged = width => ({
+  type: types.ZOOM_LEVEL_CHANGED,
+  payload: width
+});
