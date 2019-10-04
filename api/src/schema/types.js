@@ -131,9 +131,6 @@ export default `
   input HumanPoweredVehicleInput {
     type: HumanPoweredVehicleType
   },
-  input VehicleInput {
-    type: Vehicle
-  },
   
   input IncidentInput {
       timestamp: Int
