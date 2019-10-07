@@ -1,6 +1,6 @@
 import data from "./bike";
 
-const DENOMINATOR = 20;
+const DENOMINATOR = 30;
 const channels = ["altitude", "cadence", "power"];
 
 const dataLight = { time: [] };
