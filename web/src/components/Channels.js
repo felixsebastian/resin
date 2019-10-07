@@ -10,8 +10,8 @@ import { TimeRange } from "pondjs";
 import data from "../data/bikeLight";
 import connect from "../lib/connect";
 
-const minTime = new Date(data.time[0]);
-const maxTime = new Date(data.time[data.time.length - 1]);
+const minTime = new Date(data.time[0] * 1000);
+const maxTime = new Date(data.time[data.time.length - 1] * 1000);
 
 export default connect(state => ({
   channels: state.timeline.channels,
@@ -22,8 +22,6 @@ export default connect(state => ({
   channels = { ...channels };
   const durationPerPixel = timeRange.duration() / 800 / 1000;
   const rows = [];
-
-  console.log(channels);
 
   Object.keys(channels).forEach(id => {
     const channel = channels[id];
