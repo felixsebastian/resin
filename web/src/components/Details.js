@@ -44,7 +44,7 @@ export default connect(state => ({
       </StructuredListHead>
       <StructuredListBody>
         {Object.keys(data).map(key => (
-          <StructuredListRow>
+          <StructuredListRow key={key}>
             <StructuredListCell>{key}:</StructuredListCell>
             <StructuredListCell>
               <b>{data[key]}</b>
