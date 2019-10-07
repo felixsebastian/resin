@@ -28,3 +28,10 @@ export const toggleFilterFieldClicked = e => ({
   type: types.TOGGLE_FILTER_FIELD_CLICKED,
   payload: { field: e.target.dataset.field }
 });
+
+// log in
+
+export const loggedIn = token => ({
+  type: types.LOGGED_IN,
+  payload: { token }
+});

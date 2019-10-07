@@ -4,7 +4,8 @@ const actionTypes = [
   "TOGGLE_FILTER_FIELD_CLICKED",
   "INIT_TIMELINE",
   "TRACKER_MOVED",
-  "TIME_RANGE_CHANGED"
+  "TIME_RANGE_CHANGED",
+  "LOGGED_IN"
 ];
 
 export default actionTypes.reduce((res, o) => {

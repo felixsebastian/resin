@@ -5,8 +5,10 @@ import Home from "./Home";
 import pages from "../config/pages";
 import Page from "./Page";
 import styled from "styled-components";
+import connect from "../lib/connect";
+import Login from "./Login";
 
-const Wrapper = styled.div`
+const Box = styled.div`
   height: 100vh;
   display: flex;
   overflow: hidden;
@@ -14,23 +16,26 @@ const Wrapper = styled.div`
   background-color: #bbb;
 `;
 
-export default () => {
-  return (
-    <Router>
-      <Wrapper>
-        <Header />
-        <Page>
-          <Route exact path="/" component={Home} />
-          {pages.map(page => (
-            <Route
-              key={page.id}
-              exact
-              path={"/" + page.id}
-              component={page.component}
-            />
-          ))}
-        </Page>
-      </Wrapper>
-    </Router>
-  );
-};
+export default connect(state => ({ loggedIn: state.user !== null }))(
+  ({ loggedIn }) => {
+    return (
+      <Router>
+        <Box>
+          <Header />
+          <Page>
+            <Route exact path="/" component={loggedIn ? Home : Login} />
+            {loggedIn &&
+              pages.map(page => (
+                <Route
+                  key={page.id}
+                  exact
+                  path={"/" + page.id}
+                  component={page.component}
+                />
+              ))}
+          </Page>
+        </Box>
+      </Router>
+    );
+  }
+);

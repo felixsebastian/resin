@@ -9,10 +9,15 @@ import pages from "../config/pages";
 import { withRouter } from "react-router-dom";
 // eslint-disable-next-line
 import _ from "element-closest";
+import { compose } from "redux";
+import connect from "../lib/connect";
 
 const MENU_ITEM_CLASS = "FgbR8ge3OfxYmR6jmrfk";
 
-export default withRouter(({ history }) => {
+export default compose(
+  withRouter,
+  connect(state => ({ loggedIn: state.user !== null }))
+)(({ history, loggedIn }) => {
   const goHome = e => {
     e.preventDefault();
     history.push("/");
@@ -31,19 +36,21 @@ export default withRouter(({ history }) => {
       <HeaderName href="" onClick={goHome} prefix="">
         Resin
       </HeaderName>
-      <HeaderNavigation aria-label="">
-        {pages.map(page => (
-          <HeaderMenuItem
-            key={page.id}
-            href=""
-            className={MENU_ITEM_CLASS}
-            data-location={page.id}
-            onClick={go}
-          >
-            {page.name}
-          </HeaderMenuItem>
-        ))}
-      </HeaderNavigation>
+      {loggedIn && (
+        <HeaderNavigation aria-label="">
+          {pages.map(page => (
+            <HeaderMenuItem
+              key={page.id}
+              href=""
+              className={MENU_ITEM_CLASS}
+              data-location={page.id}
+              onClick={go}
+            >
+              {page.name}
+            </HeaderMenuItem>
+          ))}
+        </HeaderNavigation>
+      )}
     </HeaderCarbon>
   );
 });
