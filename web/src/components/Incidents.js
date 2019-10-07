@@ -28,17 +28,29 @@ export default () => {
   return (
     <SplitLayout
       left={
-        <TableContainer title="Data Sources">
+        <TableContainer title="Incidents">
           <Table>
             <TableHead>
               <TableRow>
-                <TableHeader>Name</TableHeader>
-                <TableHeader>Type</TableHeader>
+                <TableHeader>Time</TableHeader>
+                <TableHeader>Location</TableHeader>
+                <TableHeader># of Vehicles</TableHeader>
+                <TableHeader>Carnage Level</TableHeader>
+                <TableHeader>Notes</TableHeader>
+                <TableHeader>DCA</TableHeader>
+                <TableHeader>Weather Conditions</TableHeader>
+                <TableHeader>Actions</TableHeader>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableCell>hi</TableCell>
               <TableCell>hi</TableCell>
+              <TableCell>hi</TableCell>
+              <TableCell>hi</TableCell>
+              <TableCell>hi</TableCell>
+              <TableCell>hi</TableCell>
+              <TableCell>hi</TableCell>
+              <TableCell>delete</TableCell>
             </TableBody>
           </Table>
         </TableContainer>
