@@ -1,15 +1,18 @@
 import { connect } from "react-redux";
-import * as actionCreators from "../lib/actionCreators";
+import * as actions from "../lib/actions";
+import operations from "../operations";
+
+const allActions = { ...actions, ...operations };
 
 export default (mapStateToProps = null) =>
   connect(
     mapStateToProps,
     dispatch => ({
-      actions: Object.keys(actionCreators).reduce(
+      actions: Object.keys(allActions).reduce(
         (res, key) => ({
           ...res,
           [key]: function(...args) {
-            dispatch(actionCreators[key](...args));
+            dispatch(allActions[key](...args));
           }
         }),
         {}
