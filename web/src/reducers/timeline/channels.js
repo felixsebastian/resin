@@ -7,8 +7,6 @@ const genExampleData = channel => {
   return [...data.time].map((time, i) => [time * 1000, data[channel][i]]);
 };
 
-console.log(data);
-
 const rollupLevels = fibbonacci(200);
 
 const channels = {
@@ -67,8 +65,6 @@ Object.keys(channels).forEach(channelName => {
   channel.min = parseInt(series.min(channelName), 10);
   channel.max = parseInt(series.max(channelName), 10);
 });
-
-console.log(channels);
 
 export default (state = channels, action) => {
   switch (action.type) {
