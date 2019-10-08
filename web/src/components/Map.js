@@ -14,7 +14,6 @@ import styled from "styled-components";
 import Incident from "./IncidentMarker";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager";
 
 const GET_ALL_INCIDENT = gql`
@@ -46,9 +45,9 @@ const Layout = styled(Viewport)`
 const position = { lat: -34.397, lng: 150.644 };
 
 const markers = [
-  { lat: -34.4, lng: 150.65 },
-  { lat: -34.39, lng: 150.64 },
-  { lat: -34.398, lng: 150.6 }
+  { lat: -34.4, lng: 150.65, content: "Marker 1" },
+  { lat: -34.39, lng: 150.64, content: "Marker 2" },
+  { lat: -34.398, lng: 150.6, content: "Marker 3" }
 ];
 
 const coords = [{ lat: -34.3, lng: 150.6 }, { lat: -34.45, lng: 150.7 }];
@@ -76,23 +75,25 @@ const Map = compose(
       }}
     />
     <DrawingManager
-      defaultDrawingMode={google.maps.drawing.OverlayType.RECTANGLE}
+      //defaultDrawingMode={google.maps.drawing.OverlayType.RECTANGLE}
       defaultOptions={{
         drawingControl: true,
         drawingControlOptions: {
           position: google.maps.ControlPosition.TOP_CENTER,
-          drawingModes: [
-            google.maps.drawing.OverlayType.RECTANGLE,
-          ],
+          drawingModes: [google.maps.drawing.OverlayType.RECTANGLE],
         },
         rectangleOptions: {
           fillColor: `blue`,
-          fillOpacity: 0.5,
-          strokeWeight: 3,
+          fillOpacity: 0.4,
+          strokeWeight: 1,
           clickable: false,
           editable: true,
           zIndex: 1,
         },
+      }}
+      onRectangleComplete={(rectangle) => {
+        console.log(rectangle.getBounds().ka.g);
+        rectangle.setMap(null);
       }}
     />
   </GoogleMap>
@@ -101,7 +102,7 @@ const Map = compose(
 export default () => (
   <Layout>
     <Map
-      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk&libraries=drawing"
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk&libraries=geometry,drawing,places"
       loadingElement={<div />}
       containerElement={<div style={{ height: "100%", width: "100%" }} />}
       mapElement={<div style={{ height: "100%", width: "100%" }} />}
