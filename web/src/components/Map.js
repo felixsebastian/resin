@@ -2,21 +2,14 @@ import React from "react";
 import {
   withGoogleMap,
   GoogleMap,
-  Marker,
-  InfoWindow,
   withScriptjs,
-  Circle,
   Polygon,
   Polyline
 } from "react-google-maps";
-import { compose, withStateHandlers } from "recompose";
-import store from "../lib/store";
-import { incidentSelected } from "../lib/actionCreators";
+import { compose } from "recompose";
 import Viewport from "./Viewport";
 import styled from "styled-components";
-const {
-  DrawingManager
-} = require("react-google-maps/lib/components/drawing/DrawingManager");
+import Incident from "./IncidentMarker";
 
 const position = { lat: -34.397, lng: 150.644 };
 
@@ -26,59 +19,22 @@ const coords = [
   { lat: -34.398, lng: 150.6 }
 ];
 
+const markers = [
+  { lat: -34.4, lng: 150.65 },
+  { lat: -34.39, lng: 150.64 },
+  { lat: -34.398, lng: 150.6 }
+];
+
 const coords2 = [{ lat: -34.3, lng: 150.6 }, { lat: -34.45, lng: 150.7 }];
 
 const Map = compose(
-  withStateHandlers(
-    () => ({
-      isOpen: false,
-      isClicked: false
-    }),
-    {
-      onToggleOpen: ({ isOpen }) => () => ({
-        isOpen: !isOpen
-      }),
-      onClickedOpen: ({ isClicked }) => () => ({
-        isClicked: !isClicked
-      })
-    }
-  ),
   withScriptjs,
   withGoogleMap
 )(props => (
-  <GoogleMap defaultZoom={12} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
-    {
-      <Marker
-        position={{ lat: -34.397, lng: 150.644 }}
-        onClick={() => {
-          store.dispatch(incidentSelected(1));
-        }}
-        onMouseOver={props.onToggleOpen}
-        onMouseOut={props.onToggleOpen}
-      >
-        {props.isOpen && (
-          <InfoWindow onCloseClick={props.onToggleOpen}>
-            <div>
-              <p>
-                {"Click to see info on "}
-                <strike>{"left"}</strike>
-                {" right panel"}
-              </p>
-            </div>
-          </InfoWindow>
-        )}
-        {props.isClicked && (
-          <Circle
-            center={position}
-            radius={10000}
-            options={{
-              fillColor: "red",
-              strokeColor: "red"
-            }}
-          />
-        )}
-      </Marker>
-    }
+  <GoogleMap defaultZoom={12} defaultCenter={position}>
+    {markers.map(marker => (
+      <Incident marker={marker}/>
+    ))}
     <Polygon
       path={coords}
       options={{
