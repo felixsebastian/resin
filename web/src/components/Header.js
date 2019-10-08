@@ -17,36 +17,39 @@ const MENU_ITEM_CLASS = "FgbR8ge3OfxYmR6jmrfk";
 export default compose(
   withRouter,
   connect(state => ({ loggedIn: state.user !== null }))
-)(({ history, loggedIn }) => {
-  const goHome = e => {
+)(({ history, loggedIn, actions }) => {
+  const logoClicked = e => {
     e.preventDefault();
     history.push("/");
   };
 
-  const go = e => {
+  const itemClicked = e => {
     e.preventDefault();
-    history.push(
-      `/${e.target.closest(`.${MENU_ITEM_CLASS}`).firstElementChild.dataset
-        .location || ""}`
-    );
+    const page =
+      pages[
+        e.target.closest(`.${MENU_ITEM_CLASS}`).firstElementChild.dataset.id
+      ];
+
+    if (page.type === "PAGE") history.push(`/${page.id || ""}`);
+    else actions[page.action]();
   };
 
   return (
     <HeaderCarbon aria-label="" style={{ position: "static" }}>
-      <HeaderName href="" onClick={goHome} prefix="">
+      <HeaderName href="" onClick={logoClicked} prefix="">
         Resin
       </HeaderName>
       {loggedIn && (
         <HeaderNavigation aria-label="">
-          {pages.map(page => (
+          {pages.index.map(id => (
             <HeaderMenuItem
-              key={page.id}
+              key={id}
               href=""
               className={MENU_ITEM_CLASS}
-              data-location={page.id}
-              onClick={go}
+              data-id={id}
+              onClick={itemClicked}
             >
-              {page.name}
+              {pages[id].name}
             </HeaderMenuItem>
           ))}
         </HeaderNavigation>

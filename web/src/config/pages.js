@@ -2,32 +2,35 @@ import Context from "../components/Context";
 import Correlate from "../components/Correlate";
 import Setup from "../components/Incidents";
 import Incidents from "../components/Incidents";
-import LogOut from "../components/Incidents";
 
-export default [
-  {
-    id: "context",
+const pages = {
+  context: {
     name: "Context",
+    type: "PAGE",
     component: Context
   },
-  {
-    id: "correlate",
+  correlate: {
     name: "Correlate",
+    type: "PAGE",
     component: Correlate
   },
-  {
-    id: "setup",
+  setup: {
     name: "Setup",
+    type: "PAGE",
     component: Setup
   },
-  {
-    id: "incidents",
+  incidents: {
     name: "Incidents",
+    type: "PAGE",
     component: Incidents
   },
-  {
-    id: "log-out",
+  "log-out": {
     name: "Log Out",
-    component: LogOut
+    type: "ACTION",
+    action: "logOut"
   }
-];
+};
+
+Object.keys(pages).forEach(id => (pages[id].id = id));
+pages.index = Object.keys(pages);
+export default pages;

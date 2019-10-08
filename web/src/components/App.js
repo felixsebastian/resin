@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
 import pages from "../config/pages";
@@ -26,14 +26,16 @@ export default connect(state => ({ loggedIn: state.user !== null }))(
           <Page>
             <Route exact path="/" component={loggedIn ? Home : Login} />
             {loggedIn &&
-              pages.map(page => (
-                <Route
-                  key={page.id}
-                  exact
-                  path={"/" + page.id}
-                  component={page.component}
-                />
-              ))}
+              pages.index
+                .filter(id => pages[id].type === "PAGE")
+                .map(id => (
+                  <Route
+                    key={id}
+                    exact
+                    path={"/" + id}
+                    component={pages[id].component}
+                  />
+                ))}
           </Page>
         </Box>
       </Router>
