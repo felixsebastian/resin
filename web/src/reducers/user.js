@@ -1,13 +1,11 @@
-import actionTypes from "../lib/actionTypes";
-
-const { LOGGED_IN } = actionTypes;
+import types from "../lib/actionTypes";
 
 export default (state = null, action) => {
-  const { type, payload } = action;
-
-  switch (type) {
-    case LOGGED_IN:
-      return payload;
+  switch (action.type) {
+    case types.LOG_IN:
+      return action.payload;
+    case types.LOG_OUT:
+      return null;
     default:
       return state;
   }
