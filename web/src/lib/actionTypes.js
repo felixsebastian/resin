@@ -1,11 +1,12 @@
 const actionTypes = [
-  "INCIDENT_SELECTED",
-  "INCIDENT_ADDED_TO_SELECTION",
+  "SELECT_INCIDENT",
+  "ADD_INCIDENT_TO_SELECTION",
   "TOGGLE_FILTER_FIELD_CLICKED",
-  "INIT_TIMELINE",
-  "TRACKER_MOVED",
-  "TIME_RANGE_CHANGED",
-  "LOGGED_IN"
+  "MOVE_TRACKER",
+  "CHANGE_TIME_RANGE",
+  // async
+  "LOG_IN",
+  "LOG_OUT"
 ];
 
 export default actionTypes.reduce((res, o) => {

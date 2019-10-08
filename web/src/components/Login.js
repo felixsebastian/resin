@@ -22,10 +22,9 @@ export default compose(
 
   const submit = e => {
     e.preventDefault();
-    console.log(state);
     axios.post(LOG_IN, state).then(function(response) {
       if (response.data.success) {
-        props.actions.loggedIn(response.data.token);
+        props.actions.logIn(response.data.token);
       } else {
         setState({ ...state, logInFailed: true });
       }

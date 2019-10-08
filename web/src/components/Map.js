@@ -11,7 +11,7 @@ import {
 } from "react-google-maps";
 import { compose, withStateHandlers } from "recompose";
 import store from "../lib/store";
-import { incidentSelected } from "../lib/actionCreators";
+import { selectIncident } from "../lib/actions";
 import Viewport from "./Viewport";
 import styled from "styled-components";
 const {
@@ -51,7 +51,7 @@ const Map = compose(
       <Marker
         position={{ lat: -34.397, lng: 150.644 }}
         onClick={() => {
-          store.dispatch(incidentSelected(1));
+          store.dispatch(selectIncident(1));
         }}
         onMouseOver={props.onToggleOpen}
         onMouseOut={props.onToggleOpen}

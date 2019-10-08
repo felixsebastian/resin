@@ -1,10 +1,10 @@
 import actionTypes from "../../lib/actionTypes";
 
-const { TRACKER_MOVED } = actionTypes;
+const { MOVE_TRACKER } = actionTypes;
 
 export default (state = null, action) => {
   switch (action.type) {
-    case TRACKER_MOVED:
+    case MOVE_TRACKER:
       return action.payload.tracker;
     default:
       return state;

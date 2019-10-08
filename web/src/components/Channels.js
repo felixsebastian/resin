@@ -18,7 +18,7 @@ export default connect(state => ({
   timeRange: state.timeline.timeRange,
   tracker: state.timeline.tracker
 }))(({ channels, timeRange, tracker, actions }) => {
-  const { timeRangeChanged, trackerMoved } = actions;
+  const { changeTimeRange, moveTracker } = actions;
   channels = { ...channels };
   const durationPerPixel = timeRange.duration() / 800 / 1000;
   const rows = [];
@@ -107,8 +107,8 @@ export default connect(state => ({
         maxTime={maxTime}
         minTime={minTime}
         trackerPosition={tracker}
-        onTimeRangeChanged={timeRangeChanged}
-        onTrackerChanged={trackerMoved}
+        onTimeRangeChanged={changeTimeRange}
+        onTrackerChanged={moveTracker}
         hideTimeAxis
       >
         {rows}
