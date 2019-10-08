@@ -18,6 +18,8 @@ services:
       - PGPASSWORD=dev
       - PGDATABASE=resin
       - PGPORT=5432
+      - JWT_SECRET=xS2T22oigo9PIJ9dfW
+      - GRAPGQL_PORT=4000
   rdb:
     image: postgres
     ports:

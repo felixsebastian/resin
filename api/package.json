@@ -10,7 +10,7 @@
     "unmigrate": "sequelize db:migrate:undo:all --config ./src/config/db.json --seeders-path ./src/seeders --migrations-path ./src/migrations --models-path ./src/--migrations-path ./src/migrations",
     "seed": "sequelize db:seed:all --config ./src/config/db.json --seeders-path ./src/seeders --migrations-path ./src/migrations --models-path ./src/--migrations-path ./src/migrations",
     "unseed": "sequelize db:seed:undo:all --config ./src/config/db.json --seeders-path ./src/seeders --migrations-path ./src/migrations --models-path ./src/--migrations-path ./src/migrations",
-    "start": "env $(cat .env) nodemon --exec babel-node src/index.js"
+    "start": "nodemon --exec babel-node src/index.js"
   },
   "dependencies": {
     "apollo-server-express": "^2.9.3",
