@@ -4,10 +4,19 @@ import App from "./components/App";
 import * as serviceWorker from "./lib/serviceWorker";
 import { Provider } from "react-redux";
 import store from "./lib/store";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
+import { GRAPHQL } from "./config/constants";
+
+const client = new ApolloClient({
+  uri: GRAPHQL
+});
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </Provider>,
   document.getElementById("root")
 );
