@@ -20,6 +20,7 @@ export default connect(state => ({ loggedIn: state.user !== null }))(
   ({ loggedIn }) => {
     return (
       <Router>
+        {!loggedIn && window.location.pathname !== "/" && <Redirect to="/" />}
         <Box>
           <Header />
           <Page>
