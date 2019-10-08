@@ -36,7 +36,7 @@ const Incident = compose(
           <InfoWindow onCloseClick={props.onToggleOpen}>
             <div>
               <p>
-                {props.marker.lat} and {props.marker.lng}
+                {props.marker.content}{ " at {"}{props.marker.lat}{","}{props.marker.lng}{"}"}
               </p>
             </div>
           </InfoWindow>
