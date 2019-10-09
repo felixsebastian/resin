@@ -11,11 +11,15 @@ const BoxB = styled(Viewport)`
   flex-grow: 1;
 `;
 
+const BoxC = styled(Viewport)`
+  width: 30rem;
+`;
+
 export default ({ left, right }) => {
   return (
     <BoxA>
       <BoxB>{left}</BoxB>
-      <BoxB>{right}</BoxB>
+      <BoxC>{right}</BoxC>
     </BoxA>
   );
 };
