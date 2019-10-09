@@ -69,7 +69,7 @@ export default connect(state => ({
       <ChartRow
         titleStyle={{
           fill: "#fff",
-          fontFamily: "Space Mono"
+          fontFamily: "Noto Sans"
         }}
         titleBoxStyle={{ fill: "#333" }}
         height="80"
