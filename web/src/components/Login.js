@@ -7,6 +7,17 @@ import connect from "../lib/connect";
 import { compose } from "redux";
 import { withRouter } from "react-router-dom";
 
+const greetings = [
+  "Good morrow",
+  "G'Day",
+  "Hola",
+  "Bonjour",
+  "Guten tag",
+  "Namaste"
+];
+
+const greeting = greetings[Math.round(Math.random() * (greetings.length - 1))];
+
 export default compose(
   connect(),
   withRouter
@@ -33,7 +44,7 @@ export default compose(
 
   return (
     <CentredLayout>
-      <h3>Welcome to Resin</h3>
+      <h3>{greeting}</h3>
       <br />
       <Form>
         <TextInput
