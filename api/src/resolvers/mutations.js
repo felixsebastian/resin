@@ -37,5 +37,47 @@ export default {
     }).then(newCat => {
       return [];
     });
-  }
+  },
+
+  createVehicle: (parent, args, { db }, info) => {
+    return db.Vehicles.create({
+      type: args.vehicle.type,
+      registration: args.vehicle.registration,
+      vin: args.vehicle.vin,
+      make: args.vehicle.make,
+      model: args.vehicle.model,
+      yearOfManufacture: args.vehicle.yearOfManufacture,
+      countryOfManufacture: args.vehicle.countryOfManufacture,
+      autonomyLevel: args.vehicle.autonomyLevel,
+      sensors : args.vehicle.sensors,
+    }).then(newCat => {
+      return db.Vehicles.findAll();
+    });
+  },
+
+  deleteAllVehicles: (parent, args, { db }, info) => {
+    return db.Vehicles.destroy({
+      where: {},
+      truncate: true
+    }).then(newCat => {
+      return [];
+    });
+  },
+
+  createSensor: (parent, args, { db }, info) => {
+    return db.Sensors.create({
+      type: args.sensor.type,
+      description: args.sensor.description,
+    }).then(newCat => {
+      return db.Sensors.findAll();
+    });
+  },
+  deleteAllSensors: (parent, args, { db }, info) => {
+    return db.Sensors.destroy({
+      where: {},
+      truncate: true
+    }).then(newCat => {
+      return [];
+    });
+  },
 };

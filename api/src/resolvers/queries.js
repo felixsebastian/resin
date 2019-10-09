@@ -19,5 +19,20 @@ export default {
 */
   incidents: (parent, args, { db }, info) => {
     return db.Incidents.findAll();
-  }
+  },
+
+  vehicles: (parent, args, { db }, info) => {
+    return db.Vehicles.findAll({
+      include: [
+        {
+          model: db.Sensors,
+          //attributes: ["type"]
+        }
+      ]
+    });
+  },
+
+  sensors: (parent, args, { db }, info) => {
+    return db.Sensors.findAll();
+  },
 };

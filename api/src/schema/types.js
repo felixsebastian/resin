@@ -68,11 +68,11 @@ export default `
   },
 
   type Sensor {
-    name: String
+    type: String
     description: String
   },
 
-  type Automobile {
+  type Vehicle {
     type: AutomobileType
     registration: String
     vin: String
@@ -81,18 +81,9 @@ export default `
     yearOfManufacture: Int
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel
-    sensors: [Sensor]
+    sensors: String
   },
 
-  type RailVehicle {
-    type: RailVehicleType
-  },
-
-  type HumanPoweredVehicle {
-    type: HumanPoweredVehicleType
-  },
-
-  union Vehicle = Automobile | RailVehicle | HumanPoweredVehicle
 
   type Incident {
     id: Int
@@ -110,11 +101,11 @@ export default `
   },
 
   input SensorInput {
-    name: String
+    type: String
     description: String
   },
 
-  input AutomobileInput {
+  input VehicleInput {
     type: AutomobileType
     registration: String
     vin: String
@@ -123,13 +114,7 @@ export default `
     yearOfManufacture: Int
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel
-    sensors: [SensorInput]
-  },
-  input RailVehicleInput {
-    type: RailVehicleType
-  },
-  input HumanPoweredVehicleInput {
-    type: HumanPoweredVehicleType
+    sensors: String
   },
   
   input IncidentInput {
