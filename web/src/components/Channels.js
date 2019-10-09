@@ -53,13 +53,16 @@ export default connect(state => ({
     else if (channel.chartType === "boolean") charts.push(null);
 
     let value = "--";
+
     if (tracker) {
       const approx =
         (+tracker - +timeRange.begin()) /
         (+timeRange.end() - +timeRange.begin());
+
       const ii = Math.floor(approx * series.size());
       const i = series.bisect(new Date(tracker), ii);
       const v = i < series.size() ? series.at(i).get(id) : null;
+
       if (v) {
         value = parseInt(v, 10);
       }
