@@ -1,4 +1,5 @@
-import types from "./actionTypes";
+import types from "../lib/actionTypes";
+import logIn from "./logIn";
 
 export const selectIncident = selection => ({
   type: types.SELECT_INCIDENT,
@@ -31,11 +32,17 @@ export const toggleFilterFieldClicked = e => ({
 
 // log in
 
-export const logIn = token => ({
-  type: types.LOG_IN,
-  payload: { token }
-});
-
-export const logOut = () => ({
+const logOut = () => ({
   type: types.LOG_OUT
 });
+
+export default {
+  logIn,
+  //
+  selectIncident,
+  addIncidentToSelection,
+  moveTracker,
+  changeTimeRange,
+  toggleFilterFieldClicked,
+  logOut
+};

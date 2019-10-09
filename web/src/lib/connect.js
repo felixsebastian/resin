@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import * as actions from "../lib/actions";
+import actions from "../actions";
 import operations from "../operations";
 
 const allActions = { ...actions, ...operations };

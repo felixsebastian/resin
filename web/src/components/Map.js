@@ -11,7 +11,7 @@ import {
 } from "react-google-maps";
 import { compose, withStateHandlers } from "recompose";
 import store from "../lib/store";
-import { selectIncident } from "../lib/actions";
+import { selectIncident } from "../actions";
 import Viewport from "./Viewport";
 import styled from "styled-components";
 const {
