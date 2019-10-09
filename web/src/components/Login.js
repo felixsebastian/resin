@@ -35,7 +35,7 @@ export default compose(
     e.preventDefault();
     axios.post(LOG_IN, state).then(function(response) {
       if (response.data.success) {
-        props.actions.logIn(response.data.token);
+        props.actions.logIn(response.data.token, response.data.username);
       } else {
         setState({ ...state, logInFailed: true });
       }
@@ -46,7 +46,7 @@ export default compose(
     <CentredLayout>
       <h3>{greeting}</h3>
       <br />
-      <Form>
+      <Form onSubmit={submit}>
         <TextInput
           labelText="Username"
           value={state.username}
@@ -54,6 +54,7 @@ export default compose(
         />
         <br />
         <TextInput
+          type="password"
           labelText="Password"
           value={state.password}
           onChange={setPassword}
@@ -65,7 +66,9 @@ export default compose(
             <br />
           </>
         )}
-        <Button onClick={submit}>Log In</Button>
+        <Button type="submit" onClick={submit}>
+          Log In
+        </Button>
         <br />
         <br />
         <p>
