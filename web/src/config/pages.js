@@ -1,7 +1,8 @@
 import Context from "../components/Context";
 import Correlate from "../components/Correlate";
-import Setup from "../components/Incidents";
+import Vehicles from "../components/Vehicles";
 import Incidents from "../components/Incidents";
+import Sensors from "../components/Sensors";
 
 const pages = {
   context: {
@@ -14,15 +15,20 @@ const pages = {
     type: "PAGE",
     component: Correlate
   },
-  setup: {
-    name: "Setup",
-    type: "PAGE",
-    component: Setup
-  },
   incidents: {
     name: "Incidents",
     type: "PAGE",
     component: Incidents
+  },
+  vehicles: {
+    name: "Vehicles",
+    type: "PAGE",
+    component: Vehicles
+  },
+  sensors: {
+    name: "Sensors",
+    type: "PAGE",
+    component: Sensors
   },
   "log-out": {
     name: "Log Out",
