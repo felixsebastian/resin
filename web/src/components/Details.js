@@ -38,7 +38,7 @@ export default connect(state => ({
           Key
         </StructuredListCell>
         <StructuredListCell head>Value</StructuredListCell>
-        <StructuredListCell head style={{ width: "20%" }}>
+        <StructuredListCell head style={{ width: "25%" }}>
           Filter
         </StructuredListCell>
       </StructuredListHead>
