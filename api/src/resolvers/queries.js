@@ -26,22 +26,20 @@ export default {
       include: [
         {
           model: db.Sensors,
-          //attributes: ["type"]
         }
       ]
     });
   },
 
   getVehicle: (parent, args, { db }, info) => {
-    const where = args.rego ? { type: args.rego } : {}
-    return db.Vehicles.findAll({
+    const where = args.rego ? { registration: args.rego } : {};
+    return db.Vehicles.findOne({
       include: [
         {
           model: db.Sensors,
-          attributes: ["type"],
-          where
         }
-      ]
+      ],
+      where: where,
     });
   },
 

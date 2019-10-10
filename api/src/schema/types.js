@@ -81,7 +81,7 @@ export default `
     yearOfManufacture: Int
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel
-    sensors: [Sensor]
+    Sensors: [Sensor]
   },
 
 

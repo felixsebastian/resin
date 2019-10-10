@@ -5,10 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     vin: DataTypes.STRING,
     make:DataTypes.STRING, 
     model: DataTypes.STRING, 
-    yearOfManufacture: { type: DataTypes.INTEGER, primaryKey: true, allowNull: false },
+    yearOfManufacture: DataTypes.INTEGER,
     countryOfManufacture: DataTypes.STRING,
     autonomyLevel: DataTypes.STRING,
-//    sensors: DataTypes.STRING,
     registration: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
     updatedAt: DataTypes.INTEGER,
     createdAt: DataTypes.INTEGER

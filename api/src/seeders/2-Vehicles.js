@@ -13,7 +13,6 @@ module.exports = {
                     "yearOfManufacture": 2019,
                     "countryOfManufacture": "USA",
                     "autonomyLevel": "PARTIAL_ASSISTANCE",
-                    "sensors": "LIDAR",
                     "createdAt": new Date(),
                     "updatedAt": new Date()
                 },
@@ -26,7 +25,6 @@ module.exports = {
                     "yearOfManufacture": 2018,
                     "countryOfManufacture": "SOUTH_KOREA",
                     "autonomyLevel": "PARTIAL_ASSISTANCE",
-                    "sensors": "LIDAR",
                     "createdAt": new Date(),
                     "updatedAt": new Date()
                 },
@@ -39,7 +37,6 @@ module.exports = {
                     "yearOfManufacture": 2019,
                     "countryOfManufacture": "USA",
                     "autonomyLevel": "PARTIAL_ASSISTANCE",
-                    "sensors": "LIDAR",
                     "createdAt": new Date(),
                     "updatedAt": new Date()
                 },
@@ -52,7 +49,6 @@ module.exports = {
                     "yearOfManufacture": 2019,
                     "countryOfManufacture": "USA",
                     "autonomyLevel": "PARTIAL_ASSISTANCE",
-                    "sensors": "LIDAR",
                     "createdAt": new Date(),
                     "updatedAt": new Date()
                 }
