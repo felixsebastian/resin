@@ -6,7 +6,7 @@ import {
   GoogleMap,
   withScriptjs,
   Polygon,
-  Polyline,
+  Polyline
 } from "react-google-maps";
 import { compose } from "recompose";
 import Viewport from "./Viewport";
@@ -15,35 +15,6 @@ import Incident from "./IncidentMarker";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager";
-<<<<<<< HEAD
-=======
-
-const GET_ALL_INCIDENT = gql`
-  {
-    Incident {
-      incident
-    }
-  }
-`;
-
-/*
-function getAllIncident() 
-{
-  const { loading, error, data } = useQuery(GET_ALL_INCIDENT);
-
-  if (loading) console.log("loading");
-  if (error) console.log("Error");
-
-  return data.Incident.map(({ incident }) => (
-    console.log({ incident })
-  ));
-}
-*/
-
-const Layout = styled(Viewport)`
-  width: 100%;
-`;
->>>>>>> 23793b854fde474888e8d4755bdd251e08636112
 
 const INCIDENTS = gql`
   {
@@ -61,25 +32,20 @@ const INCIDENTS = gql`
   }
 `;
 
-<<<<<<< HEAD
 const Layout = styled(Viewport)`
   width: 100%;
 `;
-=======
-const markers = [
-  { lat: -34.4, lng: 150.65, content: "Marker 1" },
-  { lat: -34.39, lng: 150.64, content: "Marker 2" },
-  { lat: -34.398, lng: 150.6, content: "Marker 3" }
-];
->>>>>>> 23793b854fde474888e8d4755bdd251e08636112
 
 const coords = [{ lat: -34.3, lng: 150.6 }, { lat: -34.45, lng: 150.7 }];
 
 const Map = compose(
   withScriptjs,
   withGoogleMap
-<<<<<<< HEAD
 )(props => {
+  ///
+  /// Get Data
+  ///
+
   const { loading, error, data } = useQuery(INCIDENTS);
 
   if (loading) console.log("loading");
@@ -164,52 +130,6 @@ const Map = compose(
   );
 });
 
-=======
-)(props => (
-  <GoogleMap defaultZoom={12} defaultCenter={position}>
-    {markers.map(marker => (
-      <Incident marker={marker}/>
-    ))}
-    <Polygon
-      path={markers}
-      options={{
-        fillColor: "green",
-        strokeColor: "blue"
-      }}
-    />
-    <Polyline
-      path={coords}
-      geodesic={true}
-      options={{
-        strokeColor: "green"
-      }}
-    />
-    <DrawingManager
-      //defaultDrawingMode={google.maps.drawing.OverlayType.RECTANGLE}
-      defaultOptions={{
-        drawingControl: true,
-        drawingControlOptions: {
-          position: google.maps.ControlPosition.TOP_CENTER,
-          drawingModes: [google.maps.drawing.OverlayType.RECTANGLE],
-        },
-        rectangleOptions: {
-          fillColor: `blue`,
-          fillOpacity: 0.4,
-          strokeWeight: 1,
-          clickable: false,
-          editable: true,
-          zIndex: 1,
-        },
-      }}
-      onRectangleComplete={(rectangle) => {
-        console.log(rectangle.getBounds().ka.g);
-        rectangle.setMap(null);
-      }}
-    />
-  </GoogleMap>
-));
-
->>>>>>> 23793b854fde474888e8d4755bdd251e08636112
 export default () => (
   <Layout>
     <Map

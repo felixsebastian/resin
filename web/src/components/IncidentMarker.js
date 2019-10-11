@@ -1,9 +1,37 @@
-<<<<<<< HEAD
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { compose, withStateHandlers } from "recompose";
 import { Marker, InfoWindow, Circle } from "react-google-maps";
 import store from "../lib/store";
-import { selectIncident } from "../actions";
+import { selectIncident, addIncidentToSelection } from "../actions";
+
+function useKey(key) {
+  // Keep track of key state
+  const [pressed, setPressed] = useState(false);
+
+  // Does an event match the key we're watching?
+  const match = event => key.toLowerCase() == event.key.toLowerCase();
+
+  // Event handlers
+  const onDown = event => {
+    if (match(event)) setPressed(true);
+  };
+
+  const onUp = event => {
+    if (match(event)) setPressed(false);
+  };
+
+  // Bind and unbind events
+  useEffect(() => {
+    window.addEventListener("keydown", onDown);
+    window.addEventListener("keyup", onUp);
+    return () => {
+      window.removeEventListener("keydown", onDown);
+      window.removeEventListener("keyup", onUp);
+    };
+  }, [key]);
+
+  return pressed;
+}
 
 const Incident = compose(
   withStateHandlers(
@@ -19,74 +47,16 @@ const Incident = compose(
         isClicked: !isClicked
       })
     }
-  )(props => (
-    <Marker
-      position={props.marker}
-      onClick={() => {
-        store.dispatch(selectIncident(props.marker));
-        props.onClickedOpen();
-      }}
-      onMouseOver={props.onToggleOpen}
-      onMouseOut={props.onToggleOpen}
-    >
-      {props.isOpen && (
-        <InfoWindow onCloseClick={props.onToggleOpen}>
-          <div>
-            <p>
-              {"{"}
-              {props.marker.lat}
-              {","}
-              {props.marker.lng}
-              {"}"}
-            </p>
-          </div>
-        </InfoWindow>
-      )}
-      {props.isClicked && (
-        <Circle
-          center={props.marker}
-          radius={100}
-          options={{
-            fillColor: "red",
-            strokeColor: "red"
-          }}
-        />
-      )}
-    </Marker>
-  ))
-);
+  )(props => {
+    const isShiftPressed = useKey("shift");
 
-export default Incident;
-=======
-import React from "react"
-import { compose, withStateHandlers } from "recompose";
-import {
-    Marker,
-    InfoWindow,
-    Circle
-} from "react-google-maps";
-import store from "../lib/store";
-import { incidentSelected } from "../lib/actionCreators";
-
-const Incident = compose(
-    withStateHandlers(
-      () => ({
-        isOpen: false,
-        isClicked: false
-      }),
-      {
-        onToggleOpen: ({ isOpen }) => () => ({
-          isOpen: !isOpen
-        }),
-        onClickedOpen: ({ isClicked }) => (marker) => ({
-          isClicked: !isClicked
-        })
-      }
-    )(props => (
+    return (
       <Marker
         position={props.marker}
         onClick={() => {
-          store.dispatch(incidentSelected());
+          if (isShiftPressed)
+            store.dispatch(addIncidentToSelection(props.marker));
+          else store.dispatch(selectIncident(props.marker));
           props.onClickedOpen();
         }}
         onMouseOver={props.onToggleOpen}
@@ -96,7 +66,11 @@ const Incident = compose(
           <InfoWindow onCloseClick={props.onToggleOpen}>
             <div>
               <p>
-                {props.marker.content}{ " at {"}{props.marker.lat}{","}{props.marker.lng}{"}"}
+                {"{"}
+                {props.marker.lat}
+                {","}
+                {props.marker.lng}
+                {"}"}
               </p>
             </div>
           </InfoWindow>
@@ -104,7 +78,7 @@ const Incident = compose(
         {props.isClicked && (
           <Circle
             center={props.marker}
-            radius={10000}
+            radius={100}
             options={{
               fillColor: "red",
               strokeColor: "red"
@@ -112,8 +86,8 @@ const Incident = compose(
           />
         )}
       </Marker>
-    ))
-  )
+    );
+  })
+);
 
 export default Incident;
->>>>>>> 23793b854fde474888e8d4755bdd251e08636112
