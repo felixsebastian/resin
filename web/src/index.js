@@ -7,6 +7,9 @@ import store from "./lib/store";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { GRAPHQL } from "./config/constants";
+import keyWatcher from "./lib/keyWatcher";
+
+keyWatcher.start();
 
 const client = new ApolloClient({
   uri: GRAPHQL

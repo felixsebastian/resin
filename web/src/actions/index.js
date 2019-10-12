@@ -36,8 +36,22 @@ const logOut = () => ({
   type: types.LOG_OUT
 });
 
+// key watcher
+
+const keyUp = key => ({
+  type: types.KEY_UP,
+  payload: { key }
+});
+
+const keyDown = key => ({
+  type: types.KEY_DOWN,
+  payload: { key }
+});
+
 export default {
   logIn,
+  keyUp,
+  keyDown,
   //
   selectIncident,
   addIncidentToSelection,

@@ -15,24 +15,20 @@ import Incident from "./IncidentMarker";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager";
+import averageGeoPosition from "../lib/averageGeoPosition";
+import pickKeys from "../lib/pickKeys";
 
 const INCIDENTS = gql`
   {
     incidents {
       id
-      timestamp
       latitude
       longitude
-      numVehicles
-      damageSeverity
-      description
-      dca
-      weatherDesc
     }
   }
 `;
 
-const Layout = styled(Viewport)`
+const Box = styled(Viewport)`
   width: 100%;
 `;
 
@@ -41,52 +37,31 @@ const coords = [{ lat: -34.3, lng: 150.6 }, { lat: -34.45, lng: 150.7 }];
 const Map = compose(
   withScriptjs,
   withGoogleMap
-)(props => {
-  ///
-  /// Get Data
-  ///
-
+)(() => {
   const { loading, error, data } = useQuery(INCIDENTS);
-
-  if (loading) console.log("loading");
-  if (error) console.log("Error");
-
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>error!</p>;
   const markers = [];
 
-  if (!loading)
-    data.incidents.forEach(vehicle => {
-      markers.push({
-        id: vehicle.id,
-        time: vehicle.timestamp,
-        lat: vehicle.latitude,
-        lng: vehicle.longitude,
-        num: vehicle.numVehicles,
-        dmg: vehicle.damageSeverity,
-        desc: vehicle.description,
-        dca: vehicle.dca,
-        weather: vehicle.weatherDesc,
-        mode: vehicle.mode
-      });
+  data.incidents.forEach(incident => {
+    markers.push({
+      id: incident.id,
+      lat: incident.latitude,
+      lng: incident.longitude
     });
+  });
 
-  console.log(data);
-
-  var position = markers.reduce(
-    (result, next) => {
-      result.lat += next.lat;
-      result.lng += next.lng;
-      return result;
-    },
-    { lat: 0, lng: 0 }
+  const center = averageGeoPosition(
+    data.incidents.map(incident =>
+      pickKeys(incident, ["latitude", "longitude"])
+    )
   );
 
-  position = {
-    lat: position.lat / markers.length,
-    lng: position.lng / markers.length
-  };
-
   return (
-    <GoogleMap defaultZoom={16} center={position}>
+    <GoogleMap
+      defaultZoom={16}
+      initialCenter={{ lat: center.latitude, lng: center.longitude }}
+    >
       {markers.map(marker => (
         <Incident marker={marker} />
       ))}
@@ -131,12 +106,12 @@ const Map = compose(
 });
 
 export default () => (
-  <Layout>
+  <Box>
     <Map
       googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk&libraries=geometry,drawing,places"
       loadingElement={<div />}
       containerElement={<div style={{ height: "100%", width: "100%" }} />}
       mapElement={<div style={{ height: "100%", width: "100%" }} />}
     />
-  </Layout>
+  </Box>
 );

@@ -13,13 +13,21 @@ import designConstants from "../lib/designConstants";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 
-/*
-const data = {
-  make: "mitsubishi",
-  model: "bolt",
-  time: "10:15am"
-};
-*/
+const INCIDENTS = gql`
+  {
+    incidents {
+      id
+      timestamp
+      latitude
+      longitude
+      numVehicles
+      damageSeverity
+      description
+      dca
+      weatherDesc
+    }
+  }
+`;
 
 const Layout = styled(Viewport)`
   flex-grow: 1;

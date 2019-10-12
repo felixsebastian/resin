@@ -1,9 +1,13 @@
 const actionTypes = [
+  // user
   "SELECT_INCIDENT",
   "ADD_INCIDENT_TO_SELECTION",
   "TOGGLE_FILTER_FIELD_CLICKED",
   "MOVE_TRACKER",
   "CHANGE_TIME_RANGE",
+  // system
+  "KEY_DOWN",
+  "KEY_UP",
   // async
   "LOG_IN",
   "LOG_OUT"

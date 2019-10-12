@@ -55,12 +55,13 @@ const Incident = compose(
         position={props.marker}
         onClick={() => {
           if (isShiftPressed)
-            store.dispatch(addIncidentToSelection(props.marker));
-          else store.dispatch(selectIncident(props.marker));
+            store.dispatch(addIncidentToSelection(props.marker.id));
+          else store.dispatch(selectIncident(props.marker.id));
           props.onClickedOpen();
         }}
         onMouseOver={props.onToggleOpen}
         onMouseOut={props.onToggleOpen}
+        icon={"./marker.png"}
       >
         {props.isOpen && (
           <InfoWindow onCloseClick={props.onToggleOpen}>
