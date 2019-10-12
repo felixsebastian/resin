@@ -3,12 +3,20 @@ module.exports = (sequelize, DataTypes) => {
   var Vehicles = sequelize.define("Vehicles", {
     type: DataTypes.STRING,
     vin: DataTypes.STRING,
-    make:DataTypes.STRING, 
-    model: DataTypes.STRING, 
-    yearOfManufacture: DataTypes.INTEGER,
+    make: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
+    model: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
+    yearOfManufacture: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false
+    },
     countryOfManufacture: DataTypes.STRING,
     autonomyLevel: DataTypes.STRING,
-    registration: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
+    registration: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+      allowNull: false
+    },
     updatedAt: DataTypes.INTEGER,
     createdAt: DataTypes.INTEGER
   });

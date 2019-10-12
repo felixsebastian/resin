@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import Table from "./Table";
+import Table from "../Table";
 import moment from "moment";
 
 const INCIDENTS = gql`
@@ -21,32 +21,30 @@ const INCIDENTS = gql`
 
 export default () => {
   const { loading, error, data } = useQuery(INCIDENTS);
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>error!</p>;
 
   const tableRows = [];
 
-  if (!loading)
-    data.incidents.forEach(incident => {
-      tableRows.push([
-        moment
-          .unix(incident.timestamp)
-          .format("MMMM Do YYYY, h:mm:ss a")
-          .toString(),
-        <>
-          lat: {incident.latitude}
-          <br />
-          lon: {incident.longitude}
-        </>,
-        incident.numVehicles,
-        incident.damageSeverity,
-        incident.description,
-        incident.dca,
-        incident.weatherDesc,
-        <>delete</>
-      ]);
-    });
-
-  if (loading) return <p>loading...</p>;
-  if (error) return <p>error!</p>;
+  data.incidents.forEach(incident => {
+    tableRows.push([
+      moment
+        .unix(incident.timestamp)
+        .format("MMMM Do YYYY, h:mm:ss a")
+        .toString(),
+      <>
+        lat: {incident.latitude}
+        <br />
+        lon: {incident.longitude}
+      </>,
+      incident.numVehicles,
+      incident.damageSeverity,
+      incident.description,
+      incident.dca,
+      incident.weatherDesc,
+      <>delete</>
+    ]);
+  });
 
   return (
     <Table

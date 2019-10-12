@@ -22,15 +22,18 @@ export default `
     CANADA
     ITALY
     MALAYSIA
-  },
+  }
 
   enum Make {
-    FORD
-    TOYOTA
+    WAYMO
+    APPLE
+    TESLA
+    MITSUBISHI
     HONDA
-    VOLKSWAGEN
-    BMW
-  },
+    TOYOTA
+    FORD
+    GM
+  }
 
   enum AutonomyLevel {
     NONE
@@ -38,19 +41,19 @@ export default `
     PARTIAL_ASSISTANCE
     HIGH_AUTOMATION
     FULL_AUTOMATION
-  },
+  }
 
   enum AutomobileType {
     CAR
     MOTORBIKE
     BUS
     TRUCK
-  },
+  }
 
   enum RailVehicleType {
     TRAIN
     TRAM
-  },
+  }
 
   enum HumanPoweredVehicleType {
     BICYCLE
@@ -60,17 +63,17 @@ export default `
     SCOOTER
     RICKSHAW
     WHEELCHAIR
-  },
+  }
 
   enum VehicleMode {
     CONVENTIONAL
     AUTONOMOUS
-  },
+  }
 
   type Sensor {
     type: String
     description: String
-  },
+  }
 
   type Vehicle {
     type: AutomobileType
@@ -81,8 +84,8 @@ export default `
     yearOfManufacture: Int
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel
-    Sensors: [Sensor]
-  },
+    sensors: [Sensor]
+  }
 
 
   type Incident {
@@ -98,12 +101,12 @@ export default `
     dca: Int
     weatherDesc: String
     mode: VehicleMode
-  },
+  }
 
   input SensorInput {
     type: String
     description: String
-  },
+  }
 
   input VehicleInput {
     type: AutomobileType
@@ -115,7 +118,7 @@ export default `
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel
     sensors: String
-  },
+  }
   
   input IncidentInput {
       timestamp: Int

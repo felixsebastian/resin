@@ -9,7 +9,7 @@ import {
 import styled from "styled-components";
 import Viewport from "./Viewport";
 import connect from "../lib/connect";
-import designConstants from "../lib/designConstants";
+import Button from "./Button";
 
 const data = {
   make: "mitsubishi",
@@ -17,21 +17,15 @@ const data = {
   time: "10:15am"
 };
 
-const Layout = styled(Viewport)`
+const Box = styled(Viewport)`
   flex-grow: 1;
-`;
-
-const Action = styled.span`
-  cursor: pointer;
-  text-decoration: underline;
-  color: ${designConstants.linkColor};
 `;
 
 export default connect(state => ({
   isSelectionPresent: !!state.selection.length,
   filteringFields: state.filteringFields
 }))(({ isSelectionPresent, actions, filteringFields }) => (
-  <Layout>
+  <Box>
     <StructuredListWrapper>
       <StructuredListHead>
         <StructuredListCell head style={{ width: "20%" }}>
@@ -43,24 +37,21 @@ export default connect(state => ({
         </StructuredListCell>
       </StructuredListHead>
       <StructuredListBody>
-        {Object.keys(data).map(key => (
-          <StructuredListRow key={key}>
-            <StructuredListCell>{key}:</StructuredListCell>
+        {Object.keys(data).map(field => (
+          <StructuredListRow key={field}>
+            <StructuredListCell>{field}:</StructuredListCell>
             <StructuredListCell>
-              <b>{data[key]}</b>
+              <b>{data[field]}</b>
             </StructuredListCell>
             <StructuredListCell>
-              {isSelectionPresent && <Action>p</Action>}{" "}
-              <Action
-                onClick={actions.toggleFilterFieldClicked}
-                data-field={key}
-              >
-                {!filteringFields.includes(key) ? "add" : "remove"}
-              </Action>
+              {isSelectionPresent && <Button>p</Button>}{" "}
+              <Button onClick={() => actions.toggleFilterFieldClicked(field)}>
+                {!filteringFields.includes(field) ? "add" : "remove"}
+              </Button>
             </StructuredListCell>
           </StructuredListRow>
         ))}
       </StructuredListBody>
     </StructuredListWrapper>
-  </Layout>
+  </Box>
 ));

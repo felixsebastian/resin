@@ -1,10 +1,9 @@
 import React from "react";
-import Viewport from "./Viewport";
+import Viewport from "../Viewport";
 import styled from "styled-components";
 
 const BoxA = styled.div`
   display: flex;
-  flex-direction: column;
   height: 100%;
 `;
 
@@ -13,14 +12,14 @@ const BoxB = styled(Viewport)`
 `;
 
 const BoxC = styled(Viewport)`
-  height: 20rem;
+  width: 30rem;
 `;
 
-export default ({ top, bottom }) => {
+export default ({ left, right }) => {
   return (
     <BoxA>
-      <BoxB>{top}</BoxB>
-      <BoxC>{bottom}</BoxC>
+      <BoxB>{left}</BoxB>
+      <BoxC>{right}</BoxC>
     </BoxA>
   );
 };

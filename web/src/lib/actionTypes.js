@@ -4,6 +4,7 @@ const actionTypes = [
   "TOGGLE_FILTER_FIELD_CLICKED",
   "MOVE_TRACKER",
   "CHANGE_TIME_RANGE",
+  "SELECT_SENSOR",
   // async
   "LOG_IN",
   "LOG_OUT"

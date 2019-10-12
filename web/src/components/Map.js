@@ -11,12 +11,12 @@ import {
 } from "react-google-maps";
 import { compose, withStateHandlers } from "recompose";
 import store from "../lib/store";
-import { selectIncident } from "../actions";
+import actions from "../actions";
 import Viewport from "./Viewport";
 import styled from "styled-components";
-const {
-  DrawingManager
-} = require("react-google-maps/lib/components/drawing/DrawingManager");
+// const {
+//   DrawingManager
+// } = require("react-google-maps/lib/components/drawing/DrawingManager");
 
 const position = { lat: -34.397, lng: 150.644 };
 
@@ -51,7 +51,7 @@ const Map = compose(
       <Marker
         position={{ lat: -34.397, lng: 150.644 }}
         onClick={() => {
-          store.dispatch(selectIncident(1));
+          store.dispatch(actions.selectIncident(1));
         }}
         onMouseOver={props.onToggleOpen}
         onMouseOut={props.onToggleOpen}
