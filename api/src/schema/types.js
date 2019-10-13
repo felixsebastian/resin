@@ -77,6 +77,7 @@ export default `
   },
 
   type Vehicle {
+    id: Int
     type: AutomobileType
     registration: String
     vin: String

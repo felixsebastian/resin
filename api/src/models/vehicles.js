@@ -1,19 +1,17 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
   var Vehicles = sequelize.define("Vehicles", {
+    id: DataTypes.INTEGER,
     type: DataTypes.STRING,
     vin: DataTypes.STRING,
-    make: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
-    model: { type: DataTypes.STRING, primaryKey: true, allowNull: false },
-    yearOfManufacture: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false
-    },
+    make:  DataTypes.STRING ,
+    model:  DataTypes.STRING ,
+    yearOfManufacture: DataTypes.INTEGER,
     countryOfManufacture: DataTypes.STRING,
     autonomyLevel: DataTypes.STRING,
-    registration: {
-      type: DataTypes.STRING,
+    registration: DataTypes.STRING,
+    id: {
+      type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false
     },
@@ -24,12 +22,12 @@ module.exports = (sequelize, DataTypes) => {
   Vehicles.associate = function(models) {
     Vehicles.belongsToMany(models.Sensors, {
       through: "VehiclesSensors",
-      foreignKey: "vehicleReg",
+      foreignKey: "vehicleId",
       as: "sensors"
     });
     Vehicles.belongsToMany(models.Incidents, {
       through: "IncidentsVehicles",
-      foreignKey: "vehicleReg",
+      foreignKey: "vehicleId",
       as: "incidents"
     });
   };

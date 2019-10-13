@@ -3,8 +3,8 @@ module.exports = {
     up: (queryInterface, Sequelize) => {
       // Product belongsToMany Tag
       return queryInterface.createTable("IncidentsVehicles", {
-        vehicleReg: {
-          type: Sequelize.STRING,
+        vehicleId: {
+          type: Sequelize.INTEGER,
           primaryKey: true
         },
         incidentId: {
