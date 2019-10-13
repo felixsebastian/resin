@@ -28,9 +28,6 @@ module.exports = {
       autonomyLevel: {
         type: Sequelize.STRING
       },
-      sensors: {
-        type: Sequelize.STRING
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
