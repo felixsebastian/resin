@@ -1,12 +1,12 @@
-/*global google */
-
+/* global google */
 import React from "react";
 import {
   withGoogleMap,
   GoogleMap,
   withScriptjs,
   Polygon,
-  Polyline
+  Polyline,
+  MarkerClusterer
 } from "react-google-maps";
 import { compose } from "recompose";
 import Viewport from "./Viewport";
@@ -60,11 +60,18 @@ const Map = compose(
   return (
     <GoogleMap
       defaultZoom={16}
-      initialCenter={{ lat: center.latitude, lng: center.longitude }}
+      center={{ lat: center.latitude, lng: center.longitude }}
     >
+      {/* <MarkerClusterer
+        onClick={props.onMarkerClustererClick}
+        averageCenter
+        enableRetinaIcons
+        gridSize={60}
+      > */}
       {markers.map(marker => (
-        <Incident marker={marker} />
+        <Incident key={marker.id} marker={marker} />
       ))}
+      {/* </MarkerClusterer> */}
       <Polygon
         path={markers}
         options={{
