@@ -1,62 +1,32 @@
-import types from "../lib/actionTypes";
 import logIn from "./logIn";
-
-export const selectIncident = selection => ({
-  type: types.SELECT_INCIDENT,
-  payload: { selection }
-});
-
-export const addIncidentToSelection = selection => ({
-  type: types.ADD_INCIDENT_TO_SELECTION,
-  payload: { selection }
-});
-
-// timeline
-
-export const moveTracker = tracker => ({
-  type: types.MOVE_TRACKER,
-  payload: { tracker }
-});
-
-export const changeTimeRange = timeRange => ({
-  type: types.CHANGE_TIME_RANGE,
-  payload: { timeRange }
-});
-
-// filters
-
-export const toggleFilterFieldClicked = e => ({
-  type: types.TOGGLE_FILTER_FIELD_CLICKED,
-  payload: { field: e.target.dataset.field }
-});
-
-// log in
-
-const logOut = () => ({
-  type: types.LOG_OUT
-});
-
-// key watcher
-
-const keyUp = key => ({
-  type: types.KEY_UP,
-  payload: { key }
-});
-
-const keyDown = key => ({
-  type: types.KEY_DOWN,
-  payload: { key }
-});
+import createAction from "../lib/createAction";
 
 export default {
   logIn,
-  keyUp,
-  keyDown,
-  //
-  selectIncident,
-  addIncidentToSelection,
-  moveTracker,
-  changeTimeRange,
-  toggleFilterFieldClicked,
-  logOut
+  ...[
+    { id: "keyDown", type: "KEY_DOWN", payload: ["key"] },
+    { id: "keyUp", type: "KEY_UP", payload: ["key"] },
+    { id: "selectIncident", type: "SELECT_INCIDENT", payload: ["selection"] },
+    {
+      id: "addIncidentToSelection",
+      type: "ADD_INCIDENT_TO_SELECTION",
+      payload: ["selection"]
+    },
+    { id: "moveTracker", type: "MOVE_TRACKER", payload: ["tracker"] },
+    {
+      id: "changeTimeRange",
+      type: "CHANGE_TIME_RANGE",
+      payload: ["timeRange"]
+    },
+    {
+      id: "toggleFilterFieldClicked",
+      type: "TOGGLE_FILTER_FIELD_CLICKED",
+      payload: ["field"]
+    },
+    { id: "selectSensor", type: "SELECT_SENSOR", payload: ["id"] },
+    { id: "logOut", type: "LOG_OUT" }
+  ].reduce((result, action) => {
+    result[action.id] = createAction(action.type, action.payload);
+    return result;
+  }, {})
 };

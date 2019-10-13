@@ -3,6 +3,7 @@ import user from "./user";
 import timeline from "./timeline";
 import filteringFields from "./filteringFields";
 import keysDown from "./keysDown";
+import sensor from "./sensor";
 import { combineReducers } from "redux";
 
 export default combineReducers({
@@ -10,5 +11,6 @@ export default combineReducers({
   selection,
   timeline,
   filteringFields,
-  keysDown
+  keysDown,
+  sensor
 });

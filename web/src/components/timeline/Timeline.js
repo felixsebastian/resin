@@ -1,7 +1,7 @@
 import React from "react";
 import "moment-duration-format";
 import moment from "moment";
-import Viewport from "./Viewport";
+import Viewport from "../Viewport";
 import styled from "styled-components";
 import StatusBar from "./StatusBar";
 import Channels from "./Channels";

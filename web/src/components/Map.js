@@ -4,8 +4,6 @@ import {
   withGoogleMap,
   GoogleMap,
   withScriptjs,
-  Polygon,
-  Polyline,
   MarkerClusterer
 } from "react-google-maps";
 import { compose } from "recompose";
@@ -17,6 +15,9 @@ import { gql } from "apollo-boost";
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager";
 import averageGeoPosition from "../lib/averageGeoPosition";
 import pickKeys from "../lib/pickKeys";
+// const {
+//   DrawingManager
+// } = require("react-google-maps/lib/components/drawing/DrawingManager");
 
 const INCIDENTS = gql`
   {
@@ -31,8 +32,6 @@ const INCIDENTS = gql`
 const Box = styled(Viewport)`
   width: 100%;
 `;
-
-const coords = [{ lat: -34.3, lng: 150.6 }, { lat: -34.45, lng: 150.7 }];
 
 const Map = compose(
   withScriptjs,
@@ -72,20 +71,6 @@ const Map = compose(
         <Incident key={marker.id} marker={marker} />
       ))}
       {/* </MarkerClusterer> */}
-      <Polygon
-        path={markers}
-        options={{
-          fillColor: "green",
-          strokeColor: "blue"
-        }}
-      />
-      <Polyline
-        path={coords}
-        geodesic={true}
-        options={{
-          strokeColor: "green"
-        }}
-      />
       <DrawingManager
         //defaultDrawingMode={google.maps.drawing.OverlayType.RECTANGLE}
         defaultOptions={{

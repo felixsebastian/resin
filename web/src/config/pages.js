@@ -1,8 +1,8 @@
 import Context from "../components/Context";
 import Correlate from "../components/Correlate";
-import Vehicles from "../components/Vehicles";
-import Incidents from "../components/Incidents";
-import Sensors from "../components/Sensors";
+import Vehicles from "../components/vehicles/Page";
+import Incidents from "../components/incidents/Page";
+import Sensors from "../components/sensors/Page";
 
 const pages = {
   context: {
