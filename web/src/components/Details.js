@@ -13,6 +13,18 @@ import designConstants from "../lib/designConstants";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 
+const fields = [
+  "id",
+  "timestamp",
+  "latitude",
+  "longitude",
+  "numVehicles",
+  "damageSeverity",
+  "description",
+  "dca",
+  "weatherDesc"
+];
+
 const INCIDENTS = gql`
   {
     incidents {
@@ -42,8 +54,12 @@ const Action = styled.span`
 export default connect(state => ({
   isSelectionPresent: !!state.selection.length,
   filteringFields: state.filteringFields,
-  incidents: state.selection
-}))(({ isSelectionPresent, actions, filteringFields, incidents }) => {
+  selection: state.selection
+}))(({ isSelectionPresent, actions, selection }) => {
+  const { loading, error, data } = useQuery(INCIDENTS);
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>error!</p>;
+
   return (
     <Layout>
       <StructuredListWrapper>
@@ -57,25 +73,28 @@ export default connect(state => ({
           </StructuredListCell>
         </StructuredListHead>
         <StructuredListBody>
-          {incidents.map(incident =>
-            Object.keys(incident).map(key => (
-              <StructuredListRow key={key}>
-                <StructuredListCell>{key}:</StructuredListCell>
-                <StructuredListCell>
-                  <b>{incident[key]}</b>
-                </StructuredListCell>
-                <StructuredListCell>
-                  {isSelectionPresent && <Action>p</Action>}{" "}
-                  <input
-                    type="checkbox"
-                    name={key}
-                    data-field={key}
-                    onChange={actions.toggleFilterFieldClicked}
-                  />
-                </StructuredListCell>
-              </StructuredListRow>
-            ))
-          )}
+          {fields.map(field => (
+            <StructuredListRow key={field}>
+              <StructuredListCell>{field}:</StructuredListCell>
+              <StructuredListCell>
+                <b>
+                  {data.incidents
+                    .filter(incident => selection.includes(incident.id))
+                    .map(incident => incident[field])
+                    .join(", ")}
+                </b>
+              </StructuredListCell>
+              <StructuredListCell>
+                {isSelectionPresent && <Action>p</Action>}{" "}
+                <input
+                  type="checkbox"
+                  name={field}
+                  data-field={field}
+                  onChange={actions.toggleFilterFieldClicked}
+                />
+              </StructuredListCell>
+            </StructuredListRow>
+          ))}
         </StructuredListBody>
       </StructuredListWrapper>
     </Layout>
