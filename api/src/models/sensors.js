@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   Sensors.associate = function(models) {
     Sensors.belongsToMany(models.Vehicles, {
       through: "VehiclesSensors",
-      foreignKey: "sensorType"
+      foreignKey: "sensorType",
+      as: "vehicles"
     });
   };
   return Sensors;

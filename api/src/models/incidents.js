@@ -8,8 +8,6 @@ module.exports = (sequelize, DataTypes) => {
     damageSeverity: DataTypes.STRING,
     description: DataTypes.STRING,
     // Posibly remove these and insert as foreign keys
-    vehicle1: DataTypes.INTEGER,
-    vehicle2: DataTypes.INTEGER,
     dca: DataTypes.INTEGER,
     weatherDesc: DataTypes.STRING,
     mode: DataTypes.INTEGER,
@@ -23,7 +21,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   });
   // add association to foreign key vehicle here
-  
+  Incidents.associate = function(models) {
+    Incidents.belongsToMany(models.Vehicles, {
+      through: "IncidentsVehicles",
+      foreignKey: "incidentId",
+      as: "vehicles"
+    });
+  };
   return Incidents;
 };
 
