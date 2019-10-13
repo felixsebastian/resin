@@ -7,16 +7,30 @@ import {
   TextArea,
   DatePicker,
   DatePickerInput,
-  TimePicker
+  TimePicker,
+  Select,
+  SelectItem
 } from "carbon-components-react";
 import { gql } from "apollo-boost";
 import { useMutation } from "@apollo/react-hooks";
 import Padding from "../Padding";
 
+const modes = ["CONVENTIONAL", "AUTONOMOUS"];
+
 const CREATE_INCIDENT = gql`
   mutation CreateIncident($incident: IncidentInput!) {
-    createIncident(incident: $incident) {
-      make
+    createIncident(event: $incident) {
+      timestamp
+      latitude
+      longitude
+      numVehicles
+      damageSeverity
+      description
+      vehicle1
+      vehicle2
+      dca
+      weatherDesc
+      mode
     }
   }
 `;
@@ -26,8 +40,21 @@ export default () => {
 
   const [state, setState] = useState({
     date: "",
-    time: ""
+    time: "",
+    latitude: 0,
+    longitude: 0,
+    numVehicles: 1,
+    damageSeverity: "",
+    description: "",
+    vehicle1: null,
+    vehicle2: null,
+    dca: 0,
+    weatherDesc: "",
+    mode: modes[0]
   });
+
+  const setField = field => e =>
+    setState({ ...state, [field]: e.target.value });
 
   return (
     <Padding>
@@ -42,31 +69,67 @@ export default () => {
             labelText="Date"
             placeholder="dd/mm/yyyy"
             value={state.date}
-            onChange={e => setState({ ...state, date: e.target.value })}
+            onChange={setField("date")}
           />
         </DatePicker>
         <br />
         <TimePicker
           labelText="Time"
           required
-          value={state.time}
           pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"
-          onChange={e => setState({ ...state, time: e.target.value })}
+          value={state.time}
+          onChange={setField("time")}
         />
         <br />
-        <NumberInput label="Latitude" required />
+        <NumberInput
+          label="Latitude"
+          required
+          value={state.latitude}
+          onChange={setField("latitude")}
+        />
         <br />
-        <NumberInput label="Longitude" required />
+        <NumberInput
+          label="Longitude"
+          required
+          value={state.longitude}
+          onChange={setField("longitude")}
+        />
         <br />
-        <NumberInput label="Number of vehicles" required />
+        <NumberInput
+          label="Number of vehicles"
+          required
+          value={state.numVehicles}
+          onChange={setField("numVehicles")}
+        />
         <br />
-        <NumberInput label="Carnage level" required />
+        <TextInput
+          labelText="Carnage level"
+          required
+          value={state.time}
+          onChange={setField("time")}
+        />
         <br />
-        <TextArea labelText="Notes" rows={4} />
+        <TextArea
+          labelText="Notes"
+          rows={4}
+          value={state.description}
+          onChange={setField("description")}
+        />
         <br />
-        <NumberInput label="DCA" required />
+        <NumberInput
+          label="DCA"
+          required
+          value={state.dca}
+          onChange={setField("dca")}
+        />
         <br />
         <TextInput labelText="Weather conditions" required />
+        <br />
+        <Select labelText="Mode" value={state.mode} onChange={setField("mode")}>
+          {modes.map(mode => (
+            <SelectItem value={mode} text={mode} />
+          ))}
+        </Select>
         <br />
         <br />
         <Button type="submit">Create incident</Button>

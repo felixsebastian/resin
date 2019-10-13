@@ -40,8 +40,8 @@ export default connect((state, props) => ({
       position={marker}
       onClick={() =>
         props.isShiftKeyDown
-          ? props.actions.addIncidentToSelection(marker.id)
-          : props.actions.selectIncident(marker.id)
+          ? props.actions.toggleIncidentIncludedInSelection(marker.id)
+          : props.actions.toggleSelectionIsIncident(marker.id)
       }
       onMouseOver={() => setState({ ...state, isOpen: true })}
       onMouseOut={() => setState({ ...state, isOpen: false })}

@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 const Layout = styled(Viewport)`
   width: 100%;
   position: relative;
-  background-color: #000;
+  background-color: #222;
 `;
 
 const NotReadyLayout = styled.div`

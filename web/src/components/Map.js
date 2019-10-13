@@ -1,11 +1,8 @@
 /* global google */
 import React from "react";
-import {
-  withGoogleMap,
-  GoogleMap,
-  withScriptjs,
-  MarkerClusterer
-} from "react-google-maps";
+import { withGoogleMap, GoogleMap, withScriptjs } from "react-google-maps";
+import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
+import HeatmapLayer from "react-google-maps/lib/components/visualization/HeatmapLayer";
 import { compose } from "recompose";
 import Viewport from "./Viewport";
 import styled from "styled-components";
@@ -15,6 +12,11 @@ import { gql } from "apollo-boost";
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager";
 import averageGeoPosition from "../lib/averageGeoPosition";
 import pickKeys from "../lib/pickKeys";
+import connect from "../lib/connect";
+import styles from "../lib/mapStyles";
+
+const GOOGLE_MAPS_API_KEY = "AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk";
+
 // const {
 //   DrawingManager
 // } = require("react-google-maps/lib/components/drawing/DrawingManager");
@@ -33,10 +35,17 @@ const Box = styled(Viewport)`
   width: 100%;
 `;
 
+const heatMapOptions = {
+  radius: 40,
+  opacity: 0.3,
+  gradient: ["transparent", "red"]
+};
+
 const Map = compose(
+  connect(),
   withScriptjs,
   withGoogleMap
-)(() => {
+)(props => {
   const { loading, error, data } = useQuery(INCIDENTS);
   if (loading) return <p>loading...</p>;
   if (error) return <p>error!</p>;
@@ -58,19 +67,21 @@ const Map = compose(
 
   return (
     <GoogleMap
+      onClick={props.actions.clearSelection}
       defaultZoom={16}
       center={{ lat: center.latitude, lng: center.longitude }}
+      options={{ styles }}
     >
-      {/* <MarkerClusterer
-        onClick={props.onMarkerClustererClick}
+      <MarkerClusterer
+        onClick={() => 1}
         averageCenter
         enableRetinaIcons
-        gridSize={60}
-      > */}
-      {markers.map(marker => (
-        <Incident key={marker.id} marker={marker} />
-      ))}
-      {/* </MarkerClusterer> */}
+        gridSize={40}
+      >
+        {markers.map(marker => (
+          <Incident key={marker.id} marker={marker} />
+        ))}
+      </MarkerClusterer>
       <DrawingManager
         //defaultDrawingMode={google.maps.drawing.OverlayType.RECTANGLE}
         defaultOptions={{
@@ -93,6 +104,12 @@ const Map = compose(
           rectangle.setMap(null);
         }}
       />
+      <HeatmapLayer
+        data={markers.map(
+          marker => new google.maps.LatLng(marker.lat, marker.lng)
+        )}
+        options={heatMapOptions}
+      />
     </GoogleMap>
   );
 });
@@ -100,7 +117,7 @@ const Map = compose(
 export default () => (
   <Box>
     <Map
-      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk&libraries=geometry,drawing,places"
+      googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=geometry,drawing,visualization`}
       loadingElement={<div />}
       containerElement={<div style={{ height: "100%", width: "100%" }} />}
       mapElement={<div style={{ height: "100%", width: "100%" }} />}
