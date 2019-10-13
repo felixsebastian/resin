@@ -4,11 +4,11 @@ import ChartRow from "./ChartRow";
 import Charts from "./Charts";
 import YAxis from "./YAxis";
 import LineChart from "./LineChart";
-import Resizable from "./Resizable";
-import ValueAxis from "./ValueAxis";
+import Resizable from "../Resizable";
+import ValueAxis from "../ValueAxis";
 import { TimeRange } from "pondjs";
-import data from "../data/bikeLight";
-import connect from "../lib/connect";
+import data from "../../data/bikeLight";
+import connect from "../../lib/connect";
 
 const minTime = new Date(data.time[0] * 1000);
 const maxTime = new Date(data.time[data.time.length - 1] * 1000);

@@ -12,12 +12,12 @@ import merge from "merge";
 import React from "react";
 import PropTypes from "prop-types";
 import { TimeRange } from "pondjs";
-import getElementOffset from "../lib/getElementOffset";
+import getElementOffset from "../../lib/scaleAsString";
 
 /**
  * Renders a brush with the range defined in the prop `timeRange`.
  */
-export default class MultiBrush extends React.Component {
+export default class Brush extends React.Component {
   constructor(props) {
     super(props);
 
@@ -29,6 +29,7 @@ export default class MultiBrush extends React.Component {
     this.handleOverlayMouseDown = this.handleOverlayMouseDown.bind(this);
     this.handleHandleMouseDown = this.handleHandleMouseDown.bind(this);
     this.handleMouseUp = this.handleMouseUp.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.handleMouseMove = this.handleMouseMove.bind(this);
   }
 
@@ -43,13 +44,13 @@ export default class MultiBrush extends React.Component {
   // Event handlers
   //
 
-  handleBrushMouseDown(e, brush_idx) {
+  handleBrushMouseDown(e) {
     e.preventDefault();
 
     const { pageX: x, pageY: y } = e;
     const xy0 = [Math.round(x), Math.round(y)];
-    const begin = +this.props.timeRanges[brush_idx].begin();
-    const end = +this.props.timeRanges[brush_idx].end();
+    const begin = +this.props.timeRange.begin();
+    const end = +this.props.timeRange.end();
 
     document.addEventListener("mouseup", this.handleMouseUp);
 
@@ -58,56 +59,35 @@ export default class MultiBrush extends React.Component {
       brushingInitializationSite: "brush",
       initialBrushBeginTime: begin,
       initialBrushEndTime: end,
-      initialBrushXYPosition: xy0,
-      brushIndex: brush_idx
+      initialBrushXYPosition: xy0
     });
   }
 
   handleOverlayMouseDown(e) {
-    if (this.props.allowFreeDrawing || this.hasNullBrush()) {
-      e.preventDefault();
+    e.preventDefault();
 
-      const offset = getElementOffset(this.overlay);
-      const x = e.pageX - offset.left;
-      const t = this.props.timeScale.invert(x).getTime();
+    const offset = getElementOffset(this.overlay);
+    const x = e.pageX - offset.left;
+    const t = this.props.timeScale.invert(x).getTime();
 
-      document.addEventListener("mouseup", this.handleMouseUp);
+    document.addEventListener("mouseup", this.handleMouseUp);
 
-      const drawingPosition = this.props.allowFreeDrawing
-        ? this.props.timeRanges.length
-        : this.props.timeRanges.length - 1;
-
-      this.setState({
-        isBrushing: true,
-        brushingInitializationSite: "overlay",
-        initialBrushBeginTime: t,
-        initialBrushEndTime: t,
-        initialBrushXYPosition: null,
-        brushIndex: drawingPosition
-      });
-    }
+    this.setState({
+      isBrushing: true,
+      brushingInitializationSite: "overlay",
+      initialBrushBeginTime: t,
+      initialBrushEndTime: t,
+      initialBrushXYPosition: null
+    });
   }
 
-  hasNullBrush = () => {
-    return (
-      (this.props.timeRanges || []).length > 0 &&
-      this.props.timeRanges[this.props.timeRanges.length - 1] == null
-    );
-  };
-
-  handleMouseClick = (e, brushIndex) => {
-    if (this.props.onTimeRangeClicked) {
-      this.props.onTimeRangeClicked(brushIndex);
-    }
-  };
-
-  handleHandleMouseDown(e, handle, brushIndex) {
+  handleHandleMouseDown(e, handle) {
     e.preventDefault();
 
     const { pageX: x, pageY: y } = e;
     const xy0 = [Math.round(x), Math.round(y)];
-    const begin = this.props.timeRanges[brushIndex].begin().getTime();
-    const end = this.props.timeRanges[brushIndex].end().getTime();
+    const begin = this.props.timeRange.begin().getTime();
+    const end = this.props.timeRange.end().getTime();
 
     document.addEventListener("mouseover", this.handleMouseMove);
     document.addEventListener("mouseup", this.handleMouseUp);
@@ -117,8 +97,7 @@ export default class MultiBrush extends React.Component {
       brushingInitializationSite: `handle-${handle}`,
       initialBrushBeginTime: begin,
       initialBrushEndTime: end,
-      initialBrushXYPosition: xy0,
-      brushIndex: brushIndex
+      initialBrushXYPosition: xy0
     });
   }
 
@@ -128,22 +107,26 @@ export default class MultiBrush extends React.Component {
     document.removeEventListener("mouseover", this.handleMouseMove);
     document.removeEventListener("mouseup", this.handleMouseUp);
 
-    const brushing_is = this.state.brushIndex;
-    this.setState(
-      {
-        isBrushing: false,
-        brushingInitializationSite: null,
-        initialBrushBeginTime: null,
-        initialBrushEndTime: null,
-        initialBrushXYPosition: null,
-        brushIndex: null
-      },
-      () => {
-        if (this.props.onUserMouseUp) {
-          this.props.onUserMouseUp(brushing_is);
-        }
-      }
-    );
+    this.setState({
+      isBrushing: false,
+      brushingInitializationSite: null,
+      initialBrushBeginTime: null,
+      initialBrushEndTime: null,
+      initialBrushXYPosition: null
+    });
+  }
+
+  /**
+   * Handles clearing the TimeRange if the user clicks on the overlay (but
+   * doesn't drag to create a new brush). This will send a null as the
+   * new TimeRange. The user of this code can react to that however they
+   * see fit, but the most logical response is to reset the timerange to
+   * some initial value. This behavior is optional.
+   */
+  handleClick() {
+    if (this.props.allowSelectionClear && this.props.onTimeRangeChanged) {
+      this.props.onTimeRangeChanged(null);
+    }
   }
 
   handleMouseMove(e) {
@@ -204,10 +187,7 @@ export default class MultiBrush extends React.Component {
       }
 
       if (this.props.onTimeRangeChanged) {
-        this.props.onTimeRangeChanged(
-          new TimeRange(newBegin, newEnd),
-          this.state.brushIndex
-        );
+        this.props.onTimeRangeChanged(new TimeRange(newBegin, newEnd));
       }
     }
   }
@@ -229,10 +209,7 @@ export default class MultiBrush extends React.Component {
         cursor = "move";
         break;
       default:
-        cursor =
-          this.props.allowFreeDrawing || this.hasNullBrush()
-            ? "crosshair"
-            : "default";
+        cursor = "crosshair";
     }
 
     const overlayStyle = {
@@ -250,15 +227,15 @@ export default class MultiBrush extends React.Component {
         width={width}
         height={height}
         style={overlayStyle}
-        onClick={this.handleMouseClick}
         onMouseDown={this.handleOverlayMouseDown}
         onMouseUp={this.handleMouseUp}
+        onClick={this.handleClick}
       />
     );
   }
 
-  renderBrush(timeRange, idx) {
-    const { timeScale, height } = this.props;
+  renderBrush() {
+    const { timeRange, timeScale, height, style } = this.props;
 
     if (!timeRange) {
       return <g />;
@@ -271,10 +248,7 @@ export default class MultiBrush extends React.Component {
         cursor = "ew-resize";
         break;
       case "overlay":
-        cursor =
-          this.props.allowFreeDrawing || this.hasNullBrush()
-            ? "crosshair"
-            : "default";
+        cursor = "crosshair";
         break;
       default:
         cursor = "move";
@@ -288,8 +262,7 @@ export default class MultiBrush extends React.Component {
       shapeRendering: "crispEdges",
       cursor
     };
-    const userStyle = this.props.style ? this.props.style(idx) : {};
-    const brushStyle = merge(true, brushDefaultStyle, userStyle);
+    const brushStyle = merge(true, brushDefaultStyle, style);
 
     if (!this.viewport().disjoint(timeRange)) {
       const range = timeRange.intersection(this.viewport());
@@ -307,11 +280,9 @@ export default class MultiBrush extends React.Component {
       return (
         <rect
           {...bounds}
-          key={`${idx}-${brushStyle}`}
           style={brushStyle}
           pointerEvents="all"
-          onClick={e => this.handleMouseClick(e, idx)}
-          onMouseDown={e => this.handleBrushMouseDown(e, idx)}
+          onMouseDown={this.handleBrushMouseDown}
           onMouseUp={this.handleMouseUp}
         />
       );
@@ -319,8 +290,8 @@ export default class MultiBrush extends React.Component {
     return <g />;
   }
 
-  renderHandles(timeRange, idx) {
-    const { timeScale, height } = this.props;
+  renderHandles() {
+    const { timeRange, timeScale, height } = this.props;
 
     if (!timeRange) {
       return <g />;
@@ -360,14 +331,14 @@ export default class MultiBrush extends React.Component {
             {...leftHandleBounds}
             style={handleStyle}
             pointerEvents="all"
-            onMouseDown={e => this.handleHandleMouseDown(e, "left", idx)}
+            onMouseDown={e => this.handleHandleMouseDown(e, "left")}
             onMouseUp={this.handleMouseUp}
           />
           <rect
             {...rightHandleBounds}
             style={handleStyle}
             pointerEvents="all"
-            onMouseDown={e => this.handleHandleMouseDown(e, "right", idx)}
+            onMouseDown={e => this.handleHandleMouseDown(e, "right")}
             onMouseUp={this.handleMouseUp}
           />
         </g>
@@ -380,85 +351,58 @@ export default class MultiBrush extends React.Component {
     return (
       <g onMouseMove={this.handleMouseMove}>
         {this.renderOverlay()}
-        {(this.props.timeRanges || []).map((timeRange, idx) => {
-          return (
-            <g key={`multibrush_${idx}`}>
-              {this.renderBrush(timeRange, idx)}
-              {this.renderHandles(timeRange, idx)}
-            </g>
-          );
-        })}
+        {this.renderBrush()}
+        {this.renderHandles()}
       </g>
     );
   }
 }
 
-MultiBrush.propTypes = {
+Brush.propTypes = {
   /**
-   * The timeranges for the brushes. Typically you would maintain this
+   * The timerange for the brush. Typically you would maintain this
    * as state on the surrounding page, since it would likely control
    * another page element, such as the range of the main chart. See
    * also `onTimeRangeChanged()` for receiving notification of the
    * brush range being changed by the user.
    *
-   * Takes an array of Pond TimeRange object.
+   * Takes a Pond TimeRange object.
    */
-  timeRanges: PropTypes.arrayOf(PropTypes.instanceOf(TimeRange)),
-
+  timeRange: PropTypes.instanceOf(TimeRange),
   /**
    * The brush is rendered as an SVG rect. You can specify the style
-   * of this rect using this prop. The brush style is a function that you
-   * provide. It will be called with the index of the TimeRange, corresponding
-   * to those in the `timeRanges` prop.
+   * of this rect using this prop.
    */
-  style: PropTypes.func, //eslint-disable-line
-
+  style: PropTypes.object, //eslint-disable-line
   /**
    * The size of the invisible side handles. Defaults to 6 pixels.
    */
   handleSize: PropTypes.number,
-
-  /**
-   * If this prop is false, you will only be able to draw a new brush if the last position of the timeRanges
-   * array is equal to null, otherwise it will allow the free drawing and the index passed to onTimeRangeChanged
-   * will the equal to the length of the timeRanges array
-   */
-  allowFreeDrawing: PropTypes.bool,
-
+  allowSelectionClear: PropTypes.bool,
   /**
    * A callback which will be called if the brush range is changed by
-   * the user. It is called with a Pond TimeRange object and the index position of
-   * the brush in the timeRanges prop.
+   * the user. It is called with a Pond TimeRange object. Note that if
+   * `allowSelectionClear` is set to true, then this can also be called
+   * when the user performs a simple click outside the brush area. In
+   * this case it will be called with null as the TimeRange. You can
+   * use this to reset the selection, perhaps to some initial range.
    */
   onTimeRangeChanged: PropTypes.func,
-
-  /**
-   * when user stop drawing or dragging box
-   */
-  onUserMouseUp: PropTypes.func,
-
-  /**
-   * When the user clicks one of the TimeRanges
-   */
-  onTimeRangeClicked: PropTypes.func,
-
   /**
    * [Internal] The timeScale supplied by the surrounding ChartContainer
    */
   timeScale: PropTypes.func,
-
   /**
    * [Internal] The width supplied by the surrounding ChartContainer
    */
   width: PropTypes.number,
-
   /**
    * [Internal] The height supplied by the surrounding ChartContainer
    */
   height: PropTypes.number
 };
 
-MultiBrush.defaultProps = {
+Brush.defaultProps = {
   handleSize: 6,
-  allowFreeDrawing: true
+  allowSelectionClear: false
 };

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import DataPanel from "./DataPanel";
 import { geo, time } from "../data/dummy";
 import Map from "./Map";
-import Timeline from "./Timeline";
+import Timeline from "./timeline/Timeline";
 import Filters from "./Filters";
 
 const BoxA = styled.div`

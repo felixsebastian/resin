@@ -1,10 +1,10 @@
 import React from "react";
-import CentredLayout from "./CentredLayout";
+import Centred from "./layouts/Centred";
 import connect from "../lib/connect";
 
 export default connect(state => ({ username: state.user.username }))(
   ({ username }) => (
-    <CentredLayout>
+    <Centred>
       <p>
         <b>Welcome to ResIN{username && ", " + username}</b>
       </p>
@@ -16,6 +16,6 @@ export default connect(state => ({ username: state.user.username }))(
         <a href="http://github.com/felix-sebastian/">Rab'a Albreiki</a> &amp;{" "}
         <a href="http://github.com/felix-sebastian/">Felix Sebastian</a>
       </p>
-    </CentredLayout>
+    </Centred>
   )
 );

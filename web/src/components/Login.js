@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import CentredLayout from "./CentredLayout";
+import Centred from "./layouts/Centred";
 import { LOG_IN } from "../config/constants";
 import axios from "axios";
 import { Form, TextInput, Button } from "carbon-components-react";
 import connect from "../lib/connect";
 import { compose } from "redux";
 import { withRouter } from "react-router-dom";
+import MinimalButton from "./Button";
 
 const greetings = [
   "Good morrow",
@@ -43,7 +44,7 @@ export default compose(
   };
 
   return (
-    <CentredLayout>
+    <Centred>
       <h3>{greeting}</h3>
       <br />
       <Form onSubmit={submit}>
@@ -73,10 +74,10 @@ export default compose(
         <br />
         <p>
           <small>
-            <a href="#">Need help?</a>
+            <MinimalButton>Need help?</MinimalButton>
           </small>
         </p>
       </Form>
-    </CentredLayout>
+    </Centred>
   );
 });

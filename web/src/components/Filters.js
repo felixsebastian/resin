@@ -25,12 +25,10 @@ export default connect(state => ({
         </Hint>
       )}
       {filteringFields.map(field => (
-        <>
+        <React.Fragment key={field}>
           <input placeholder={field} />{" "}
-          <span data-field={field} onClick={actions.toggleFilterFieldClicked}>
-            x
-          </span>{" "}
-        </>
+          <span onClick={() => actions.toggleFilterFieldClicked(field)}>x</span>{" "}
+        </React.Fragment>
       ))}
     </div>
   </Layout>

@@ -22,7 +22,7 @@ import YAxis from "./YAxis";
 import Charts from "./Charts";
 import MultiBrush from "./MultiBrush";
 import TimeMarker from "./TimeMarker";
-import ScaleInterpolator from "../lib/interpolators";
+import ScaleInterpolator from "../../lib/interpolators";
 
 function createScale(yaxis, type, min, max, y0, y1) {
   let scale;

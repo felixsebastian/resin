@@ -9,9 +9,9 @@ import {
 import styled from "styled-components";
 import Viewport from "./Viewport";
 import connect from "../lib/connect";
-import designConstants from "../lib/designConstants";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
+import Button from "./Button";
 
 const fields = [
   "id",
@@ -41,14 +41,8 @@ const INCIDENTS = gql`
   }
 `;
 
-const Layout = styled(Viewport)`
+const Box = styled(Viewport)`
   flex-grow: 1;
-`;
-
-const Action = styled.span`
-  cursor: pointer;
-  text-decoration: underline;
-  color: ${designConstants.linkColor};
 `;
 
 export default connect(state => ({
@@ -61,7 +55,7 @@ export default connect(state => ({
   if (error) return <p>error!</p>;
 
   return (
-    <Layout>
+    <Box>
       <StructuredListWrapper>
         <StructuredListHead>
           <StructuredListCell head style={{ width: "20%" }}>
@@ -85,7 +79,7 @@ export default connect(state => ({
                 </b>
               </StructuredListCell>
               <StructuredListCell>
-                {isSelectionPresent && <Action>p</Action>}{" "}
+                {isSelectionPresent && <Button>p</Button>}{" "}
                 <input
                   type="checkbox"
                   name={field}
@@ -97,6 +91,6 @@ export default connect(state => ({
           ))}
         </StructuredListBody>
       </StructuredListWrapper>
-    </Layout>
+    </Box>
   );
 });
