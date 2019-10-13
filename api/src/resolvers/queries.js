@@ -1,24 +1,17 @@
 export default {
-  /*
-  categories: (parent, args, { db }, info) => {
-    return db.Categories.findAll();
-  },
-
-  locations: (parent, args, { db }, info) => {
-    const where = args.categoryId ? { id: args.categoryId } : {};
-    return db.Locations.findAll({
+  
+  incidents: (parent, args, { db }, info) => {
+    return db.Incidents.findAll({
       include: [
         {
-          model: db.Categories,
-          attributes: ["name"],
-          where
+          model: db.Vehicles,
+          as: 'vehicles'
         }
       ]
+    }).then(incident => {
+      console.log(incident);
+      return incident;
     });
-  },
-*/
-  incidents: (parent, args, { db }, info) => {
-    return db.Incidents.findAll();
   },
 
   vehicles: (parent, args, { db }, info) => {
@@ -26,6 +19,11 @@ export default {
       include: [
         {
           model: db.Sensors,
+          as: 'sensors'
+        },
+        {
+          model: db.Incidents,
+          as: 'incidents'
         }
       ]
     });
@@ -37,6 +35,7 @@ export default {
       include: [
         {
           model: db.Sensors,
+          as: 'sensors'
         }
       ],
       where: where,

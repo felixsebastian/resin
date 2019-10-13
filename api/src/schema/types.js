@@ -70,6 +70,7 @@ export default `
   type Sensor {
     type: String
     description: String
+    vehicles: [Vehicle]
   },
 
   type Vehicle {
@@ -81,7 +82,8 @@ export default `
     yearOfManufacture: Int
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel
-    Sensors: [Sensor]
+    sensors: [Sensor]
+    incidents: [Incident]
   },
 
 
@@ -93,8 +95,7 @@ export default `
     numVehicles: Int
     damageSeverity: String
     description: String
-    vehicle1: Vehicle
-    vehicle2: Vehicle
+    vehicles: [Vehicle]
     dca: Int
     weatherDesc: String
     mode: VehicleMode
@@ -114,7 +115,6 @@ export default `
     yearOfManufacture: Int
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel
-    sensors: String
   },
   
   input IncidentInput {

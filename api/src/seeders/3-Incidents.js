@@ -13,8 +13,6 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1434286300,
-    "vehicle1": 1,
-    "vehicle2": 2,
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -27,8 +25,6 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1510280800,
-    "vehicle1": 1,
-    "vehicle2": 2,
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -41,8 +37,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1558763300,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -55,8 +50,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1427347000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -69,8 +63,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1489019900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -83,8 +76,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1461958100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -97,8 +89,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1484050800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -111,8 +102,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1520460600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -125,8 +115,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1517489700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -139,8 +128,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1452691800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -153,8 +141,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1429405300,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -167,8 +154,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1489118000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -181,8 +167,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1462962500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -195,8 +180,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1551103500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -209,8 +193,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1462115500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -223,8 +206,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1486245200,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -237,8 +219,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1503989000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -251,8 +232,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1507152200,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -265,8 +245,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1496457900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -279,8 +258,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1508415100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -293,8 +271,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1546380500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -307,8 +284,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1516898000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -321,8 +297,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1430252400,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -335,8 +310,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1483900700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -349,8 +323,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1563018900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -363,8 +336,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1550152600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -377,8 +349,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1470220000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -391,8 +362,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1487063700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -405,8 +375,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1527777900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -419,8 +388,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1472707900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -433,8 +401,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1480105600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -447,8 +414,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1544615000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -461,8 +427,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1454373600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -475,8 +440,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1486253100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -489,8 +453,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1503198600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -503,8 +466,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1553966400,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -517,8 +479,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1515778300,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -531,8 +492,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1486010100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -545,8 +505,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1470688600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -559,8 +518,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1530340100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -573,8 +531,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1515980400,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -587,8 +544,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1506515900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -601,8 +557,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1529103900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -615,8 +570,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1443781600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -629,8 +583,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1568526700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -643,8 +596,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1443448900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -657,8 +609,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1481649800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -671,8 +622,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1463978000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -685,8 +635,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1542158100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -699,8 +648,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1480241500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -713,8 +661,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1543763900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -727,8 +674,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1442237100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -741,8 +687,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1432440600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -755,8 +700,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1479578800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -769,8 +713,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1449510300,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -783,8 +726,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1552608700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -797,8 +739,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1428114700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -811,8 +752,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1527101400,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -825,8 +765,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1553001100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -839,8 +778,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1451505300,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -853,8 +791,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1564104500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -867,8 +804,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1554989500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -881,8 +817,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1481561700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -895,8 +830,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1542036900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -909,8 +843,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1567957200,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -923,8 +856,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1561357800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -937,8 +869,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1475197200,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -951,8 +882,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1548654400,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -965,8 +895,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1506703900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -979,8 +908,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1518615600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -993,8 +921,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1473627800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1007,8 +934,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1535389100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1021,8 +947,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1426382400,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1035,8 +960,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1480793000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1049,8 +973,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1499107600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1063,8 +986,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1486300800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1077,8 +999,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1566541100,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1091,8 +1012,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1423176200,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1105,8 +1025,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1550260800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1119,8 +1038,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1469090800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1133,8 +1051,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1542458300,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1147,8 +1064,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1534004900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1161,8 +1077,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1511331200,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1175,8 +1090,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1472486800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1189,8 +1103,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1443001800,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1203,8 +1116,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1540220900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1217,8 +1129,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1456319000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1231,8 +1142,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1495943600,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1245,8 +1155,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1462991700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1259,8 +1168,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1450662900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1273,8 +1181,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1567547000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1287,8 +1194,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1464923500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1301,8 +1207,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1482206500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1315,8 +1220,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1556595700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1329,8 +1233,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1508817700,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1343,8 +1246,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1460716500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1357,8 +1259,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1510785000,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1371,8 +1272,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1543475500,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1385,8 +1285,7 @@ module.exports = {
     "mode": "AUTONOMOUS",
     "numVehicles": 2,
     "timestamp": 1532214900,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
@@ -1399,8 +1298,7 @@ module.exports = {
     "mode": "CONVENTIONAL",
     "numVehicles": 2,
     "timestamp": 1507610300,
-    "vehicle1": 1,
-    "vehicle2": 2,
+
     "weatherDesc": "This will be deprecated with weather api",
     "createdAt": new Date(),
     "updatedAt": new Date()
