@@ -1,5 +1,6 @@
+/* global google */
 import React, { useState } from "react";
-import { Marker, InfoWindow, Circle } from "react-google-maps";
+import { Marker, InfoWindow, Circle, GoogleMap } from "react-google-maps";
 import connect from "../lib/connect";
 
 const Halo = props => (
@@ -44,6 +45,7 @@ export default connect((state, props) => ({
       }
       onMouseOver={() => setState({ ...state, isOpen: true })}
       onMouseOut={() => setState({ ...state, isOpen: false })}
+      icon={{ url: "/marker.png", anchor: new google.maps.Point(9, 9) }}
     >
       {props.isOpen && <Info latitude={marker.lat} longitude={marker.lng} />}
       {props.selected && <Halo center={marker} />}
