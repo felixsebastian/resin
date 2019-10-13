@@ -1,24 +1,24 @@
 import store from "./store";
 import actions from "../actions";
 
-let keyup = null,
-  keydown = null;
+let keyDown = null,
+  keyUp = null;
 
 export default {
   start: () => {
-    keyup = window.addEventListener(
+    keyDown = window.addEventListener(
       "keydown",
-      e => store.dispatch(actions.keyDown(e.keyCode)),
+      e => store.dispatch(actions.keyDown(e.key)),
       false
     );
-    keydown = window.addEventListener(
+    keyUp = window.addEventListener(
       "keyup",
-      e => store.dispatch(actions.keyUp(e.keyCode)),
+      e => store.dispatch(actions.keyUp(e.key)),
       false
     );
   },
   stop: () => {
-    window.removeEventListener(keyup);
-    window.removeEventListener(keydown);
+    window.removeEventListener(keyDown);
+    window.removeEventListener(keyUp);
   }
 };
