@@ -5,6 +5,7 @@ export default `
     getVehicle(rego: String!) : Vehicle
     sensors: [Sensor!],
     incidentsByRect(p1: PointInput!, p2: PointInput!, filters: FilterInput): [Incident],
-    incidentsByRadius(p: PointInput!, radius: Float!, filters: FilterInput): [Incident]
+    incidentsByRadius(p: PointInput!, radius: Float!, filters: FilterInput): [Incident],
+    speedLimit(p: [PointInput!]): [Int]
   }
 `;

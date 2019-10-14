@@ -88,5 +88,9 @@ export default {
     .filter( i => (i.latitude - args.p.lat)**2 + (i.longitude - args.p.long )**2 <= radDeg**2 );
 
     return applyPostFilters( incidents, args.filters );
+  },
+
+  speedLimit: (parent, args, { db }, info) => {
+    return db.SpeedZones.findAll().map( sz => sz.limit );
   }
 };
