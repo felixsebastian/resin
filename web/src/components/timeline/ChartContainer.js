@@ -540,11 +540,6 @@ export default class ChartContainer extends React.Component {
       </g>
     );
 
-    //
-    // Final render of the ChartContainer is composed of a number of
-    // chartRows, a timeAxis and the tracker indicator
-    //
-
     const svgWidth = this.props.width;
     const svgHeight =
       chartsHeight + timeAxisHeight + paddingTop + paddingBottom + titleHeight;
@@ -555,7 +550,7 @@ export default class ChartContainer extends React.Component {
       this.props.style ? this.props.style : {}
     );
 
-    return this.props.showGridPosition === "over" ? (
+    return (
       <svg
         width={svgWidth}
         height={svgHeight}
@@ -568,142 +563,30 @@ export default class ChartContainer extends React.Component {
         {timeAxis}
         {rowTitles}
       </svg>
-    ) : (
-      <svg
-        width={svgWidth}
-        height={svgHeight}
-        style={{ display: "block" }}
-        ref={this.saveSvgRef}
-      >
-        {title}
-        {timeAxis}
-        {rows}
-        {rowTitles}
-        {tracker}
-      </svg>
     );
   }
 }
 
 ChartContainer.propTypes = {
-  /**
-   * A [Pond TimeRange](https://esnet-pondjs.appspot.com/#/timerange) representing the
-   * begin and end time of the chart.
-   */
   timeRange: PropTypes.instanceOf(TimeRange).isRequired,
-
-  /**
-   * Should the time axis use a UTC scale or local
-   */
   utc: PropTypes.bool,
-
-  /**
-   * Children of the ChartContainer should be ChartRows.
-   */
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element
   ]).isRequired,
-
-  /**
-   * The width of the chart. This library also includes a <Resizable> component
-   * that can be wrapped around a \<ChartContainer\>. The purpose of this is to
-   * inject a width prop into the ChartContainer so that it will fit the
-   * surrounding element. This is very handy when you need the chart to resize
-   * based on a responsive layout.
-   */
   width: PropTypes.number,
-
-  /**
-   * Constrain the timerange to not move back in time further than this Date.
-   */
   minTime: PropTypes.instanceOf(Date),
-
-  /**
-   * Constrain the timerange to not move forward in time than this Date. A
-   * common example is setting this to the current time or the end time
-   * of a fixed set of data.
-   */
   maxTime: PropTypes.instanceOf(Date),
-
-  /**
-   * Boolean to turn on interactive pan and zoom behavior for the chart.
-   */
   enablePanZoom: PropTypes.bool,
-
-  /**
-   * Boolean to turn on interactive drag to zoom behavior for the chart.
-   */
   enableDragZoom: PropTypes.bool,
-
-  /**
-   * If this is set the timerange of the chart cannot be zoomed in further
-   * than this duration, in milliseconds. This might be determined by the
-   * resolution of your data.
-   */
   minDuration: PropTypes.number,
-
-  /**
-   * Provides several options as to the format of the time axis labels.
-   *
-   * In general the time axis will generate an appropriate time scale based
-   * on the timeRange prop and there is no need to set this.
-   *
-   * However, some options exist:
-   *
-   *  - setting format to "day", "month" or "year" will show only ticks on those,
-   * and every one of those intervals. For example maybe you are showing a bar
-   * chart for October 2014 then setting the format to "day" will insure that a
-   * label is placed for each and every day
-   *
-   *  - setting format to "relative" interprets the time as a duration. This
-   * is good for data that is specified relative to its start time, rather than
-   * as an actual date/time
-   *
-   *  - setting the format to a d3 format string will use that format
-   *
-   *  - supplying a function for format will cause that function to be called
-   * whenever rendering a time
-   */
   format: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-
-  /**
-   * Time in milliseconds to transition from one Y-scale to the next
-   */
   transition: PropTypes.number,
-
-  /**
-   * Show grid lines for each time marker
-   */
   showGrid: PropTypes.bool,
-
-  /**
-   * Defines whether grid is overlayed ("over"( or underlayed ("under")
-   * with respect to the charts
-   */
   showGridPosition: PropTypes.oneOf(["over", "under"]),
-
-  /**
-   * Defines how to style the SVG
-   */
   style: PropTypes.object,
-
-  /**
-   * The width of the tracker info box
-   */
   trackerHintWidth: PropTypes.number,
-
-  /**
-   * The height of the tracker info box
-   */
   trackerHintHeight: PropTypes.number,
-
-  /**
-   * Info box value or values to place next to the tracker line.
-   * This is either an array of objects, with each object
-   * specifying the label and value to be shown in the info box,
-   * or a simple string label.
-   */
   trackerValues: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(
@@ -713,141 +596,34 @@ ChartContainer.propTypes = {
       })
     )
   ]),
-
-  /**
-   * A Date specifying the position of the tracker line on the chart. It is
-   * common to take this from the onTrackerChanged callback so that the tracker
-   * followers the user's cursor, but it could be modified to snap to a point or
-   * to the nearest minute, for example.
-   */
   trackerPosition: PropTypes.instanceOf(Date),
-
-  /**
-   * The style of the time marker. This is an object of the form { line, box, dot }.
-   * Line, box and dot are themselves objects representing inline CSS for each of
-   * the pieces of the info marker.
-   *
-   * When we use the TimeMarker as a tracker, we can style the box and dot as well.
-   */
   trackerStyle: PropTypes.shape({
     label: PropTypes.object, // eslint-disable-line
     line: PropTypes.object, // eslint-disable-line
     box: PropTypes.object, // eslint-disable-line
     dot: PropTypes.object // eslint-disable-line
   }),
-
-  /**
-   * Will be called when the user hovers over a chart. The callback will
-   * be called with the timestamp (a Date object) of the position hovered
-   * over as well as the current time axis' time scale. The timestamp may
-   * be used as the trackerPosition (see above), or to provide information
-   * about the time hovered over within the greater page. The time scale
-   * may be used to translate the timestamp into an x coordinate, which
-   * can then be used to position arbitrary components in sync with the
-   * current tracker position.
-   * Commonly we might do something like this:
-   * ```
-   *   <ChartContainer
-   *     onTrackerChanged={(tracker) => this.setState({tracker})}
-   *     trackerPosition={this.state.tracker}
-   *     ... />
-   * ```
-   */
   onTrackerChanged: PropTypes.func,
-
-  /**
-   * This will be called if the user pans and/or zooms the chart. The callback
-   * will be called with the new TimeRange. This can be fed into the timeRange
-   * prop as well as used elsewhere on the greater page. Typical use might look
-   * like this:
-   * ```
-   *   <ChartContainer
-   *     onTimeRangeChanged={(timerange) => this.setState({timerange})}
-   *     timeRange={this.state.timerange}
-   *     ... />
-   * ```
-   */
   onTimeRangeChanged: PropTypes.func,
-
-  /**
-   * Called when the size of the chart changes
-   */
   onChartResize: PropTypes.func,
-
-  /**
-   * Called when the user clicks the background plane of the chart. This is
-   * useful when deselecting elements.
-   */
   onBackgroundClick: PropTypes.func,
-
-  /**
-   * Called when the user context-clicks the chart
-   */
   onContextMenu: PropTypes.func,
-
-  /**
-   * Props for handling the padding
-   */
   padding: PropTypes.number,
   paddingLeft: PropTypes.number,
   paddingRight: PropTypes.number,
   paddingTop: PropTypes.number,
   paddingBottom: PropTypes.number,
-
-  /**
-   * Specify the title for the chart
-   */
   title: PropTypes.string,
-
-  /**
-   * Specify the height of the title
-   * Default value is 28 pixels
-   */
   titleHeight: PropTypes.number,
-
-  /**
-   * Specify the styling of the chart's title
-   */
   titleStyle: PropTypes.object,
-
-  /**
-   * Object specifying the CSS by which the `TimeAxis` can be styled. The object can contain:
-   * "values" (the time labels), "axis" (the main horizontal line) and "ticks" (which may
-   * optionally extend the height of all chart rows using the `showGrid` prop. Each of these
-   * is an inline CSS style applied to the axis label, axis values, axis line and ticks
-   * respectively.
-   *
-   * Note that "ticks" and "values" are passed into d3's styles, so they are regular CSS property names
-   * and not React's camel case names (e.g. "stroke-dasharray" not "strokeDasharray"). "axis" is a
-   * regular React rendered SVG line, so it uses camel case.
-   */
   timeAxisStyle: PropTypes.shape({
     axis: PropTypes.object,
     values: PropTypes.object,
     ticks: PropTypes.object
   }),
-
-  /**
-   * Height of the time axis
-   * Default value is 35 pixels
-   */
   timeAxisHeight: PropTypes.number,
-
-  /**
-   * Specify the number of ticks
-   * The default ticks for quantitative scales are multiples of 2, 5 and 10.
-   * So, while you can use this prop to increase or decrease the tick count, it will always return multiples of 2, 5 and 10.
-   */
   timeAxisTickCount: PropTypes.number,
-
-  /**
-   * Angle the time axis labels
-   */
   timeAxisAngledLabels: PropTypes.bool,
-
-  /**
-   * Prop to hide time axis if required
-   */
   hideTimeAxis: PropTypes.bool
 };
 

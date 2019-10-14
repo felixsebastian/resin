@@ -113,6 +113,7 @@ export default connect(state => ({
         onTimeRangeChanged={changeTimeRange}
         onTrackerChanged={moveTracker}
         hideTimeAxis
+        style={{ height: 291, borderBottom: "1px solid #fff" }}
       >
         {rows}
       </ChartContainer>

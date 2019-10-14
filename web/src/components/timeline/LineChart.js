@@ -153,7 +153,7 @@ export default class LineChart extends React.Component {
       fill: "none",
       opacity: 0.0,
       strokeWidth: 7,
-      cursor: "crosshair",
+      cursor: "",
       pointerEvents: "stroke"
     };
 
