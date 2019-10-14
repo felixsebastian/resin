@@ -90,7 +90,6 @@ export default `
     incidents: [Incident]
   },
 
-
   type Incident {
     id: Int
     timestamp: Int
@@ -104,6 +103,31 @@ export default `
     weatherDesc: String
     mode: VehicleMode
   }
+
+  type Point {
+    lat: Float,
+    long: Float
+  },
+
+  input PointInput {
+    lat: Float
+    long: Float
+  },
+
+  input FilterInput {
+    timestamp: rangedFilterInput,
+    numVehicles: rangedFilterInput,
+    damageSeverity: [String],
+    hourOfDay: rangedFilterInput,
+    dca: [Int],
+    mode: String
+  },
+
+  input rangedFilterInput {
+    exact: Int,
+    lower: Int,
+    upper: Int
+  },
 
   input SensorInput {
     type: String
