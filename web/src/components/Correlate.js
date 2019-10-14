@@ -24,7 +24,7 @@ const BoxD = styled.div`
 `;
 
 const BoxF = styled.div`
-  width: 25rem;
+  width: 30rem;
   height: 100%;
   display: flex;
   flex-direction: column;
