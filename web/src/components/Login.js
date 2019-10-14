@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Centred from "./layouts/Centred";
+import Centered from "./layouts/Centered";
 import { LOG_IN } from "../config/constants";
 import axios from "axios";
 import { Form, TextInput, Button } from "carbon-components-react";
@@ -44,7 +44,7 @@ export default compose(
   };
 
   return (
-    <Centred>
+    <Centered>
       <h3>{greeting}</h3>
       <br />
       <Form onSubmit={submit}>
@@ -78,6 +78,6 @@ export default compose(
           </small>
         </p>
       </Form>
-    </Centred>
+    </Centered>
   );
 });
