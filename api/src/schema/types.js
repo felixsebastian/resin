@@ -113,6 +113,7 @@ export default `
     timestamp: rangedFilterInput,
     numVehicles: rangedFilterInput,
     damageSeverity: [String],
+    hourOfDay: rangedFilterInput,
     dca: [Int],
     mode: String
   },
