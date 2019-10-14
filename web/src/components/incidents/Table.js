@@ -52,11 +52,11 @@ export default () => {
       headings={[
         "Time",
         "Location",
-        "# of Vehicles",
-        "Carnage Level",
+        "Vehicle count",
+        "Damage",
         "Notes",
         "DCA",
-        "Weather Conditions",
+        "Weather",
         "Actions"
       ]}
       rows={tableRows}

@@ -85,12 +85,16 @@ export default () => {
           label="Latitude"
           required
           value={state.latitude}
+          min={-180}
+          max={180}
           onChange={setField("latitude")}
         />
         <br />
         <NumberInput
           label="Longitude"
           required
+          min={-180}
+          max={180}
           value={state.longitude}
           onChange={setField("longitude")}
         />
@@ -103,10 +107,10 @@ export default () => {
         />
         <br />
         <TextInput
-          labelText="Carnage level"
+          labelText="Damage"
           required
-          value={state.time}
-          onChange={setField("time")}
+          value={state.damageSeverity}
+          onChange={setField("damageSeverity")}
         />
         <br />
         <TextArea
@@ -123,7 +127,7 @@ export default () => {
           onChange={setField("dca")}
         />
         <br />
-        <TextInput labelText="Weather conditions" required />
+        <TextInput labelText="Weather" required />
         <br />
         <Select labelText="Mode" value={state.mode} onChange={setField("mode")}>
           {modes.map(mode => (
