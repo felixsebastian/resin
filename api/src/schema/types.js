@@ -110,8 +110,8 @@ export default `
   },
 
   input FilterInput {
-    timestamp: rangedFilter,
-    numVehicles: rangedFilter,
+    timestamp: rangedFilterInput,
+    numVehicles: rangedFilterInput,
     damageSeverity: [String],
     dca: [Int],
     mode: String
