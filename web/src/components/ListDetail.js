@@ -8,7 +8,7 @@ const Box = styled.div`
 `;
 
 const List = styled(Viewport)`
-  width: 30rem;
+  width: 25rem;
 `;
 
 const Item = styled.div`
@@ -23,16 +23,17 @@ const Item = styled.div`
 
 const Detail = styled(Viewport)`
   flex-grow: 1;
+  flex-basis: 0;
 `;
 
-export default ({ items, children, listItemClicked }) => {
+export default ({ items, children, onItemClicked }) => {
   return (
     <Box>
       <List>
         {items.map(item => (
           <Item
             onClick={() =>
-              listItemClicked(typeof item === "string" ? item : item.id)
+              onItemClicked(typeof item === "string" ? item : item.id)
             }
           >
             {typeof item === "string" ? item : item.text}
