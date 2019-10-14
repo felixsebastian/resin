@@ -84,7 +84,6 @@ export default `
     Sensors: [Sensor]
   },
 
-
   type Incident {
     id: Int
     timestamp: Int
@@ -98,6 +97,25 @@ export default `
     dca: Int
     weatherDesc: String
     mode: VehicleMode
+  },
+
+  input Point {
+    x: Float
+    y: Float
+  },
+
+  input Filter {
+    timestamp: rangedFilter,
+    numVehicles: rangedFilter,
+    damageSeverity: [String],
+    dca: [Int],
+    mode: String
+  },
+
+  input rangedFilter {
+    exact: Int,
+    lower: Int,
+    upper: Int
   },
 
   input SensorInput {
