@@ -2,16 +2,10 @@ import React from "react";
 import Viewport from "./Viewport";
 import connect from "../lib/connect";
 import styled from "styled-components";
+import Hint from "./Hint";
 
 const Layout = styled(Viewport)`
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-`;
-
-const Hint = styled.span`
-  color: #aaa;
+  padding: 1rem;
 `;
 
 export default connect(state => ({
