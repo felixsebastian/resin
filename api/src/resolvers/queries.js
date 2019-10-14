@@ -63,7 +63,9 @@ export default {
     if (args.filters)
       applyFilters(where, args.filters);
   
-    return db.Incidents.findAll({ where: where });
+    let incidents = db.Incidents.findAll({ where: where });
+
+    return applyPostFilters( incidents, args.filters );
   },
 
   // Note: Latitude: 1 deg = 110.574 km, Longitude: 1 deg = 111.320*cos(latitude) km
