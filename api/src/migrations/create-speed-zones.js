@@ -11,11 +11,21 @@ module.exports = {
         limit: {
           type: Sequelize.INTEGER,
         },
-        latitude: {
-          type: Sequelize.FLOAT,
+        p1: {
+          latitude: {
+            type: Sequelize.FLOAT,
+          },
+          longitude: {
+            type: Sequelize.FLOAT
+          }
         },
-        longitude: {
-          type: Sequelize.FLOAT
+        p2: {
+          latitude: {
+            type: Sequelize.FLOAT,
+          },
+          longitude: {
+            type: Sequelize.FLOAT
+          }
         }
       });
     },
