@@ -1,49 +1,51 @@
+import { Op } from 'sequelize'
+
 module.exports = {
-  applyFilters = ( where, filters ) => {
+  applyFilters: ( where, filters ) => {
     if (filters.timestamp) {
-      this.applyRangedFilter( where, filters.timestamp, "timestamp" );
+      module.exports.applyRangedFilter( where, filters.timestamp, "timestamp" );
     }
 
     if (filters.numVehicles) {
-      this.applyRangedFilter( where, filters.timestamp, "timestamp" );
+      module.exports.applyRangedFilter( where, filters.timestamp, "timestamp" );
     }
 
     if (filters.damageSeverity) {
-      whereCondition.damageSeverity = {
+      where.damageSeverity = {
         [Op.in]: filters.damageSeverity
       };
     }
 
     if (filters.dca) {
-      whereCondition.dca = {
+      where.dca = {
         [Op.in]: filters.dca
       };
     }
 
     if (filters.mode) {
-      whereCondition.mode = filters.mode;
+      where.mode = filters.mode;
     }
   },
 
-  applyRangedFilter = ( where, filter, filterName ) => {
+  applyRangedFilter: ( where, filter, filterName ) => {
     if (filter.exact) {
-      whereCondition.filterName = filter.exact;
+      where[filterName] = filter.exact;
     }
 
     else if (!filter.lower && filter.upper) {
-      whereCondition.filterName = {
+      where[filterName] = {
         [Op.lte]: filter.upper
       };
     }
 
     else if (filter.lower && !filter.upper) {
-      whereCondition.filterName = {
+      where[filterName] = {
         [Op.gte]: filter.lower
       };
     }
 
     else {
-      whereCondition.filterName = {
+      where[filterName] = {
         [Op.between]: [filter.lower, filter.upper]
       };
     }

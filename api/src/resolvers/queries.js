@@ -53,10 +53,10 @@ export default {
   incidentsByRect: (parent, args, { db }, info) => {
     let where = {
       latitude: {
-        [Op.between]: [args.p1.x, args.p2.x]
+        [Op.between]: [args.p1.lat, args.p2.lat]
       },
       longitude: {
-        [Op.between]: [args.p1.y, args.p2.y]
+        [Op.between]: [args.p1.long, args.p2.long]
       }
     };
 
@@ -73,17 +73,17 @@ export default {
 
     let where = {
       latitude: {
-        [Op.between]: [args.p.x - radDeg, args.p2.x + radDeg]
+        [Op.between]: [args.p.lat - radDeg, args.p.lat + radDeg]
       },
       longitude: {
-        [Op.between]: [args.p.y - radDeg, args.p.y + radDeg]
+        [Op.between]: [args.p.long - radDeg, args.p.long + radDeg]
       }
     };
-    
+
     if (args.filters)
       applyFilters(where, args.filters);
   
     return db.Incidents.findAll({ where: where })
-    .filter( i => (i.latitude - args.p.x)**2 + (i.longitude - args.p.y )**2 <= radDeg**2 );
+    .filter( i => (i.latitude - args.p.lat)**2 + (i.longitude - args.p.long )**2 <= radDeg**2 );
   }
 };

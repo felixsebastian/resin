@@ -4,7 +4,7 @@ export default `
     vehicles: [Vehicle!]
     getVehicle(rego: String!) : Vehicle
     sensors: [Sensor!],
-    incidentsByRect(p1: Point!, p2: Point!, filters: Filter): [Incident],
-    incidentsByRadius(p: Point!, filters: Filter): [Incident]
+    incidentsByRect(p1: PointInput!, p2: PointInput!, filters: FilterInput): [Incident],
+    incidentsByRadius(p: PointInput!, radius: Float!, filters: FilterInput): [Incident]
   }
 `;

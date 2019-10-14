@@ -99,12 +99,17 @@ export default `
     mode: VehicleMode
   },
 
-  input Point {
-    x: Float
-    y: Float
+  type Point {
+    lat: Float,
+    long: Float
   },
 
-  input Filter {
+  input PointInput {
+    lat: Float
+    long: Float
+  },
+
+  input FilterInput {
     timestamp: rangedFilter,
     numVehicles: rangedFilter,
     damageSeverity: [String],
@@ -112,7 +117,7 @@ export default `
     mode: String
   },
 
-  input rangedFilter {
+  input rangedFilterInput {
     exact: Int,
     lower: Int,
     upper: Int
