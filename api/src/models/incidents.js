@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     // Probably don't keep here
     streetType: DataTypes.STRING,
     speedLimit: DataTypes.INTEGER,
-    schoolZones: DataTypes.BOOLEAN,
+    schoolZone: DataTypes.BOOLEAN,
 
     updatedAt: DataTypes.INTEGER,
     createdAt: DataTypes.INTEGER,

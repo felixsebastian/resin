@@ -10,6 +10,38 @@ module.exports = {
       module.exports.applyRangedFilter( where, filters.timestamp, "timestamp" );
     }
 
+    if (filters.make) {
+      where['$vehicles.make$'] = {
+        [Op.in]: filters.make
+      };
+    }
+
+    if (filters.model) {
+      where['$vehicles.model$'] = {
+        [Op.in]: filters.model
+      };
+    }
+
+    if (filters.oem) {
+      where['$vehicles.oem$'] = {
+        [Op.in]: filters.oem
+      };
+    }
+
+    if (filters.streetType) {
+      where.streetType = {
+        [Op.in]: filters.streetType
+      };
+    }
+
+    if (filters.speedLimit) {
+      module.exports.applyRangedFilter( where, filters.speedLimit, "speedLimit" );
+    }
+
+    if (filters.schoolZone) {
+      where.schoolZone = filters.schoolZone;
+    }
+
     if (filters.damageSeverity) {
       where.damageSeverity = {
         [Op.in]: filters.damageSeverity

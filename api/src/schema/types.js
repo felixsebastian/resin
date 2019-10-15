@@ -92,7 +92,7 @@ export default `
     dca: Int
     mode: VehicleMode
 
-    streetType: StreetType
+    streetType: String
     speedLimit: Int
     schoolZone: Boolean
   }
@@ -145,16 +145,22 @@ export default `
 
   input FilterInput {
     timestamp: RangedFilterInput,
-    numVehicles: RangedFilterInput,
-    damageSeverity: [String],
-    hourOfDay: RangedFilterInput,
-    dca: [Int],
+    numVehicles: RangedFilterInput
+    damageSeverity: [String]
+    hourOfDay: RangedFilterInput
+    make: [String]
+    model: [String]
+    oem: [String]
+    streetType: [String]
+    speedLimit: RangedFilterInput
+    schoolZone: Boolean
+    dca: [Int]
     mode: String
   },
 
   input RangedFilterInput {
-    exact: Int,
-    lower: Int,
+    exact: Int
+    lower: Int
     upper: Int
   },
 
