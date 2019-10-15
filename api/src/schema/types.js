@@ -83,6 +83,7 @@ export default `
     vin: String
     make: Make
     model: String
+    oem: String
     yearOfManufacture: Int
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel
@@ -140,6 +141,7 @@ export default `
     vin: String
     make: Make
     model: String
+    oem: String
     yearOfManufacture: Int
     countryOfManufacture: Country
     autonomyLevel: AutonomyLevel

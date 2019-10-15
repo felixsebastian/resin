@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     vin: DataTypes.STRING,
     make:  DataTypes.STRING ,
     model:  DataTypes.STRING ,
+    oem: DataTypes.STRING,
     yearOfManufacture: DataTypes.INTEGER,
     countryOfManufacture: DataTypes.STRING,
     autonomyLevel: DataTypes.STRING,

@@ -46,6 +46,7 @@ export default {
       vin: args.vehicle.vin,
       make: args.vehicle.make,
       model: args.vehicle.model,
+      oem: args.vehicle.oem,
       yearOfManufacture: args.vehicle.yearOfManufacture,
       countryOfManufacture: args.vehicle.countryOfManufacture,
       autonomyLevel: args.vehicle.autonomyLevel,

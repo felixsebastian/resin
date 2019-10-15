@@ -23,6 +23,9 @@ module.exports = {
       model: {
         type: Sequelize.STRING
       },
+      oem: {
+        type: Sequelize.STRING
+      },
       yearOfManufacture: {
           type: Sequelize.INTEGER
       },
