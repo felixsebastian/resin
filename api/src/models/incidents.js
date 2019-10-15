@@ -7,10 +7,14 @@ module.exports = (sequelize, DataTypes) => {
     numVehicles: DataTypes.INTEGER,
     damageSeverity: DataTypes.STRING,
     description: DataTypes.STRING,
-    // Posibly remove these and insert as foreign keys
     dca: DataTypes.INTEGER,
-    weatherDesc: DataTypes.STRING,
     mode: DataTypes.INTEGER,
+
+    // Probably don't keep here
+    streetType: DataTypes.STRING,
+    speedLimit: DataTypes.INTEGER,
+    schoolZones: DataTypes.BOOLEAN,
+
     updatedAt: DataTypes.INTEGER,
     createdAt: DataTypes.INTEGER,
     id: {

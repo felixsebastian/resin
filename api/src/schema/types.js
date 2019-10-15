@@ -90,8 +90,47 @@ export default `
     description: String
     vehicles: [Vehicle]
     dca: Int
-    weatherDesc: String
     mode: VehicleMode
+
+    streetType: StreetType
+    speedLimit: Int
+    schoolZone: Boolean
+  }
+
+  enum StreetType {
+    ST
+    ALY
+    AVE
+    CT
+    WAY
+    TER
+    BLVD
+    RAMP
+    PL
+    LN
+    LOOP
+    DR
+    RD
+    CIR
+    WALK
+    PARK
+    ROW
+    PATH
+    TERR
+    HWY
+    EXPY
+    HL
+    PLZ
+    STPS
+    STWY
+    LANE
+    TUNL
+  }
+
+  type Street {
+    schoolZone: Boolean
+    type: StreetType
+    speedLimit: Int
   }
 
   type Point {
@@ -105,15 +144,15 @@ export default `
   },
 
   input FilterInput {
-    timestamp: rangedFilterInput,
-    numVehicles: rangedFilterInput,
+    timestamp: RangedFilterInput,
+    numVehicles: RangedFilterInput,
     damageSeverity: [String],
-    hourOfDay: rangedFilterInput,
+    hourOfDay: RangedFilterInput,
     dca: [Int],
     mode: String
   },
 
-  input rangedFilterInput {
+  input RangedFilterInput {
     exact: Int,
     lower: Int,
     upper: Int
