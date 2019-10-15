@@ -24,17 +24,6 @@ export default `
     MALAYSIA
   }
 
-  enum Make {
-    WAYMO
-    APPLE
-    TESLA
-    MITSUBISHI
-    HONDA
-    TOYOTA
-    FORD
-    GM
-  }
-
   enum AutonomyLevel {
     NONE
     DRIVER_ASSISTANCE
@@ -81,7 +70,7 @@ export default `
     type: AutomobileType
     registration: String
     vin: String
-    make: Make
+    make: String
     model: String
     oem: String
     yearOfManufacture: Int
@@ -139,7 +128,7 @@ export default `
     type: AutomobileType
     registration: String
     vin: String
-    make: Make
+    make: String
     model: String
     oem: String
     yearOfManufacture: Int
