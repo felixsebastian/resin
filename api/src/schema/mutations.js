@@ -7,6 +7,9 @@ export default `
     createVehicle(vehicle: VehicleInput!): [Vehicle!]
     deleteAllVehicles: [Incident!]
 
+    createVehicleSensorAssociation(ass: VehicleSensorInput!): [Vehicle!]
+    createIncidentVehicleAssociation(ass: IncidentVehicleInput!): [Incident!]
+
     createSensor(sensor: SensorInput!): [Sensor!]
     deleteAllSensors: [Sensor!] 
   }

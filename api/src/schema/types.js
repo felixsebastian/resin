@@ -132,6 +132,16 @@ export default `
   input SensorInput {
     type: String
     description: String
+  },
+
+  input VehicleSensorInput {
+    vehicleId: Int
+    sensorType: String
+  }
+
+  input IncidentVehicleInput {
+    incidentId: Int
+    vehicleId: Int
   }
 
   input VehicleInput {
@@ -152,8 +162,6 @@ export default `
       numVehicles: Int
       damageSeverity: String
       description: String
-      vehicle1: Int
-      vehicle2: Int
       dca: Int
       weatherDesc: String
       mode: VehicleMode
