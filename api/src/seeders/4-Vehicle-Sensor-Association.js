@@ -4,13 +4,13 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert("VehiclesSensors", [
         {
-            vehicleId: "1",
+            vehicleId: 1,
             sensorType: "LIDAR",
             createdAt: new Date(),
             updatedAt: new Date()
         },
         {
-            vehicleId: "1",
+            vehicleId: 1,
             sensorType: "RADAR",
             createdAt: new Date(),
             updatedAt: new Date()
