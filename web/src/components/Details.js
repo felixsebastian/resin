@@ -23,8 +23,7 @@ const fields = {
   numVehicles: { canFilterBy: true, label: "Vehicle count" },
   damageSeverity: { canFilterBy: true, label: "Damage" },
   description: { canFilterBy: true, label: "Notes" },
-  dca: { canFilterBy: true, label: "DCA" },
-  weatherDesc: { canFilterBy: true, label: "Weather" }
+  dca: { canFilterBy: true, label: "DCA" }
 };
 
 const INCIDENTS = gql`
@@ -38,7 +37,6 @@ const INCIDENTS = gql`
       damageSeverity
       description
       dca
-      weatherDesc
     }
   }
 `;

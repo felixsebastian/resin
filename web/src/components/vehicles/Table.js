@@ -11,8 +11,8 @@ const VEHICLES = gql`
       vin
       make
       model
+      oem
       yearOfManufacture
-      countryOfManufacture
       autonomyLevel
       sensors {
         type
@@ -34,8 +34,9 @@ export default () => {
       vehicle.vin,
       vehicle.make,
       vehicle.model,
+      vehicle.oem,
       vehicle.yearOfManufacture,
-      vehicle.countryOfManufacture,
+      //vehicle.countryOfManufacture,
       vehicle.autonomyLevel,
       vehicle.sensors ? vehicle.sensors.join(", ") : "",
       <>delete</>
@@ -51,8 +52,9 @@ export default () => {
         "VIN #",
         "Make",
         "Model",
+        "OEM",
         "Year",
-        "Country",
+        //"Country",
         "Autonomy Level",
         "Sensors",
         "Actions"

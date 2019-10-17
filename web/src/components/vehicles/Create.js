@@ -22,6 +22,7 @@ const CREATE_VEHICLE = gql`
 
 const types = ["CAR", "MOTORBIKE", "BUS", "TRUCK"];
 
+/*
 const makes = [
   "WAYMO",
   "APPLE",
@@ -32,6 +33,7 @@ const makes = [
   "FORD",
   "GM"
 ];
+*/
 
 const autonomyLevels = [
   "NONE",
@@ -71,8 +73,9 @@ export default () => {
     type: types[0],
     registration: "",
     vin: "",
-    make: makes[0],
+    make: "",
     model: "",
+    oem: "",
     yearOfManufacture: moment().year(),
     countryOfManufacture: countries[0],
     autonomyLevel: autonomyLevels[0],
@@ -111,21 +114,25 @@ export default () => {
           onChange={e => setState({ ...state, vin: e.target.value })}
         />
         <br />
-        <Select
+        <TextInput
           labelText="Make"
+          required
           value={state.make}
           onChange={e => setState({ ...state, make: e.target.value })}
-        >
-          {makes.map(make => (
-            <SelectItem value={make} text={make} />
-          ))}
-        </Select>
+        />
         <br />
         <TextInput
           labelText="Model"
           required
           value={state.model}
           onChange={e => setState({ ...state, model: e.target.value })}
+        />
+        <br />
+        <TextInput
+          labelText="OEM"
+          required
+          value={state.oem}
+          onChange={e => setState({ ...state, oem: e.target.value })}
         />
         <br />
         <NumberInput

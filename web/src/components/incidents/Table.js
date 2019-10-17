@@ -14,7 +14,7 @@ const INCIDENTS = gql`
       damageSeverity
       description
       dca
-      weatherDesc
+      mode
     }
   }
 `;
@@ -41,7 +41,7 @@ export default () => {
       incident.damageSeverity,
       incident.description,
       incident.dca,
-      incident.weatherDesc,
+      incident.mode,
       <>delete</>
     ]);
   });
@@ -56,7 +56,7 @@ export default () => {
         "Damage",
         "Notes",
         "DCA",
-        "Weather",
+        "Mode",
         "Actions"
       ]}
       rows={tableRows}
