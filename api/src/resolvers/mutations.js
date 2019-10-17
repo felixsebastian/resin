@@ -18,15 +18,28 @@ export default {
       numVehicles: args.event.numVehicles,
       damageSeverity: args.event.damageSeverity,
       description: args.event.description,
-      vehicle1: args.event.vehicle1,
-      vehicle2: args.event.vehicle2,
       dca : args.event.dca,
       weatherDesc: args.event.weatherDesc,
       mode: args.event.mode,
       createdAt: new Date(),
       updatedAt: new Date()
     }).then(newCat => {
-      return db.Incidents.findAll();
+      return db.Incidents.findAll({
+        limit: 1,
+        include: [
+          {
+            model: db.Vehicles,
+            as: 'vehicles',
+            include: [
+              {
+                model: db.Sensors,
+                as: 'sensors',
+              }
+            ]
+          },
+        ],
+        order:[['createdAt', 'DESC']]
+      });
     });
   },
 
@@ -50,9 +63,62 @@ export default {
       yearOfManufacture: args.vehicle.yearOfManufacture,
       countryOfManufacture: args.vehicle.countryOfManufacture,
       autonomyLevel: args.vehicle.autonomyLevel,
-      sensors : args.vehicle.sensors,
     }).then(newCat => {
-      return db.Vehicles.findAll();
+      return db.Vehicles.findAll({
+        limit: 1,
+        include: [
+          {
+            model: db.Sensors,
+            as: 'sensors'
+          },
+          {
+            model: db.Incidents,
+            as: 'incidents'
+          }
+        ],
+        order:[['createdAt', 'DESC']]
+        });
+    });
+  },
+
+  createVehicleSensorAssociation: (parent, args, { db }, info) =>{
+    return db.VehiclesSensors.create({
+      vehicleId: args.ass.vehicleId,
+      sensorType: args.ass.sensorType
+    }).then(newCat => {
+      return db.Vehicles.findAll({
+        include: [
+          {
+            model: db.Sensors,
+            as: 'sensors'
+          },
+          {
+            model: db.Incidents,
+            as: 'incidents'
+          }
+        ]
+        });
+    });
+  },
+  createIncidentVehicleAssociation: (parent, args, { db }, info) =>{
+    return db.IncidentsVehicles.create({
+      vehicleId: args.ass.vehicleId,
+      incidentId: args.ass.incidentId
+    }).then(newCat => {
+      return db.Incidents.findAll({
+        include: [
+          {
+            model: db.Vehicles,
+            as: 'vehicles',
+            include: [
+              {
+                model: db.Sensors,
+                as: 'sensors',
+              }
+            ]
+          },
+        ]
+        });
     });
   },
 
@@ -70,7 +136,10 @@ export default {
       type: args.sensor.type,
       description: args.sensor.description,
     }).then(newCat => {
-      return db.Sensors.findAll();
+      return db.Sensors.findAll({
+        limit:1,
+        order:[['createdAt', 'DESC']]
+      });
     });
   },
   deleteAllSensors: (parent, args, { db }, info) => {

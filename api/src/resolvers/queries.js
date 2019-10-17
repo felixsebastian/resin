@@ -8,8 +8,14 @@ export default {
       include: [
         {
           model: db.Vehicles,
-          as: 'vehicles'
-        }
+          as: 'vehicles',
+          include: [
+            {
+              model: db.Sensors,
+              as: 'sensors',
+            }
+          ]
+        },
       ]
     }).then(incident => {
       console.log(incident);
