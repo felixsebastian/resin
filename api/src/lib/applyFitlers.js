@@ -84,17 +84,19 @@ module.exports = {
   },
 
   applyPostFilters: ( incidents, filters ) => {
-    if (filters.hourOfDay) {
-
-      if (filters.hourOfDay.exact) {
-        incidents = incidents.filter( (i) => new Date(i.timestamp * 1000).getHours() === filters.hourOfDay.exact);
-      }
+    if (filters) {
+      if (filters.hourOfDay) {
   
-      else {
-        incidents = incidents.filter( (i) => {
-          const d = new Date(i.timestamp * 1000).getHours();
-          return d < filters.hourOfDay.upper && d >= filters.hourOfDay.lower;
-        });
+        if (filters.hourOfDay.exact) {
+          incidents = incidents.filter( (i) => new Date(i.timestamp * 1000).getHours() === filters.hourOfDay.exact);
+        }
+    
+        else {
+          incidents = incidents.filter( (i) => {
+            const d = new Date(i.timestamp * 1000).getHours();
+            return d < filters.hourOfDay.upper && d >= filters.hourOfDay.lower;
+          });
+        }
       }
     }
 
