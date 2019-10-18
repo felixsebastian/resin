@@ -77,9 +77,9 @@ export default () => {
     model: "",
     oem: "",
     yearOfManufacture: moment().year(),
-    countryOfManufacture: countries[0],
-    autonomyLevel: autonomyLevels[0],
-    sensors: ""
+    //countryOfManufacture: countries[0],
+    autonomyLevel: autonomyLevels[0]
+    //sensors: ""
   });
 
   return (
@@ -166,13 +166,15 @@ export default () => {
           ))}
         </Select>
         <br />
+        {/*
         <TextInput
           labelText="Sensors"
-          required
+          //required
           value={state.sensors}
           onChange={e => setState({ ...state, sensors: e.target.value })}
         />
         <br />
+        */}
         <br />
         <Button type="submit">Create vehicle</Button>
       </Form>
