@@ -147,6 +147,12 @@ module.exports = {
           "createdAt": new Date(),
           "updatedAt": new Date()
         },
+        {
+          "vehicleId": 10,
+          "incidentId": 26,
+          "createdAt": new Date(),
+          "updatedAt": new Date()
+        },
     ]);
 },
 

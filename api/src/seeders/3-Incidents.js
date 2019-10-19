@@ -329,6 +329,19 @@ module.exports = {
         "createdAt": new Date(),
         "updatedAt": new Date()
       },
+      { // 26
+        "damageSeverity": "MINOR",
+        "dca": 130,
+        "description": "The AV (subject vehicle) Driver was on Highway 101 S between NASA Ames Research Center and Exit 237 to Sunnyvale, at approximately 3:00pm on Tuesday May 10, 2016. The AV functions of the subject vehicle were not engaged at the time (conventional mode). The subject vehicle had one passenger in the back seat. There was heavy traffic traveling at 20-40mph. The car traveling directly ahead of the subject vehicle stopped suddenly. The subject vehicle impacted the stopped vehicle at low speed. Both drivers pulled over to the shoulder of the road. No injuries were reported by either vehicle occupant in this minor crash. No airbags deployed in the crash. Except for minor scuff marks on the leading vehicle's rear bumper, no other body damage was observed. After exchange of information, both vehicles were driven away from the scene. The police were not called. No other vehicles were involved.",
+        "latitude": "37.779922",
+        "longitude": "-122.428925",
+        "mode": "CONVENTIONAL",
+        "numVehicles": 3,
+        "timestamp": 1487234280,
+        "weatherDesc": "CLEAR",
+        "createdAt": new Date(),
+        "updatedAt": new Date()
+      },
       ],
       {}
     );

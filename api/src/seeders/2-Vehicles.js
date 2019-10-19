@@ -122,6 +122,19 @@ module.exports = {
                     "createdAt": new Date(),
                     "updatedAt": new Date()
                 },
+                { // 9
+                    "type": "CAR",
+                    "registration": "",
+                    "vin": "",
+                    "make": "NISSAN",
+                    "model": "LEAF",
+                    "oem": "NISSAN NORTH AMERICA INC",
+                    "yearOfManufacture": 2010,
+                    "countryOfManufacture": "",
+                    "autonomyLevel": "PARTIAL_ASSISTANCE",
+                    "createdAt": new Date(),
+                    "updatedAt": new Date()
+                },
 
             ],
             {}
