@@ -4,8 +4,7 @@ import {
   StructuredListHead,
   StructuredListBody,
   StructuredListRow,
-  StructuredListCell,
-  Toggle
+  StructuredListCell
 } from "carbon-components-react";
 import styled from "styled-components";
 import Viewport from "./Viewport";
@@ -15,6 +14,8 @@ import { gql } from "apollo-boost";
 import Button from "./Button";
 import Hint from "./Hint";
 import Centered from "./layouts/Centered";
+import Padding from "./Padding";
+import sources from "../lib/incidentSources";
 
 const fields = {
   timestamp: { canFilterBy: false, label: "Time" },
@@ -37,6 +38,20 @@ const INCIDENTS = gql`
       damageSeverity
       description
       dca
+      weatherDesc
+      vehicle1 {
+        vin
+        type
+        registration
+        make
+        model
+        yearOfManufacture
+        countryOfManufacture
+        autonomyLevel
+        sensors {
+          type
+        }
+      }
     }
   }
 `;
@@ -54,46 +69,68 @@ export default connect(state => ({
   if (loading) return <p>loading...</p>;
   if (error) return <p>error!</p>;
 
+  const dataSelected = data.incidents.filter(incident =>
+    selection.includes(incident.id)
+  );
+
   return (
     <Box>
       {selection.length > 0 ? (
-        <StructuredListWrapper>
-          <StructuredListHead>
-            <StructuredListCell head style={{ width: "30%" }}>
-              Key
-            </StructuredListCell>
-            <StructuredListCell head>Value</StructuredListCell>
-            <StructuredListCell head style={{ width: "25%" }}>
-              Filter
-            </StructuredListCell>
-          </StructuredListHead>
-          <StructuredListBody>
-            {Object.keys(fields).map(id => (
-              <StructuredListRow key={id}>
-                <StructuredListCell>{fields[id].label}:</StructuredListCell>
-                <StructuredListCell>
-                  <b>
-                    {data.incidents
-                      .filter(incident => selection.includes(incident.id))
-                      .map(incident => incident[id])
-                      .join(", ")}
-                  </b>
-                </StructuredListCell>
-                <StructuredListCell>
-                  {isSelectionPresent && false && <Button>p</Button>}{" "}
-                  {fields[id].canFilterBy && (
-                    <Toggle
-                      labelA={null}
-                      labelB={null}
-                      checked={filteringFields.includes(id)}
-                      onChange={() => actions.toggleFilterFieldClicked(id)}
-                    />
-                  )}
-                </StructuredListCell>
-              </StructuredListRow>
-            ))}
-          </StructuredListBody>
-        </StructuredListWrapper>
+        Object.keys(sources).map(sourceId => {
+          const source = sources[sourceId];
+          const fields = source.fields;
+
+          return (
+            <>
+              <Padding>
+                <h4>{source.heading}</h4>
+              </Padding>
+              <StructuredListWrapper style={{ margin: 0 }}>
+                <StructuredListBody>
+                  <StructuredListHead>
+                    <StructuredListCell head style={{ width: "30%" }}>
+                      Key
+                    </StructuredListCell>
+                    <StructuredListCell head>Value</StructuredListCell>
+                    <StructuredListCell head style={{ width: "25%" }}>
+                      Actions
+                    </StructuredListCell>
+                  </StructuredListHead>
+                  {Object.keys(fields).map(fieldId => {
+                    const field = fields[fieldId];
+
+                    let fieldData =
+                      sourceId === "incident"
+                        ? dataSelected
+                        : dataSelected
+                            .filter(incident => incident.vehicles[0])
+                            .map(incident => incident.vehicles[0]);
+
+                    return (
+                      <StructuredListRow key={fieldId}>
+                        <StructuredListCell>{field.label}:</StructuredListCell>
+                        <StructuredListCell>
+                          <b>
+                            {fieldData
+                              .map(record =>
+                                field.view
+                                  ? field.view(record[fieldId])
+                                  : record[fieldId]
+                              )
+                              .join(", ")}
+                          </b>
+                        </StructuredListCell>
+                        <StructuredListCell>
+                          {isSelectionPresent && false && <Button>p</Button>}{" "}
+                        </StructuredListCell>
+                      </StructuredListRow>
+                    );
+                  })}
+                </StructuredListBody>
+              </StructuredListWrapper>
+            </>
+          );
+        })
       ) : (
         <Centered offset={10}>
           <Hint>Select an incident to view details about it</Hint>

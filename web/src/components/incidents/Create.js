@@ -21,19 +21,7 @@ const modes = ["CONVENTIONAL", "AUTONOMOUS"];
 const CREATE_INCIDENT = gql`
   mutation CreateIncident($incident: IncidentInput!) {
     createIncident(event: $incident) {
-      timestamp
-      latitude
-      longitude
-      numVehicles
-      damageSeverity
       description
-      vehicle1
-      vehicle2
-      dca
-      mode
-      streetType
-      speedLimit
-      schoolZone
     }
   }
 `;
@@ -75,20 +63,21 @@ const parseTimestamp = (date, time) => {
 export default () => {
   const [createIncident] = useMutation(CREATE_INCIDENT);
 
+  //Incident input does not contain the input for street type, speed limit and school zone
   const [state, setState] = useState({
     date: "",
     time: "",
-    latitude: 0,
-    longitude: 0,
+    latitude: 0.0,
+    longitude: 0.0,
     numVehicles: 1,
     damageSeverity: "",
     description: "",
-    vehicle1: null,
-    vehicle2: null,
+    //vehicle1: null,
+    //vehicle2: null,
     dca: 0,
-    mode: modes[0],
-    streetType: streetTypes[0],
-    speedLimit: 0
+    mode: modes[0]
+    //streetType: streetTypes[0],
+    //speedLimit: 0,
     //schoolZone: false
   });
 
@@ -99,23 +88,24 @@ export default () => {
     <Padding>
       <Form
         onSubmit={e => {
-          console.log(parseTimestamp(state.date, state.time));
+          //console.log(parseTimestamp(state.date, state.time));
+          console.log(state);
           e.preventDefault();
           createIncident({
             variables: {
-              vehicle: {
+              incident: {
                 timestamp: parseTimestamp(state.date, state.time),
                 latitude: state.latitude,
                 longitude: state.longitude,
                 numVehicles: state.numVehicles,
                 damageSeverity: state.damageSeverity,
                 description: state.description,
-                vehicle1: state.vehicle1,
-                vehicle2: state.vehicle2,
+                //vehicle1: state.vehicle1,
+                //vehicle2: state.vehicle2,
                 dca: state.dca,
-                mode: state.mode,
-                streetType: state.streetType,
-                speedLimit: state.speedLimit
+                mode: state.mode
+                //streetType: state.streetType,
+                //speedLimit: state.speedLimit,
                 //schoolZone: state.schoolZone
               }
             }
@@ -140,6 +130,7 @@ export default () => {
             labelText="Date"
             placeholder="dd/mm/yyyy"
             value={state.date}
+            required
             //pattern="( (([012][0-9])|(3[012]))/((0[0-9])|(1[012]))/([1-9][0-9][0-9][0-9]) )"
             /*
             onChange={e => {
@@ -206,14 +197,15 @@ export default () => {
           onChange={setField("dca")}
         />
         <br />
-        <TextInput labelText="Weather" required />
-        <br />
+        {/*<TextInput labelText="Weather" required />
+        <br />*/}
         <Select labelText="Mode" value={state.mode} onChange={setField("mode")}>
           {modes.map(mode => (
             <SelectItem value={mode} text={mode} />
           ))}
         </Select>
         <br />
+        {/*
         <Select
           labelText="Street Type"
           value={state.streetType}
@@ -231,7 +223,6 @@ export default () => {
           onChange={setField("speedLimit")}
         />
         <br />
-        {/*
         <Select
           labelText="School Zone"
           value={state.schoolZone}
@@ -240,8 +231,8 @@ export default () => {
           <SelectItem value={true} text={"Yes"} />
           <SelectItem value={false} text={"No"} />
         </Select>
-        <br />
         */}
+        <br />
         <Button type="submit">Create incident</Button>
       </Form>
     </Padding>
