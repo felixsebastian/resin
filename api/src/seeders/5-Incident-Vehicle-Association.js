@@ -111,6 +111,42 @@ module.exports = {
           "createdAt": new Date(),
           "updatedAt": new Date()
         },
+        {
+          "vehicleId": 7,
+          "incidentId": 20,
+          "createdAt": new Date(),
+          "updatedAt": new Date()
+        },
+        {
+          "vehicleId": 7,
+          "incidentId": 21,
+          "createdAt": new Date(),
+          "updatedAt": new Date()
+        },
+        {
+          "vehicleId": 5,
+          "incidentId": 22,
+          "createdAt": new Date(),
+          "updatedAt": new Date()
+        },
+        {
+          "vehicleId": 7,
+          "incidentId": 23,
+          "createdAt": new Date(),
+          "updatedAt": new Date()
+        },
+        {
+          "vehicleId": 5,
+          "incidentId": 24,
+          "createdAt": new Date(),
+          "updatedAt": new Date()
+        },
+        {
+          "vehicleId": 9,
+          "incidentId": 25,
+          "createdAt": new Date(),
+          "updatedAt": new Date()
+        },
     ]);
 },
 
