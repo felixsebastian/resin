@@ -21,8 +21,23 @@ export default {
       payload: ["timeRange"]
     },
     {
-      type: "TOGGLE_FILTER_FIELD_CLICKED",
-      payload: ["field"]
+      type: "ADD_FILTER",
+      payload: ["id"]
+    },
+    {
+      type: "REMOVE_FILTER",
+      payload: ["id"]
+    },
+    {
+      type: "CLEAR_FILTER_FIELDS"
+    },
+    {
+      type: "CHANGE_FILTER_VALUE",
+      payload: ["id", "value"]
+    },
+    {
+      type: "CHANGE_FILTER_TYPE",
+      payload: ["field", "type"]
     },
     { type: "SELECT_SENSOR", payload: ["id"] },
     { type: "LOG_OUT" }

@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import Table from "../Table";
-import moment from "moment";
+import time from "../../lib/views/time";
 
 const INCIDENTS = gql`
   {
@@ -28,10 +28,7 @@ export default () => {
 
   data.incidents.forEach(incident => {
     tableRows.push([
-      moment
-        .unix(incident.timestamp)
-        .format("MMMM Do YYYY, h:mm:ss a")
-        .toString(),
+      time(incident.timestamp),
       <>
         lat: {incident.latitude}
         <br />

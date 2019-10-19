@@ -1,7 +1,7 @@
 import React from "react";
 import Details from "./Details";
 import styled from "styled-components";
-import Histogram from "./Histogram";
+import Map from "./Map";
 import Filters from "./filters";
 
 const BoxA = styled.div`
@@ -23,6 +23,13 @@ const BoxD = styled.div`
   flex-grow: 1;
 `;
 
+const BoxE = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  height: 20rem;
+`;
+
 const BoxF = styled.div`
   width: 30rem;
   height: 100%;
@@ -39,7 +46,7 @@ export default () => (
         <Filters />
       </BoxC>
       <BoxD>
-        <Histogram />
+        <Map />
       </BoxD>
     </BoxB>
     <BoxF>

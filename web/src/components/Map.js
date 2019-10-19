@@ -37,8 +37,15 @@ const Box = styled(Viewport)`
 
 const heatMapOptions = {
   radius: 40,
-  opacity: 0.3,
-  gradient: ["transparent", "red"]
+  opacity: 0.2,
+  gradient: [
+    "transparent",
+    "#0000FF",
+    "#00FFFF",
+    "#00FF00",
+    "#FFFF00",
+    "#FF0000"
+  ]
 };
 
 const Map = compose(
