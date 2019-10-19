@@ -15,7 +15,7 @@ const BoxA = styled.span`
 export default connect(state => ({
   filters: state.filters
 }))(({ filters, actions }) =>
-  filters.map(filter => {
+  filters.map((filter, index) => {
     const { field } = filter;
 
     const Input =
@@ -28,7 +28,7 @@ export default connect(state => ({
       <BoxA key={field}>
         <Input
           onChange={value => actions.changeFilterValue(field, value)}
-          field={field}
+          index={index}
         />{" "}
         <PaddingRight>
           <Flyout

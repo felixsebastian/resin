@@ -2,27 +2,18 @@ import React from "react";
 import sources from "../../../lib/incidentSources";
 import { useSelector } from "react-redux";
 import filterTypes from "../../../lib/filterTypes";
-import { createSelector } from "reselect";
-
-const selectFilters = createSelector(state => state.filters);
 
 export default props => {
-  const filters = useSelector(selectFilters);
-  const type = filters.find(filter => filter.field === props.field).type;
-
-  console.log(type);
-  console.log(props.field.type);
-  console.log(sources.incident.fields[props.field.type]);
-  console.log(filterTypes[sources.incident.fields[props.field.type]]);
-  console.log(filterTypes[sources.incident.fields[props.field.type]][type]);
+  const filter = useSelector(state => state.filters[props.index]);
 
   return (
     <input
       onChange={e => props.onChange(e.target.value)}
       placeholder={
-        sources.incident.fields[props.field].label +
+        sources.incident.fields[filter.field].label +
         " " +
-        filterTypes[sources.incident.fields[props.field.type]][type].text
+        filterTypes[sources.incident.fields[filter.field].type][filter.type]
+          .text
       }
     />
   );

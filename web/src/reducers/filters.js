@@ -11,6 +11,8 @@ export default (state = [], action) => {
   const { type, payload } = action;
   switch (type) {
     case types.ADD_FILTER:
+      if (state.find(filter => filter.field === payload.id)) return state;
+
       return [
         ...state,
         {

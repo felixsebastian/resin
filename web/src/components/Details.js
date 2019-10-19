@@ -39,7 +39,7 @@ const INCIDENTS = gql`
       description
       dca
       weatherDesc
-      vehicles {
+      vehicle1 {
         vin
         type
         registration
