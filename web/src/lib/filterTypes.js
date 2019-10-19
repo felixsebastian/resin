@@ -1,14 +1,13 @@
 import Radius from "../components/filters/inputs/Radius";
-import StringIs from "../components/filters/inputs/StringIs";
 
 export default {
   location: { RADIUS: { text: "is within radius", component: Radius } },
   time: {
     WITHIN: { text: "is within" },
-    TIME_OF_DAY_WITHIN: { text: "is within" }
+    TIME_OF_DAY_WITHIN: { text: "of day is within" }
   },
   string: {
-    IS: { text: "is", component: StringIs },
+    IS: { text: "is" },
     CONTAINS: { text: "contains" }
   },
   number: {
