@@ -5,7 +5,7 @@ import DataPanel from "./DataPanel";
 import { geo, time } from "../data/dummy";
 import Map from "./Map";
 import Timeline from "./timeline/Timeline";
-import Filters from "./Filters";
+import Filters from "./filters";
 
 const BoxA = styled.div`
   display: flex;
