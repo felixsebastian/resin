@@ -11,16 +11,36 @@ import { DrawingManager } from "react-google-maps/lib/components/drawing/Drawing
 import averageGeoPosition from "../lib/averageGeoPosition";
 import styles from "../lib/mapStyles";
 import useActions from "../hooks/useActions";
+import { useSelector } from "react-redux";
+import sources from "../lib/incidentSources";
 
 const GOOGLE_MAPS_API_KEY = "AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk";
 
 const INCIDENTS = gql`
-  {
-    incidents {
+  query incidents($filters: FiltersInput!) {
+    incidents(filters: $filters) {
       id
+      timestamp
       location {
         latitude
         longitude
+      }
+      numVehicles
+      damageSeverity
+      description
+      dca
+      vehicles {
+        vin
+        type
+        registration
+        make
+        model
+        yearOfManufacture
+        countryOfManufacture
+        autonomyLevel
+        sensors {
+          type
+        }
       }
     }
   }
@@ -44,7 +64,23 @@ const Map = compose(
   withGoogleMap
 )(() => {
   const { clearSelection } = useActions();
-  const { loading, error, data } = useQuery(INCIDENTS);
+  const filters = useSelector(state => state.filters);
+
+  const { loading, error, data } = useQuery(INCIDENTS, {
+    variables: {
+      filters: filters.reduce((result, filter) => {
+        if (
+          ["time", "location"].includes(
+            sources.incidents.fields[filter.field].type
+          )
+        )
+          result[filter.field] = { type: filter.type, value: filter.value };
+        else result[filter.field] = { [filter.type]: filter.value };
+        return result;
+      }, {})
+    }
+  });
+
   if (loading) return <p>loading...</p>;
   if (error) return <p>error!</p>;
   const markers = [];

@@ -1,15 +1,6 @@
-import filterTypes from "./filterTypes";
+import filter from "./filter";
 import incident from "./incident";
-import location from "./location";
 import sensor from "./sensor";
-import timeOfDay from "./timeOfDay";
 import vehicle from "./vehicle";
 
-export default "".concat(
-  filterTypes,
-  incident,
-  location,
-  sensor,
-  timeOfDay,
-  vehicle
-);
+export default "".concat(filter, incident, sensor, vehicle);

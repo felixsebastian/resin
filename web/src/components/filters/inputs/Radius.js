@@ -5,13 +5,12 @@ export default props => {
   const filter = useSelector(state => state.filters[props.index]);
 
   const value = filter.value || {
-    centerLatitude: "",
-    centerLongitude: "",
-    distance: ""
+    center: {
+      latitude: 0,
+      longitude: 0
+    },
+    distance: 0
   };
-
-  const onChange = e =>
-    props.onChange({ ...value, [e.target.dataset.field]: e.target.value });
 
   return (
     <>
@@ -19,24 +18,43 @@ export default props => {
         type="number"
         placeholder="center lat"
         size="5"
-        data-field="centerLatitude"
-        onChange={onChange}
-        value={value.centerLatitude}
+        onChange={e =>
+          props.onChange({
+            distance: value.distance,
+            center: {
+              longitude: value.center.longitude,
+              latitude: parseFloat(e.target.value, 10)
+            }
+          })
+        }
+        value={value.center.latitude}
       />
       <input
         type="number"
         placeholder="center lon"
         size="5"
         data-field="centerLongitude"
-        onChange={onChange}
-        value={value.centerLongitude}
+        onChange={e =>
+          props.onChange({
+            distance: value.distance,
+            center: {
+              latitude: value.center.latitude,
+              longitude: parseFloat(e.target.value, 10)
+            }
+          })
+        }
+        value={value.center.longitude}
       />
       <input
         type="number"
         placeholder="distance (kms)"
         size="5"
-        data-field="distance"
-        onChange={onChange}
+        onChange={e =>
+          props.onChange({
+            center: value.center,
+            distance: parseFloat(e.target.value, 10)
+          })
+        }
         value={value.distance}
       />
     </>

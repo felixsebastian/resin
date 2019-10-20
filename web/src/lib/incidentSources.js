@@ -14,7 +14,7 @@ export default {
       numVehicles: { label: "Vehicle count", type: "number" },
       damageSeverity: { label: "Damage", type: "string" },
       description: { label: "Notes", type: "string" },
-      dca: { label: "DCA", type: "string" },
+      dca: { label: "DCA", type: "number" },
       weatherDesc: { label: "Weather", type: "string" }
     }
   },

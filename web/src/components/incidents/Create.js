@@ -19,7 +19,7 @@ import moment from "moment";
 const modes = ["CONVENTIONAL", "AUTONOMOUS"];
 
 const CREATE_INCIDENT = gql`
-  mutation CreateIncident($incident: IncidentInput!) {
+  mutation CreateIncident($incident: Incident!) {
     createIncident(event: $incident) {
       description
     }
