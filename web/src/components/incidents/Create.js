@@ -67,8 +67,10 @@ export default () => {
   const [state, setState] = useState({
     date: "",
     time: "",
-    latitude: 0.0,
-    longitude: 0.0,
+    location: {
+      latitude: 0,
+      longitude: 0
+    },
     numVehicles: 1,
     damageSeverity: "",
     description: "",
@@ -88,15 +90,12 @@ export default () => {
     <Padding>
       <Form
         onSubmit={e => {
-          //console.log(parseTimestamp(state.date, state.time));
-          console.log(state);
           e.preventDefault();
           createIncident({
             variables: {
               incident: {
                 timestamp: parseTimestamp(state.date, state.time),
-                latitude: state.latitude,
-                longitude: state.longitude,
+                location: state.location,
                 numVehicles: state.numVehicles,
                 damageSeverity: state.damageSeverity,
                 description: state.description,

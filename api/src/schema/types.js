@@ -63,7 +63,7 @@ export default `
     type: String
     description: String
     vehicles: [Vehicle]
-  },
+  }
 
   type Vehicle {
     id: Int
@@ -78,20 +78,23 @@ export default `
     autonomyLevel: AutonomyLevel
     sensors: [Sensor]
     incidents: [Incident]
-  },
+  }
+
+  type Location {
+    latitude: Float
+    longitude: Float
+  }
 
   type Incident {
     id: Int
     timestamp: Int
-    latitude: Float
-    longitude: Float
+    location: Location
     numVehicles: Int
     damageSeverity: String
     description: String
     vehicles: [Vehicle]
     dca: Int
     mode: VehicleMode
-
     streetType: String
     speedLimit: Int
     schoolZone: Boolean

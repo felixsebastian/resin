@@ -16,10 +16,15 @@ export default {
           ]
         }
       ]
-    }).then(incident => {
-      console.log(incident);
-      return incident;
-    });
+    }).then(incidents =>
+      incidents.map(incident => ({
+        ...incident.dataValues,
+        location: {
+          latitude: incident.dataValues.latitude || 0,
+          longitude: incident.dataValues.longitude || 0
+        }
+      }))
+    );
   },
 
   vehicles: (parent, args, { db }, info) => {
