@@ -13,7 +13,7 @@ import { useMutation } from "@apollo/react-hooks";
 import Padding from "../Padding";
 
 const CREATE_VEHICLE = gql`
-  mutation CreateVehicle($vehicle: VehicleInput!) {
+  mutation CreateVehicle($vehicle: Vehicle!) {
     createVehicle(vehicle: $vehicle) {
       make
     }

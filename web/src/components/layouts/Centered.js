@@ -7,6 +7,7 @@ const BoxA = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  width: 100%;
 `;
 
 const BoxB = styled.div`

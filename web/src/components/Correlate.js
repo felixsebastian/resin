@@ -2,6 +2,7 @@ import React from "react";
 import Details from "./Details";
 import styled from "styled-components";
 import Histogram from "./Histogram";
+import Viewport from "./Viewport";
 import Filters from "./filters";
 
 const BoxA = styled.div`
@@ -17,20 +18,22 @@ const BoxB = styled.div`
   flex-grow: 1;
 `;
 
-const BoxD = styled.div`
+const BoxD = styled(Viewport)`
   display: flex;
   flex-direction: row;
   flex-grow: 1;
 `;
 
-const BoxF = styled.div`
+const BoxF = styled(Viewport)`
   width: 30rem;
   height: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-const BoxC = styled.div``;
+const BoxC = styled(Viewport)`
+  padding: 1rem;
+`;
 
 export default () => (
   <BoxA>

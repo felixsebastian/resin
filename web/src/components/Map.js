@@ -11,16 +11,36 @@ import { DrawingManager } from "react-google-maps/lib/components/drawing/Drawing
 import averageGeoPosition from "../lib/averageGeoPosition";
 import styles from "../lib/mapStyles";
 import useActions from "../hooks/useActions";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
 
 const GOOGLE_MAPS_API_KEY = "AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk";
 
 const INCIDENTS = gql`
-  {
-    incidents {
+  query incidents($filters: [FilterInput]) {
+    incidents(filters: $filters) {
       id
+      timestamp
       location {
         latitude
         longitude
+      }
+      numVehicles
+      damageSeverity
+      description
+      dca
+      vehicles {
+        vin
+        type
+        registration
+        make
+        model
+        yearOfManufacture
+        countryOfManufacture
+        autonomyLevel
+        sensors {
+          type
+        }
       }
     }
   }
@@ -39,14 +59,26 @@ const heatMap = {
   ]
 };
 
+const serializeFilters = src =>
+  src.map(filter => ({
+    ...filter,
+    value: btoa(JSON.stringify(filter.value))
+  }));
+
 const Map = compose(
   withScriptjs,
   withGoogleMap
 )(() => {
   const { clearSelection } = useActions();
-  const { loading, error, data } = useQuery(INCIDENTS);
-  if (loading) return <p>loading...</p>;
-  if (error) return <p>error!</p>;
+
+  const { loading, error, data } = useQuery(INCIDENTS, {
+    variables: {
+      filters: serializeFilters(useSelector(state => state.filters))
+    },
+    pollInterval: 2000
+  });
+
+  if (loading || error) return null;
   const markers = [];
 
   data.incidents.forEach(incident => {
@@ -65,7 +97,11 @@ const Map = compose(
     <GoogleMap
       onClick={clearSelection}
       defaultZoom={16}
-      center={{ lat: center.latitude, lng: center.longitude }}
+      center={
+        data.incidents.length > 0
+          ? { lat: center.latitude, lng: center.longitude }
+          : undefined
+      }
       options={{ styles }}
     >
       <MarkerClusterer
@@ -110,11 +146,54 @@ const Map = compose(
   );
 });
 
+const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+`;
+
+const Toolbar = styled.div`
+  padding: 0.2rem;
+  border-bottom: 1px solid #aaaaaa;
+  color: #fff;
+`;
+
+const Container = styled.div`
+  flex-grow: 1;
+  width: 100%;
+`;
+
+const MapBox = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+const HeatMapIcon = styled.button`
+  display: inline-block;
+  border: none;
+  width: 1rem;
+  height: 1rem;
+  /* border-radius: 50%; */
+  background-image: radial-gradient(
+    #ff0000,
+    #0000ff,
+    #00ffff,
+    #00ff00,
+    #ffff00
+  );
+`;
+
 export default () => (
-  <Map
-    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=geometry,drawing,visualization`}
-    loadingElement={<div />}
-    containerElement={<div style={{ height: "100%", width: "100%" }} />}
-    mapElement={<div style={{ height: "100%", width: "100%" }} />}
-  />
+  <Box>
+    {/* <Toolbar>
+      <HeatMapIcon />
+    </Toolbar> */}
+    <Map
+      googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=geometry,drawing,visualization`}
+      loadingElement={<div />}
+      containerElement={<Container />}
+      mapElement={<MapBox />}
+    />
+  </Box>
 );

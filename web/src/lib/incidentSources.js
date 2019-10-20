@@ -9,13 +9,13 @@ export default {
       location: {
         label: "Location",
         view: location,
-        type: "location"
+        type: "location",
+        hide: true
       },
       numVehicles: { label: "Vehicle count", type: "number" },
       damageSeverity: { label: "Damage", type: "string" },
       description: { label: "Notes", type: "string" },
-      dca: { label: "DCA", type: "string" },
-      weatherDesc: { label: "Weather", type: "string" }
+      dca: { label: "DCA", type: "number" }
     }
   },
   vehicle: {

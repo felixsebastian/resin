@@ -1,19 +1,26 @@
 import Radius from "../components/filters/inputs/Radius";
+import Rectangle from "../components/filters/inputs/Rectangle";
+import Number from "../components/filters/inputs/Number";
 
 export default {
-  location: { RADIUS: { text: "is within radius", component: Radius } },
+  location: {
+    radius: { text: "is within radius", component: Radius },
+    rectangle: { text: "is within rectangle", component: Rectangle }
+  },
   time: {
-    WITHIN: { text: "is within" },
-    TIME_OF_DAY_WITHIN: { text: "of day is within" }
+    range: { text: "is within" },
+    timeOfDay: { text: "of day is within" }
   },
   string: {
-    IS: { text: "is" },
-    CONTAINS: { text: "contains" }
+    eq: { text: "is" },
+    not: { text: "is not" },
+    contains: { text: "contains" }
   },
   number: {
-    IS: { text: "is" },
-    BETWEEN: { text: "is between" },
-    GREATER_THAN: { text: "is greater than" },
-    LESS_THAN: { text: "is less than" }
+    eq: { text: "is", component: Number },
+    not: { text: "is not", component: Number },
+    range: { text: "is between" },
+    gt: { text: "is greater than", component: Number },
+    lt: { text: "is less than", component: Number }
   }
 };

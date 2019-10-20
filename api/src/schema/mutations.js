@@ -1,16 +1,12 @@
-import types from "./types";
 export default `
   type Mutation {
-    createIncident(event: IncidentInput!): [Incident!]
-    deleteAllIncidents: [Incident!]
-    
-    createVehicle(vehicle: VehicleInput!): [Vehicle!]
-    deleteAllVehicles: [Incident!]
-
-    createVehicleSensorAssociation(ass: VehicleSensorInput!): [Vehicle!]
-    createIncidentVehicleAssociation(ass: IncidentVehicleInput!): [Incident!]
-
-    createSensor(sensor: SensorInput!): [Sensor!]
-    deleteAllSensors: [Sensor!] 
+    createIncident(incident: IncidentInput!): [Incident!]
   }
 `;
+
+// createIncident(event: Incident!): [Incident!]
+// deleteAllIncidents: [Incident!]
+// createVehicle(vehicle: Vehicle!): [Vehicle!]
+// deleteAllVehicles: [Incident!]
+// createSensor(sensor: Sensor!): [Sensor!]
+// deleteAllSensors: [Sensor!]

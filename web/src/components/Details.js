@@ -8,7 +8,6 @@ import {
 } from "carbon-components-react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import Button from "./Button";
 import Hint from "./Hint";
 import Centered from "./layouts/Centered";
 import Padding from "./Padding";
@@ -47,7 +46,6 @@ const INCIDENTS = gql`
 
 export default () => {
   const selection = useSelector(state => state.selection);
-  const isSelectionPresent = useSelector(state => !!state.selection.length);
   const { loading, error, data } = useQuery(INCIDENTS);
   if (loading) return <Padding>loading...</Padding>;
   if (error) return <Padding>error!</Padding>;
@@ -61,60 +59,60 @@ export default () => {
       <Hint>Select an incident to view details about it</Hint>
     </Centered>
   ) : (
-    Object.keys(sources).map(sourceId => {
-      const source = sources[sourceId];
-      const fields = source.fields;
+    Object.keys(sources)
+      .filter(sourceId => sourceId === "incident")
+      .map(sourceId => {
+        const source = sources[sourceId];
+        const fields = source.fields;
 
-      return (
-        <>
-          <Padding>
-            <h4>{source.heading}</h4>
-          </Padding>
-          <StructuredListWrapper style={{ margin: 0 }}>
-            <StructuredListBody>
+        return (
+          <>
+            <Padding>
+              <h4>{source.heading}</h4>
+            </Padding>
+            <StructuredListWrapper style={{ margin: 0 }}>
               <StructuredListHead>
-                <StructuredListCell head style={{ width: "30%" }}>
-                  Key
-                </StructuredListCell>
-                <StructuredListCell head>Value</StructuredListCell>
-                <StructuredListCell head style={{ width: "25%" }}>
-                  Actions
-                </StructuredListCell>
+                <StructuredListRow>
+                  <StructuredListCell head style={{ width: "30%" }}>
+                    Key
+                  </StructuredListCell>
+                  <StructuredListCell head>Value</StructuredListCell>
+                </StructuredListRow>
               </StructuredListHead>
-              {Object.keys(fields).map(fieldId => {
-                const field = fields[fieldId];
+              <StructuredListBody>
+                {Object.keys(fields)
+                  .filter(fieldId => !fields[fieldId].hide)
+                  .map(fieldId => {
+                    const field = fields[fieldId];
 
-                let fieldData =
-                  sourceId === "incident"
-                    ? dataSelected
-                    : dataSelected
-                        .filter(incident => incident.vehicles[0])
-                        .map(incident => incident.vehicles[0]);
+                    let fieldData =
+                      sourceId === "incident"
+                        ? dataSelected
+                        : dataSelected
+                            .filter(incident => incident.vehicles[0])
+                            .map(incident => incident.vehicles[0]);
 
-                return (
-                  <StructuredListRow key={fieldId}>
-                    <StructuredListCell>{field.label}:</StructuredListCell>
-                    <StructuredListCell>
-                      <b>
-                        {fieldData
-                          .map(record =>
-                            field.view
-                              ? field.view(record[fieldId])
-                              : record[fieldId]
-                          )
-                          .join(", ")}
-                      </b>
-                    </StructuredListCell>
-                    <StructuredListCell>
-                      {isSelectionPresent && false && <Button>p</Button>}{" "}
-                    </StructuredListCell>
-                  </StructuredListRow>
-                );
-              })}
-            </StructuredListBody>
-          </StructuredListWrapper>
-        </>
-      );
-    })
+                    return (
+                      <StructuredListRow key={fieldId}>
+                        <StructuredListCell>{field.label}:</StructuredListCell>
+                        <StructuredListCell>
+                          <b>
+                            {fieldData
+                              .map(record =>
+                                field.view
+                                  ? field.view(record[fieldId])
+                                  : record[fieldId]
+                              )
+                              .join(", ")}
+                          </b>
+                        </StructuredListCell>
+                      </StructuredListRow>
+                    );
+                  })}
+              </StructuredListBody>
+            </StructuredListWrapper>
+          </>
+        );
+      })
   );
 };

@@ -1,6 +1,4 @@
 import React from "react";
-import Viewport from "./Viewport";
-import styled from "styled-components";
 import Centered from "./layouts/Centered";
 import {
   BarChart,
@@ -57,22 +55,16 @@ const data = [
   }
 ];
 
-const Box = styled(Viewport)`
-  width: 100%;
-`;
-
 export default () => (
-  <Box>
-    <Centered offset={0}>
-      <BarChart width={600} height={600} data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
-      </BarChart>
-    </Centered>
-  </Box>
+  <Centered offset={0}>
+    <BarChart width={600} height={600} data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Bar dataKey="pv" fill="#8884d8" />
+      <Bar dataKey="uv" fill="#82ca9d" />
+    </BarChart>
+  </Centered>
 );
