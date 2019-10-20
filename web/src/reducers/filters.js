@@ -20,12 +20,12 @@ export default (state = [], action) => {
           type: Object.keys(
             filterTypes[sources.incident.fields[payload.id].type]
           )[0],
-          value: ""
+          value: null
         }
       ];
     case types.REMOVE_FILTER:
       return state.filter(filter => filter.field !== payload.id);
-    case types.CLEARS:
+    case types.CLEAR_FILTERS:
       return [];
     case types.CHANGE_FILTER_TYPE:
       return changeFilterByKey(state, payload.field, "type", payload.type);
