@@ -11,7 +11,6 @@ import {
 } from "react-timeseries-charts";
 
 const TimelineContinuous = ({ color, data }) => {
-  console.log(data);
   const style = styler([
     {
       key: "precip",
@@ -59,13 +58,12 @@ const TimelineContinuous = ({ color, data }) => {
   );
 };
 
-const TimelineBoolean = ({ color, data }) =>
-  null;
-  //  <ResponsiveContainer>
-  //    <LineChart width={300} data={[{a:5},{a:1},{a:3}]}>
-  //      <Line type="monotone" dataKey="a" stroke={color} strokeWidth={2} isAnimationActive={false} />
-  //    </LineChart>
-  //  </ResponsiveContainer>
+const TimelineBoolean = ({ color, data }) => null;
+//  <ResponsiveContainer>
+//    <LineChart width={300} data={[{a:5},{a:1},{a:3}]}>
+//      <Line type="monotone" dataKey="a" stroke={color} strokeWidth={2} isAnimationActive={false} />
+//    </LineChart>
+//  </ResponsiveContainer>
 
 export default ({ type, color, data }) => {
   switch (type) {

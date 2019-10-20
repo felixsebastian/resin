@@ -29,11 +29,11 @@ export default {
       payload: ["id"]
     },
     {
-      type: "CLEAR_FILTER_FIELDS"
+      type: "CLEAR_FILTERS"
     },
     {
       type: "CHANGE_FILTER_VALUE",
-      payload: ["id", "value"]
+      payload: ["field", "value"]
     },
     {
       type: "CHANGE_FILTER_TYPE",
