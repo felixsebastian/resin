@@ -1,5 +1,4 @@
 import React from "react";
-import connect from "../../lib/connect";
 import Button from "../Button";
 import sources from "../../lib/incidentSources";
 import types from "../../lib/filterTypes";
@@ -7,15 +6,18 @@ import DefaultInput from "./inputs/Default";
 import styled from "styled-components";
 import PaddingRight from "../PaddingRight";
 import Flyout from "../flyout";
+import { useSelector } from "react-redux";
+import useActions from "../../hooks/useActions";
 
 const BoxA = styled.span`
   padding: 0 1rem 0 0;
 `;
 
-export default connect(state => ({
-  filters: state.filters
-}))(({ filters, actions }) =>
-  filters.map((filter, index) => {
+export default () => {
+  const filters = useSelector(state => state.filters);
+  const { changeFilterValue, changeFilterType, removeFilter } = useActions();
+
+  return filters.map((filter, index) => {
     const { field } = filter;
 
     const Input =
@@ -27,12 +29,12 @@ export default connect(state => ({
     return (
       <BoxA key={field}>
         <Input
-          onChange={value => actions.changeFilterValue(field, value)}
+          onChange={value => changeFilterValue(field, value)}
           index={index}
         />{" "}
         <PaddingRight>
           <Flyout
-            optionSelected={id => actions.changeFilterType(field, id)}
+            optionSelected={id => changeFilterType(field, id)}
             options={Object.keys(usableFilterTypes).map(type => ({
               id: type,
               text: usableFilterTypes[type].text
@@ -41,8 +43,8 @@ export default connect(state => ({
             Type
           </Flyout>
         </PaddingRight>
-        <Button onClick={() => actions.removeFilter(field)}>Remove</Button>
+        <Button onClick={() => removeFilter(field)}>Remove</Button>
       </BoxA>
     );
-  })
-);
+  });
+};

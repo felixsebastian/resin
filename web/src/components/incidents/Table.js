@@ -3,13 +3,16 @@ import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import Table from "../Table";
 import time from "../../lib/views/time";
+import location from "../../lib/views/location";
 
 const INCIDENTS = gql`
   {
     incidents {
       timestamp
-      latitude
-      longitude
+      location {
+        latitude
+        longitude
+      }
       numVehicles
       damageSeverity
       description
@@ -29,11 +32,7 @@ export default () => {
   data.incidents.forEach(incident => {
     tableRows.push([
       time(incident.timestamp),
-      <>
-        lat: {incident.latitude}
-        <br />
-        lon: {incident.longitude}
-      </>,
+      location(incident.location),
       incident.numVehicles,
       incident.damageSeverity,
       incident.description,
