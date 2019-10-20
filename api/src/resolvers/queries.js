@@ -1,21 +1,20 @@
-import { applyFilters, applyPostFilters } from '../lib/applyFitlers';
-import { Op } from 'sequelize';
+import { applyFilters, applyPostFilters } from "../lib/applyFitlers";
+import { Op } from "sequelize";
 
 export default {
-  
   incidents: (parent, args, { db }, info) => {
     return db.Incidents.findAll({
       include: [
         {
           model: db.Vehicles,
-          as: 'vehicles',
+          as: "vehicles",
           include: [
             {
               model: db.Sensors,
-              as: 'sensors',
+              as: "sensors"
             }
           ]
-        },
+        }
       ]
     }).then(incident => {
       console.log(incident);
@@ -28,11 +27,11 @@ export default {
       include: [
         {
           model: db.Sensors,
-          as: 'sensors'
+          as: "sensors"
         },
         {
           model: db.Incidents,
-          as: 'incidents'
+          as: "incidents"
         }
       ]
     });
@@ -44,10 +43,10 @@ export default {
       include: [
         {
           model: db.Sensors,
-          as: 'sensors'
+          as: "sensors"
         }
       ],
-      where: where,
+      where: where
     });
   },
 
@@ -65,20 +64,19 @@ export default {
       }
     };
 
-    if (args.filters)
-      applyFilters(where, args.filters);
-  
-      let incidents =  db.Incidents.findAll({
-        include: [
-          {
-            model: db.Vehicles,
-            as: 'vehicles'
-          }
-        ],
-        where: where
-      })
+    if (args.filters) applyFilters(where, args.filters);
 
-    return applyPostFilters( incidents, args.filters );
+    let incidents = db.Incidents.findAll({
+      include: [
+        {
+          model: db.Vehicles,
+          as: "vehicles"
+        }
+      ],
+      where: where
+    });
+
+    return applyPostFilters(incidents, args.filters);
   },
 
   // Note: Latitude: 1 deg = 110.574 km, Longitude: 1 deg = 111.320*cos(latitude) km
@@ -95,20 +93,22 @@ export default {
       }
     };
 
-    if (args.filters)
-      applyFilters(where, args.filters);
-  
-    let incidents =  db.Incidents.findAll({
+    if (args.filters) applyFilters(where, args.filters);
+
+    let incidents = db.Incidents.findAll({
       include: [
         {
           model: db.Vehicles,
-          as: 'vehicles'
+          as: "vehicles"
         }
       ],
       where: where
-    })
-    .filter( i => (i.latitude - args.p.lat)**2 + (i.longitude - args.p.long )**2 <= radDeg**2 );
+    }).filter(
+      i =>
+        (i.latitude - args.p.lat) ** 2 + (i.longitude - args.p.long) ** 2 <=
+        radDeg ** 2
+    );
 
-    return applyPostFilters( incidents, args.filters );
+    return applyPostFilters(incidents, args.filters);
   }
 };
