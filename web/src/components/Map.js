@@ -4,38 +4,29 @@ import { withGoogleMap, GoogleMap, withScriptjs } from "react-google-maps";
 import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
 import HeatmapLayer from "react-google-maps/lib/components/visualization/HeatmapLayer";
 import { compose } from "recompose";
-import Viewport from "./Viewport";
-import styled from "styled-components";
 import Incident from "./IncidentMarker";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import { DrawingManager } from "react-google-maps/lib/components/drawing/DrawingManager";
 import averageGeoPosition from "../lib/averageGeoPosition";
-import pickKeys from "../lib/pickKeys";
-import connect from "../lib/connect";
 import styles from "../lib/mapStyles";
+import useActions from "../hooks/useActions";
 
 const GOOGLE_MAPS_API_KEY = "AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk";
-
-// const {
-//   DrawingManager
-// } = require("react-google-maps/lib/components/drawing/DrawingManager");
 
 const INCIDENTS = gql`
   {
     incidents {
       id
-      latitude
-      longitude
+      location {
+        latitude
+        longitude
+      }
     }
   }
 `;
 
-const Box = styled(Viewport)`
-  width: 100%;
-`;
-
-const heatMapOptions = {
+const heatMap = {
   radius: 40,
   opacity: 0.2,
   gradient: [
@@ -49,10 +40,10 @@ const heatMapOptions = {
 };
 
 const Map = compose(
-  connect(),
   withScriptjs,
   withGoogleMap
-)(props => {
+)(() => {
+  const { clearSelection } = useActions();
   const { loading, error, data } = useQuery(INCIDENTS);
   if (loading) return <p>loading...</p>;
   if (error) return <p>error!</p>;
@@ -61,20 +52,18 @@ const Map = compose(
   data.incidents.forEach(incident => {
     markers.push({
       id: incident.id,
-      lat: incident.latitude,
-      lng: incident.longitude
+      lat: incident.location.latitude,
+      lng: incident.location.longitude
     });
   });
 
   const center = averageGeoPosition(
-    data.incidents.map(incident =>
-      pickKeys(incident, ["latitude", "longitude"])
-    )
+    data.incidents.map(incident => incident.location)
   );
 
   return (
     <GoogleMap
-      onClick={props.actions.clearSelection}
+      onClick={clearSelection}
       defaultZoom={16}
       center={{ lat: center.latitude, lng: center.longitude }}
       options={{ styles }}
@@ -115,19 +104,17 @@ const Map = compose(
         data={markers.map(
           marker => new google.maps.LatLng(marker.lat, marker.lng)
         )}
-        options={heatMapOptions}
+        options={heatMap}
       />
     </GoogleMap>
   );
 });
 
 export default () => (
-  <Box>
-    <Map
-      googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=geometry,drawing,visualization`}
-      loadingElement={<div />}
-      containerElement={<div style={{ height: "100%", width: "100%" }} />}
-      mapElement={<div style={{ height: "100%", width: "100%" }} />}
-    />
-  </Box>
+  <Map
+    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=geometry,drawing,visualization`}
+    loadingElement={<div />}
+    containerElement={<div style={{ height: "100%", width: "100%" }} />}
+    mapElement={<div style={{ height: "100%", width: "100%" }} />}
+  />
 );
