@@ -1,6 +1,7 @@
 export default `
 
   enum Country {
+
     JAPAN
     SOUTH_KOREA
     USA
@@ -74,7 +75,7 @@ export default `
     model: String
     oem: String
     yearOfManufacture: Int
-    countryOfManufacture: Country
+    countryOfManufacture: String
     autonomyLevel: AutonomyLevel
     sensors: [Sensor]
     incidents: [Incident]
