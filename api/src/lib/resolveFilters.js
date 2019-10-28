@@ -37,7 +37,8 @@ export default filters =>
           }
         } else if (
           // basic
-          ["description", "damageSeverity", "dca", "numVehicles"].includes(
+          ["description", "damageSeverity", "dca", "numVehicles", '$vehicles.make$',
+          '$vehicles.model$', '$vehicles.oem$', "speedLimit", "mode"].includes(
             field
           )
         ) {

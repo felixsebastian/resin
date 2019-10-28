@@ -9,12 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     dca: DataTypes.INTEGER,
     mode: DataTypes.INTEGER,
-
-    // Probably don't keep here
-    streetType: DataTypes.STRING,
     speedLimit: DataTypes.INTEGER,
-    schoolZone: DataTypes.BOOLEAN,
-
     updatedAt: DataTypes.INTEGER,
     createdAt: DataTypes.INTEGER,
     id: {

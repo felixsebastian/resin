@@ -35,14 +35,8 @@ module.exports = {
       mode: {
         type: Sequelize.STRING
       },
-      streetType : {
-        type: Sequelize.STRING
-      },
       speedLimit: {
         type: Sequelize.INTEGER
-      },
-      schoolZone: {
-        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
