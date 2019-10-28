@@ -21,7 +21,7 @@ services:
       - JWT_SECRET=xS2T22oigo9PIJ9dfW
       - GRAPGQL_PORT=4000
   rdb:
-    image: postgres
+    image: postgres:11
     ports:
       - "5432:5432"
     volumes:
