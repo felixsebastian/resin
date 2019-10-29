@@ -37,7 +37,12 @@ export default filters =>
           }
         } else if (
           // basic
-          ["description", "damageSeverity", "dca", "numVehicles"].includes(
+          ["description", "damageSeverity", "dca", "numVehicles", "mode", "speedLimit",
+          "$vehicles.oem$", "$vehicles.make$", "$vehicles.model$", 'windSpeed',
+          'apparentTemperature', 'cloudCover', 'dewPoint', 'humidity',
+          'ozone', 'precipIntensity', 'precipProbability', 'schoolZone',
+          'precipType', 'pressure', 'summary', 'temperature', 'streetType',
+          'uvIndex', 'visibility', 'windBearing', 'windGust' ].includes(
             field
           )
         ) {
