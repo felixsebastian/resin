@@ -1,4 +1,5 @@
 import resolveFilters from "../lib/resolveFilters";
+import resolveChart from "../lib/resolveChart";
 
 export default {
   incidents: (_, args, { db }) =>
@@ -41,7 +42,25 @@ export default {
   },
   sensors: (parent, args, { db }, info) => {
     return db.Sensors.findAll();
-  }
+  },
+  correlate: (_, args, { db }) => {
+    return db.Incidents.findAll({
+      include: [
+        {
+          model: db.Vehicles,
+          as: "vehicles",
+          include: [
+            {
+              model: db.Sensors,
+              as: "sensors"
+            }
+          ]
+        }
+      ],
+      where: resolveFilters(args.filters)
+    }).then(incidents => 
+      resolveChart(incidents, args.options)
+    )}
   // getVehicle: (parent, args, { db }, info) => {
   //   const where = args.rego ? { registration: args.rego } : {};
   //   return db.Vehicles.findOne({
