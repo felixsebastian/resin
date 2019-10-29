@@ -2,7 +2,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      "IncidentsVehicles",
+      "Incidents",
         [
     {
         "createdAt": new Date(),
@@ -19,7 +19,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1569505800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.84,
+            "cloudCover": 0,
+            "dewPoint": 56.41,
+            "humidity": 0.82,
+            "ozone": 264.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.97,
+            "summary": "Clear",
+            "temperature": 61.84,
+            "uvIndex": 0,
+            "visibility": 6.928,
+            "windBearing": 247,
+            "windGust": 11.57,
+            "windSpeed": 8.47
+        }
     },
     {
         "createdAt": new Date(),
@@ -36,7 +53,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1425622600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.2,
+            "cloudCover": 0,
+            "dewPoint": 38.61,
+            "humidity": 0.52,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1025.95,
+            "summary": "Clear",
+            "temperature": 56.2,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 348,
+            "windGust": 2.51,
+            "windSpeed": 1.99
+        }
     },
     {
         "createdAt": new Date(),
@@ -53,7 +86,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1561789000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.69,
+            "cloudCover": 0.07,
+            "dewPoint": 50.73,
+            "humidity": 0.8,
+            "ozone": 360.6,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.63,
+            "summary": "Clear",
+            "temperature": 56.69,
+            "uvIndex": 0,
+            "visibility": 9.304,
+            "windBearing": 270,
+            "windGust": 8.95,
+            "windSpeed": 7.15
+        }
     },
     {
         "createdAt": new Date(),
@@ -70,7 +120,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1557044400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.72,
+            "cloudCover": 0.34,
+            "dewPoint": 48.04,
+            "humidity": 0.91,
+            "ozone": 374.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.5,
+            "summary": "Partly Cloudy",
+            "temperature": 50.72,
+            "uvIndex": 0,
+            "visibility": 9.133,
+            "windBearing": 248,
+            "windGust": 10.92,
+            "windSpeed": 8.76
+        }
     },
     {
         "createdAt": new Date(),
@@ -87,7 +154,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1461229500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.14,
+            "cloudCover": 0.68,
+            "dewPoint": 53.58,
+            "humidity": 0.88,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.65,
+            "summary": "Mostly Cloudy",
+            "temperature": 57.14,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 257,
+            "windGust": 3.05,
+            "windSpeed": 2.06
+        }
     },
     {
         "createdAt": new Date(),
@@ -104,7 +187,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1511665100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.24,
+            "cloudCover": 0.13,
+            "dewPoint": 54.05,
+            "humidity": 0.75,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.6,
+            "summary": "Partly Cloudy",
+            "temperature": 62.24,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 92,
+            "windGust": 2.55,
+            "windSpeed": 1.76
+        }
     },
     {
         "createdAt": new Date(),
@@ -121,7 +220,24 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1485130800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 43.79,
+            "cloudCover": 1,
+            "dewPoint": 44.17,
+            "humidity": 0.9,
+            "precipIntensity": 0.1109,
+            "precipProbability": 1,
+            "precipType": "rain",
+            "pressure": 1005.15,
+            "summary": "Rain",
+            "temperature": 47.04,
+            "uvIndex": 0,
+            "visibility": 5.64,
+            "windBearing": 250,
+            "windGust": 13.19,
+            "windSpeed": 6.65
+        }
     },
     {
         "createdAt": new Date(),
@@ -138,7 +254,25 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1544993400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.1,
+            "cloudCover": 0.94,
+            "dewPoint": 52.48,
+            "humidity": 0.79,
+            "ozone": 296.2,
+            "precipIntensity": 0.0009,
+            "precipProbability": 0.06,
+            "precipType": "rain",
+            "pressure": 1015.95,
+            "summary": "Overcast",
+            "temperature": 59.1,
+            "uvIndex": 2,
+            "visibility": 7.803,
+            "windBearing": 156,
+            "windGust": 20.3,
+            "windSpeed": 12.47
+        }
     },
     {
         "createdAt": new Date(),
@@ -155,7 +289,24 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1548884000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.52,
+            "cloudCover": 0.34,
+            "dewPoint": 49.81,
+            "humidity": 0.75,
+            "ozone": 299.3,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.2,
+            "summary": "Partly Cloudy",
+            "temperature": 57.52,
+            "uvIndex": 3,
+            "visibility": 7.714,
+            "windBearing": 239,
+            "windGust": 5.73,
+            "windSpeed": 3.5
+        }
     },
     {
         "createdAt": new Date(),
@@ -172,7 +323,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1513804600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.68,
+            "cloudCover": 0.08,
+            "dewPoint": 37,
+            "humidity": 0.53,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.05,
+            "summary": "Clear",
+            "temperature": 53.68,
+            "uvIndex": 2,
+            "visibility": 9.951,
+            "windBearing": 312,
+            "windGust": 12.44,
+            "windSpeed": 7.36
+        }
     },
     {
         "createdAt": new Date(),
@@ -189,7 +356,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1531648000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.38,
+            "cloudCover": 0.72,
+            "dewPoint": 53.21,
+            "humidity": 0.89,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.67,
+            "summary": "Mostly Cloudy",
+            "temperature": 56.38,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 254,
+            "windGust": 10.8,
+            "windSpeed": 6.81
+        }
     },
     {
         "createdAt": new Date(),
@@ -206,7 +389,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1449063500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 48.07,
+            "cloudCover": 0.87,
+            "dewPoint": 37.73,
+            "humidity": 0.67,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.22,
+            "summary": "Mostly Cloudy",
+            "temperature": 48.07,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 22,
+            "windGust": 1.8,
+            "windSpeed": 1.8
+        }
     },
     {
         "createdAt": new Date(),
@@ -223,7 +422,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1542584800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.15,
+            "cloudCover": 0.66,
+            "dewPoint": 43.12,
+            "humidity": 0.57,
+            "ozone": 287.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.97,
+            "summary": "Foggy",
+            "temperature": 58.15,
+            "uvIndex": 0,
+            "visibility": 0,
+            "windBearing": 307,
+            "windGust": 3.83,
+            "windSpeed": 2.9
+        }
     },
     {
         "createdAt": new Date(),
@@ -240,7 +456,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1487653300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.92,
+            "cloudCover": 0.87,
+            "dewPoint": 53.34,
+            "humidity": 0.88,
+            "precipIntensity": 0.0016,
+            "precipProbability": 0.35,
+            "precipType": "rain",
+            "pressure": 1014.44,
+            "summary": "Mostly Cloudy",
+            "temperature": 56.92,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 199,
+            "windGust": 21.99,
+            "windSpeed": 12.04
+        }
     },
     {
         "createdAt": new Date(),
@@ -257,7 +490,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1526468200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.09,
+            "cloudCover": 0.66,
+            "dewPoint": 48.15,
+            "humidity": 0.83,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.28,
+            "summary": "Mostly Cloudy",
+            "temperature": 53.09,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 258,
+            "windGust": 5.48,
+            "windSpeed": 3.51
+        }
     },
     {
         "createdAt": new Date(),
@@ -274,7 +523,25 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "AVE",
         "timestamp": 1551185300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.18,
+            "cloudCover": 1,
+            "dewPoint": 50.2,
+            "humidity": 0.93,
+            "ozone": 284.8,
+            "precipIntensity": 0.0624,
+            "precipProbability": 0.84,
+            "precipType": "rain",
+            "pressure": 1013.51,
+            "summary": "Light Rain",
+            "temperature": 52.18,
+            "uvIndex": 0,
+            "visibility": 5.646,
+            "windBearing": 170,
+            "windGust": 23.86,
+            "windSpeed": 15.72
+        }
     },
     {
         "createdAt": new Date(),
@@ -291,7 +558,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1538304800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.17,
+            "cloudCover": 0.71,
+            "dewPoint": 54.47,
+            "humidity": 0.81,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.49,
+            "summary": "Mostly Cloudy",
+            "temperature": 60.17,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 162,
+            "windGust": 6.21,
+            "windSpeed": 3.76
+        }
     },
     {
         "createdAt": new Date(),
@@ -308,7 +591,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1555078600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.17,
+            "cloudCover": 0.16,
+            "dewPoint": 44.28,
+            "humidity": 0.8,
+            "ozone": 353.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015,
+            "summary": "Partly Cloudy",
+            "temperature": 50.17,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 316,
+            "windGust": 11.35,
+            "windSpeed": 7.57
+        }
     },
     {
         "createdAt": new Date(),
@@ -325,7 +625,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "LN",
         "timestamp": 1439541600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.3,
+            "cloudCover": 0.88,
+            "dewPoint": 58.84,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.1,
+            "summary": "Overcast",
+            "temperature": 63.25,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 267,
+            "windGust": 6.36,
+            "windSpeed": 4.46
+        }
     },
     {
         "createdAt": new Date(),
@@ -342,7 +658,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1424273700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.07,
+            "cloudCover": 1,
+            "dewPoint": 47.8,
+            "humidity": 0.82,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.18,
+            "summary": "Overcast",
+            "temperature": 53.07,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 320,
+            "windGust": 1.79,
+            "windSpeed": 1.2
+        }
     },
     {
         "createdAt": new Date(),
@@ -359,7 +691,24 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "BLVD",
         "timestamp": 1460293700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.37,
+            "cloudCover": 1,
+            "dewPoint": 51.91,
+            "humidity": 0.95,
+            "precipIntensity": 0.0096,
+            "precipProbability": 0.85,
+            "precipType": "rain",
+            "pressure": 1011.53,
+            "summary": "Drizzle",
+            "temperature": 53.37,
+            "uvIndex": 0,
+            "visibility": 8.626,
+            "windBearing": 266,
+            "windGust": 4.36,
+            "windSpeed": 3.1
+        }
     },
     {
         "createdAt": new Date(),
@@ -376,7 +725,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1470727400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.86,
+            "cloudCover": 0.62,
+            "dewPoint": 54.13,
+            "humidity": 0.87,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.21,
+            "summary": "Mostly Cloudy",
+            "temperature": 57.86,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 225,
+            "windGust": 7.62,
+            "windSpeed": 5.13
+        }
     },
     {
         "createdAt": new Date(),
@@ -393,7 +758,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1432241500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.11,
+            "cloudCover": 0.86,
+            "dewPoint": 52.83,
+            "humidity": 0.69,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014,
+            "summary": "Mostly Cloudy",
+            "temperature": 63.11,
+            "uvIndex": 5,
+            "visibility": 9.997,
+            "windBearing": 252,
+            "windGust": 13.47,
+            "windSpeed": 9.09
+        }
     },
     {
         "createdAt": new Date(),
@@ -410,7 +791,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1494095700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.68,
+            "cloudCover": 0.33,
+            "dewPoint": 43.58,
+            "humidity": 0.57,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1009.09,
+            "summary": "Partly Cloudy",
+            "temperature": 58.68,
+            "uvIndex": 7,
+            "visibility": 9.997,
+            "windBearing": 257,
+            "windGust": 9.5,
+            "windSpeed": 5.6
+        }
     },
     {
         "createdAt": new Date(),
@@ -427,7 +824,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1507068900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 70.56,
+            "cloudCover": 0,
+            "dewPoint": 42.11,
+            "humidity": 0.36,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.98,
+            "summary": "Clear",
+            "temperature": 70.56,
+            "uvIndex": 4,
+            "visibility": 9.997,
+            "windBearing": 264,
+            "windGust": 11.47,
+            "windSpeed": 7.04
+        }
     },
     {
         "createdAt": new Date(),
@@ -444,7 +857,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ALY",
         "timestamp": 1449320800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 45,
+            "cloudCover": 0.17,
+            "dewPoint": 40.6,
+            "humidity": 0.84,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1024.06,
+            "summary": "Partly Cloudy",
+            "temperature": 45,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 52,
+            "windGust": 1.69,
+            "windSpeed": 1.19
+        }
     },
     {
         "createdAt": new Date(),
@@ -461,7 +890,23 @@ module.exports = {
         "speedLimit": 35,
         "streetType": "BLVD",
         "timestamp": 1493068100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.38,
+            "cloudCover": 0.97,
+            "dewPoint": 52.49,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.45,
+            "summary": "Overcast",
+            "temperature": 59.38,
+            "uvIndex": 4,
+            "visibility": 9.943,
+            "windBearing": 259,
+            "windGust": 12.65,
+            "windSpeed": 7.76
+        }
     },
     {
         "createdAt": new Date(),
@@ -478,7 +923,25 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "DR",
         "timestamp": 1549267100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 44.11,
+            "cloudCover": 1,
+            "dewPoint": 47.17,
+            "humidity": 0.92,
+            "ozone": 323.5,
+            "precipIntensity": 0.0558,
+            "precipProbability": 0.76,
+            "precipType": "rain",
+            "pressure": 1002.3,
+            "summary": "Light Rain",
+            "temperature": 49.4,
+            "uvIndex": 0,
+            "visibility": 7.765,
+            "windBearing": 176,
+            "windGust": 20.94,
+            "windSpeed": 14.05
+        }
     },
     {
         "createdAt": new Date(),
@@ -495,7 +958,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1521212200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 45.4,
+            "cloudCover": 1,
+            "dewPoint": 43.75,
+            "humidity": 0.94,
+            "precipIntensity": 0.0105,
+            "precipProbability": 0.74,
+            "precipType": "rain",
+            "pressure": 1012.13,
+            "summary": "Drizzle",
+            "temperature": 45.4,
+            "uvIndex": 0,
+            "visibility": 7.805,
+            "windBearing": 197,
+            "windGust": 3.47,
+            "windSpeed": 2.69
+        }
     },
     {
         "createdAt": new Date(),
@@ -512,7 +992,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1460602600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.74,
+            "cloudCover": 0.21,
+            "dewPoint": 45.79,
+            "humidity": 0.69,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.05,
+            "summary": "Partly Cloudy",
+            "temperature": 55.74,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 256,
+            "windGust": 9.03,
+            "windSpeed": 5.77
+        }
     },
     {
         "createdAt": new Date(),
@@ -529,7 +1025,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1435340300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 68.11,
+            "cloudCover": 0.12,
+            "dewPoint": 56.14,
+            "humidity": 0.66,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.03,
+            "summary": "Clear",
+            "temperature": 68.11,
+            "uvIndex": 7,
+            "visibility": 9.997,
+            "windBearing": 266,
+            "windGust": 8.63,
+            "windSpeed": 5.91
+        }
     },
     {
         "createdAt": new Date(),
@@ -546,7 +1058,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "DR",
         "timestamp": 1521559200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.67,
+            "cloudCover": 1,
+            "dewPoint": 46.33,
+            "humidity": 0.82,
+            "precipIntensity": 0.0054,
+            "precipProbability": 0.56,
+            "precipType": "rain",
+            "pressure": 1015.55,
+            "summary": "Possible Drizzle",
+            "temperature": 51.67,
+            "uvIndex": 0,
+            "visibility": 9.355,
+            "windBearing": 175,
+            "windGust": 2.15,
+            "windSpeed": 1.67
+        }
     },
     {
         "createdAt": new Date(),
@@ -563,7 +1092,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1510710000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.61,
+            "cloudCover": 0.25,
+            "dewPoint": 42.79,
+            "humidity": 0.6,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.23,
+            "summary": "Partly Cloudy",
+            "temperature": 56.61,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 281,
+            "windGust": 3.16,
+            "windSpeed": 2.59
+        }
     },
     {
         "createdAt": new Date(),
@@ -580,7 +1125,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "",
         "timestamp": 1471278400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.56,
+            "cloudCover": 1,
+            "dewPoint": 53.17,
+            "humidity": 0.88,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.91,
+            "summary": "Overcast",
+            "temperature": 56.56,
+            "uvIndex": 2,
+            "visibility": 9.746,
+            "windBearing": 246,
+            "windGust": 7.12,
+            "windSpeed": 3.98
+        }
     },
     {
         "createdAt": new Date(),
@@ -597,7 +1158,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1510830700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.85,
+            "cloudCover": 1,
+            "dewPoint": 55.21,
+            "humidity": 0.94,
+            "precipIntensity": 0.1484,
+            "precipProbability": 1,
+            "precipType": "rain",
+            "pressure": 1011.15,
+            "summary": "Rain",
+            "temperature": 56.85,
+            "uvIndex": 0,
+            "visibility": 4.811,
+            "windBearing": 279,
+            "windGust": 7.9,
+            "windSpeed": 4.43
+        }
     },
     {
         "createdAt": new Date(),
@@ -614,7 +1192,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "BLVD",
         "timestamp": 1492993900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.85,
+            "cloudCover": 0.37,
+            "dewPoint": 48.58,
+            "humidity": 0.64,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.34,
+            "summary": "Partly Cloudy",
+            "temperature": 60.85,
+            "uvIndex": 2,
+            "visibility": 9.997,
+            "windBearing": 275,
+            "windGust": 16.24,
+            "windSpeed": 11.82
+        }
     },
     {
         "createdAt": new Date(),
@@ -631,7 +1225,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1499448300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 73.17,
+            "cloudCover": 0,
+            "dewPoint": 55.2,
+            "humidity": 0.53,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.94,
+            "summary": "Clear",
+            "temperature": 73.17,
+            "uvIndex": 6,
+            "visibility": 9.997,
+            "windBearing": 280,
+            "windGust": 5.24,
+            "windSpeed": 3.36
+        }
     },
     {
         "createdAt": new Date(),
@@ -648,7 +1258,23 @@ module.exports = {
         "speedLimit": 65,
         "streetType": "RAMP",
         "timestamp": 1457964300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.19,
+            "cloudCover": 0.97,
+            "dewPoint": 48.12,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.83,
+            "summary": "Overcast",
+            "temperature": 52.19,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 278,
+            "windGust": 3.52,
+            "windSpeed": 1.96
+        }
     },
     {
         "createdAt": new Date(),
@@ -665,7 +1291,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1536907500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.08,
+            "cloudCover": 0.28,
+            "dewPoint": 51.78,
+            "humidity": 0.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.24,
+            "summary": "Partly Cloudy",
+            "temperature": 58.08,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 236,
+            "windGust": 8.22,
+            "windSpeed": 5.39
+        }
     },
     {
         "createdAt": new Date(),
@@ -682,7 +1324,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1500367600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.33,
+            "cloudCover": 0.06,
+            "dewPoint": 50.42,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.27,
+            "summary": "Clear",
+            "temperature": 57.33,
+            "uvIndex": 0,
+            "visibility": 9.77,
+            "windBearing": 253,
+            "windGust": 6.45,
+            "windSpeed": 4.41
+        }
     },
     {
         "createdAt": new Date(),
@@ -699,7 +1357,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1426335000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.18,
+            "cloudCover": 0.09,
+            "dewPoint": 50.77,
+            "humidity": 0.79,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.67,
+            "summary": "Clear",
+            "temperature": 57.18,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 122,
+            "windGust": 1.05,
+            "windSpeed": 0.93
+        }
     },
     {
         "createdAt": new Date(),
@@ -716,7 +1390,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1458291300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.25,
+            "cloudCover": 0.12,
+            "dewPoint": 48.91,
+            "humidity": 0.88,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.94,
+            "summary": "Clear",
+            "temperature": 52.25,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 275,
+            "windGust": 2.71,
+            "windSpeed": 1.59
+        }
     },
     {
         "createdAt": new Date(),
@@ -733,7 +1423,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1541291500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 71.59,
+            "cloudCover": 0.55,
+            "dewPoint": 46.79,
+            "humidity": 0.41,
+            "ozone": 257.7,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.12,
+            "summary": "Mostly Cloudy",
+            "temperature": 71.59,
+            "uvIndex": 0,
+            "visibility": 5.01,
+            "windBearing": 253,
+            "windGust": 6.29,
+            "windSpeed": 4.56
+        }
     },
     {
         "createdAt": new Date(),
@@ -750,7 +1457,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1500403500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.47,
+            "cloudCover": 0.64,
+            "dewPoint": 52.86,
+            "humidity": 0.71,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.2,
+            "summary": "Mostly Cloudy",
+            "temperature": 62.47,
+            "uvIndex": 6,
+            "visibility": 9.997,
+            "windBearing": 234,
+            "windGust": 12.32,
+            "windSpeed": 8.12
+        }
     },
     {
         "createdAt": new Date(),
@@ -767,7 +1490,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1565513400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.92,
+            "cloudCover": 0.79,
+            "dewPoint": 56.41,
+            "humidity": 0.95,
+            "ozone": 326.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.95,
+            "summary": "Mostly Cloudy",
+            "temperature": 57.92,
+            "uvIndex": 0,
+            "visibility": 8.269,
+            "windBearing": 274,
+            "windGust": 7.12,
+            "windSpeed": 4.84
+        }
     },
     {
         "createdAt": new Date(),
@@ -784,7 +1524,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1469258800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.11,
+            "cloudCover": 0,
+            "dewPoint": 51.56,
+            "humidity": 0.73,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.24,
+            "summary": "Clear",
+            "temperature": 60.11,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 245,
+            "windGust": 3.53,
+            "windSpeed": 3.03
+        }
     },
     {
         "createdAt": new Date(),
@@ -801,7 +1557,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1563853100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.42,
+            "cloudCover": 0.12,
+            "dewPoint": 51.85,
+            "humidity": 0.73,
+            "ozone": 306.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.94,
+            "summary": "Clear",
+            "temperature": 60.42,
+            "uvIndex": 0,
+            "visibility": 7.752,
+            "windBearing": 256,
+            "windGust": 8.86,
+            "windSpeed": 7.73
+        }
     },
     {
         "createdAt": new Date(),
@@ -818,7 +1591,21 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "AVE",
         "timestamp": 1443849300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.5,
+            "dewPoint": 53.91,
+            "humidity": 0.76,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.02,
+            "summary": "Clear",
+            "temperature": 61.5,
+            "uvIndex": 0,
+            "windBearing": 231,
+            "windGust": 3.77,
+            "windSpeed": 2.8
+        }
     },
     {
         "createdAt": new Date(),
@@ -835,7 +1622,18 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "DR",
         "timestamp": 1538513400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 72.67,
+            "dewPoint": 59.85,
+            "humidity": 0.64,
+            "precipType": "rain",
+            "pressure": 1009.05,
+            "summary": "Clear",
+            "temperature": 72.67,
+            "windBearing": 307,
+            "windSpeed": 4.75
+        }
     },
     {
         "createdAt": new Date(),
@@ -852,7 +1650,24 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1554052600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.72,
+            "cloudCover": 0,
+            "dewPoint": 48.79,
+            "humidity": 0.75,
+            "ozone": 311.3,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1022.48,
+            "summary": "Clear",
+            "temperature": 56.72,
+            "uvIndex": 4,
+            "visibility": 9.439,
+            "windBearing": 149,
+            "windGust": 4.47,
+            "windSpeed": 2.56
+        }
     },
     {
         "createdAt": new Date(),
@@ -869,7 +1684,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1512543500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 46.19,
+            "cloudCover": 0,
+            "dewPoint": 32.21,
+            "humidity": 0.58,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1024.24,
+            "summary": "Clear",
+            "temperature": 46.19,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 75,
+            "windGust": 1.24,
+            "windSpeed": 1.09
+        }
     },
     {
         "createdAt": new Date(),
@@ -886,7 +1717,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1568959500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.33,
+            "cloudCover": 0,
+            "dewPoint": 50.21,
+            "humidity": 0.62,
+            "ozone": 312,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.27,
+            "summary": "Clear",
+            "temperature": 63.33,
+            "uvIndex": 0,
+            "visibility": 8.102,
+            "windBearing": 292,
+            "windGust": 6.01,
+            "windSpeed": 4.73
+        }
     },
     {
         "createdAt": new Date(),
@@ -903,7 +1751,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1441525600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.09,
+            "cloudCover": 0.02,
+            "dewPoint": 41.68,
+            "humidity": 0.47,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.36,
+            "summary": "Clear",
+            "temperature": 62.09,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 222,
+            "windGust": 1.42,
+            "windSpeed": 1.12
+        }
     },
     {
         "createdAt": new Date(),
@@ -920,7 +1784,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1518751000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.59,
+            "cloudCover": 0,
+            "dewPoint": 32.48,
+            "humidity": 0.45,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1024.33,
+            "summary": "Clear",
+            "temperature": 53.59,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 303,
+            "windGust": 3.13,
+            "windSpeed": 2.65
+        }
     },
     {
         "createdAt": new Date(),
@@ -937,7 +1817,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1512093500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.74,
+            "cloudCover": 0.2,
+            "dewPoint": 44.71,
+            "humidity": 0.66,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.19,
+            "summary": "Partly Cloudy",
+            "temperature": 55.74,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 284,
+            "windGust": 2.12,
+            "windSpeed": 1.57
+        }
     },
     {
         "createdAt": new Date(),
@@ -954,7 +1850,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1521982900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 42.04,
+            "cloudCover": 0.68,
+            "dewPoint": 38.4,
+            "humidity": 0.87,
+            "precipIntensity": 0.0016,
+            "precipProbability": 0.38,
+            "precipType": "rain",
+            "pressure": 1019.81,
+            "summary": "Possible Drizzle",
+            "temperature": 42.04,
+            "uvIndex": 0,
+            "visibility": 9.993,
+            "windBearing": 193,
+            "windGust": 2.27,
+            "windSpeed": 1.61
+        }
     },
     {
         "createdAt": new Date(),
@@ -971,7 +1884,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1486337500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.86,
+            "cloudCover": 1,
+            "dewPoint": 50.1,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1008.78,
+            "summary": "Overcast",
+            "temperature": 56.86,
+            "uvIndex": 1,
+            "visibility": 9.629,
+            "windBearing": 175,
+            "windGust": 15.78,
+            "windSpeed": 8.92
+        }
     },
     {
         "createdAt": new Date(),
@@ -988,7 +1917,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1501609100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 67.69,
+            "cloudCover": 0.17,
+            "dewPoint": 56.92,
+            "humidity": 0.68,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.26,
+            "summary": "Partly Cloudy",
+            "temperature": 67.69,
+            "uvIndex": 6,
+            "visibility": 10,
+            "windBearing": 267,
+            "windGust": 5.43,
+            "windSpeed": 3.52
+        }
     },
     {
         "createdAt": new Date(),
@@ -1005,7 +1950,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1441540200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.25,
+            "cloudCover": 0.01,
+            "dewPoint": 41.71,
+            "humidity": 0.54,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014,
+            "summary": "Clear",
+            "temperature": 58.25,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 286,
+            "windGust": 1.26,
+            "windSpeed": 0.99
+        }
     },
     {
         "createdAt": new Date(),
@@ -1022,7 +1983,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1487099700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.21,
+            "cloudCover": 0.3,
+            "dewPoint": 47.27,
+            "humidity": 0.6,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.57,
+            "summary": "Partly Cloudy",
+            "temperature": 61.21,
+            "uvIndex": 3,
+            "visibility": 9.997,
+            "windBearing": 60,
+            "windGust": 6.03,
+            "windSpeed": 3.39
+        }
     },
     {
         "createdAt": new Date(),
@@ -1039,7 +2016,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1539261700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.1,
+            "cloudCover": 0.66,
+            "dewPoint": 49.91,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.31,
+            "summary": "Mostly Cloudy",
+            "temperature": 54.1,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 295,
+            "windGust": 5.58,
+            "windSpeed": 3.5
+        }
     },
     {
         "createdAt": new Date(),
@@ -1056,7 +2049,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1447562900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.23,
+            "cloudCover": 0.08,
+            "dewPoint": 47.87,
+            "humidity": 0.82,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.18,
+            "summary": "Clear",
+            "temperature": 53.23,
+            "uvIndex": 0,
+            "visibility": 9.816,
+            "windBearing": 210,
+            "windGust": 3.91,
+            "windSpeed": 2.65
+        }
     },
     {
         "createdAt": new Date(),
@@ -1073,7 +2082,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1475426500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.12,
+            "cloudCover": 0.74,
+            "dewPoint": 53.38,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.91,
+            "summary": "Mostly Cloudy",
+            "temperature": 60.12,
+            "uvIndex": 2,
+            "visibility": 10,
+            "windBearing": 238,
+            "windGust": 8.34,
+            "windSpeed": 4.78
+        }
     },
     {
         "createdAt": new Date(),
@@ -1090,7 +2115,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "LN",
         "timestamp": 1491060400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.86,
+            "cloudCover": 0.1,
+            "dewPoint": 42.28,
+            "humidity": 0.54,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.05,
+            "summary": "Clear",
+            "temperature": 58.86,
+            "uvIndex": 1,
+            "visibility": 9.375,
+            "windBearing": 12,
+            "windGust": 3.31,
+            "windSpeed": 2.4
+        }
     },
     {
         "createdAt": new Date(),
@@ -1107,7 +2148,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "DR",
         "timestamp": 1471214600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 71.03,
+            "cloudCover": 0.1,
+            "dewPoint": 55.53,
+            "humidity": 0.58,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.43,
+            "summary": "Clear",
+            "temperature": 71.03,
+            "uvIndex": 6,
+            "visibility": 9.997,
+            "windBearing": 267,
+            "windGust": 9.39,
+            "windSpeed": 5.85
+        }
     },
     {
         "createdAt": new Date(),
@@ -1124,7 +2181,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "",
         "timestamp": 1568272000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 65.7,
+            "cloudCover": 0,
+            "dewPoint": 51.68,
+            "humidity": 0.61,
+            "ozone": 296.3,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.18,
+            "summary": "Clear",
+            "temperature": 65.7,
+            "uvIndex": 0,
+            "visibility": 6.792,
+            "windBearing": 300,
+            "windGust": 5.24,
+            "windSpeed": 3.31
+        }
     },
     {
         "createdAt": new Date(),
@@ -1141,7 +2215,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1470141400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.17,
+            "cloudCover": 1,
+            "dewPoint": 53.05,
+            "humidity": 0.89,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.78,
+            "summary": "Overcast",
+            "temperature": 56.17,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 252,
+            "windGust": 5.46,
+            "windSpeed": 3.52
+        }
     },
     {
         "createdAt": new Date(),
@@ -1158,7 +2248,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1515044600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.52,
+            "cloudCover": 1,
+            "dewPoint": 50.93,
+            "humidity": 0.91,
+            "precipIntensity": 0.0891,
+            "precipProbability": 0.96,
+            "precipType": "rain",
+            "pressure": 1015.92,
+            "summary": "Light Rain",
+            "temperature": 53.52,
+            "uvIndex": 0,
+            "visibility": 2.691,
+            "windBearing": 121,
+            "windGust": 3.56,
+            "windSpeed": 2.11
+        }
     },
     {
         "createdAt": new Date(),
@@ -1175,7 +2282,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1439608000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 70.41,
+            "cloudCover": 0.27,
+            "dewPoint": 56.84,
+            "humidity": 0.62,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.36,
+            "summary": "Partly Cloudy",
+            "temperature": 70.41,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 265,
+            "windGust": 7.73,
+            "windSpeed": 5.34
+        }
     },
     {
         "createdAt": new Date(),
@@ -1192,7 +2315,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1444489500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.26,
+            "cloudCover": 0.99,
+            "dewPoint": 57.74,
+            "humidity": 0.95,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.28,
+            "summary": "Overcast",
+            "temperature": 59.18,
+            "uvIndex": 0,
+            "visibility": 2.878,
+            "windBearing": 271,
+            "windGust": 3.45,
+            "windSpeed": 2.75
+        }
     },
     {
         "createdAt": new Date(),
@@ -1209,7 +2348,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1524636700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.47,
+            "cloudCover": 0.31,
+            "dewPoint": 46.86,
+            "humidity": 0.87,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.23,
+            "summary": "Partly Cloudy",
+            "temperature": 50.47,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 268,
+            "windGust": 5.25,
+            "windSpeed": 3.89
+        }
     },
     {
         "createdAt": new Date(),
@@ -1226,7 +2381,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1459610600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.43,
+            "cloudCover": 1,
+            "dewPoint": 47.14,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1022.98,
+            "summary": "Overcast",
+            "temperature": 51.43,
+            "uvIndex": 1,
+            "visibility": 9.959,
+            "windBearing": 229,
+            "windGust": 3.56,
+            "windSpeed": 2.11
+        }
     },
     {
         "createdAt": new Date(),
@@ -1243,7 +2414,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1519537200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 44.2,
+            "cloudCover": 0.03,
+            "dewPoint": 39.5,
+            "humidity": 0.76,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1026.88,
+            "summary": "Clear",
+            "temperature": 46.75,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 306,
+            "windGust": 8.18,
+            "windSpeed": 5.31
+        }
     },
     {
         "createdAt": new Date(),
@@ -1260,7 +2447,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "TER",
         "timestamp": 1431089000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 49.34,
+            "cloudCover": 0.08,
+            "dewPoint": 44.55,
+            "humidity": 0.83,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1009.64,
+            "summary": "Clear",
+            "temperature": 49.34,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 166,
+            "windGust": 2.18,
+            "windSpeed": 1.76
+        }
     },
     {
         "createdAt": new Date(),
@@ -1277,7 +2480,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "HWY",
         "timestamp": 1545759800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.7,
+            "cloudCover": 0.1,
+            "dewPoint": 42.44,
+            "humidity": 0.71,
+            "ozone": 323.1,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.07,
+            "summary": "Clear",
+            "temperature": 51.7,
+            "uvIndex": 1,
+            "visibility": 10,
+            "windBearing": 326,
+            "windGust": 11.01,
+            "windSpeed": 8.86
+        }
     },
     {
         "createdAt": new Date(),
@@ -1294,7 +2514,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1490216300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.17,
+            "cloudCover": 0.55,
+            "dewPoint": 45.52,
+            "humidity": 0.63,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.58,
+            "summary": "Mostly Cloudy",
+            "temperature": 58.17,
+            "uvIndex": 5,
+            "visibility": 9.997,
+            "windBearing": 279,
+            "windGust": 12.9,
+            "windSpeed": 8.07
+        }
     },
     {
         "createdAt": new Date(),
@@ -1311,7 +2547,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1458961300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.02,
+            "cloudCover": 0.11,
+            "dewPoint": 46.57,
+            "humidity": 0.63,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.55,
+            "summary": "Clear",
+            "temperature": 59.02,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 280,
+            "windGust": 7.53,
+            "windSpeed": 4.98
+        }
     },
     {
         "createdAt": new Date(),
@@ -1328,7 +2580,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1530748700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 64.93,
+            "cloudCover": 0,
+            "dewPoint": 51.37,
+            "humidity": 0.61,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.91,
+            "summary": "Clear",
+            "temperature": 64.93,
+            "uvIndex": 4,
+            "visibility": 9.997,
+            "windBearing": 247,
+            "windGust": 15.22,
+            "windSpeed": 10.13
+        }
     },
     {
         "createdAt": new Date(),
@@ -1345,7 +2613,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1509285500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.54,
+            "cloudCover": 1,
+            "dewPoint": 50.38,
+            "humidity": 0.92,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.35,
+            "summary": "Overcast",
+            "temperature": 52.54,
+            "uvIndex": 0,
+            "visibility": 8.201,
+            "windBearing": 221,
+            "windGust": 2.33,
+            "windSpeed": 1.17
+        }
     },
     {
         "createdAt": new Date(),
@@ -1362,7 +2646,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1524670700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.62,
+            "cloudCover": 0.96,
+            "dewPoint": 46.79,
+            "humidity": 0.84,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.46,
+            "summary": "Overcast",
+            "temperature": 51.62,
+            "uvIndex": 1,
+            "visibility": 8.56,
+            "windBearing": 264,
+            "windGust": 5.95,
+            "windSpeed": 3.83
+        }
     },
     {
         "createdAt": new Date(),
@@ -1379,7 +2679,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1515361700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.29,
+            "cloudCover": 0.75,
+            "dewPoint": 47.58,
+            "humidity": 0.87,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.87,
+            "summary": "Mostly Cloudy",
+            "temperature": 51.29,
+            "uvIndex": 2,
+            "visibility": 7.316,
+            "windBearing": 20,
+            "windGust": 4.03,
+            "windSpeed": 3.04
+        }
     },
     {
         "createdAt": new Date(),
@@ -1396,7 +2712,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1429824400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62,
+            "cloudCover": 0.57,
+            "dewPoint": 50.08,
+            "humidity": 0.65,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.71,
+            "summary": "Mostly Cloudy",
+            "temperature": 62,
+            "uvIndex": 6,
+            "visibility": 10,
+            "windBearing": 250,
+            "windGust": 12.22,
+            "windSpeed": 8.05
+        }
     },
     {
         "createdAt": new Date(),
@@ -1413,7 +2745,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1531116500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.8,
+            "cloudCover": 0.01,
+            "dewPoint": 47.06,
+            "humidity": 0.56,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.93,
+            "summary": "Clear",
+            "temperature": 62.8,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 252,
+            "windGust": 9.21,
+            "windSpeed": 7.06
+        }
     },
     {
         "createdAt": new Date(),
@@ -1430,7 +2778,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1439414000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 76.14,
+            "cloudCover": 0,
+            "dewPoint": 54.35,
+            "humidity": 0.47,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.31,
+            "summary": "Clear",
+            "temperature": 76.14,
+            "uvIndex": 9,
+            "visibility": 9.997,
+            "windBearing": 270,
+            "windGust": 11.5,
+            "windSpeed": 7.19
+        }
     },
     {
         "createdAt": new Date(),
@@ -1447,7 +2811,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1486274900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.45,
+            "cloudCover": 0.46,
+            "dewPoint": 48.77,
+            "humidity": 0.91,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.14,
+            "summary": "Partly Cloudy",
+            "temperature": 51.45,
+            "uvIndex": 0,
+            "visibility": 9.858,
+            "windBearing": 176,
+            "windGust": 2.04,
+            "windSpeed": 1.44
+        }
     },
     {
         "createdAt": new Date(),
@@ -1464,7 +2844,24 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1549945100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 46.38,
+            "cloudCover": 0.1,
+            "dewPoint": 40.19,
+            "humidity": 0.79,
+            "ozone": 325.1,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1022.06,
+            "summary": "Clear",
+            "temperature": 46.38,
+            "uvIndex": 0,
+            "visibility": 8.997,
+            "windBearing": 143,
+            "windGust": 4.3,
+            "windSpeed": 3
+        }
     },
     {
         "createdAt": new Date(),
@@ -1481,7 +2878,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1507689700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.28,
+            "cloudCover": 0.16,
+            "dewPoint": 47.36,
+            "humidity": 0.62,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.44,
+            "summary": "Partly Cloudy",
+            "temperature": 60.28,
+            "uvIndex": 0,
+            "visibility": 8.739,
+            "windBearing": 259,
+            "windGust": 5.52,
+            "windSpeed": 4.14
+        }
     },
     {
         "createdAt": new Date(),
@@ -1498,7 +2911,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1556540600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.65,
+            "cloudCover": 0.92,
+            "dewPoint": 48.47,
+            "humidity": 0.89,
+            "ozone": 332.1,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1008.67,
+            "summary": "Overcast",
+            "temperature": 51.65,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 218,
+            "windGust": 9.74,
+            "windSpeed": 8.05
+        }
     },
     {
         "createdAt": new Date(),
@@ -1515,7 +2945,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1491687800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.91,
+            "cloudCover": 0.42,
+            "dewPoint": 41.92,
+            "humidity": 0.66,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.39,
+            "summary": "Partly Cloudy",
+            "temperature": 52.91,
+            "uvIndex": 6,
+            "visibility": 9.997,
+            "windBearing": 271,
+            "windGust": 13.57,
+            "windSpeed": 8.54
+        }
     },
     {
         "createdAt": new Date(),
@@ -1532,7 +2978,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1513975200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.15,
+            "cloudCover": 0.2,
+            "dewPoint": 34.22,
+            "humidity": 0.52,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1026.13,
+            "summary": "Partly Cloudy",
+            "temperature": 51.15,
+            "uvIndex": 2,
+            "visibility": 9.997,
+            "windBearing": 22,
+            "windGust": 7.49,
+            "windSpeed": 5
+        }
     },
     {
         "createdAt": new Date(),
@@ -1549,7 +3011,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1519395400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 34.22,
+            "cloudCover": 0,
+            "dewPoint": 26.67,
+            "humidity": 0.65,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1026.51,
+            "summary": "Clear",
+            "temperature": 37.52,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 335,
+            "windGust": 5.82,
+            "windSpeed": 4.24
+        }
     },
     {
         "createdAt": new Date(),
@@ -1566,7 +3044,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1425470900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 47.52,
+            "cloudCover": 0,
+            "dewPoint": 41.49,
+            "humidity": 0.79,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.26,
+            "summary": "Clear",
+            "temperature": 47.52,
+            "uvIndex": 0,
+            "visibility": 9.962,
+            "windBearing": 111,
+            "windGust": 1.43,
+            "windSpeed": 1.39
+        }
     },
     {
         "createdAt": new Date(),
@@ -1583,7 +3077,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1559364000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.86,
+            "cloudCover": 0.12,
+            "dewPoint": 50.31,
+            "humidity": 0.85,
+            "ozone": 377.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.53,
+            "summary": "Clear",
+            "temperature": 54.86,
+            "uvIndex": 0,
+            "visibility": 7.39,
+            "windBearing": 274,
+            "windGust": 7.77,
+            "windSpeed": 5.99
+        }
     },
     {
         "createdAt": new Date(),
@@ -1600,7 +3111,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1476335700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.38,
+            "cloudCover": 0.18,
+            "dewPoint": 48.5,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.63,
+            "summary": "Partly Cloudy",
+            "temperature": 55.38,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 250,
+            "windGust": 3.96,
+            "windSpeed": 2.87
+        }
     },
     {
         "createdAt": new Date(),
@@ -1617,7 +3144,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1443700100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.09,
+            "cloudCover": 0.74,
+            "dewPoint": 55.98,
+            "humidity": 0.83,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.42,
+            "summary": "Mostly Cloudy",
+            "temperature": 61.09,
+            "uvIndex": 0,
+            "visibility": 9.857,
+            "windBearing": 216,
+            "windGust": 1.73,
+            "windSpeed": 1.12
+        }
     },
     {
         "createdAt": new Date(),
@@ -1634,7 +3177,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1461760300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.36,
+            "cloudCover": 0.83,
+            "dewPoint": 46.1,
+            "humidity": 0.82,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.7,
+            "summary": "Mostly Cloudy",
+            "temperature": 51.36,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 258,
+            "windGust": 5.62,
+            "windSpeed": 4.03
+        }
     },
     {
         "createdAt": new Date(),
@@ -1651,7 +3210,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1533525600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 68.64,
+            "cloudCover": 0.13,
+            "dewPoint": 49.23,
+            "humidity": 0.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.42,
+            "summary": "Partly Cloudy",
+            "temperature": 68.64,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 268,
+            "windGust": 11.32,
+            "windSpeed": 7.66
+        }
     },
     {
         "createdAt": new Date(),
@@ -1668,7 +3243,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1490650100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.44,
+            "cloudCover": 0.34,
+            "dewPoint": 45.99,
+            "humidity": 0.57,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.91,
+            "summary": "Partly Cloudy",
+            "temperature": 61.44,
+            "uvIndex": 6,
+            "visibility": 9.997,
+            "windBearing": 293,
+            "windGust": 15.53,
+            "windSpeed": 9.18
+        }
     },
     {
         "createdAt": new Date(),
@@ -1685,7 +3276,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1567509200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.6,
+            "cloudCover": 0.78,
+            "dewPoint": 58.05,
+            "humidity": 0.95,
+            "ozone": 281,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.73,
+            "summary": "Mostly Cloudy",
+            "temperature": 59.49,
+            "uvIndex": 0,
+            "visibility": 9.684,
+            "windBearing": 251,
+            "windGust": 10.1,
+            "windSpeed": 7.51
+        }
     },
     {
         "createdAt": new Date(),
@@ -1702,7 +3310,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "PL",
         "timestamp": 1517830800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.65,
+            "cloudCover": 0,
+            "dewPoint": 45.51,
+            "humidity": 0.77,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.42,
+            "summary": "Clear",
+            "temperature": 52.65,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 11,
+            "windGust": 2.14,
+            "windSpeed": 1.56
+        }
     },
     {
         "createdAt": new Date(),
@@ -1719,7 +3343,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1430875500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.04,
+            "cloudCover": 0.4,
+            "dewPoint": 46.68,
+            "humidity": 0.64,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012,
+            "summary": "Partly Cloudy",
+            "temperature": 59.04,
+            "uvIndex": 1,
+            "visibility": 9.461,
+            "windBearing": 233,
+            "windGust": 12.64,
+            "windSpeed": 7.33
+        }
     },
     {
         "createdAt": new Date(),
@@ -1736,7 +3376,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1558559200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.95,
+            "cloudCover": 0.5,
+            "dewPoint": 49.57,
+            "humidity": 0.6,
+            "ozone": 410.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.17,
+            "summary": "Mostly Cloudy",
+            "temperature": 63.95,
+            "uvIndex": 5,
+            "visibility": 7.263,
+            "windBearing": 256,
+            "windGust": 13.93,
+            "windSpeed": 9.14
+        }
     },
     {
         "createdAt": new Date(),
@@ -1753,7 +3410,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1445492700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.55,
+            "cloudCover": 0.14,
+            "dewPoint": 51.98,
+            "humidity": 0.73,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.48,
+            "summary": "Partly Cloudy",
+            "temperature": 60.55,
+            "uvIndex": 0,
+            "visibility": 9.727,
+            "windBearing": 249,
+            "windGust": 2.64,
+            "windSpeed": 2.1
+        }
     },
     {
         "createdAt": new Date(),
@@ -1770,7 +3443,25 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1551264300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.9,
+            "cloudCover": 1,
+            "dewPoint": 50.28,
+            "humidity": 0.88,
+            "ozone": 285.8,
+            "precipIntensity": 0.0599,
+            "precipProbability": 1,
+            "precipType": "rain",
+            "pressure": 1010.23,
+            "summary": "Light Rain",
+            "temperature": 53.9,
+            "uvIndex": 0,
+            "visibility": 5.025,
+            "windBearing": 173,
+            "windGust": 29.68,
+            "windSpeed": 16.2
+        }
     },
     {
         "createdAt": new Date(),
@@ -1787,7 +3478,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "RD",
         "timestamp": 1475158700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.75,
+            "cloudCover": 0.98,
+            "dewPoint": 51.96,
+            "humidity": 0.87,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.43,
+            "summary": "Overcast",
+            "temperature": 55.75,
+            "uvIndex": 0,
+            "visibility": 9.154,
+            "windBearing": 250,
+            "windGust": 5.58,
+            "windSpeed": 3.68
+        }
     },
     {
         "createdAt": new Date(),
@@ -1804,7 +3511,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1452644200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.09,
+            "cloudCover": 0.86,
+            "dewPoint": 48.86,
+            "humidity": 0.79,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.62,
+            "summary": "Mostly Cloudy",
+            "temperature": 55.09,
+            "uvIndex": 0,
+            "visibility": 8.146,
+            "windBearing": 295,
+            "windGust": 3.69,
+            "windSpeed": 2.21
+        }
     },
     {
         "createdAt": new Date(),
@@ -1821,7 +3544,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1535100900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.98,
+            "cloudCover": 1,
+            "dewPoint": 52.54,
+            "humidity": 0.79,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.93,
+            "summary": "Overcast",
+            "temperature": 58.98,
+            "uvIndex": 0,
+            "visibility": 9.066,
+            "windBearing": 252,
+            "windGust": 10.66,
+            "windSpeed": 6.78
+        }
     },
     {
         "createdAt": new Date(),
@@ -1838,7 +3577,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1424474500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 67.34,
+            "cloudCover": 0.06,
+            "dewPoint": 50.69,
+            "humidity": 0.55,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.6,
+            "summary": "Clear",
+            "temperature": 67.34,
+            "uvIndex": 2,
+            "visibility": 9.997,
+            "windBearing": 319,
+            "windGust": 5.53,
+            "windSpeed": 2.94
+        }
     },
     {
         "createdAt": new Date(),
@@ -1855,7 +3610,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1457937800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.13,
+            "cloudCover": 0.99,
+            "dewPoint": 53.53,
+            "humidity": 0.91,
+            "precipIntensity": 0.0123,
+            "precipProbability": 0.61,
+            "precipType": "rain",
+            "pressure": 1016.89,
+            "summary": "Possible Drizzle",
+            "temperature": 56.13,
+            "uvIndex": 0,
+            "visibility": 7.827,
+            "windBearing": 259,
+            "windGust": 10.91,
+            "windSpeed": 6.58
+        }
     },
     {
         "createdAt": new Date(),
@@ -1872,7 +3644,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1474024600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.21,
+            "cloudCover": 0.94,
+            "dewPoint": 50.16,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.53,
+            "summary": "Overcast",
+            "temperature": 54.21,
+            "uvIndex": 0,
+            "visibility": 9.959,
+            "windBearing": 252,
+            "windGust": 4.24,
+            "windSpeed": 2.65
+        }
     },
     {
         "createdAt": new Date(),
@@ -1889,7 +3677,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1483838900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.97,
+            "cloudCover": 0.98,
+            "dewPoint": 53.52,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.32,
+            "summary": "Overcast",
+            "temperature": 57.97,
+            "uvIndex": 0,
+            "visibility": 8.441,
+            "windBearing": 161,
+            "windGust": 12.34,
+            "windSpeed": 6.82
+        }
     },
     {
         "createdAt": new Date(),
@@ -1906,7 +3710,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1492689900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.92,
+            "cloudCover": 0.68,
+            "dewPoint": 51.02,
+            "humidity": 0.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1024.79,
+            "summary": "Mostly Cloudy",
+            "temperature": 53.92,
+            "uvIndex": 0,
+            "visibility": 9.948,
+            "windBearing": 282,
+            "windGust": 2.17,
+            "windSpeed": 2.14
+        }
     },
     {
         "createdAt": new Date(),
@@ -1923,7 +3743,23 @@ module.exports = {
         "speedLimit": 35,
         "streetType": "BLVD",
         "timestamp": 1530328800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 69.23,
+            "cloudCover": 0,
+            "dewPoint": 48.98,
+            "humidity": 0.48,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.08,
+            "summary": "Clear",
+            "temperature": 69.23,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 253,
+            "windGust": 7.96,
+            "windSpeed": 6.75
+        }
     },
     {
         "createdAt": new Date(),
@@ -1940,7 +3776,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1500556800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.29,
+            "cloudCover": 0.54,
+            "dewPoint": 51.9,
+            "humidity": 0.92,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.96,
+            "summary": "Mostly Cloudy",
+            "temperature": 54.29,
+            "uvIndex": 0,
+            "visibility": 9.971,
+            "windBearing": 230,
+            "windGust": 7.21,
+            "windSpeed": 4.77
+        }
     },
     {
         "createdAt": new Date(),
@@ -1957,7 +3809,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1439977000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.73,
+            "cloudCover": 0.77,
+            "dewPoint": 55.85,
+            "humidity": 0.84,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.93,
+            "summary": "Mostly Cloudy",
+            "temperature": 60.73,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 251,
+            "windGust": 9,
+            "windSpeed": 5.74
+        }
     },
     {
         "createdAt": new Date(),
@@ -1974,7 +3842,23 @@ module.exports = {
         "speedLimit": 35,
         "streetType": "BLVD",
         "timestamp": 1437707800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.78,
+            "cloudCover": 0.26,
+            "dewPoint": 55.04,
+            "humidity": 0.76,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.22,
+            "summary": "Partly Cloudy",
+            "temperature": 62.78,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 263,
+            "windGust": 11.66,
+            "windSpeed": 8.05
+        }
     },
     {
         "createdAt": new Date(),
@@ -1991,7 +3875,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1437579400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.13,
+            "cloudCover": 0.43,
+            "dewPoint": 55.4,
+            "humidity": 0.84,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.46,
+            "summary": "Partly Cloudy",
+            "temperature": 60.13,
+            "uvIndex": 2,
+            "visibility": 8.873,
+            "windBearing": 237,
+            "windGust": 10.12,
+            "windSpeed": 6.38
+        }
     },
     {
         "createdAt": new Date(),
@@ -2008,7 +3908,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1442978200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.19,
+            "cloudCover": 0.46,
+            "dewPoint": 52.09,
+            "humidity": 0.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.71,
+            "summary": "Partly Cloudy",
+            "temperature": 58.19,
+            "uvIndex": 0,
+            "visibility": 9.691,
+            "windBearing": 244,
+            "windGust": 8.2,
+            "windSpeed": 5.43
+        }
     },
     {
         "createdAt": new Date(),
@@ -2025,7 +3941,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1436506300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.24,
+            "cloudCover": 1,
+            "dewPoint": 55.93,
+            "humidity": 0.86,
+            "precipIntensity": 0.0055,
+            "precipProbability": 0.51,
+            "precipType": "rain",
+            "pressure": 1012.51,
+            "summary": "Possible Drizzle",
+            "temperature": 60.24,
+            "uvIndex": 0,
+            "visibility": 9.447,
+            "windBearing": 251,
+            "windGust": 4.99,
+            "windSpeed": 3.51
+        }
     },
     {
         "createdAt": new Date(),
@@ -2042,7 +3975,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1502654900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 67.31,
+            "cloudCover": 0.15,
+            "dewPoint": 55.96,
+            "humidity": 0.67,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.15,
+            "summary": "Partly Cloudy",
+            "temperature": 67.31,
+            "uvIndex": 9,
+            "visibility": 9.997,
+            "windBearing": 249,
+            "windGust": 12.2,
+            "windSpeed": 7.99
+        }
     },
     {
         "createdAt": new Date(),
@@ -2059,7 +4008,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1520410600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.69,
+            "cloudCover": 0,
+            "dewPoint": 39.82,
+            "humidity": 0.64,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.64,
+            "summary": "Clear",
+            "temperature": 51.69,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 41,
+            "windGust": 1.65,
+            "windSpeed": 1.51
+        }
     },
     {
         "createdAt": new Date(),
@@ -2076,7 +4041,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1511678000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.26,
+            "cloudCover": 0.07,
+            "dewPoint": 53.15,
+            "humidity": 0.75,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.4,
+            "summary": "Clear",
+            "temperature": 61.26,
+            "uvIndex": 0,
+            "visibility": 9.951,
+            "windBearing": 244,
+            "windGust": 3.15,
+            "windSpeed": 2.23
+        }
     },
     {
         "createdAt": new Date(),
@@ -2093,7 +4074,23 @@ module.exports = {
         "speedLimit": 35,
         "streetType": "BLVD",
         "timestamp": 1525286900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.04,
+            "cloudCover": 0.13,
+            "dewPoint": 49.34,
+            "humidity": 0.61,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.07,
+            "summary": "Partly Cloudy",
+            "temperature": 63.04,
+            "uvIndex": 8,
+            "visibility": 9.997,
+            "windBearing": 249,
+            "windGust": 8.87,
+            "windSpeed": 4.89
+        }
     },
     {
         "createdAt": new Date(),
@@ -2110,7 +4107,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1442830800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 67.92,
+            "cloudCover": 0,
+            "dewPoint": 46.64,
+            "humidity": 0.46,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1008.91,
+            "summary": "Clear",
+            "temperature": 67.92,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 273,
+            "windGust": 1.19,
+            "windSpeed": 0.8
+        }
     },
     {
         "createdAt": new Date(),
@@ -2127,7 +4140,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1558102700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.15,
+            "cloudCover": 0.97,
+            "dewPoint": 46.07,
+            "humidity": 0.8,
+            "ozone": 368.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.45,
+            "summary": "Overcast",
+            "temperature": 52.15,
+            "uvIndex": 0,
+            "visibility": 9.572,
+            "windBearing": 295,
+            "windGust": 10.65,
+            "windSpeed": 8.95
+        }
     },
     {
         "createdAt": new Date(),
@@ -2144,7 +4174,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "WAY",
         "timestamp": 1481783800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.52,
+            "cloudCover": 0.94,
+            "dewPoint": 53.42,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.35,
+            "summary": "Overcast",
+            "temperature": 57.52,
+            "uvIndex": 0,
+            "visibility": 9.736,
+            "windBearing": 163,
+            "windGust": 11.88,
+            "windSpeed": 7.01
+        }
     },
     {
         "createdAt": new Date(),
@@ -2161,7 +4207,25 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1562536700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.9,
+            "cloudCover": 0.14,
+            "dewPoint": 50.6,
+            "humidity": 0.77,
+            "ozone": 351.5,
+            "precipIntensity": 0.0022,
+            "precipProbability": 0.03,
+            "precipType": "rain",
+            "pressure": 1013.49,
+            "summary": "Partly Cloudy",
+            "temperature": 57.9,
+            "uvIndex": 7,
+            "visibility": 10,
+            "windBearing": 253,
+            "windGust": 16.73,
+            "windSpeed": 12.2
+        }
     },
     {
         "createdAt": new Date(),
@@ -2178,7 +4242,24 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "AVE",
         "timestamp": 1488740000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 42.47,
+            "cloudCover": 0.74,
+            "dewPoint": 37.75,
+            "humidity": 0.69,
+            "precipIntensity": 0.0029,
+            "precipProbability": 0.47,
+            "precipType": "rain",
+            "pressure": 1014.69,
+            "summary": "Possible Drizzle",
+            "temperature": 47.53,
+            "uvIndex": 3,
+            "visibility": 9.532,
+            "windBearing": 274,
+            "windGust": 18.85,
+            "windSpeed": 11.48
+        }
     },
     {
         "createdAt": new Date(),
@@ -2195,7 +4276,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1508063700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.84,
+            "cloudCover": 0.07,
+            "dewPoint": 35.35,
+            "humidity": 0.44,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.69,
+            "summary": "Clear",
+            "temperature": 56.84,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 36,
+            "windGust": 3.17,
+            "windSpeed": 2.3
+        }
     },
     {
         "createdAt": new Date(),
@@ -2212,7 +4309,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1516456300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 40.94,
+            "cloudCover": 0,
+            "dewPoint": 35.81,
+            "humidity": 0.77,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.22,
+            "summary": "Clear",
+            "temperature": 42.54,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 337,
+            "windGust": 5.13,
+            "windSpeed": 3.28
+        }
     },
     {
         "createdAt": new Date(),
@@ -2229,7 +4342,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1438350100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.55,
+            "cloudCover": 0.83,
+            "dewPoint": 57.11,
+            "humidity": 0.88,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.22,
+            "summary": "Mostly Cloudy",
+            "temperature": 60.55,
+            "uvIndex": 0,
+            "visibility": 9.76,
+            "windBearing": 247,
+            "windGust": 4.48,
+            "windSpeed": 3.39
+        }
     },
     {
         "createdAt": new Date(),
@@ -2246,7 +4375,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1524556100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.33,
+            "cloudCover": 0.36,
+            "dewPoint": 48.69,
+            "humidity": 0.84,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.42,
+            "summary": "Partly Cloudy",
+            "temperature": 53.33,
+            "uvIndex": 0,
+            "visibility": 9.103,
+            "windBearing": 258,
+            "windGust": 4.85,
+            "windSpeed": 3.56
+        }
     },
     {
         "createdAt": new Date(),
@@ -2263,7 +4408,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1442378300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.39,
+            "cloudCover": 0.44,
+            "dewPoint": 50.06,
+            "humidity": 0.69,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.34,
+            "summary": "Partly Cloudy",
+            "temperature": 60.39,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 272,
+            "windGust": 10.69,
+            "windSpeed": 6.21
+        }
     },
     {
         "createdAt": new Date(),
@@ -2280,7 +4441,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1449831200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 44.1,
+            "cloudCover": 0.93,
+            "dewPoint": 43.19,
+            "humidity": 0.89,
+            "precipIntensity": 0.0686,
+            "precipProbability": 0.94,
+            "precipType": "rain",
+            "pressure": 1009.75,
+            "summary": "Light Rain",
+            "temperature": 46.22,
+            "uvIndex": 0,
+            "visibility": 9.288,
+            "windBearing": 175,
+            "windGust": 4.66,
+            "windSpeed": 4.54
+        }
     },
     {
         "createdAt": new Date(),
@@ -2297,7 +4475,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1556515900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.86,
+            "cloudCover": 0.51,
+            "dewPoint": 48.21,
+            "humidity": 0.91,
+            "ozone": 331.1,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1009.16,
+            "summary": "Mostly Cloudy",
+            "temperature": 50.86,
+            "uvIndex": 0,
+            "visibility": 9.929,
+            "windBearing": 265,
+            "windGust": 8.31,
+            "windSpeed": 5.94
+        }
     },
     {
         "createdAt": new Date(),
@@ -2314,7 +4509,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1548747200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.01,
+            "cloudCover": 0.31,
+            "dewPoint": 46.14,
+            "humidity": 0.67,
+            "ozone": 231.3,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.28,
+            "summary": "Partly Cloudy",
+            "temperature": 57.01,
+            "uvIndex": 0,
+            "visibility": 9.609,
+            "windBearing": 27,
+            "windGust": 4.85,
+            "windSpeed": 3.75
+        }
     },
     {
         "createdAt": new Date(),
@@ -2331,7 +4543,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "AVE",
         "timestamp": 1442502800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.08,
+            "cloudCover": 0.97,
+            "dewPoint": 55.82,
+            "humidity": 0.89,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.51,
+            "summary": "Overcast",
+            "temperature": 59.08,
+            "uvIndex": 0,
+            "visibility": 9.666,
+            "windBearing": 313,
+            "windGust": 2.63,
+            "windSpeed": 2.01
+        }
     },
     {
         "createdAt": new Date(),
@@ -2348,7 +4576,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1424974100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.97,
+            "cloudCover": 0.36,
+            "dewPoint": 49.28,
+            "humidity": 0.7,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.46,
+            "summary": "Partly Cloudy",
+            "temperature": 58.97,
+            "uvIndex": 3,
+            "visibility": 8.241,
+            "windBearing": 299,
+            "windGust": 4.39,
+            "windSpeed": 2.51
+        }
     },
     {
         "createdAt": new Date(),
@@ -2365,7 +4609,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1500176000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 72.51,
+            "cloudCover": 0.4,
+            "dewPoint": 53.37,
+            "humidity": 0.51,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.49,
+            "summary": "Partly Cloudy",
+            "temperature": 72.51,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 285,
+            "windGust": 4.92,
+            "windSpeed": 3.08
+        }
     },
     {
         "createdAt": new Date(),
@@ -2382,7 +4642,24 @@ module.exports = {
         "speedLimit": 65,
         "streetType": "RAMP",
         "timestamp": 1568372500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 70.43,
+            "cloudCover": 0,
+            "dewPoint": 50.71,
+            "humidity": 0.5,
+            "ozone": 288.1,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.84,
+            "summary": "Clear",
+            "temperature": 70.43,
+            "uvIndex": 0,
+            "visibility": 5.922,
+            "windBearing": 55,
+            "windGust": 2.77,
+            "windSpeed": 2.52
+        }
     },
     {
         "createdAt": new Date(),
@@ -2399,7 +4676,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1497171700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.5,
+            "cloudCover": 0.07,
+            "dewPoint": 45.99,
+            "humidity": 0.76,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.76,
+            "summary": "Clear",
+            "temperature": 53.5,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 282,
+            "windGust": 13.22,
+            "windSpeed": 8.01
+        }
     },
     {
         "createdAt": new Date(),
@@ -2416,7 +4709,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1564200600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.35,
+            "cloudCover": 0.09,
+            "dewPoint": 53.92,
+            "humidity": 0.85,
+            "ozone": 303.1,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.88,
+            "summary": "Clear",
+            "temperature": 58.35,
+            "uvIndex": 0,
+            "visibility": 7.791,
+            "windBearing": 258,
+            "windGust": 7.82,
+            "windSpeed": 6.76
+        }
     },
     {
         "createdAt": new Date(),
@@ -2433,7 +4743,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1494116200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.02,
+            "cloudCover": 0.2,
+            "dewPoint": 45.02,
+            "humidity": 0.54,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1006.74,
+            "summary": "Partly Cloudy",
+            "temperature": 62.02,
+            "uvIndex": 2,
+            "visibility": 9.239,
+            "windBearing": 269,
+            "windGust": 10.71,
+            "windSpeed": 6.8
+        }
     },
     {
         "createdAt": new Date(),
@@ -2450,7 +4776,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1459838700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.72,
+            "cloudCover": 0,
+            "dewPoint": 46.55,
+            "humidity": 0.74,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.07,
+            "summary": "Clear",
+            "temperature": 54.72,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 262,
+            "windGust": 2.36,
+            "windSpeed": 1.72
+        }
     },
     {
         "createdAt": new Date(),
@@ -2467,7 +4809,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "",
         "timestamp": 1460837300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 75.98,
+            "cloudCover": 0.15,
+            "dewPoint": 40.37,
+            "humidity": 0.28,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.08,
+            "summary": "Partly Cloudy",
+            "temperature": 75.98,
+            "uvIndex": 8,
+            "visibility": 10,
+            "windBearing": 355,
+            "windGust": 9.64,
+            "windSpeed": 4.67
+        }
     },
     {
         "createdAt": new Date(),
@@ -2484,7 +4842,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1479893100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.84,
+            "cloudCover": 1,
+            "dewPoint": 48.77,
+            "humidity": 0.89,
+            "precipIntensity": 0.0489,
+            "precipProbability": 0.9,
+            "precipType": "rain",
+            "pressure": 1021.44,
+            "summary": "Light Rain",
+            "temperature": 51.84,
+            "uvIndex": 0,
+            "visibility": 8.606,
+            "windBearing": 275,
+            "windGust": 4.01,
+            "windSpeed": 2.26
+        }
     },
     {
         "createdAt": new Date(),
@@ -2501,7 +4876,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1452695200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.75,
+            "cloudCover": 0.91,
+            "dewPoint": 51.65,
+            "humidity": 0.86,
+            "precipIntensity": 0.0147,
+            "precipProbability": 0.69,
+            "precipType": "rain",
+            "pressure": 1017.34,
+            "summary": "Drizzle",
+            "temperature": 55.75,
+            "uvIndex": 0,
+            "visibility": 9.614,
+            "windBearing": 222,
+            "windGust": 15.56,
+            "windSpeed": 8.12
+        }
     },
     {
         "createdAt": new Date(),
@@ -2518,7 +4910,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1462329800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.88,
+            "cloudCover": 0.63,
+            "dewPoint": 51.94,
+            "humidity": 0.72,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.95,
+            "summary": "Mostly Cloudy",
+            "temperature": 60.88,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 278,
+            "windGust": 5.88,
+            "windSpeed": 4.05
+        }
     },
     {
         "createdAt": new Date(),
@@ -2535,7 +4943,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1560279500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 79.47,
+            "cloudCover": 0,
+            "dewPoint": 59.56,
+            "humidity": 0.51,
+            "ozone": 327.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.7,
+            "summary": "Clear",
+            "temperature": 79.44,
+            "uvIndex": 9,
+            "visibility": 2.666,
+            "windBearing": 322,
+            "windGust": 6.8,
+            "windSpeed": 4.37
+        }
     },
     {
         "createdAt": new Date(),
@@ -2552,7 +4977,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1462042200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 70.14,
+            "cloudCover": 0.02,
+            "dewPoint": 41.06,
+            "humidity": 0.35,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.36,
+            "summary": "Clear",
+            "temperature": 70.14,
+            "uvIndex": 9,
+            "visibility": 9.967,
+            "windBearing": 340,
+            "windGust": 13.97,
+            "windSpeed": 7.16
+        }
     },
     {
         "createdAt": new Date(),
@@ -2569,7 +5010,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1445607400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.59,
+            "cloudCover": 0.4,
+            "dewPoint": 50.55,
+            "humidity": 0.77,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.02,
+            "summary": "Partly Cloudy",
+            "temperature": 57.59,
+            "uvIndex": 0,
+            "visibility": 9.935,
+            "windBearing": 139,
+            "windGust": 1.88,
+            "windSpeed": 1.73
+        }
     },
     {
         "createdAt": new Date(),
@@ -2586,7 +5043,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1524560800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.25,
+            "cloudCover": 0.59,
+            "dewPoint": 48.51,
+            "humidity": 0.87,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.22,
+            "summary": "Mostly Cloudy",
+            "temperature": 52.25,
+            "uvIndex": 0,
+            "visibility": 9.067,
+            "windBearing": 254,
+            "windGust": 4.78,
+            "windSpeed": 3.47
+        }
     },
     {
         "createdAt": new Date(),
@@ -2603,7 +5076,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1457304200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.49,
+            "cloudCover": 0.87,
+            "dewPoint": 45.03,
+            "humidity": 0.63,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.56,
+            "summary": "Mostly Cloudy",
+            "temperature": 57.49,
+            "uvIndex": 3,
+            "visibility": 9.997,
+            "windBearing": 213,
+            "windGust": 13.76,
+            "windSpeed": 7.75
+        }
     },
     {
         "createdAt": new Date(),
@@ -2620,7 +5109,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1501317600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.15,
+            "cloudCover": 0.27,
+            "dewPoint": 52.17,
+            "humidity": 0.83,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.36,
+            "summary": "Partly Cloudy",
+            "temperature": 57.15,
+            "uvIndex": 0,
+            "visibility": 9.511,
+            "windBearing": 247,
+            "windGust": 6.73,
+            "windSpeed": 4.84
+        }
     },
     {
         "createdAt": new Date(),
@@ -2637,7 +5142,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1523646000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.95,
+            "cloudCover": 0,
+            "dewPoint": 41.25,
+            "humidity": 0.48,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1030.4,
+            "summary": "Clear",
+            "temperature": 60.95,
+            "uvIndex": 8,
+            "visibility": 9.997,
+            "windBearing": 317,
+            "windGust": 8.09,
+            "windSpeed": 4.78
+        }
     },
     {
         "createdAt": new Date(),
@@ -2654,7 +5175,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1490286500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.21,
+            "cloudCover": 0.31,
+            "dewPoint": 44.24,
+            "humidity": 0.74,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.26,
+            "summary": "Partly Cloudy",
+            "temperature": 52.21,
+            "uvIndex": 2,
+            "visibility": 9.997,
+            "windBearing": 277,
+            "windGust": 5.79,
+            "windSpeed": 3.36
+        }
     },
     {
         "createdAt": new Date(),
@@ -2671,7 +5208,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1520234400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 42.83,
+            "cloudCover": 0,
+            "dewPoint": 36.01,
+            "humidity": 0.77,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1027.04,
+            "summary": "Clear",
+            "temperature": 42.83,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 16,
+            "windGust": 2.79,
+            "windSpeed": 2.04
+        }
     },
     {
         "createdAt": new Date(),
@@ -2688,7 +5241,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1503141000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.06,
+            "cloudCover": 0.92,
+            "dewPoint": 56.1,
+            "humidity": 0.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.77,
+            "summary": "Overcast",
+            "temperature": 59.06,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 258,
+            "windGust": 5.1,
+            "windSpeed": 3.25
+        }
     },
     {
         "createdAt": new Date(),
@@ -2705,7 +5274,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1519733600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 38.39,
+            "cloudCover": 0.57,
+            "dewPoint": 24.19,
+            "humidity": 0.49,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.95,
+            "summary": "Mostly Cloudy",
+            "temperature": 42.24,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 344,
+            "windGust": 10.39,
+            "windSpeed": 6.04
+        }
     },
     {
         "createdAt": new Date(),
@@ -2722,7 +5307,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1531381600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.36,
+            "cloudCover": 0.09,
+            "dewPoint": 53.92,
+            "humidity": 0.82,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.86,
+            "summary": "Clear",
+            "temperature": 59.36,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 253,
+            "windGust": 8.76,
+            "windSpeed": 6.04
+        }
     },
     {
         "createdAt": new Date(),
@@ -2739,7 +5340,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1564975600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.85,
+            "cloudCover": 0.47,
+            "dewPoint": 55.75,
+            "humidity": 0.86,
+            "ozone": 306.4,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.84,
+            "summary": "Partly Cloudy",
+            "temperature": 59.85,
+            "uvIndex": 0,
+            "visibility": 7.671,
+            "windBearing": 269,
+            "windGust": 13.82,
+            "windSpeed": 8.88
+        }
     },
     {
         "createdAt": new Date(),
@@ -2756,7 +5374,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1452524100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 49.99,
+            "cloudCover": 1,
+            "dewPoint": 46.09,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1025.51,
+            "summary": "Overcast",
+            "temperature": 49.99,
+            "uvIndex": 0,
+            "visibility": 9.658,
+            "windBearing": 72,
+            "windGust": 1.57,
+            "windSpeed": 1.44
+        }
     },
     {
         "createdAt": new Date(),
@@ -2773,7 +5407,23 @@ module.exports = {
         "speedLimit": 65,
         "streetType": "RAMP",
         "timestamp": 1506882700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 70.84,
+            "cloudCover": 0.19,
+            "dewPoint": 46.37,
+            "humidity": 0.42,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.46,
+            "summary": "Partly Cloudy",
+            "temperature": 70.84,
+            "uvIndex": 5,
+            "visibility": 9.997,
+            "windBearing": 294,
+            "windGust": 8.84,
+            "windSpeed": 5.15
+        }
     },
     {
         "createdAt": new Date(),
@@ -2790,7 +5440,23 @@ module.exports = {
         "speedLimit": 65,
         "streetType": "RAMP",
         "timestamp": 1477225200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.33,
+            "cloudCover": 0.25,
+            "dewPoint": 47.14,
+            "humidity": 0.82,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.41,
+            "summary": "Partly Cloudy",
+            "temperature": 52.33,
+            "uvIndex": 0,
+            "visibility": 9.94,
+            "windBearing": 197,
+            "windGust": 1.97,
+            "windSpeed": 1.65
+        }
     },
     {
         "createdAt": new Date(),
@@ -2807,7 +5473,24 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "BLVD",
         "timestamp": 1567877100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.33,
+            "cloudCover": 0.97,
+            "dewPoint": 55.39,
+            "humidity": 0.9,
+            "ozone": 282.4,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.17,
+            "summary": "Overcast",
+            "temperature": 58.33,
+            "uvIndex": 3,
+            "visibility": 9.213,
+            "windBearing": 259,
+            "windGust": 16.6,
+            "windSpeed": 10.5
+        }
     },
     {
         "createdAt": new Date(),
@@ -2824,7 +5507,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1440732600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 75.79,
+            "cloudCover": 0.12,
+            "dewPoint": 52.74,
+            "humidity": 0.45,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.06,
+            "summary": "Clear",
+            "temperature": 75.79,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 272,
+            "windGust": 5.58,
+            "windSpeed": 3.79
+        }
     },
     {
         "createdAt": new Date(),
@@ -2841,7 +5540,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1511609900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.52,
+            "cloudCover": 0,
+            "dewPoint": 51.29,
+            "humidity": 0.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.88,
+            "summary": "Clear",
+            "temperature": 57.52,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 63,
+            "windGust": 4.02,
+            "windSpeed": 2.76
+        }
     },
     {
         "createdAt": new Date(),
@@ -2858,7 +5573,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1515911500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 49.16,
+            "cloudCover": 0.01,
+            "dewPoint": 45.93,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1022.24,
+            "summary": "Clear",
+            "temperature": 49.9,
+            "uvIndex": 0,
+            "visibility": 8.663,
+            "windBearing": 78,
+            "windGust": 4.36,
+            "windSpeed": 3.46
+        }
     },
     {
         "createdAt": new Date(),
@@ -2875,7 +5606,25 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1542843200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.52,
+            "cloudCover": 0.85,
+            "dewPoint": 55.53,
+            "humidity": 0.87,
+            "ozone": 289.6,
+            "precipIntensity": 0.0806,
+            "precipProbability": 0.95,
+            "precipType": "rain",
+            "pressure": 1014.15,
+            "summary": "Light Rain",
+            "temperature": 59.52,
+            "uvIndex": 0,
+            "visibility": 5.581,
+            "windBearing": 210,
+            "windGust": 11.69,
+            "windSpeed": 7.81
+        }
     },
     {
         "createdAt": new Date(),
@@ -2892,7 +5641,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "PL",
         "timestamp": 1511021200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 46.7,
+            "cloudCover": 0.09,
+            "dewPoint": 36.46,
+            "humidity": 0.67,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.99,
+            "summary": "Clear",
+            "temperature": 46.7,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 17,
+            "windGust": 2.8,
+            "windSpeed": 2.01
+        }
     },
     {
         "createdAt": new Date(),
@@ -2909,7 +5674,24 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1554721500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.48,
+            "cloudCover": 0.1,
+            "dewPoint": 54.68,
+            "humidity": 0.94,
+            "ozone": 290.3,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1022.69,
+            "summary": "Clear",
+            "temperature": 56.48,
+            "uvIndex": 0,
+            "visibility": 8.604,
+            "windBearing": 233,
+            "windGust": 3.01,
+            "windSpeed": 2.36
+        }
     },
     {
         "createdAt": new Date(),
@@ -2926,7 +5708,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1528127900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.2,
+            "cloudCover": 0.06,
+            "dewPoint": 48.46,
+            "humidity": 0.61,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.05,
+            "summary": "Clear",
+            "temperature": 62.2,
+            "uvIndex": 3,
+            "visibility": 9.62,
+            "windBearing": 241,
+            "windGust": 9.67,
+            "windSpeed": 7.12
+        }
     },
     {
         "createdAt": new Date(),
@@ -2943,7 +5741,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1472558200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.29,
+            "cloudCover": 0.76,
+            "dewPoint": 54.7,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.99,
+            "summary": "Mostly Cloudy",
+            "temperature": 59.29,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 235,
+            "windGust": 6.28,
+            "windSpeed": 4.37
+        }
     },
     {
         "createdAt": new Date(),
@@ -2960,7 +5774,23 @@ module.exports = {
         "speedLimit": 65,
         "streetType": "",
         "timestamp": 1506748600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.97,
+            "cloudCover": 0.78,
+            "dewPoint": 56.98,
+            "humidity": 0.87,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.55,
+            "summary": "Mostly Cloudy",
+            "temperature": 60.97,
+            "uvIndex": 0,
+            "visibility": 9.777,
+            "windBearing": 255,
+            "windGust": 22.77,
+            "windSpeed": 9.58
+        }
     },
     {
         "createdAt": new Date(),
@@ -2977,7 +5807,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1507341900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 72.35,
+            "cloudCover": 0,
+            "dewPoint": 38.78,
+            "humidity": 0.3,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.57,
+            "summary": "Clear",
+            "temperature": 72.35,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 300,
+            "windGust": 4.48,
+            "windSpeed": 2.67
+        }
     },
     {
         "createdAt": new Date(),
@@ -2994,7 +5840,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1425416400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.16,
+            "cloudCover": 0.17,
+            "dewPoint": 45.75,
+            "humidity": 0.57,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.86,
+            "summary": "Partly Cloudy",
+            "temperature": 61.16,
+            "uvIndex": 5,
+            "visibility": 9.997,
+            "windBearing": 293,
+            "windGust": 7.44,
+            "windSpeed": 4.19
+        }
     },
     {
         "createdAt": new Date(),
@@ -3011,7 +5873,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1504197500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 65.6,
+            "cloudCover": 0.11,
+            "dewPoint": 57.34,
+            "humidity": 0.75,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.51,
+            "summary": "Clear",
+            "temperature": 65.6,
+            "uvIndex": 3,
+            "visibility": 9.997,
+            "windBearing": 332,
+            "windGust": 2.41,
+            "windSpeed": 1.61
+        }
     },
     {
         "createdAt": new Date(),
@@ -3028,7 +5906,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1482808600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 43.43,
+            "cloudCover": 0.06,
+            "dewPoint": 28.48,
+            "humidity": 0.55,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1026.15,
+            "summary": "Clear",
+            "temperature": 43.43,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 66,
+            "windGust": 3.77,
+            "windSpeed": 2.45
+        }
     },
     {
         "createdAt": new Date(),
@@ -3045,7 +5939,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1561458500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.43,
+            "cloudCover": 0.13,
+            "dewPoint": 52.08,
+            "humidity": 0.82,
+            "ozone": 339.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1009.99,
+            "summary": "Partly Cloudy",
+            "temperature": 57.43,
+            "uvIndex": 0,
+            "visibility": 9.729,
+            "windBearing": 260,
+            "windGust": 8.9,
+            "windSpeed": 7.36
+        }
     },
     {
         "createdAt": new Date(),
@@ -3062,7 +5973,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1421535400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.26,
+            "cloudCover": 0.47,
+            "dewPoint": 52.44,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1022.73,
+            "summary": "Partly Cloudy",
+            "temperature": 59.26,
+            "uvIndex": 1,
+            "visibility": 7.807,
+            "windBearing": 3,
+            "windGust": 6.67,
+            "windSpeed": 3.91
+        }
     },
     {
         "createdAt": new Date(),
@@ -3079,7 +6006,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1510373300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.87,
+            "cloudCover": 0.28,
+            "dewPoint": 53.12,
+            "humidity": 0.94,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.17,
+            "summary": "Partly Cloudy",
+            "temperature": 54.87,
+            "uvIndex": 0,
+            "visibility": 9.616,
+            "windBearing": 254,
+            "windGust": 2.44,
+            "windSpeed": 1.66
+        }
     },
     {
         "createdAt": new Date(),
@@ -3096,7 +6039,23 @@ module.exports = {
         "speedLimit": 35,
         "streetType": "AVE",
         "timestamp": 1537021900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.55,
+            "cloudCover": 0.48,
+            "dewPoint": 49.57,
+            "humidity": 0.83,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.23,
+            "summary": "Partly Cloudy",
+            "temperature": 54.55,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 242,
+            "windGust": 11.17,
+            "windSpeed": 6.39
+        }
     },
     {
         "createdAt": new Date(),
@@ -3113,7 +6072,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1532300100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 72.13,
+            "cloudCover": 0.16,
+            "dewPoint": 55.76,
+            "humidity": 0.56,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.07,
+            "summary": "Partly Cloudy",
+            "temperature": 72.13,
+            "uvIndex": 6,
+            "visibility": 9.997,
+            "windBearing": 261,
+            "windGust": 13.49,
+            "windSpeed": 9.08
+        }
     },
     {
         "createdAt": new Date(),
@@ -3130,7 +6105,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1431331700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.68,
+            "cloudCover": 0.41,
+            "dewPoint": 47.49,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.52,
+            "summary": "Partly Cloudy",
+            "temperature": 51.68,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 220,
+            "windGust": 5.37,
+            "windSpeed": 4.08
+        }
     },
     {
         "createdAt": new Date(),
@@ -3147,7 +6138,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1462410500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.93,
+            "cloudCover": 0.56,
+            "dewPoint": 51.67,
+            "humidity": 0.69,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.18,
+            "summary": "Mostly Cloudy",
+            "temperature": 61.93,
+            "uvIndex": 1,
+            "visibility": 9.997,
+            "windBearing": 247,
+            "windGust": 13.16,
+            "windSpeed": 8.14
+        }
     },
     {
         "createdAt": new Date(),
@@ -3164,7 +6171,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1420937100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.18,
+            "cloudCover": 0.54,
+            "dewPoint": 49.51,
+            "humidity": 0.73,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.73,
+            "summary": "Mostly Cloudy",
+            "temperature": 58.18,
+            "uvIndex": 0,
+            "visibility": 7.352,
+            "windBearing": 295,
+            "windGust": 2.36,
+            "windSpeed": 1.87
+        }
     },
     {
         "createdAt": new Date(),
@@ -3181,7 +6204,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1462805800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.84,
+            "cloudCover": 1,
+            "dewPoint": 49.75,
+            "humidity": 0.89,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.39,
+            "summary": "Overcast",
+            "temperature": 52.84,
+            "uvIndex": 1,
+            "visibility": 9.91,
+            "windBearing": 234,
+            "windGust": 5.89,
+            "windSpeed": 3.65
+        }
     },
     {
         "createdAt": new Date(),
@@ -3198,7 +6237,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1455596100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.15,
+            "cloudCover": 0.13,
+            "dewPoint": 50.58,
+            "humidity": 0.64,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.28,
+            "summary": "Partly Cloudy",
+            "temperature": 63.15,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 357,
+            "windGust": 1.29,
+            "windSpeed": 0.74
+        }
     },
     {
         "createdAt": new Date(),
@@ -3215,7 +6270,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1461752800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.9,
+            "cloudCover": 0.4,
+            "dewPoint": 43.01,
+            "humidity": 0.72,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.26,
+            "summary": "Partly Cloudy",
+            "temperature": 51.9,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 268,
+            "windGust": 7.27,
+            "windSpeed": 4.55
+        }
     },
     {
         "createdAt": new Date(),
@@ -3232,7 +6303,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1568468900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 66.7,
+            "cloudCover": 0.1,
+            "dewPoint": 48.26,
+            "humidity": 0.51,
+            "ozone": 292.6,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.97,
+            "summary": "Clear",
+            "temperature": 66.7,
+            "uvIndex": 0,
+            "visibility": 8.003,
+            "windBearing": 244,
+            "windGust": 4.25,
+            "windSpeed": 3.13
+        }
     },
     {
         "createdAt": new Date(),
@@ -3249,7 +6337,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1539514900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.53,
+            "cloudCover": 0.83,
+            "dewPoint": 48.35,
+            "humidity": 0.83,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.55,
+            "summary": "Mostly Cloudy",
+            "temperature": 53.53,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 263,
+            "windGust": 5.08,
+            "windSpeed": 2.96
+        }
     },
     {
         "createdAt": new Date(),
@@ -3266,7 +6370,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1421865400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.2,
+            "cloudCover": 0.32,
+            "dewPoint": 44.5,
+            "humidity": 0.7,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.29,
+            "summary": "Partly Cloudy",
+            "temperature": 54.2,
+            "uvIndex": 2,
+            "visibility": 9.702,
+            "windBearing": 358,
+            "windGust": 5.99,
+            "windSpeed": 3.98
+        }
     },
     {
         "createdAt": new Date(),
@@ -3283,7 +6403,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1463941500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.81,
+            "cloudCover": 0.8,
+            "dewPoint": 49.25,
+            "humidity": 0.71,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.89,
+            "summary": "Mostly Cloudy",
+            "temperature": 58.81,
+            "uvIndex": 5,
+            "visibility": 9.997,
+            "windBearing": 252,
+            "windGust": 7.52,
+            "windSpeed": 4.3
+        }
     },
     {
         "createdAt": new Date(),
@@ -3300,7 +6436,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ALY",
         "timestamp": 1567059300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.07,
+            "cloudCover": 0.75,
+            "dewPoint": 59.89,
+            "humidity": 0.93,
+            "ozone": 287,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.35,
+            "summary": "Mostly Cloudy",
+            "temperature": 61.8,
+            "uvIndex": 0,
+            "visibility": 8.829,
+            "windBearing": 248,
+            "windGust": 10.25,
+            "windSpeed": 7.34
+        }
     },
     {
         "createdAt": new Date(),
@@ -3317,7 +6470,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1513777400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 43.57,
+            "cloudCover": 0.95,
+            "dewPoint": 40.86,
+            "humidity": 0.83,
+            "precipIntensity": 0.0006,
+            "precipProbability": 0.12,
+            "precipType": "rain",
+            "pressure": 1021.83,
+            "summary": "Overcast",
+            "temperature": 45.69,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 302,
+            "windGust": 7.51,
+            "windSpeed": 4.41
+        }
     },
     {
         "createdAt": new Date(),
@@ -3334,7 +6504,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1458165500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 68.21,
+            "cloudCover": 0.09,
+            "dewPoint": 46.39,
+            "humidity": 0.46,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.83,
+            "summary": "Clear",
+            "temperature": 68.21,
+            "uvIndex": 5,
+            "visibility": 9.997,
+            "windBearing": 310,
+            "windGust": 8.45,
+            "windSpeed": 4.58
+        }
     },
     {
         "createdAt": new Date(),
@@ -3351,7 +6537,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1557711500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.48,
+            "cloudCover": 0.24,
+            "dewPoint": 49.42,
+            "humidity": 0.77,
+            "ozone": 345.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.67,
+            "summary": "Partly Cloudy",
+            "temperature": 56.48,
+            "uvIndex": 0,
+            "visibility": 7.755,
+            "windBearing": 257,
+            "windGust": 14.63,
+            "windSpeed": 10.81
+        }
     },
     {
         "createdAt": new Date(),
@@ -3368,7 +6571,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "AVE",
         "timestamp": 1433566600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.46,
+            "cloudCover": 0.5,
+            "dewPoint": 52.71,
+            "humidity": 0.84,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.93,
+            "summary": "Mostly Cloudy",
+            "temperature": 57.46,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 261,
+            "windGust": 7.28,
+            "windSpeed": 4.88
+        }
     },
     {
         "createdAt": new Date(),
@@ -3385,7 +6604,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1489548500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 64.29,
+            "cloudCover": 0.05,
+            "dewPoint": 52.98,
+            "humidity": 0.67,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.28,
+            "summary": "Clear",
+            "temperature": 64.29,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 294,
+            "windGust": 4.38,
+            "windSpeed": 3.35
+        }
     },
     {
         "createdAt": new Date(),
@@ -3402,7 +6637,24 @@ module.exports = {
         "speedLimit": 40,
         "streetType": "WAY",
         "timestamp": 1545799000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.96,
+            "cloudCover": 0.09,
+            "dewPoint": 43.96,
+            "humidity": 0.69,
+            "ozone": 293.1,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.89,
+            "summary": "Clear",
+            "temperature": 53.96,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 323,
+            "windGust": 13.36,
+            "windSpeed": 9.16
+        }
     },
     {
         "createdAt": new Date(),
@@ -3419,7 +6671,23 @@ module.exports = {
         "speedLimit": 65,
         "streetType": "RAMP",
         "timestamp": 1423226500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.12,
+            "cloudCover": 0.88,
+            "dewPoint": 47.31,
+            "humidity": 0.63,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.8,
+            "summary": "Overcast",
+            "temperature": 60.12,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 167,
+            "windGust": 11.58,
+            "windSpeed": 7.18
+        }
     },
     {
         "createdAt": new Date(),
@@ -3436,7 +6704,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "",
         "timestamp": 1551617300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.68,
+            "cloudCover": 0.92,
+            "dewPoint": 51.9,
+            "humidity": 0.97,
+            "ozone": 271.4,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.28,
+            "summary": "Overcast",
+            "temperature": 52.68,
+            "uvIndex": 0,
+            "visibility": 7.941,
+            "windBearing": 220,
+            "windGust": 5.74,
+            "windSpeed": 3.52
+        }
     },
     {
         "createdAt": new Date(),
@@ -3453,7 +6738,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1499319300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.26,
+            "cloudCover": 0.13,
+            "dewPoint": 52.58,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.87,
+            "summary": "Partly Cloudy",
+            "temperature": 59.26,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 263,
+            "windGust": 4.88,
+            "windSpeed": 3.86
+        }
     },
     {
         "createdAt": new Date(),
@@ -3470,7 +6771,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1557882400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58,
+            "cloudCover": 0.76,
+            "dewPoint": 49.95,
+            "humidity": 0.75,
+            "ozone": 319.7,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.73,
+            "summary": "Mostly Cloudy",
+            "temperature": 58,
+            "uvIndex": 1,
+            "visibility": 8.635,
+            "windBearing": 251,
+            "windGust": 11.53,
+            "windSpeed": 7.44
+        }
     },
     {
         "createdAt": new Date(),
@@ -3487,7 +6805,24 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1548266900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 48.27,
+            "cloudCover": 0.08,
+            "dewPoint": 37.6,
+            "humidity": 0.64,
+            "ozone": 254.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1031.25,
+            "summary": "Clear",
+            "temperature": 49.28,
+            "uvIndex": 2,
+            "visibility": 9.425,
+            "windBearing": 16,
+            "windGust": 6.01,
+            "windSpeed": 3.69
+        }
     },
     {
         "createdAt": new Date(),
@@ -3504,7 +6839,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1516657400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.15,
+            "cloudCover": 0.42,
+            "dewPoint": 46.86,
+            "humidity": 0.74,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1025.82,
+            "summary": "Partly Cloudy",
+            "temperature": 55.15,
+            "uvIndex": 2,
+            "visibility": 9.442,
+            "windBearing": 294,
+            "windGust": 8.05,
+            "windSpeed": 4.84
+        }
     },
     {
         "createdAt": new Date(),
@@ -3521,7 +6872,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1533764600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 74.16,
+            "cloudCover": 0.18,
+            "dewPoint": 55.06,
+            "humidity": 0.51,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.11,
+            "summary": "Partly Cloudy",
+            "temperature": 74.16,
+            "uvIndex": 8,
+            "visibility": 9.908,
+            "windBearing": 271,
+            "windGust": 9.23,
+            "windSpeed": 6.9
+        }
     },
     {
         "createdAt": new Date(),
@@ -3538,7 +6905,25 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1545670000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.44,
+            "cloudCover": 1,
+            "dewPoint": 52.58,
+            "humidity": 0.97,
+            "ozone": 281.4,
+            "precipIntensity": 0.0059,
+            "precipProbability": 0.61,
+            "precipType": "rain",
+            "pressure": 1021.03,
+            "summary": "Possible Drizzle",
+            "temperature": 53.44,
+            "uvIndex": 0,
+            "visibility": 8.007,
+            "windBearing": 179,
+            "windGust": 10.3,
+            "windSpeed": 7.09
+        }
     },
     {
         "createdAt": new Date(),
@@ -3555,7 +6940,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1537375300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.02,
+            "cloudCover": 0.26,
+            "dewPoint": 50.91,
+            "humidity": 0.74,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.86,
+            "summary": "Partly Cloudy",
+            "temperature": 59.02,
+            "uvIndex": 2,
+            "visibility": 8.876,
+            "windBearing": 235,
+            "windGust": 5.24,
+            "windSpeed": 3.19
+        }
     },
     {
         "createdAt": new Date(),
@@ -3572,7 +6973,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1485136400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 46.48,
+            "cloudCover": 1,
+            "dewPoint": 43.57,
+            "humidity": 0.9,
+            "precipIntensity": 0.0327,
+            "precipProbability": 0.94,
+            "precipType": "rain",
+            "pressure": 1004.68,
+            "summary": "Light Rain",
+            "temperature": 46.48,
+            "uvIndex": 0,
+            "visibility": 9.869,
+            "windBearing": 176,
+            "windGust": 4.27,
+            "windSpeed": 2.98
+        }
     },
     {
         "createdAt": new Date(),
@@ -3589,7 +7007,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ALY",
         "timestamp": 1500630100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.49,
+            "cloudCover": 0.08,
+            "dewPoint": 50.64,
+            "humidity": 0.81,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.36,
+            "summary": "Clear",
+            "temperature": 56.49,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 223,
+            "windGust": 6.91,
+            "windSpeed": 4.71
+        }
     },
     {
         "createdAt": new Date(),
@@ -3606,7 +7040,24 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1568280800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 66.11,
+            "cloudCover": 0,
+            "dewPoint": 51.74,
+            "humidity": 0.6,
+            "ozone": 295.6,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.45,
+            "summary": "Clear",
+            "temperature": 66.11,
+            "uvIndex": 0,
+            "visibility": 7.819,
+            "windBearing": 213,
+            "windGust": 3.82,
+            "windSpeed": 2.7
+        }
     },
     {
         "createdAt": new Date(),
@@ -3623,7 +7074,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1495292100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.61,
+            "cloudCover": 0,
+            "dewPoint": 50.62,
+            "humidity": 0.75,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.84,
+            "summary": "Clear",
+            "temperature": 58.61,
+            "uvIndex": 1,
+            "visibility": 9.982,
+            "windBearing": 315,
+            "windGust": 1.97,
+            "windSpeed": 1.42
+        }
     },
     {
         "createdAt": new Date(),
@@ -3640,7 +7107,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "CT",
         "timestamp": 1516987300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 45.23,
+            "cloudCover": 0.21,
+            "dewPoint": 43.06,
+            "humidity": 0.92,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1028.62,
+            "summary": "Partly Cloudy",
+            "temperature": 45.23,
+            "uvIndex": 1,
+            "visibility": 9.421,
+            "windBearing": 327,
+            "windGust": 2.03,
+            "windSpeed": 1.7
+        }
     },
     {
         "createdAt": new Date(),
@@ -3657,7 +7140,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1562676900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.85,
+            "cloudCover": 0.93,
+            "dewPoint": 53.59,
+            "humidity": 0.96,
+            "ozone": 314,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.69,
+            "summary": "Overcast",
+            "temperature": 54.85,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 245,
+            "windGust": 8.72,
+            "windSpeed": 6.98
+        }
     },
     {
         "createdAt": new Date(),
@@ -3674,7 +7174,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1493335200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 64.43,
+            "cloudCover": 0.25,
+            "dewPoint": 46.48,
+            "humidity": 0.52,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.42,
+            "summary": "Partly Cloudy",
+            "temperature": 64.43,
+            "uvIndex": 4,
+            "visibility": 10,
+            "windBearing": 275,
+            "windGust": 13.57,
+            "windSpeed": 8.27
+        }
     },
     {
         "createdAt": new Date(),
@@ -3691,7 +7207,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1500988900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.29,
+            "cloudCover": 0.87,
+            "dewPoint": 53.87,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.33,
+            "summary": "Mostly Cloudy",
+            "temperature": 58.29,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 271,
+            "windGust": 4.54,
+            "windSpeed": 2.98
+        }
     },
     {
         "createdAt": new Date(),
@@ -3708,7 +7240,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1470217700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.82,
+            "cloudCover": 0.02,
+            "dewPoint": 52.25,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.84,
+            "summary": "Clear",
+            "temperature": 56.82,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 249,
+            "windGust": 4.94,
+            "windSpeed": 3.49
+        }
     },
     {
         "createdAt": new Date(),
@@ -3725,7 +7273,23 @@ module.exports = {
         "speedLimit": 45,
         "streetType": "BLVD",
         "timestamp": 1430723300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.55,
+            "cloudCover": 1,
+            "dewPoint": 47.09,
+            "humidity": 0.82,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.37,
+            "summary": "Overcast",
+            "temperature": 52.55,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 251,
+            "windGust": 10.17,
+            "windSpeed": 6.68
+        }
     },
     {
         "createdAt": new Date(),
@@ -3742,7 +7306,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1429251100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.11,
+            "cloudCover": 0,
+            "dewPoint": 32.97,
+            "humidity": 0.35,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.51,
+            "summary": "Clear",
+            "temperature": 61.11,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 260,
+            "windGust": 2.27,
+            "windSpeed": 1.64
+        }
     },
     {
         "createdAt": new Date(),
@@ -3759,7 +7339,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1436834800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 71.9,
+            "cloudCover": 0.64,
+            "dewPoint": 58.47,
+            "humidity": 0.63,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.46,
+            "summary": "Mostly Cloudy",
+            "temperature": 71.9,
+            "uvIndex": 2,
+            "visibility": 9.997,
+            "windBearing": 265,
+            "windGust": 12.21,
+            "windSpeed": 8.84
+        }
     },
     {
         "createdAt": new Date(),
@@ -3776,7 +7372,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1426282500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 73.46,
+            "cloudCover": 0.55,
+            "dewPoint": 54.93,
+            "humidity": 0.52,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.57,
+            "summary": "Mostly Cloudy",
+            "temperature": 73.46,
+            "uvIndex": 4,
+            "visibility": 9.997,
+            "windBearing": 307,
+            "windGust": 6.76,
+            "windSpeed": 3.99
+        }
     },
     {
         "createdAt": new Date(),
@@ -3793,7 +7405,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1480639800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.22,
+            "cloudCover": 0.1,
+            "dewPoint": 40.09,
+            "humidity": 0.57,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.34,
+            "summary": "Clear",
+            "temperature": 55.22,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 287,
+            "windGust": 3.2,
+            "windSpeed": 2.46
+        }
     },
     {
         "createdAt": new Date(),
@@ -3810,7 +7438,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1490190300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.11,
+            "cloudCover": 0.97,
+            "dewPoint": 49.63,
+            "humidity": 0.91,
+            "precipIntensity": 0.0105,
+            "precipProbability": 0.68,
+            "precipType": "rain",
+            "pressure": 1015.74,
+            "summary": "Possible Drizzle",
+            "temperature": 52.11,
+            "uvIndex": 0,
+            "visibility": 9.148,
+            "windBearing": 286,
+            "windGust": 4.8,
+            "windSpeed": 3.55
+        }
     },
     {
         "createdAt": new Date(),
@@ -3827,7 +7472,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1445752500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.26,
+            "cloudCover": 0.69,
+            "dewPoint": 52.1,
+            "humidity": 0.74,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.35,
+            "summary": "Mostly Cloudy",
+            "temperature": 60.26,
+            "uvIndex": 0,
+            "visibility": 9.374,
+            "windBearing": 275,
+            "windGust": 2.71,
+            "windSpeed": 2.36
+        }
     },
     {
         "createdAt": new Date(),
@@ -3844,7 +7505,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1541203800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 69.2,
+            "cloudCover": 0.33,
+            "dewPoint": 49.37,
+            "humidity": 0.49,
+            "ozone": 255.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.57,
+            "summary": "Partly Cloudy",
+            "temperature": 69.2,
+            "uvIndex": 0,
+            "visibility": 6.196,
+            "windBearing": 267,
+            "windGust": 7.7,
+            "windSpeed": 5.05
+        }
     },
     {
         "createdAt": new Date(),
@@ -3861,7 +7539,25 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1558219600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.43,
+            "cloudCover": 1,
+            "dewPoint": 47.95,
+            "humidity": 0.82,
+            "ozone": 370.1,
+            "precipIntensity": 0.0373,
+            "precipProbability": 0.67,
+            "precipType": "rain",
+            "pressure": 1012.7,
+            "summary": "Possible Light Rain",
+            "temperature": 53.43,
+            "uvIndex": 3,
+            "visibility": 5.74,
+            "windBearing": 148,
+            "windGust": 16.82,
+            "windSpeed": 12.12
+        }
     },
     {
         "createdAt": new Date(),
@@ -3878,7 +7574,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1452307500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 49.28,
+            "cloudCover": 1,
+            "dewPoint": 44.68,
+            "humidity": 0.84,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.99,
+            "summary": "Overcast",
+            "temperature": 49.28,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 108,
+            "windGust": 2.49,
+            "windSpeed": 2.49
+        }
     },
     {
         "createdAt": new Date(),
@@ -3895,7 +7607,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1513703900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 47.76,
+            "cloudCover": 0.41,
+            "dewPoint": 38.03,
+            "humidity": 0.69,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1022.94,
+            "summary": "Partly Cloudy",
+            "temperature": 47.76,
+            "uvIndex": 1,
+            "visibility": 9.85,
+            "windBearing": 139,
+            "windGust": 2.11,
+            "windSpeed": 1.55
+        }
     },
     {
         "createdAt": new Date(),
@@ -3912,7 +7640,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1541086800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.42,
+            "cloudCover": 0.45,
+            "dewPoint": 50.49,
+            "humidity": 0.65,
+            "ozone": 260.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.18,
+            "summary": "Partly Cloudy",
+            "temperature": 62.42,
+            "uvIndex": 0,
+            "visibility": 8.6,
+            "windBearing": 42,
+            "windGust": 5.69,
+            "windSpeed": 2.96
+        }
     },
     {
         "createdAt": new Date(),
@@ -3929,7 +7674,24 @@ module.exports = {
         "speedLimit": 35,
         "streetType": "AVE",
         "timestamp": 1556028800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.68,
+            "cloudCover": 0.2,
+            "dewPoint": 45.41,
+            "humidity": 0.64,
+            "ozone": 308.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.17,
+            "summary": "Partly Cloudy",
+            "temperature": 57.68,
+            "uvIndex": 0,
+            "visibility": 6.084,
+            "windBearing": 140,
+            "windGust": 4.61,
+            "windSpeed": 2.64
+        }
     },
     {
         "createdAt": new Date(),
@@ -3946,7 +7708,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1552321000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.46,
+            "cloudCover": 0.02,
+            "dewPoint": 39.4,
+            "humidity": 0.66,
+            "ozone": 377.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.77,
+            "summary": "Clear",
+            "temperature": 50.46,
+            "uvIndex": 1,
+            "visibility": 10,
+            "windBearing": 29,
+            "windGust": 6.25,
+            "windSpeed": 4.12
+        }
     },
     {
         "createdAt": new Date(),
@@ -3963,7 +7742,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1521694200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.92,
+            "cloudCover": 1,
+            "dewPoint": 55.58,
+            "humidity": 0.86,
+            "precipIntensity": 0.0272,
+            "precipProbability": 0.74,
+            "precipType": "rain",
+            "pressure": 1008.5,
+            "summary": "Light Rain",
+            "temperature": 59.92,
+            "uvIndex": 0,
+            "visibility": 9.038,
+            "windBearing": 166,
+            "windGust": 10.1,
+            "windSpeed": 6.28
+        }
     },
     {
         "createdAt": new Date(),
@@ -3980,7 +7776,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "LN",
         "timestamp": 1521398300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.29,
+            "cloudCover": 0.51,
+            "dewPoint": 44.64,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.15,
+            "summary": "Mostly Cloudy",
+            "temperature": 51.29,
+            "uvIndex": 4,
+            "visibility": 9.819,
+            "windBearing": 72,
+            "windGust": 5.14,
+            "windSpeed": 3.21
+        }
     },
     {
         "createdAt": new Date(),
@@ -3997,7 +7809,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1476987100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 68.83,
+            "cloudCover": 0.07,
+            "dewPoint": 51.25,
+            "humidity": 0.53,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.79,
+            "summary": "Clear",
+            "temperature": 68.83,
+            "uvIndex": 3,
+            "visibility": 9.989,
+            "windBearing": 333,
+            "windGust": 5.71,
+            "windSpeed": 3.69
+        }
     },
     {
         "createdAt": new Date(),
@@ -4014,7 +7842,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1467596200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 64.57,
+            "cloudCover": 0.11,
+            "dewPoint": 53.34,
+            "humidity": 0.67,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.64,
+            "summary": "Clear",
+            "temperature": 64.57,
+            "uvIndex": 1,
+            "visibility": 9.997,
+            "windBearing": 260,
+            "windGust": 11.89,
+            "windSpeed": 7.3
+        }
     },
     {
         "createdAt": new Date(),
@@ -4031,7 +7875,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1486726500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.19,
+            "cloudCover": 1,
+            "dewPoint": 53.82,
+            "humidity": 0.95,
+            "precipIntensity": 0.0047,
+            "precipProbability": 0.48,
+            "precipType": "rain",
+            "pressure": 1014.95,
+            "summary": "Possible Drizzle",
+            "temperature": 55.19,
+            "uvIndex": 0,
+            "visibility": 8.817,
+            "windBearing": 220,
+            "windGust": 3.42,
+            "windSpeed": 2.14
+        }
     },
     {
         "createdAt": new Date(),
@@ -4048,7 +7909,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1435940100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.36,
+            "cloudCover": 0.49,
+            "dewPoint": 57.94,
+            "humidity": 0.82,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.57,
+            "summary": "Partly Cloudy",
+            "temperature": 63.36,
+            "uvIndex": 3,
+            "visibility": 9.997,
+            "windBearing": 265,
+            "windGust": 7.97,
+            "windSpeed": 5.18
+        }
     },
     {
         "createdAt": new Date(),
@@ -4065,7 +7942,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1517152600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 46.24,
+            "cloudCover": 0,
+            "dewPoint": 41.25,
+            "humidity": 0.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1028.3,
+            "summary": "Clear",
+            "temperature": 47.06,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 26,
+            "windGust": 4.22,
+            "windSpeed": 3.11
+        }
     },
     {
         "createdAt": new Date(),
@@ -4082,7 +7975,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "CIR",
         "timestamp": 1452002900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.04,
+            "cloudCover": 1,
+            "dewPoint": 49.27,
+            "humidity": 0.97,
+            "precipIntensity": 0.1155,
+            "precipProbability": 1,
+            "precipType": "rain",
+            "pressure": 1002.8,
+            "summary": "Rain",
+            "temperature": 50.04,
+            "uvIndex": 0,
+            "visibility": 5.629,
+            "windBearing": 145,
+            "windGust": 6.96,
+            "windSpeed": 6.38
+        }
     },
     {
         "createdAt": new Date(),
@@ -4099,7 +8009,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1469315100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 83.33,
+            "cloudCover": 0,
+            "dewPoint": 53.33,
+            "humidity": 0.36,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.48,
+            "summary": "Clear",
+            "temperature": 83.33,
+            "uvIndex": 6,
+            "visibility": 9.997,
+            "windBearing": 273,
+            "windGust": 9.29,
+            "windSpeed": 5.32
+        }
     },
     {
         "createdAt": new Date(),
@@ -4116,7 +8042,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1524574000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.82,
+            "cloudCover": 0.99,
+            "dewPoint": 48.83,
+            "humidity": 0.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.47,
+            "summary": "Overcast",
+            "temperature": 51.82,
+            "uvIndex": 0,
+            "visibility": 9.43,
+            "windBearing": 227,
+            "windGust": 2.68,
+            "windSpeed": 1.75
+        }
     },
     {
         "createdAt": new Date(),
@@ -4133,7 +8075,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1427215200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.67,
+            "cloudCover": 0.74,
+            "dewPoint": 52.1,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1026.06,
+            "summary": "Mostly Cloudy",
+            "temperature": 56.67,
+            "uvIndex": 2,
+            "visibility": 9.939,
+            "windBearing": 274,
+            "windGust": 6.78,
+            "windSpeed": 3.98
+        }
     },
     {
         "createdAt": new Date(),
@@ -4150,7 +8108,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1568298200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 65.27,
+            "cloudCover": 0,
+            "dewPoint": 50.16,
+            "humidity": 0.58,
+            "ozone": 291.3,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.56,
+            "summary": "Clear",
+            "temperature": 65.27,
+            "uvIndex": 0,
+            "visibility": 8.496,
+            "windBearing": 36,
+            "windGust": 3.09,
+            "windSpeed": 2.49
+        }
     },
     {
         "createdAt": new Date(),
@@ -4167,7 +8142,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1449478000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.76,
+            "cloudCover": 0.88,
+            "dewPoint": 54.32,
+            "humidity": 0.92,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1026.15,
+            "summary": "Overcast",
+            "temperature": 56.76,
+            "uvIndex": 0,
+            "visibility": 4.862,
+            "windBearing": 275,
+            "windGust": 1.87,
+            "windSpeed": 1.22
+        }
     },
     {
         "createdAt": new Date(),
@@ -4184,7 +8175,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1427547000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.48,
+            "cloudCover": 0.13,
+            "dewPoint": 48.24,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.88,
+            "summary": "Partly Cloudy",
+            "temperature": 52.48,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 21,
+            "windGust": 2.15,
+            "windSpeed": 1.62
+        }
     },
     {
         "createdAt": new Date(),
@@ -4201,7 +8208,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1490853500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.03,
+            "cloudCover": 0.17,
+            "dewPoint": 49.97,
+            "humidity": 0.83,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.62,
+            "summary": "Partly Cloudy",
+            "temperature": 55.03,
+            "uvIndex": 0,
+            "visibility": 9.715,
+            "windBearing": 255,
+            "windGust": 5.96,
+            "windSpeed": 3.87
+        }
     },
     {
         "createdAt": new Date(),
@@ -4218,7 +8241,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1508664100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.14,
+            "cloudCover": 0,
+            "dewPoint": 49.87,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1027.16,
+            "summary": "Clear",
+            "temperature": 54.14,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 153,
+            "windGust": 1.77,
+            "windSpeed": 1.65
+        }
     },
     {
         "createdAt": new Date(),
@@ -4235,7 +8274,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1466748600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.94,
+            "cloudCover": 0.45,
+            "dewPoint": 52.95,
+            "humidity": 0.75,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.16,
+            "summary": "Partly Cloudy",
+            "temperature": 60.94,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 248,
+            "windGust": 7.74,
+            "windSpeed": 4.5
+        }
     },
     {
         "createdAt": new Date(),
@@ -4252,7 +8307,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1506567100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 73.57,
+            "cloudCover": 0,
+            "dewPoint": 46.14,
+            "humidity": 0.38,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.96,
+            "summary": "Clear",
+            "temperature": 73.57,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 288,
+            "windGust": 3.06,
+            "windSpeed": 2.21
+        }
     },
     {
         "createdAt": new Date(),
@@ -4269,7 +8340,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1494486100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.68,
+            "cloudCover": 0.22,
+            "dewPoint": 46.81,
+            "humidity": 0.83,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.08,
+            "summary": "Partly Cloudy",
+            "temperature": 51.68,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 253,
+            "windGust": 7.8,
+            "windSpeed": 4.79
+        }
     },
     {
         "createdAt": new Date(),
@@ -4286,7 +8373,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1486767900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.35,
+            "cloudCover": 0.47,
+            "dewPoint": 49.46,
+            "humidity": 0.7,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.78,
+            "summary": "Partly Cloudy",
+            "temperature": 59.35,
+            "uvIndex": 2,
+            "visibility": 9.997,
+            "windBearing": 273,
+            "windGust": 9.59,
+            "windSpeed": 5.7
+        }
     },
     {
         "createdAt": new Date(),
@@ -4303,7 +8406,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1441367100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.6,
+            "cloudCover": 0,
+            "dewPoint": 50.22,
+            "humidity": 0.79,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1009.99,
+            "summary": "Clear",
+            "temperature": 56.6,
+            "uvIndex": 0,
+            "visibility": 9.831,
+            "windBearing": 206,
+            "windGust": 4.57,
+            "windSpeed": 3.06
+        }
     },
     {
         "createdAt": new Date(),
@@ -4320,7 +8439,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1500098700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 58.35,
+            "cloudCover": 0.12,
+            "dewPoint": 52.57,
+            "humidity": 0.81,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.87,
+            "summary": "Clear",
+            "temperature": 58.35,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 264,
+            "windGust": 5.09,
+            "windSpeed": 3.76
+        }
     },
     {
         "createdAt": new Date(),
@@ -4337,7 +8472,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1464861000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.56,
+            "cloudCover": 0.89,
+            "dewPoint": 52.63,
+            "humidity": 0.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.92,
+            "summary": "Overcast",
+            "temperature": 55.56,
+            "uvIndex": 0,
+            "visibility": 9.227,
+            "windBearing": 269,
+            "windGust": 4.09,
+            "windSpeed": 3
+        }
     },
     {
         "createdAt": new Date(),
@@ -4354,7 +8505,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1482223800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 42.77,
+            "cloudCover": 0,
+            "dewPoint": 31.24,
+            "humidity": 0.64,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1027.64,
+            "summary": "Clear",
+            "temperature": 42.77,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 8,
+            "windGust": 3.74,
+            "windSpeed": 2.72
+        }
     },
     {
         "createdAt": new Date(),
@@ -4371,7 +8538,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1457473200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.4,
+            "cloudCover": 0.98,
+            "dewPoint": 44.57,
+            "humidity": 0.64,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.65,
+            "summary": "Overcast",
+            "temperature": 56.4,
+            "uvIndex": 3,
+            "visibility": 9.997,
+            "windBearing": 257,
+            "windGust": 8.06,
+            "windSpeed": 4.69
+        }
     },
     {
         "createdAt": new Date(),
@@ -4388,7 +8571,23 @@ module.exports = {
         "speedLimit": 40,
         "streetType": "BLVD",
         "timestamp": 1461120600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 65.88,
+            "cloudCover": 0.32,
+            "dewPoint": 40.78,
+            "humidity": 0.4,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.49,
+            "summary": "Partly Cloudy",
+            "temperature": 65.88,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 265,
+            "windGust": 8.61,
+            "windSpeed": 3.66
+        }
     },
     {
         "createdAt": new Date(),
@@ -4405,7 +8604,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1435524600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 68.34,
+            "cloudCover": 0.44,
+            "dewPoint": 58.18,
+            "humidity": 0.7,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.3,
+            "summary": "Partly Cloudy",
+            "temperature": 68.34,
+            "uvIndex": 8,
+            "visibility": 9.997,
+            "windBearing": 260,
+            "windGust": 12.39,
+            "windSpeed": 7.89
+        }
     },
     {
         "createdAt": new Date(),
@@ -4422,7 +8637,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1446584500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.43,
+            "cloudCover": 0.14,
+            "dewPoint": 41.15,
+            "humidity": 0.44,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.06,
+            "summary": "Partly Cloudy",
+            "temperature": 63.43,
+            "uvIndex": 3,
+            "visibility": 9.997,
+            "windBearing": 318,
+            "windGust": 9.12,
+            "windSpeed": 4.92
+        }
     },
     {
         "createdAt": new Date(),
@@ -4439,7 +8670,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1474206200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.1,
+            "cloudCover": 0.06,
+            "dewPoint": 48.29,
+            "humidity": 0.75,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.25,
+            "summary": "Clear",
+            "temperature": 56.1,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 326,
+            "windGust": 0.77,
+            "windSpeed": 0.77
+        }
     },
     {
         "createdAt": new Date(),
@@ -4456,7 +8703,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1493092400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.34,
+            "cloudCover": 0.69,
+            "dewPoint": 48.62,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.61,
+            "summary": "Mostly Cloudy",
+            "temperature": 55.34,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 274,
+            "windGust": 11.36,
+            "windSpeed": 7.61
+        }
     },
     {
         "createdAt": new Date(),
@@ -4473,7 +8736,25 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1550089900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.88,
+            "cloudCover": 1,
+            "dewPoint": 50.02,
+            "humidity": 0.9,
+            "ozone": 274.9,
+            "precipIntensity": 0.2012,
+            "precipProbability": 1,
+            "precipType": "rain",
+            "pressure": 1000.55,
+            "summary": "Rain",
+            "temperature": 52.88,
+            "uvIndex": 3,
+            "visibility": 2.556,
+            "windBearing": 130,
+            "windGust": 16.14,
+            "windSpeed": 8.72
+        }
     },
     {
         "createdAt": new Date(),
@@ -4490,7 +8771,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1556610800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.35,
+            "cloudCover": 0.53,
+            "dewPoint": 50.57,
+            "humidity": 0.9,
+            "ozone": 353.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.6,
+            "summary": "Mostly Cloudy",
+            "temperature": 53.35,
+            "uvIndex": 0,
+            "visibility": 9.299,
+            "windBearing": 233,
+            "windGust": 14.98,
+            "windSpeed": 10.43
+        }
     },
     {
         "createdAt": new Date(),
@@ -4507,7 +8805,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1496192300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.84,
+            "cloudCover": 0.71,
+            "dewPoint": 50.16,
+            "humidity": 0.7,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.27,
+            "summary": "Mostly Cloudy",
+            "temperature": 59.84,
+            "uvIndex": 1,
+            "visibility": 9.997,
+            "windBearing": 247,
+            "windGust": 13.19,
+            "windSpeed": 8.38
+        }
     },
     {
         "createdAt": new Date(),
@@ -4524,7 +8838,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "CT",
         "timestamp": 1479752400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.38,
+            "cloudCover": 0.48,
+            "dewPoint": 52.28,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.11,
+            "summary": "Partly Cloudy",
+            "temperature": 56.38,
+            "uvIndex": 2,
+            "visibility": 9.868,
+            "windBearing": 289,
+            "windGust": 5.86,
+            "windSpeed": 3.03
+        }
     },
     {
         "createdAt": new Date(),
@@ -4541,7 +8871,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "TER",
         "timestamp": 1459558700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.99,
+            "cloudCover": 0.11,
+            "dewPoint": 49.8,
+            "humidity": 0.69,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.35,
+            "summary": "Clear",
+            "temperature": 59.99,
+            "uvIndex": 1,
+            "visibility": 9.997,
+            "windBearing": 258,
+            "windGust": 11.04,
+            "windSpeed": 7.18
+        }
     },
     {
         "createdAt": new Date(),
@@ -4558,7 +8904,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1503856100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 74.11,
+            "cloudCover": 0.13,
+            "dewPoint": 59.5,
+            "humidity": 0.6,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.14,
+            "summary": "Partly Cloudy",
+            "temperature": 74.11,
+            "uvIndex": 5,
+            "visibility": 8.802,
+            "windBearing": 275,
+            "windGust": 5.03,
+            "windSpeed": 2.49
+        }
     },
     {
         "createdAt": new Date(),
@@ -4575,7 +8937,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1515375400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.31,
+            "cloudCover": 0.78,
+            "dewPoint": 47.21,
+            "humidity": 0.86,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.48,
+            "summary": "Mostly Cloudy",
+            "temperature": 51.31,
+            "uvIndex": 0,
+            "visibility": 9.393,
+            "windBearing": 28,
+            "windGust": 2.63,
+            "windSpeed": 2.39
+        }
     },
     {
         "createdAt": new Date(),
@@ -4592,7 +8970,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1539151600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.58,
+            "cloudCover": 0.39,
+            "dewPoint": 51.89,
+            "humidity": 0.84,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1008.81,
+            "summary": "Partly Cloudy",
+            "temperature": 56.58,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 236,
+            "windGust": 12.47,
+            "windSpeed": 8.6
+        }
     },
     {
         "createdAt": new Date(),
@@ -4609,7 +9003,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1466422800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.79,
+            "cloudCover": 0.04,
+            "dewPoint": 45.99,
+            "humidity": 0.67,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.25,
+            "summary": "Clear",
+            "temperature": 56.79,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 277,
+            "windGust": 2.04,
+            "windSpeed": 1.72
+        }
     },
     {
         "createdAt": new Date(),
@@ -4626,7 +9036,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1532204700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 73.13,
+            "cloudCover": 0.15,
+            "dewPoint": 55.28,
+            "humidity": 0.54,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.96,
+            "summary": "Partly Cloudy",
+            "temperature": 73.13,
+            "uvIndex": 9,
+            "visibility": 9.997,
+            "windBearing": 248,
+            "windGust": 14.28,
+            "windSpeed": 9.32
+        }
     },
     {
         "createdAt": new Date(),
@@ -4643,7 +9069,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "CIR",
         "timestamp": 1448739500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 51.93,
+            "cloudCover": 0,
+            "dewPoint": 22.54,
+            "humidity": 0.31,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.84,
+            "summary": "Clear",
+            "temperature": 51.93,
+            "uvIndex": 3,
+            "visibility": 9.997,
+            "windBearing": 66,
+            "windGust": 8.37,
+            "windSpeed": 5.85
+        }
     },
     {
         "createdAt": new Date(),
@@ -4660,7 +9102,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1545345400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.64,
+            "cloudCover": 0.88,
+            "dewPoint": 49.26,
+            "humidity": 0.88,
+            "ozone": 263,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.51,
+            "summary": "Overcast",
+            "temperature": 52.64,
+            "uvIndex": 1,
+            "visibility": 5.96,
+            "windBearing": 318,
+            "windGust": 5.41,
+            "windSpeed": 3.59
+        }
     },
     {
         "createdAt": new Date(),
@@ -4677,7 +9136,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1528994900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.03,
+            "cloudCover": 0.23,
+            "dewPoint": 49.66,
+            "humidity": 0.71,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.36,
+            "summary": "Partly Cloudy",
+            "temperature": 59.03,
+            "uvIndex": 5,
+            "visibility": 9.962,
+            "windBearing": 225,
+            "windGust": 11.57,
+            "windSpeed": 8.08
+        }
     },
     {
         "createdAt": new Date(),
@@ -4694,7 +9169,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "CIR",
         "timestamp": 1492200900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.58,
+            "cloudCover": 0.11,
+            "dewPoint": 38.98,
+            "humidity": 0.46,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.32,
+            "summary": "Clear",
+            "temperature": 59.58,
+            "uvIndex": 8,
+            "visibility": 9.997,
+            "windBearing": 322,
+            "windGust": 10.82,
+            "windSpeed": 5.77
+        }
     },
     {
         "createdAt": new Date(),
@@ -4711,7 +9202,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1501116200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 72.74,
+            "cloudCover": 0,
+            "dewPoint": 55.41,
+            "humidity": 0.55,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.23,
+            "summary": "Clear",
+            "temperature": 72.74,
+            "uvIndex": 2,
+            "visibility": 9.997,
+            "windBearing": 267,
+            "windGust": 9.61,
+            "windSpeed": 5.9
+        }
     },
     {
         "createdAt": new Date(),
@@ -4728,7 +9235,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1496987400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.82,
+            "cloudCover": 1,
+            "dewPoint": 57.27,
+            "humidity": 0.88,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.68,
+            "summary": "Overcast",
+            "temperature": 60.82,
+            "uvIndex": 0,
+            "visibility": 8.915,
+            "windBearing": 273,
+            "windGust": 3.33,
+            "windSpeed": 2.71
+        }
     },
     {
         "createdAt": new Date(),
@@ -4745,7 +9268,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "WAY",
         "timestamp": 1443969300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.37,
+            "cloudCover": 0.09,
+            "dewPoint": 48.53,
+            "humidity": 0.78,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1001.46,
+            "summary": "Clear",
+            "temperature": 55.37,
+            "uvIndex": 0,
+            "visibility": 9.458,
+            "windBearing": 125,
+            "windGust": 2.79,
+            "windSpeed": 2.48
+        }
     },
     {
         "createdAt": new Date(),
@@ -4762,7 +9301,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1442922000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.49,
+            "cloudCover": 0.15,
+            "dewPoint": 53.75,
+            "humidity": 0.81,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.35,
+            "summary": "Partly Cloudy",
+            "temperature": 59.49,
+            "uvIndex": 0,
+            "visibility": 8.78,
+            "windBearing": 233,
+            "windGust": 9.51,
+            "windSpeed": 6.44
+        }
     },
     {
         "createdAt": new Date(),
@@ -4779,7 +9334,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1452022300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.1,
+            "cloudCover": 0.97,
+            "dewPoint": 49.23,
+            "humidity": 0.9,
+            "precipIntensity": 0.0482,
+            "precipProbability": 0.94,
+            "precipType": "rain",
+            "pressure": 1005.57,
+            "summary": "Light Rain",
+            "temperature": 52.1,
+            "uvIndex": 2,
+            "visibility": 4.569,
+            "windBearing": 273,
+            "windGust": 8.41,
+            "windSpeed": 6.5
+        }
     },
     {
         "createdAt": new Date(),
@@ -4796,7 +9368,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1521918000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.51,
+            "cloudCover": 0.75,
+            "dewPoint": 40.81,
+            "humidity": 0.64,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.67,
+            "summary": "Mostly Cloudy",
+            "temperature": 52.51,
+            "uvIndex": 4,
+            "visibility": 9.997,
+            "windBearing": 268,
+            "windGust": 9.89,
+            "windSpeed": 6.15
+        }
     },
     {
         "createdAt": new Date(),
@@ -4813,7 +9401,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1526915600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.98,
+            "cloudCover": 0.11,
+            "dewPoint": 48.55,
+            "humidity": 0.79,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.71,
+            "summary": "Clear",
+            "temperature": 54.98,
+            "uvIndex": 2,
+            "visibility": 9.467,
+            "windBearing": 197,
+            "windGust": 6.94,
+            "windSpeed": 5.5
+        }
     },
     {
         "createdAt": new Date(),
@@ -4830,7 +9434,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1505413900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 65.12,
+            "cloudCover": 0.51,
+            "dewPoint": 54.19,
+            "humidity": 0.68,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.87,
+            "summary": "Mostly Cloudy",
+            "temperature": 65.12,
+            "uvIndex": 5,
+            "visibility": 9.997,
+            "windBearing": 244,
+            "windGust": 12.45,
+            "windSpeed": 7.73
+        }
     },
     {
         "createdAt": new Date(),
@@ -4847,7 +9467,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1520375800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 64.52,
+            "cloudCover": 0.18,
+            "dewPoint": 39.51,
+            "humidity": 0.4,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.83,
+            "summary": "Partly Cloudy",
+            "temperature": 64.52,
+            "uvIndex": 3,
+            "visibility": 9.997,
+            "windBearing": 40,
+            "windGust": 8.02,
+            "windSpeed": 4.93
+        }
     },
     {
         "createdAt": new Date(),
@@ -4864,7 +9500,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1538056500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.46,
+            "cloudCover": 0.78,
+            "dewPoint": 49.35,
+            "humidity": 0.89,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.48,
+            "summary": "Mostly Cloudy",
+            "temperature": 52.46,
+            "uvIndex": 0,
+            "visibility": 5.594,
+            "windBearing": 317,
+            "windGust": 3.73,
+            "windSpeed": 2.75
+        }
     },
     {
         "createdAt": new Date(),
@@ -4881,7 +9533,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1529706800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 85.97,
+            "cloudCover": 0,
+            "dewPoint": 52.62,
+            "humidity": 0.32,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.2,
+            "summary": "Clear",
+            "temperature": 85.97,
+            "uvIndex": 8,
+            "visibility": 9.997,
+            "windBearing": 280,
+            "windGust": 9.69,
+            "windSpeed": 7.08
+        }
     },
     {
         "createdAt": new Date(),
@@ -4898,7 +9566,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1441063200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 76.2,
+            "cloudCover": 0,
+            "dewPoint": 56.8,
+            "humidity": 0.51,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.67,
+            "summary": "Clear",
+            "temperature": 76.2,
+            "uvIndex": 4,
+            "visibility": 9.823,
+            "windBearing": 261,
+            "windGust": 12.02,
+            "windSpeed": 8.02
+        }
     },
     {
         "createdAt": new Date(),
@@ -4915,7 +9599,23 @@ module.exports = {
         "speedLimit": 65,
         "streetType": "",
         "timestamp": 1479829400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 47.15,
+            "cloudCover": 0.45,
+            "dewPoint": 44.31,
+            "humidity": 0.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1022.69,
+            "summary": "Partly Cloudy",
+            "temperature": 47.15,
+            "uvIndex": 0,
+            "visibility": 9.947,
+            "windBearing": 103,
+            "windGust": 1.38,
+            "windSpeed": 1.27
+        }
     },
     {
         "createdAt": new Date(),
@@ -4932,7 +9632,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1488767900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 43,
+            "cloudCover": 0.41,
+            "dewPoint": 35.37,
+            "humidity": 0.65,
+            "precipIntensity": 0.0004,
+            "precipProbability": 0.08,
+            "precipType": "rain",
+            "pressure": 1017.73,
+            "summary": "Partly Cloudy",
+            "temperature": 46.43,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 278,
+            "windGust": 10.35,
+            "windSpeed": 6.77
+        }
     },
     {
         "createdAt": new Date(),
@@ -4949,7 +9666,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1449364600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.08,
+            "cloudCover": 0.71,
+            "dewPoint": 45.52,
+            "humidity": 0.75,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1023.5,
+            "summary": "Mostly Cloudy",
+            "temperature": 53.08,
+            "uvIndex": 0,
+            "visibility": 9.993,
+            "windBearing": 86,
+            "windGust": 2.07,
+            "windSpeed": 1.62
+        }
     },
     {
         "createdAt": new Date(),
@@ -4966,7 +9699,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1532543300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 66.3,
+            "cloudCover": 0.11,
+            "dewPoint": 55.01,
+            "humidity": 0.67,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.01,
+            "summary": "Clear",
+            "temperature": 66.3,
+            "uvIndex": 8,
+            "visibility": 9.997,
+            "windBearing": 264,
+            "windGust": 8.74,
+            "windSpeed": 6.27
+        }
     },
     {
         "createdAt": new Date(),
@@ -4983,7 +9732,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1436580800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 66.44,
+            "cloudCover": 0.28,
+            "dewPoint": 55.93,
+            "humidity": 0.69,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.02,
+            "summary": "Partly Cloudy",
+            "temperature": 66.44,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 259,
+            "windGust": 11,
+            "windSpeed": 7.18
+        }
     },
     {
         "createdAt": new Date(),
@@ -5000,7 +9765,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1450027000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 53.04,
+            "cloudCover": 1,
+            "dewPoint": 50.39,
+            "humidity": 0.91,
+            "precipIntensity": 0.1315,
+            "precipProbability": 1,
+            "precipType": "rain",
+            "pressure": 1011.75,
+            "summary": "Rain",
+            "temperature": 53.04,
+            "uvIndex": 1,
+            "visibility": 1.249,
+            "windBearing": 201,
+            "windGust": 19.82,
+            "windSpeed": 14.39
+        }
     },
     {
         "createdAt": new Date(),
@@ -5017,7 +9799,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1458703300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.08,
+            "cloudCover": 0.21,
+            "dewPoint": 44.78,
+            "humidity": 0.71,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1024.33,
+            "summary": "Partly Cloudy",
+            "temperature": 54.08,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 293,
+            "windGust": 10.16,
+            "windSpeed": 5.44
+        }
     },
     {
         "createdAt": new Date(),
@@ -5034,7 +9832,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1522393700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 59.34,
+            "cloudCover": 0.05,
+            "dewPoint": 46.48,
+            "humidity": 0.62,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.36,
+            "summary": "Clear",
+            "temperature": 59.34,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 292,
+            "windGust": 1.53,
+            "windSpeed": 1.41
+        }
     },
     {
         "createdAt": new Date(),
@@ -5051,7 +9865,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1550018400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.78,
+            "cloudCover": 0.84,
+            "dewPoint": 37.85,
+            "humidity": 0.61,
+            "ozone": 288.2,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.68,
+            "summary": "Mostly Cloudy",
+            "temperature": 50.78,
+            "uvIndex": 0,
+            "visibility": 8.788,
+            "windBearing": 113,
+            "windGust": 7.77,
+            "windSpeed": 4.43
+        }
     },
     {
         "createdAt": new Date(),
@@ -5068,7 +9899,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1466963200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 69.74,
+            "cloudCover": 0.14,
+            "dewPoint": 53.84,
+            "humidity": 0.57,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.63,
+            "summary": "Partly Cloudy",
+            "temperature": 69.74,
+            "uvIndex": 7,
+            "visibility": 10,
+            "windBearing": 268,
+            "windGust": 5.84,
+            "windSpeed": 3.77
+        }
     },
     {
         "createdAt": new Date(),
@@ -5085,7 +9932,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1524343500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 74.24,
+            "cloudCover": 0,
+            "dewPoint": 52.75,
+            "humidity": 0.47,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1019.37,
+            "summary": "Clear",
+            "temperature": 74.24,
+            "uvIndex": 9,
+            "visibility": 10,
+            "windBearing": 300,
+            "windGust": 6.57,
+            "windSpeed": 3.51
+        }
     },
     {
         "createdAt": new Date(),
@@ -5102,7 +9965,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "DR",
         "timestamp": 1432331900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.45,
+            "cloudCover": 0.82,
+            "dewPoint": 52.99,
+            "humidity": 0.74,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.47,
+            "summary": "Mostly Cloudy",
+            "temperature": 61.45,
+            "uvIndex": 5,
+            "visibility": 9.997,
+            "windBearing": 245,
+            "windGust": 11.96,
+            "windSpeed": 7.91
+        }
     },
     {
         "createdAt": new Date(),
@@ -5119,7 +9998,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1433321600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.94,
+            "cloudCover": 0.85,
+            "dewPoint": 50.5,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.04,
+            "summary": "Mostly Cloudy",
+            "temperature": 54.94,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 222,
+            "windGust": 6.47,
+            "windSpeed": 4.72
+        }
     },
     {
         "createdAt": new Date(),
@@ -5136,7 +10031,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1483019100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 44.78,
+            "cloudCover": 0,
+            "dewPoint": 34.81,
+            "humidity": 0.66,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.83,
+            "summary": "Clear",
+            "temperature": 45.7,
+            "uvIndex": 0,
+            "visibility": 9.958,
+            "windBearing": 74,
+            "windGust": 5.5,
+            "windSpeed": 3.04
+        }
     },
     {
         "createdAt": new Date(),
@@ -5153,7 +10064,24 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1546771200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 46.91,
+            "cloudCover": 0.64,
+            "dewPoint": 46.5,
+            "humidity": 0.88,
+            "ozone": 309,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.36,
+            "summary": "Mostly Cloudy",
+            "temperature": 49.84,
+            "uvIndex": 0,
+            "visibility": 9.919,
+            "windBearing": 195,
+            "windGust": 9.15,
+            "windSpeed": 7.21
+        }
     },
     {
         "createdAt": new Date(),
@@ -5170,7 +10098,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "DR",
         "timestamp": 1522259000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.83,
+            "cloudCover": 0,
+            "dewPoint": 47.37,
+            "humidity": 0.55,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1022.24,
+            "summary": "Clear",
+            "temperature": 63.83,
+            "uvIndex": 4,
+            "visibility": 10,
+            "windBearing": 331,
+            "windGust": 6.7,
+            "windSpeed": 3.32
+        }
     },
     {
         "createdAt": new Date(),
@@ -5187,7 +10131,25 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1544835200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.56,
+            "cloudCover": 0.81,
+            "dewPoint": 51.14,
+            "humidity": 0.79,
+            "ozone": 320.8,
+            "precipIntensity": 0.0101,
+            "precipProbability": 0.27,
+            "precipType": "rain",
+            "pressure": 1019.39,
+            "summary": "Mostly Cloudy",
+            "temperature": 57.56,
+            "uvIndex": 0,
+            "visibility": 7.438,
+            "windBearing": 199,
+            "windGust": 12.74,
+            "windSpeed": 8.89
+        }
     },
     {
         "createdAt": new Date(),
@@ -5204,7 +10166,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1528037300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.11,
+            "cloudCover": 0,
+            "dewPoint": 50.23,
+            "humidity": 0.67,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.58,
+            "summary": "Clear",
+            "temperature": 61.11,
+            "uvIndex": 1,
+            "visibility": 9.984,
+            "windBearing": 244,
+            "windGust": 4.76,
+            "windSpeed": 3.69
+        }
     },
     {
         "createdAt": new Date(),
@@ -5221,7 +10199,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1538870700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 71.99,
+            "cloudCover": 0.13,
+            "dewPoint": 52.15,
+            "humidity": 0.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1010.46,
+            "summary": "Partly Cloudy",
+            "temperature": 71.99,
+            "uvIndex": 1,
+            "visibility": 9.997,
+            "windBearing": 276,
+            "windGust": 13.28,
+            "windSpeed": 8.56
+        }
     },
     {
         "createdAt": new Date(),
@@ -5238,7 +10232,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1514851500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.26,
+            "cloudCover": 0.24,
+            "dewPoint": 46.55,
+            "humidity": 0.58,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.03,
+            "summary": "Partly Cloudy",
+            "temperature": 61.26,
+            "uvIndex": 0,
+            "visibility": 9.637,
+            "windBearing": 344,
+            "windGust": 3.28,
+            "windSpeed": 1.98
+        }
     },
     {
         "createdAt": new Date(),
@@ -5255,7 +10265,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1540177700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57,
+            "cloudCover": 0,
+            "dewPoint": 51.43,
+            "humidity": 0.82,
+            "ozone": 273.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.99,
+            "summary": "Clear",
+            "temperature": 57,
+            "uvIndex": 0,
+            "visibility": 8.798,
+            "windBearing": 289,
+            "windGust": 6.23,
+            "windSpeed": 5.52
+        }
     },
     {
         "createdAt": new Date(),
@@ -5272,7 +10299,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1564920900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.06,
+            "cloudCover": 1,
+            "dewPoint": 56.83,
+            "humidity": 0.99,
+            "ozone": 315.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.45,
+            "summary": "Overcast",
+            "temperature": 56.99,
+            "uvIndex": 0,
+            "visibility": 8.131,
+            "windBearing": 234,
+            "windGust": 9.03,
+            "windSpeed": 7.48
+        }
     },
     {
         "createdAt": new Date(),
@@ -5289,7 +10333,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1541848900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.33,
+            "cloudCover": 0.27,
+            "dewPoint": 30.5,
+            "humidity": 0.43,
+            "ozone": 257.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.58,
+            "summary": "Foggy",
+            "temperature": 52.33,
+            "uvIndex": 0,
+            "visibility": 0.603,
+            "windBearing": 45,
+            "windGust": 7.04,
+            "windSpeed": 4.85
+        }
     },
     {
         "createdAt": new Date(),
@@ -5306,7 +10367,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1479300100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.73,
+            "cloudCover": 0.07,
+            "dewPoint": 44.36,
+            "humidity": 0.79,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.75,
+            "summary": "Clear",
+            "temperature": 50.73,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 294,
+            "windGust": 4.31,
+            "windSpeed": 2.87
+        }
     },
     {
         "createdAt": new Date(),
@@ -5323,7 +10400,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1501195100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 79.23,
+            "cloudCover": 0,
+            "dewPoint": 56.54,
+            "humidity": 0.46,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.65,
+            "summary": "Clear",
+            "temperature": 79.23,
+            "uvIndex": 7,
+            "visibility": 9.997,
+            "windBearing": 280,
+            "windGust": 8.3,
+            "windSpeed": 5.33
+        }
     },
     {
         "createdAt": new Date(),
@@ -5340,7 +10433,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "BLVD",
         "timestamp": 1448078000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.96,
+            "cloudCover": 0.09,
+            "dewPoint": 50.39,
+            "humidity": 0.82,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.18,
+            "summary": "Clear",
+            "temperature": 55.96,
+            "uvIndex": 0,
+            "visibility": 9.655,
+            "windBearing": 330,
+            "windGust": 4.9,
+            "windSpeed": 4.9
+        }
     },
     {
         "createdAt": new Date(),
@@ -5357,7 +10466,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1452778300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 45.44,
+            "cloudCover": 0.67,
+            "dewPoint": 42.62,
+            "humidity": 0.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.02,
+            "summary": "Mostly Cloudy",
+            "temperature": 45.44,
+            "uvIndex": 0,
+            "visibility": 8.82,
+            "windBearing": 138,
+            "windGust": 2.18,
+            "windSpeed": 1.15
+        }
     },
     {
         "createdAt": new Date(),
@@ -5374,7 +10499,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1432940400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 64.77,
+            "cloudCover": 0.37,
+            "dewPoint": 53,
+            "humidity": 0.66,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.26,
+            "summary": "Partly Cloudy",
+            "temperature": 64.77,
+            "uvIndex": 5,
+            "visibility": 9.997,
+            "windBearing": 255,
+            "windGust": 10.67,
+            "windSpeed": 7.79
+        }
     },
     {
         "createdAt": new Date(),
@@ -5391,7 +10532,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1497839700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 81.15,
+            "cloudCover": 0,
+            "dewPoint": 56.01,
+            "humidity": 0.42,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1006.96,
+            "summary": "Clear",
+            "temperature": 81.15,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 282,
+            "windGust": 9.51,
+            "windSpeed": 5.27
+        }
     },
     {
         "createdAt": new Date(),
@@ -5408,7 +10565,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1420599000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 55.85,
+            "cloudCover": 0,
+            "dewPoint": 41.44,
+            "humidity": 0.58,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.93,
+            "summary": "Clear",
+            "temperature": 55.85,
+            "uvIndex": 0,
+            "visibility": 9.836,
+            "windBearing": 78,
+            "windGust": 2.93,
+            "windSpeed": 2.72
+        }
     },
     {
         "createdAt": new Date(),
@@ -5425,7 +10598,23 @@ module.exports = {
         "speedLimit": 35,
         "streetType": "BLVD",
         "timestamp": 1430718700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 52.77,
+            "cloudCover": 0.53,
+            "dewPoint": 47.27,
+            "humidity": 0.82,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.23,
+            "summary": "Mostly Cloudy",
+            "temperature": 52.77,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 254,
+            "windGust": 9.63,
+            "windSpeed": 6.16
+        }
     },
     {
         "createdAt": new Date(),
@@ -5442,7 +10631,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1538115500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.14,
+            "cloudCover": 0.36,
+            "dewPoint": 51.29,
+            "humidity": 0.84,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.91,
+            "summary": "Partly Cloudy",
+            "temperature": 56.14,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 258,
+            "windGust": 7.21,
+            "windSpeed": 4.49
+        }
     },
     {
         "createdAt": new Date(),
@@ -5459,7 +10664,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1449633500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.46,
+            "cloudCover": 0.73,
+            "dewPoint": 53.02,
+            "humidity": 0.88,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.94,
+            "summary": "Mostly Cloudy",
+            "temperature": 56.46,
+            "uvIndex": 0,
+            "visibility": 7.546,
+            "windBearing": 31,
+            "windGust": 1.16,
+            "windSpeed": 1.16
+        }
     },
     {
         "createdAt": new Date(),
@@ -5476,7 +10697,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1511127900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 60.74,
+            "cloudCover": 0.43,
+            "dewPoint": 45.41,
+            "humidity": 0.57,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.88,
+            "summary": "Partly Cloudy",
+            "temperature": 60.74,
+            "uvIndex": 2,
+            "visibility": 10,
+            "windBearing": 347,
+            "windGust": 5.39,
+            "windSpeed": 3.09
+        }
     },
     {
         "createdAt": new Date(),
@@ -5493,7 +10730,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "LOOP",
         "timestamp": 1447756900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.05,
+            "cloudCover": 0,
+            "dewPoint": 38.36,
+            "humidity": 0.64,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1026.99,
+            "summary": "Clear",
+            "temperature": 50.05,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 341,
+            "windGust": 4.78,
+            "windSpeed": 3.59
+        }
     },
     {
         "createdAt": new Date(),
@@ -5510,7 +10763,23 @@ module.exports = {
         "speedLimit": 65,
         "streetType": "RAMP",
         "timestamp": 1426843000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 54.24,
+            "cloudCover": 0,
+            "dewPoint": 47.09,
+            "humidity": 0.77,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.87,
+            "summary": "Clear",
+            "temperature": 54.24,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 241,
+            "windGust": 3.56,
+            "windSpeed": 2.33
+        }
     },
     {
         "createdAt": new Date(),
@@ -5527,7 +10796,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1422199200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 42.86,
+            "cloudCover": 0.02,
+            "dewPoint": 40.91,
+            "humidity": 0.87,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.51,
+            "summary": "Clear",
+            "temperature": 44.6,
+            "uvIndex": 0,
+            "visibility": 9.484,
+            "windBearing": 38,
+            "windGust": 5.05,
+            "windSpeed": 3.73
+        }
     },
     {
         "createdAt": new Date(),
@@ -5544,7 +10829,23 @@ module.exports = {
         "speedLimit": 65,
         "streetType": "RAMP",
         "timestamp": 1530904300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 74.77,
+            "cloudCover": 0.55,
+            "dewPoint": 54.68,
+            "humidity": 0.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1020.58,
+            "summary": "Mostly Cloudy",
+            "temperature": 74.77,
+            "uvIndex": 7,
+            "visibility": 9.997,
+            "windBearing": 281,
+            "windGust": 7.49,
+            "windSpeed": 4.65
+        }
     },
     {
         "createdAt": new Date(),
@@ -5561,7 +10862,24 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1561772600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.37,
+            "cloudCover": 0.28,
+            "dewPoint": 50.31,
+            "humidity": 0.65,
+            "ozone": 368.9,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.72,
+            "summary": "Partly Cloudy",
+            "temperature": 62.37,
+            "uvIndex": 1,
+            "visibility": 7.257,
+            "windBearing": 267,
+            "windGust": 15.62,
+            "windSpeed": 10.11
+        }
     },
     {
         "createdAt": new Date(),
@@ -5578,7 +10896,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "CT",
         "timestamp": 1430911500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.62,
+            "cloudCover": 0.7,
+            "dewPoint": 44.71,
+            "humidity": 0.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.41,
+            "summary": "Mostly Cloudy",
+            "temperature": 50.62,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 206,
+            "windGust": 8.34,
+            "windSpeed": 4.89
+        }
     },
     {
         "createdAt": new Date(),
@@ -5595,7 +10929,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1524778500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 63.36,
+            "cloudCover": 0.04,
+            "dewPoint": 48.18,
+            "humidity": 0.58,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.2,
+            "summary": "Clear",
+            "temperature": 63.36,
+            "uvIndex": 8,
+            "visibility": 9.997,
+            "windBearing": 257,
+            "windGust": 12.12,
+            "windSpeed": 6.78
+        }
     },
     {
         "createdAt": new Date(),
@@ -5612,7 +10962,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "",
         "timestamp": 1452999500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.89,
+            "cloudCover": 1,
+            "dewPoint": 55.2,
+            "humidity": 0.91,
+            "precipIntensity": 0.0078,
+            "precipProbability": 0.78,
+            "precipType": "rain",
+            "pressure": 1021.91,
+            "summary": "Drizzle",
+            "temperature": 57.89,
+            "uvIndex": 0,
+            "visibility": 7.652,
+            "windBearing": 153,
+            "windGust": 2.05,
+            "windSpeed": 1.3
+        }
     },
     {
         "createdAt": new Date(),
@@ -5629,7 +10996,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1560125800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 77.24,
+            "cloudCover": 0.42,
+            "dewPoint": 52.64,
+            "humidity": 0.42,
+            "ozone": 327.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1014.42,
+            "summary": "Foggy",
+            "temperature": 77.24,
+            "uvIndex": 3,
+            "visibility": 0,
+            "windBearing": 265,
+            "windGust": 10.69,
+            "windSpeed": 4.95
+        }
     },
     {
         "createdAt": new Date(),
@@ -5646,7 +11030,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1532740700,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 65.18,
+            "cloudCover": 0,
+            "dewPoint": 52.97,
+            "humidity": 0.65,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.75,
+            "summary": "Clear",
+            "temperature": 65.18,
+            "uvIndex": 1,
+            "visibility": 9.997,
+            "windBearing": 260,
+            "windGust": 13.36,
+            "windSpeed": 9.98
+        }
     },
     {
         "createdAt": new Date(),
@@ -5663,7 +11063,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1451177500,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 49.36,
+            "cloudCover": 0.1,
+            "dewPoint": 26.56,
+            "humidity": 0.41,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1028.9,
+            "summary": "Clear",
+            "temperature": 49.36,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 55,
+            "windGust": 3.59,
+            "windSpeed": 2.84
+        }
     },
     {
         "createdAt": new Date(),
@@ -5680,7 +11096,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1457789600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 48.27,
+            "cloudCover": 0.84,
+            "dewPoint": 44.98,
+            "humidity": 0.83,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.64,
+            "summary": "Mostly Cloudy",
+            "temperature": 49.89,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 159,
+            "windGust": 7.11,
+            "windSpeed": 4.7
+        }
     },
     {
         "createdAt": new Date(),
@@ -5697,7 +11129,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1475343200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.77,
+            "cloudCover": 0.1,
+            "dewPoint": 49.44,
+            "humidity": 0.62,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.04,
+            "summary": "Clear",
+            "temperature": 62.77,
+            "uvIndex": 3,
+            "visibility": 9.918,
+            "windBearing": 286,
+            "windGust": 6.63,
+            "windSpeed": 3.96
+        }
     },
     {
         "createdAt": new Date(),
@@ -5714,7 +11162,23 @@ module.exports = {
         "speedLimit": 15,
         "streetType": "ST",
         "timestamp": 1423446400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 62.66,
+            "cloudCover": 0.89,
+            "dewPoint": 55.38,
+            "humidity": 0.77,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.55,
+            "summary": "Overcast",
+            "temperature": 62.66,
+            "uvIndex": 0,
+            "visibility": 9.709,
+            "windBearing": 186,
+            "windGust": 20.87,
+            "windSpeed": 11.27
+        }
     },
     {
         "createdAt": new Date(),
@@ -5731,7 +11195,23 @@ module.exports = {
         "speedLimit": 30,
         "streetType": "ST",
         "timestamp": 1452793100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 48.41,
+            "cloudCover": 0.59,
+            "dewPoint": 45.43,
+            "humidity": 0.89,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1021.22,
+            "summary": "Mostly Cloudy",
+            "temperature": 48.41,
+            "uvIndex": 1,
+            "visibility": 8.656,
+            "windBearing": 158,
+            "windGust": 3.13,
+            "windSpeed": 1.49
+        }
     },
     {
         "createdAt": new Date(),
@@ -5748,7 +11228,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1542208000,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 47.65,
+            "cloudCover": 0.23,
+            "dewPoint": 31.68,
+            "humidity": 0.5,
+            "ozone": 278.2,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1027.94,
+            "summary": "Foggy",
+            "temperature": 49.82,
+            "uvIndex": 0,
+            "visibility": 0.222,
+            "windBearing": 50,
+            "windGust": 8.32,
+            "windSpeed": 5.62
+        }
     },
     {
         "createdAt": new Date(),
@@ -5765,7 +11262,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "DR",
         "timestamp": 1430040800,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 50.96,
+            "cloudCover": 0.24,
+            "dewPoint": 43.48,
+            "humidity": 0.75,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1017.84,
+            "summary": "Partly Cloudy",
+            "temperature": 50.96,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 290,
+            "windGust": 8.68,
+            "windSpeed": 4.97
+        }
     },
     {
         "createdAt": new Date(),
@@ -5782,7 +11295,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "PL",
         "timestamp": 1421327100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 46.57,
+            "cloudCover": 0.12,
+            "dewPoint": 42.42,
+            "humidity": 0.85,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1024.84,
+            "summary": "Clear",
+            "temperature": 46.57,
+            "uvIndex": 0,
+            "visibility": 3.304,
+            "windBearing": 66,
+            "windGust": 2.59,
+            "windSpeed": 2.1
+        }
     },
     {
         "createdAt": new Date(),
@@ -5799,7 +11328,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1505109400,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 73.75,
+            "cloudCover": 0.18,
+            "dewPoint": 58,
+            "humidity": 0.58,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.34,
+            "summary": "Partly Cloudy",
+            "temperature": 73.75,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 294,
+            "windGust": 1.96,
+            "windSpeed": 1.6
+        }
     },
     {
         "createdAt": new Date(),
@@ -5816,7 +11361,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1534245600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 56.85,
+            "cloudCover": 1,
+            "dewPoint": 53.01,
+            "humidity": 0.87,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.41,
+            "summary": "Overcast",
+            "temperature": 56.85,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 228,
+            "windGust": 9.31,
+            "windSpeed": 6.32
+        }
     },
     {
         "createdAt": new Date(),
@@ -5833,7 +11394,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1566343900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 64.85,
+            "cloudCover": 0.11,
+            "dewPoint": 56.58,
+            "humidity": 0.75,
+            "ozone": 297.8,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1016.23,
+            "summary": "Clear",
+            "temperature": 64.85,
+            "uvIndex": 4,
+            "visibility": 7.33,
+            "windBearing": 293,
+            "windGust": 15.68,
+            "windSpeed": 9.84
+        }
     },
     {
         "createdAt": new Date(),
@@ -5850,7 +11428,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "WAY",
         "timestamp": 1498079600,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 75.43,
+            "cloudCover": 0,
+            "dewPoint": 59.93,
+            "humidity": 0.59,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1007.65,
+            "summary": "Clear",
+            "temperature": 75.43,
+            "uvIndex": 10,
+            "visibility": 9.997,
+            "windBearing": 283,
+            "windGust": 8.72,
+            "windSpeed": 4.95
+        }
     },
     {
         "createdAt": new Date(),
@@ -5867,7 +11461,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1564959100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 64.53,
+            "cloudCover": 0,
+            "dewPoint": 55.89,
+            "humidity": 0.74,
+            "ozone": 308.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1015.44,
+            "summary": "Clear",
+            "temperature": 64.53,
+            "uvIndex": 6,
+            "visibility": 4.724,
+            "windBearing": 255,
+            "windGust": 14.4,
+            "windSpeed": 9.82
+        }
     },
     {
         "createdAt": new Date(),
@@ -5884,7 +11495,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "AVE",
         "timestamp": 1563540900,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.61,
+            "cloudCover": 0.63,
+            "dewPoint": 56.77,
+            "humidity": 0.97,
+            "ozone": 298.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1011.79,
+            "summary": "Mostly Cloudy",
+            "temperature": 57.59,
+            "uvIndex": 0,
+            "visibility": 10,
+            "windBearing": 212,
+            "windGust": 6.27,
+            "windSpeed": 5.25
+        }
     },
     {
         "createdAt": new Date(),
@@ -5901,7 +11529,23 @@ module.exports = {
         "speedLimit": 35,
         "streetType": "AVE",
         "timestamp": 1444393200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.1,
+            "cloudCover": 0.1,
+            "dewPoint": 50.09,
+            "humidity": 0.77,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1018.45,
+            "summary": "Clear",
+            "temperature": 57.1,
+            "uvIndex": 0,
+            "visibility": 9.997,
+            "windBearing": 272,
+            "windGust": 3.21,
+            "windSpeed": 2.17
+        }
     },
     {
         "createdAt": new Date(),
@@ -5918,7 +11562,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1433117300,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 61.48,
+            "cloudCover": 0.55,
+            "dewPoint": 49.82,
+            "humidity": 0.66,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.46,
+            "summary": "Mostly Cloudy",
+            "temperature": 61.48,
+            "uvIndex": 3,
+            "visibility": 9.997,
+            "windBearing": 250,
+            "windGust": 14.72,
+            "windSpeed": 10.22
+        }
     },
     {
         "createdAt": new Date(),
@@ -5935,7 +11595,23 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "DR",
         "timestamp": 1503178100,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 68.52,
+            "cloudCover": 0.14,
+            "dewPoint": 58.9,
+            "humidity": 0.71,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1012.59,
+            "summary": "Partly Cloudy",
+            "temperature": 68.52,
+            "uvIndex": 8,
+            "visibility": 9.716,
+            "windBearing": 253,
+            "windGust": 11.64,
+            "windSpeed": 7.56
+        }
     },
     {
         "createdAt": new Date(),
@@ -5952,7 +11628,24 @@ module.exports = {
         "speedLimit": 25,
         "streetType": "ST",
         "timestamp": 1546997200,
-        "updatedAt": new Date()
+        "updatedAt": new Date(),
+        "weather": {
+            "apparentTemperature": 57.07,
+            "cloudCover": 0.84,
+            "dewPoint": 51.11,
+            "humidity": 0.8,
+            "ozone": 268.5,
+            "precipIntensity": 0,
+            "precipProbability": 0,
+            "pressure": 1013.44,
+            "summary": "Mostly Cloudy",
+            "temperature": 57.07,
+            "uvIndex": 0,
+            "visibility": 9.643,
+            "windBearing": 165,
+            "windGust": 19.91,
+            "windSpeed": 10.27
+        }
     }
 ],
       {}
@@ -5960,6 +11653,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("IncidentsVehicles", null, {});
+    return queryInterface.bulkDelete("Incidents", null, {});
   }
 };

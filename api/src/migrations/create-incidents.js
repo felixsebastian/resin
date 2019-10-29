@@ -38,6 +38,62 @@ module.exports = {
       speedLimit: {
         type: Sequelize.INTEGER
       },
+      apparentTemperature: {
+        type: Sequelize.FLOAT
+      },
+      cloudCover: {
+        type: Sequelize.FLOAT
+      },
+      dewPoint: {
+        type: Sequelize.FLOAT
+      },
+      humidity: {
+        type: Sequelize.FLOAT
+      },
+      ozone: {
+        type: Sequelize.FLOAT
+      },
+      precipIntensity: {
+        type: Sequelize.FLOAT
+      },
+      precipProbability: {
+        type: Sequelize.FLOAT
+      },
+      precipType: {
+        type: Sequelize.STRING
+      },
+      pressure: {
+        type: Sequelize.FLOAT
+      },
+      summary: {
+        type: Sequelize.STRING
+      },
+      temperature: {
+        type: Sequelize.FLOAT
+      },
+      uvIndex: {
+        type: Sequelize.FLOAT
+      },
+      visibility: {
+        type: Sequelize.FLOAT
+      },
+      windBearing: {
+        type: Sequelize.FLOAT
+      },
+      windGust: {
+        type: Sequelize.FLOAT
+      },
+      windSpeed: {
+        type: Sequelize.FLOAT
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

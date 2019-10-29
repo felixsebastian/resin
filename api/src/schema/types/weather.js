@@ -7,6 +7,7 @@ export default `
     ozone
     precipIntensity
     precipProbability
+    precipType
     pressure
     summary
     temperature
