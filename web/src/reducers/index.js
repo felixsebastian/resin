@@ -4,6 +4,7 @@ import timeline from "./timeline";
 import filters from "./filters";
 import keysDown from "./keysDown";
 import sensor from "./sensor";
+import correlateIndependant from "./correlateIndependant";
 import { combineReducers } from "redux";
 
 export default combineReducers({
@@ -12,5 +13,6 @@ export default combineReducers({
   timeline,
   filters,
   keysDown,
-  sensor
+  sensor,
+  correlateIndependant
 });

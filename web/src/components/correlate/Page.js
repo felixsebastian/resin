@@ -1,9 +1,9 @@
 import React from "react";
-import Details from "./Details";
 import styled from "styled-components";
 import Histogram from "./Histogram";
-import Viewport from "./Viewport";
-import Filters from "./filters";
+import Controls from "./Controls";
+import Viewport from "../Viewport";
+import Filters from "../filters";
 
 const BoxA = styled.div`
   display: flex;
@@ -18,21 +18,20 @@ const BoxB = styled.div`
   flex-grow: 1;
 `;
 
+const BoxC = styled(Viewport)`
+  padding: 1rem;
+`;
+
 const BoxD = styled(Viewport)`
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
+  overflow: hidden;
 `;
 
-const BoxF = styled(Viewport)`
-  width: 30rem;
-  height: 100%;
+const BoxE = styled(Viewport)`
   display: flex;
-  flex-direction: column;
-`;
-
-const BoxC = styled(Viewport)`
-  padding: 1rem;
+  flex-direction: row;
+  flex-grow: 1;
 `;
 
 export default () => (
@@ -42,11 +41,11 @@ export default () => (
         <Filters />
       </BoxC>
       <BoxD>
-        <Histogram />
+        <Controls />
       </BoxD>
+      <BoxE>
+        <Histogram />
+      </BoxE>
     </BoxB>
-    <BoxF>
-      <Details />
-    </BoxF>
   </BoxA>
 );

@@ -11,6 +11,7 @@ const actionTypes = [
   "MOVE_TRACKER",
   "CHANGE_TIME_RANGE",
   "SELECT_SENSOR",
+  "CHANGE_CORRELATE_INDEPENDANT",
   // system
   "KEY_DOWN",
   "KEY_UP",

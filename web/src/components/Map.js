@@ -36,7 +36,6 @@ const INCIDENTS = gql`
         make
         model
         yearOfManufacture
-        countryOfManufacture
         autonomyLevel
         sensors {
           type

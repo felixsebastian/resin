@@ -40,7 +40,8 @@ export default {
       payload: ["field", "type"]
     },
     { type: "SELECT_SENSOR", payload: ["id"] },
-    { type: "LOG_OUT" }
+    { type: "LOG_OUT" },
+    { type: "CHANGE_CORRELATE_INDEPENDANT", payload: ["field"] }
   ].reduce((result, action) => {
     result[
       action.type

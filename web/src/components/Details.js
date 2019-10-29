@@ -27,6 +27,7 @@ const INCIDENTS = gql`
       damageSeverity
       description
       dca
+      mode
       vehicles {
         vin
         type
@@ -34,7 +35,6 @@ const INCIDENTS = gql`
         make
         model
         yearOfManufacture
-        countryOfManufacture
         autonomyLevel
         sensors {
           type

@@ -1,5 +1,5 @@
 import Context from "../components/MapScreen";
-import Correlate from "../components/Correlate";
+import Correlate from "../components/correlate/Page";
 import Vehicles from "../components/vehicles/Page";
 import Incidents from "../components/incidents/Page";
 import Sensors from "../components/sensors/Page";
