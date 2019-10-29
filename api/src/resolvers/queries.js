@@ -23,6 +23,24 @@ export default {
         location: {
           latitude: incident.dataValues.latitude || 0,
           longitude: incident.dataValues.longitude || 0
+        },
+        weather: {
+          apparentTemperature: incident.dataValues.apparentTemperature,
+          cloudCover: incident.dataValues.cloudCover,
+          dewPoint: incident.dataValues.dewPoint,
+          humidity: incident.dataValues.humidity,
+          ozone: incident.dataValues.ozone,
+          precipIntensity: incident.dataValues.precipIntensity,
+          precipProbability: incident.dataValues.precipProbability,
+          precipType: incident.dataValues.precipType,
+          pressure: incident.dataValues.pressure,
+          summary: incident.dataValues.summary,
+          temperature: incident.dataValues.temperature,
+          uvIndex: incident.dataValues.uvIndex,
+          visibility: incident.dataValues.visibility,
+          windBearing: incident.dataValues.windBearing,
+          windGust: incident.dataValues.windGust,
+          windSpeed: incident.dataValues.windSpeed
         }
       }))
     ),

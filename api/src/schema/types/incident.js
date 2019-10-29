@@ -12,5 +12,6 @@ export default `
     streetType: StreetType
     speedLimit: Int
     schoolZone: Boolean
+    weather: Weather
   }
 `;
