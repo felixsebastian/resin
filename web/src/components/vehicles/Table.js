@@ -45,7 +45,7 @@ export default () => {
 
   return (
     <Table
-      title="Incidents"
+      title="Vehicles"
       headings={[
         "Type",
         "Reg #",
