@@ -28,6 +28,24 @@ const INCIDENTS = gql`
       description
       dca
       mode
+      weather {
+        apparentTemperature
+        cloudCover
+        dewPoint
+        humidity
+        ozone
+        precipIntensity
+        precipProbability
+        precipType
+        pressure
+        summary
+        temperature
+        uvIndex
+        visibility
+        windBearing
+        windGust
+        windSpeed
+      }
       vehicles {
         vin
         type
@@ -50,9 +68,12 @@ export default () => {
   if (loading) return <Padding>loading...</Padding>;
   if (error) return <Padding>error!</Padding>;
 
-  const dataSelected = data.incidents.filter(incident =>
-    selection.includes(incident.id)
-  );
+  const dataSelected = data.incidents
+    .filter(incident => selection.includes(incident.id))
+    .map(incident => ({
+      ...incident,
+      ...incident.weather
+    }));
 
   return selection.length === 0 ? (
     <Centered offset={10}>

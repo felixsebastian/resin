@@ -1,6 +1,7 @@
 import Radius from "../components/filters/inputs/Radius";
 import Rectangle from "../components/filters/inputs/Rectangle";
 import Number from "../components/filters/inputs/Number";
+import NumberBetween from "../components/filters/inputs/NumberBetween";
 
 export default {
   location: {
@@ -19,7 +20,7 @@ export default {
   number: {
     eq: { text: "is", component: Number },
     not: { text: "is not", component: Number },
-    range: { text: "is between" },
+    between: { text: "is between", component: NumberBetween },
     gt: { text: "is greater than", component: Number },
     lt: { text: "is less than", component: Number }
   }
