@@ -4,10 +4,9 @@ import Padding from "../Padding";
 import useActions from "../../hooks/useActions";
 import InlineSpacer from "../InlineSpacer";
 import sources from "../../lib/incidentSources";
-
 const random = "ChRQ7tAvWIDIj7qFbAui";
-
 const fields = ["numVehicles", "speedLimit", "damageSeverity", "mode", "dca"];
+const continuousFields = ["numVehicles", "speedLimit"];
 
 export default () => {
   const independant = useSelector(state => state.independant);
@@ -30,7 +29,7 @@ export default () => {
           </option>
         ))}
       </select>
-      {field && sources.incident.fields[field].type === "number" && (
+      {field && continuousFields.includes(field) && (
         <>
           <InlineSpacer />
           <label>
