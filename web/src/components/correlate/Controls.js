@@ -13,9 +13,7 @@ export default () => {
   const independant = useSelector(state => state.independant);
   const stepSize = useSelector(state => state.stepSize);
   const { changeIndependant, changeStepSize } = useActions();
-
-  const field =
-    fields[Object.keys(fields).find(field => field === independant)];
+  const field = fields[fields.findIndex(field => field === independant)];
 
   return (
     <Padding>
@@ -26,13 +24,13 @@ export default () => {
         <option disabled value={random}>
           Select One
         </option>
-        {Object.keys(fields).map(field => (
+        {fields.map(field => (
           <option value={field} key={field}>
-            {sources.incident[field].label}
+            {sources.incident.fields[field].label}
           </option>
         ))}
       </select>
-      {field && field.continuous && (
+      {field && sources.incident.fields[field].type === "number" && (
         <>
           <InlineSpacer />
           <label>
