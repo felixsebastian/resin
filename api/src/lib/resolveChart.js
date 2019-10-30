@@ -4,7 +4,11 @@ export default ( incidents, options ) => {
     const itm = incidents.map( i => i[field] )
         .filter( i => i != null );
   
-    if ([ 'numVehicles', 'speedLimit' ].indexOf(field) != -1) {
+    if ([ 'numVehicles', 'speedLimit', 'weather.windSpeed',
+    'weather.apparentTemperature', 'weather.cloudCover', 'weather.dewPoint', 'weather.humidity',
+    'weather.ozone', 'weather.precipIntensity', 'weather.precipProbability', 'weather.schoolZone',
+    'weather.pressure', 'weather.temperature',
+    'weather.uvIndex', 'weather.visibility', 'weather.windBearing', 'weather.windGust' ].indexOf(field) != -1) {
       if (!options.step) options.step = 10;
       let bounds = {};
       bounds.min = Math.min(...itm);
