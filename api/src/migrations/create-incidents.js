@@ -44,6 +44,22 @@ module.exports = {
       schoolZone: {
         type: Sequelize.BOOLEAN
       },
+      apparentTemperature: Sequelize.FLOAT,
+      cloudCover: Sequelize.FLOAT,
+      dewPoint: Sequelize.FLOAT,
+      humidity: Sequelize.FLOAT,
+      ozone: Sequelize.FLOAT,
+      precipIntensity: Sequelize.FLOAT,
+      precipProbability: Sequelize.FLOAT,
+      precipType: Sequelize.STRING,
+      pressure: Sequelize.FLOAT,
+      summary: Sequelize.STRING,
+      temperature: Sequelize.FLOAT,
+      uvIndex: Sequelize.FLOAT,
+      visibility: Sequelize.FLOAT,
+      windBearing: Sequelize.FLOAT,
+      windGust: Sequelize.FLOAT,
+      windSpeed: Sequelize.FLOAT,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

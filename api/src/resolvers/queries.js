@@ -1,4 +1,5 @@
 import resolveFilters from "../lib/resolveFilters";
+import resolveChart from "../lib/resolveChart";
 
 export default {
   incidents: (_, args, { db }) =>
@@ -22,6 +23,24 @@ export default {
         location: {
           latitude: incident.dataValues.latitude || 0,
           longitude: incident.dataValues.longitude || 0
+        },
+        weather: {
+          apparentTemperature: incident.dataValues.apparentTemperature,
+          cloudCover: incident.dataValues.cloudCover,
+          dewPoint: incident.dataValues.dewPoint,
+          humidity: incident.dataValues.humidity,
+          ozone: incident.dataValues.ozone,
+          precipIntensity: incident.dataValues.precipIntensity,
+          precipProbability: incident.dataValues.precipProbability,
+          precipType: incident.dataValues.precipType,
+          pressure: incident.dataValues.pressure,
+          summary: incident.dataValues.summary,
+          temperature: incident.dataValues.temperature,
+          uvIndex: incident.dataValues.uvIndex,
+          visibility: incident.dataValues.visibility,
+          windBearing: incident.dataValues.windBearing,
+          windGust: incident.dataValues.windGust,
+          windSpeed: incident.dataValues.windSpeed
         }
       }))
     ),
@@ -41,7 +60,25 @@ export default {
   },
   sensors: (parent, args, { db }, info) => {
     return db.Sensors.findAll();
-  }
+  },
+  correlate: (_, args, { db }) => {
+    return db.Incidents.findAll({
+      include: [
+        {
+          model: db.Vehicles,
+          as: "vehicles",
+          include: [
+            {
+              model: db.Sensors,
+              as: "sensors"
+            }
+          ]
+        }
+      ],
+      where: resolveFilters(args.filters)
+    }).then(incidents => 
+      resolveChart(incidents, args.options)
+    )}
   // getVehicle: (parent, args, { db }, info) => {
   //   const where = args.rego ? { registration: args.rego } : {};
   //   return db.Vehicles.findOne({

@@ -2,7 +2,8 @@ export default `
   type Query {
     incidents(filters: [FilterInput]): [Incident!]
     vehicles: [Vehicle!]
-    sensors: [Sensor!],
+    sensors: [Sensor!]
+    correlate(filters: [FilterInput], options: ChartOptionsInput): [Chart!]
   }
 `;
 
