@@ -14,6 +14,7 @@ export default {
       },
       numVehicles: { label: "Vehicle count", type: "number" },
       damageSeverity: { label: "Damage", type: "string" },
+      speedLimit: { label: "Speed limit", type: "number" },
       description: { label: "Notes", type: "string" },
       dca: { label: "DCA", type: "number" },
       mode: { label: "Mode", type: "string" }

@@ -13,6 +13,7 @@ import styles from "../lib/mapStyles";
 import useActions from "../hooks/useActions";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import serializeFilters from "../lib/serializeFilters";
 
 const GOOGLE_MAPS_API_KEY = "AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk";
 
@@ -57,12 +58,6 @@ const heatMap = {
     "#FF0000"
   ]
 };
-
-const serializeFilters = src =>
-  src.map(filter => ({
-    ...filter,
-    value: btoa(JSON.stringify(filter.value))
-  }));
 
 const Map = compose(
   withScriptjs,

@@ -20,6 +20,7 @@ const BoxB = styled.div`
 
 const BoxC = styled(Viewport)`
   padding: 1rem;
+  overflow: visible;
 `;
 
 const BoxD = styled(Viewport)`

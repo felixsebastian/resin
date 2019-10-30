@@ -41,7 +41,8 @@ export default {
     },
     { type: "SELECT_SENSOR", payload: ["id"] },
     { type: "LOG_OUT" },
-    { type: "CHANGE_CORRELATE_INDEPENDANT", payload: ["field"] }
+    { type: "CHANGE_INDEPENDANT", payload: ["independant"] },
+    { type: "CHANGE_STEP_SIZE", payload: ["stepSize"] }
   ].reduce((result, action) => {
     result[
       action.type

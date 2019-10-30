@@ -2,7 +2,7 @@ import resolveFilters from "../lib/resolveFilters";
 import resolveChart from "../lib/resolveChart";
 
 export default {
-  incidents: (_, args, { db }) =>
+  incidents: (_parent, args, { db }) =>
     db.Incidents.findAll({
       include: [
         {
@@ -44,7 +44,7 @@ export default {
         }
       }))
     ),
-  vehicles: (parent, args, { db }, info) => {
+  vehicles: (_parent, _args, { db }) => {
     return db.Vehicles.findAll({
       include: [
         {
@@ -58,10 +58,10 @@ export default {
       ]
     });
   },
-  sensors: (parent, args, { db }, info) => {
+  sensors: (_parent, _args, { db }) => {
     return db.Sensors.findAll();
   },
-  correlate: (_, args, { db }) => {
+  correlate: (_parent, args, { db }) => {
     return db.Incidents.findAll({
       include: [
         {
@@ -76,9 +76,8 @@ export default {
         }
       ],
       where: resolveFilters(args.filters)
-    }).then(incidents => 
-      resolveChart(incidents, args.options)
-    )}
+    }).then(incidents => resolveChart(incidents, args.options));
+  }
   // getVehicle: (parent, args, { db }, info) => {
   //   const where = args.rego ? { registration: args.rego } : {};
   //   return db.Vehicles.findOne({
