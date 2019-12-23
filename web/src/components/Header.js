@@ -37,7 +37,7 @@ export default compose(
   return (
     <HeaderCarbon aria-label="" style={{ position: "static" }}>
       <HeaderName href="" onClick={logoClicked} prefix="">
-        Resin
+        AutoCrad
       </HeaderName>
       {loggedIn && (
         <HeaderNavigation aria-label="">

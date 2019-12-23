@@ -3,11 +3,14 @@ services:
   web:
     build: ./web
     ports:
-      - "3000:3000"
+      - "80:3000"
     volumes:
       - "./web:/app"
+    restart:
+      - always
   api:
     build: ./api
+    restart: always
     ports:
       - "4000:4000"
     volumes:
@@ -22,6 +25,7 @@ services:
       - GRAPGQL_PORT=4000
   rdb:
     image: postgres:11
+    restart: always
     ports:
       - "5432:5432"
     volumes:
