@@ -4,6 +4,6 @@ RUN mkdir /app
 
 WORKDIR /app
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD npm i && npm start
