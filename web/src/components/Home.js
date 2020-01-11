@@ -17,7 +17,7 @@ export default connect(state => ({ username: state.user.username }))(
         <a href="http://github.com/felix-sebastian/">Felix Sebastian</a>
       </p>
       <p>
-        This video is intended for educational purposes only and not for any commercial usage. We acknoledge Swinburne University of Technology, TAC Victoria, iMove CRC and DMV of California for their respective contributions to this project. If there are any concerns please contact us at ().
+        This website is intended for educational purposes only and not for any commercial usage. We acknoledge Swinburne University of Technology, TAC Victoria, iMove CRC and DMV of California for their respective contributions to this project. If there are any concerns please contact us at (pjayaraman@swin.edu.au).
       </p>
     </Centered>
   )
