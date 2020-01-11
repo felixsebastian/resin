@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "AutoCrad",
+  "name": "Automated Crash Data Analytics Tool",
   "icons": [
     {
       "src": "favicon.ico",
