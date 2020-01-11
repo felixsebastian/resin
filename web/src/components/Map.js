@@ -15,7 +15,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import serializeFilters from "../lib/serializeFilters";
 
-const GOOGLE_MAPS_API_KEY = "AIzaSyD64mBstzTUD74x9B8ZZc5jp2gQvHWeBHk";
+const GOOGLE_MAPS_API_KEY = "AIzaSyBBvr0hEu7XpgMI6g0OJEzfai88VJNNm_c";
 
 const INCIDENTS = gql`
   query incidents($filters: [FilterInput]) {
