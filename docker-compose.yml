@@ -3,15 +3,17 @@ services:
   web:
     build: ./web
     ports:
-      - "3000:80"
+      - "80:3000"
     volumes:
       - "./web:/app"
+    restart: always
   api:
     build: ./api
     ports:
       - "4000:4000"
     volumes:
       - "./api:/app"
+    restart: always
     environment:
       - PGUSER=dev
       - PGHOST=rdb
@@ -26,9 +28,7 @@ services:
       - "5432:5432"
     volumes:
       - "./temp/pg:/var/lib/postgresql/data"
-    environment:
-      - POSTGRES_USER=dev
-      - POSTGRES_PASSWORD=dev
+    restart: always
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U dev"]
       interval: 10s
