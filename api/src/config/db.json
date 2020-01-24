@@ -1,5 +1,7 @@
 {
   "development": {
+    "username": "dev",
+    "password": "dev",
     "database": "resin",
     "host": "rdb",
     "dialect": "postgres",
