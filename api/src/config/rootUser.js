@@ -1,4 +1,4 @@
 export default {
-  username: "root",
-  password: null
+  username: "dev",
+  password: "dev"
 };
