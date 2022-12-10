@@ -16,7 +16,7 @@
     "apollo-server-express": "^2.9.3",
     "body-parser": "^1.19.0",
     "core-js": "^3.2.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "graphql": "^14.0.2",
     "graphql-tools": "^4.0.3",
     "jsonwebtoken": "^8.5.1",
